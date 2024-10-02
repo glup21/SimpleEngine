@@ -10,7 +10,7 @@
 #include "engine.h"
 #include "scene.h"
 #include "mesh.h"
-
+#include "model.h"
 class Application
 {
 
@@ -18,7 +18,7 @@ class Application
     GLFWwindow* window;
 
 public:
-    Application() = default;
+    Application();
     ~Application() = default;
 
     void initialize();

@@ -5,19 +5,21 @@
 #include <vector>
 #include <GL/glew.h>
 
+using std::vector;
+
 class Mesh : public IDrawableObject
 {
 public:
     Mesh() = default;
-    Mesh(const std::vector<float>& points);
+    Mesh(const vector<float>& points);
     ~Mesh();
     void draw() override;
     float* getArrayBuffer();
-    void setup() override;
+    void setup(ShaderProgram* shaderProgram = nullptr) override;
 
 private:
     GLuint vao, vbo;
-    std::vector<float> points;
+    vector<float> points;
     
 };
 

@@ -8,14 +8,16 @@
 
 #include <stdlib.h>
 #include <stdio.h>
+#include "shaderProgram.h"
 
 class Engine
 {
 
     vector<IDrawableObject*>* drawObjectBuffer;
+    ShaderProgram* shaderProgram;
 
 public:
-    Engine() = default;
+    Engine();
     ~Engine() = default;
     void init(Scene scene);
     void run();

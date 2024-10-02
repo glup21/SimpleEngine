@@ -5,17 +5,22 @@
 
 Shader::Shader(const string& filePath, GLenum shaderType)
 {
-
+    shader = glCreateShader(shaderType);
+    code = readFile(filePath);
+    const char* tmp = code.c_str();
+    glShaderSource(shader, 1, &tmp, NULL);
+    glCompileShader(shader);
 }
 
 Shader::~Shader()
 {
     glDeleteShader(shader);
+    
 }
 
 GLuint Shader::getShader() const
 {
-
+    return shader;
 }
 
 string Shader::readFile(const string& filePath) //rewrite later

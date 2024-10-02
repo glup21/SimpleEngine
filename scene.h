@@ -3,22 +3,26 @@
 
 #include "mesh.h"
 #include <vector>
-
-using std::vector;
+#include "shader.h"
+#include <string>
+#include "IGameObject.h"
+using std::vector, std::pair, std::string;
 
 class Scene
 {
-
-    vector<IDrawableObject*> drawObjects;
+    vector<IGameObject*> gameObjects;
+    vector<IDrawableObject*> drawableObjects;
+    vector<Shader*> shaders;
 
 public:
     Scene() = default;
     ~Scene() = default;
 
-    Scene(vector<IDrawableObject*> dObj);
-    vector<IDrawableObject*>* getObjects();
-
-
+    Scene(vector<IGameObject*> gObj, const string& shaderPath);
+    vector<IGameObject*>* getObjects();
+    vector<IDrawableObject*>* getDrawableObjects();
+    vector<Shader*>* getShaders();
+    
 };
 
-#endif
+#endif // SCENE_H

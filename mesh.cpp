@@ -11,7 +11,7 @@ Mesh::~Mesh()
     glDeleteBuffers(1, &vbo);
 }
 
-void Mesh::setup()
+void Mesh::setup(ShaderProgram* shaderProgram)
 {
     glGenVertexArrays(1, &vao);
     glGenBuffers(1, &vbo);
@@ -28,7 +28,7 @@ void Mesh::setup()
     glBindVertexArray(0);
 }
 
-void Mesh::draw()
+void Mesh::draw() 
 {
     glBindVertexArray(vao);
     glDrawArrays(GL_TRIANGLES, 0, points.size() / 3);

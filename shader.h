@@ -15,6 +15,7 @@ public:
 
 private:
     GLuint shader;
+    string code;
     string readFile(const string& filePath);
     //void checkCompileErrors(GLuint shader, string type);
 };

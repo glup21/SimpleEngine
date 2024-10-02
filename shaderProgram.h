@@ -10,6 +10,7 @@ class ShaderProgram
 {
 public:
     ShaderProgram();
+    //ShaderProgram(vector<GLuint> new_shaders);
     ~ShaderProgram();
     void attachShader(const Shader& shader);
     void linkProgram();
@@ -18,8 +19,8 @@ public:
 
 private:
     GLuint program;
-    std::vector<GLuint> shaders;
-    void checkLinkErrors(GLuint program);
+    vector<GLuint> shaders;
+    void checkLinkErrors();
 };
 
 #endif 

@@ -1,11 +1,11 @@
 #include "application.h"
 
-// Application::Application()
-// {
+Application::Application()
+{
     
-// }
+}
 
-void Application::initialize()
+void Application::initialize() 
 {
     //Create window
     
@@ -43,6 +43,8 @@ void Application::initialize()
     glfwGetVersion(&major, &minor, &revision);
     printf("Using GLFW %i.%i.%i\n", major, minor, revision);
 
+    engine = new Engine();
+
 }
 
 void Application::run()
@@ -55,12 +57,19 @@ void Application::run()
     };
 
     Mesh mesh(points);
-    vector<IDrawableObject*> objects;
-    objects.push_back(&mesh);
-    Scene scene(objects);
+    Model model(&mesh);
+    vector<IGameObject*> objects;
+    objects.push_back(&model);
+    Scene scene(objects, "shaders/");
 
     engine->init(scene);
-    engine->run();
+
+    while (!glfwWindowShouldClose(window))
+    {
+        engine->run();
+    // put the stuff we’ve been drawing onto the display
+        glfwSwapBuffers(window);
+    }
 
 
 
