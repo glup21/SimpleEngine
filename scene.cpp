@@ -58,9 +58,9 @@ std::vector<IGameObject*>* Scene::getObjects()
     return &gameObjects;
 }
 
-std::vector<IDrawableObject*>* Scene::getDrawableObjects()
+std::vector<IDrawableObject*> Scene::getDrawableObjects()
 {
-    return &drawableObjects;
+    return drawableObjects;
 }
 vector<Shader*>* Scene::getShaders()
 {

@@ -10,7 +10,6 @@ class ShaderProgram
 {
 public:
     ShaderProgram();
-    //ShaderProgram(vector<GLuint> new_shaders);
     ~ShaderProgram();
     void attachShader(const Shader& shader);
     void linkProgram();

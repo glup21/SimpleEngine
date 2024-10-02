@@ -13,7 +13,7 @@
 class Engine
 {
 
-    vector<IDrawableObject*>* drawObjectBuffer;
+    vector<IDrawableObject*> drawObjectBuffer;
     ShaderProgram* shaderProgram;
 
 public:

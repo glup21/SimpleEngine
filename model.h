@@ -16,13 +16,12 @@ class Model : public IGameObject, public IDrawableObject
 
 
 public:
-    Model() = default;
+    //Model() = default;
     Model(Mesh* m, Shader* s = nullptr);
     ~Model() = default;
 
     Mesh* getMesh();
     Shader* getShader();
-
 
     void setup(ShaderProgram* shaderProgram) override;
     void draw() override;

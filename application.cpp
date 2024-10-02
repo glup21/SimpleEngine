@@ -68,6 +68,7 @@ void Application::run()
     {
         engine->run();
     // put the stuff we’ve been drawing onto the display
+        glfwPollEvents();
         glfwSwapBuffers(window);
     }
 

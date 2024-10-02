@@ -18,7 +18,7 @@ public:
     void setup(ShaderProgram* shaderProgram = nullptr) override;
 
 private:
-    GLuint vao, vbo;
+    GLuint VAO, VBO;
     vector<float> points;
     
 };

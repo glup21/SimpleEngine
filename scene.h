@@ -20,7 +20,7 @@ public:
 
     Scene(vector<IGameObject*> gObj, const string& shaderPath);
     vector<IGameObject*>* getObjects();
-    vector<IDrawableObject*>* getDrawableObjects();
+    vector<IDrawableObject*> getDrawableObjects();
     vector<Shader*>* getShaders();
     
 };

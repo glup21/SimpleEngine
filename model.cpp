@@ -1,6 +1,6 @@
 #include "model.h"
 
-#include "model.h"
+#include <iostream>
 
 Model::Model(Mesh* m, Shader* s) : mesh(m), shader(s), transform() {}
 
@@ -16,9 +16,18 @@ Shader* Model::getShader()
 
 void Model::setup(ShaderProgram* shaderProgram)
 {
-    mesh->setup();
-    if(shader)
+    if (!mesh) {
+        std::cerr << "Error: mesh is null in Model::setup" << std::endl;
+        return;
+    }
+
+    mesh->setup(shaderProgram);
+
+    if (shader) {
         shaderProgram->attachShader(*shader);
+    } else {
+        std::cerr << "Warning: shader is null in Model::setup" << std::endl;
+    }
 }
 
 void Model::update() 
@@ -28,6 +37,13 @@ void Model::update()
 
 void Model::draw()
 {
+    if (!mesh) {
+        std::cerr << "Error: mesh is null in Model::draw" << std::endl;
+        return;
+    }
+
+    // Use the shader program
+
     mesh->draw();
 }
 
