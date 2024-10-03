@@ -14,7 +14,7 @@ class Engine
 {
 
     vector<IDrawableObject*> drawObjectBuffer;
-    ShaderProgram* shaderProgram;
+    //ShaderProgram* shaderProgram;
 
 public:
     Engine();

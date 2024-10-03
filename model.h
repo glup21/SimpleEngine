@@ -10,20 +10,21 @@
 class Model : public IGameObject, public IDrawableObject
 {
     Mesh* mesh;
-    Shader* shader;
+    //Shader* shader;
     Transform transform;
-    //ShaderProgram* shaderProgram;
+    ShaderProgram* shaderProgram;
 
 
 public:
     //Model() = default;
-    Model(Mesh* m, Shader* s = nullptr);
+    //Model(Mesh* m, Shader* s = nullptr);
+    Model(Mesh* m, ShaderProgram* sp);
     ~Model() = default;
 
     Mesh* getMesh();
-    Shader* getShader();
+    //Shader* getShader();
 
-    void setup(ShaderProgram* shaderProgram) override;
+    void setup(ShaderProgram* sP) override;
     void draw() override;
     void update() override;
     Transform getTransform() override;

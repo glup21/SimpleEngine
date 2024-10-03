@@ -2,32 +2,32 @@
 
 #include <iostream>
 
-Model::Model(Mesh* m, Shader* s) : mesh(m), shader(s), transform() {}
+//Model::Model(Mesh* m, Shader* s) : mesh(m), shader(s), transform() {}
+
+Model::Model(Mesh* m, ShaderProgram* sp) : mesh(m), shaderProgram(sp), transform()
+{
+
+}
 
 Mesh* Model::getMesh()
 {
     return mesh;
 }
 
-Shader* Model::getShader()
-{
-    return shader;
-}
+// Shader* Model::getShader()
+// {
+//     return shader;
+// }
 
-void Model::setup(ShaderProgram* shaderProgram)
+void Model::setup(ShaderProgram* sP)
 {
     if (!mesh) {
         std::cerr << "Error: mesh is null in Model::setup" << std::endl;
         return;
     }
-
+    //shaderProgram->linkProgram();
+    
     mesh->setup(shaderProgram);
-
-    if (shader) {
-        shaderProgram->attachShader(*shader);
-    } else {
-        std::cerr << "Warning: shader is null in Model::setup" << std::endl;
-    }
 }
 
 void Model::update() 
@@ -43,7 +43,7 @@ void Model::draw()
     }
 
     // Use the shader program
-
+    shaderProgram->use();
     mesh->draw();
 }
 

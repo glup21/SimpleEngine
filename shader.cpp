@@ -10,6 +10,7 @@ Shader::Shader(const string& filePath, GLenum shaderType)
     const char* tmp = code.c_str();
     glShaderSource(shader, 1, &tmp, NULL);
     glCompileShader(shader);
+    checkCompileErrors(shader);
 }
 
 Shader::~Shader()
@@ -31,14 +32,14 @@ string Shader::readFile(const string& filePath) //rewrite later
     return buffer.str();
 }
 
-// void Shader::checkCompileErrors(GLuint shader, string type)
-// {
-//     GLint success;
-//     GLchar infoLog[1024];
-//     glGetShaderiv(shader, GL_COMPILE_STATUS, &success);
-//     if (!success)
-//     {
-//         glGetShaderInfoLog(shader, 1024, NULL, infoLog);
-//         std::cerr << "ERROR::" << type << "::COMPILATION_FAILED\n" << infoLog << std::endl;
-//     }
-// }
+void Shader::checkCompileErrors(GLuint shader)
+{
+    GLint success;
+    GLchar infoLog[1024];
+    glGetShaderiv(shader, GL_COMPILE_STATUS, &success);
+    if (!success)
+    {
+        glGetShaderInfoLog(shader, 1024, NULL, infoLog);
+        std::cerr << "ERROR COMPILATION_FAILED\n" << infoLog << std::endl;
+    }
+}

@@ -50,16 +50,42 @@ void Application::initialize()
 void Application::run()
 {
     //MANUAL SCENE CREATION, REPLACE LATER
-    vector<float> points = {
-        0.0f, 0.5f, 0.0f,
-        0.5f, -0.5f, 0.0f,
-        -0.5f, -0.5f, 0.0f
+    vector<float> trianglePoints = {
+        0.0f, 0.75f, 0.0f,  
+        0.75f, -0.25f, 0.0f, 
+        -0.75f, -0.25f, 0.0f 
     };
 
-    Mesh mesh(points);
-    Model model(&mesh);
+    vector<float> squarePoints = {
+        -0.25f, 0.25f, 0.0f,  
+        0.25f, 0.25f, 0.0f,
+        0.25f, -0.25f, 0.0f,
+
+        0.25f, -0.25f, 0.0f,
+        -0.25f, -0.25f, 0.0f,
+        -0.25f, 0.25f, 0.0f
+    };
+
+    Mesh triangleMesh(trianglePoints);
+    Mesh squareMesh(squarePoints);
+
+    ShaderProgram triangleShaderProgram;
+    triangleShaderProgram.attachShader(Shader("./shaders/vertex.glsl", GL_VERTEX_SHADER));
+    triangleShaderProgram.attachShader(Shader("./shaders/fragment_2.glsl", GL_FRAGMENT_SHADER));
+    triangleShaderProgram.linkProgram();
+
+    ShaderProgram squareShaderProgram;
+    squareShaderProgram.attachShader(Shader("./shaders/vertex.glsl", GL_VERTEX_SHADER));
+    squareShaderProgram.attachShader(Shader("./shaders/fragment_1.glsl", GL_FRAGMENT_SHADER));
+    squareShaderProgram.linkProgram();
+
+    Model triangleModel(&triangleMesh, &triangleShaderProgram);
+    Model squareModel(&squareMesh, &squareShaderProgram);
+
     vector<IGameObject*> objects;
-    objects.push_back(&model);
+    objects.push_back(&triangleModel);
+    objects.push_back(&squareModel);
+
     Scene scene(objects, "shaders/");
 
     engine->init(scene);

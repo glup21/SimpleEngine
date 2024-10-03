@@ -6,24 +6,24 @@ using std::cout, std::endl;
 Scene::Scene(std::vector<IGameObject*> gObj, const std::string& shaderPath) : gameObjects(gObj)
 {
     // REWORK FOR JSON CONFIG COMPATIBILITY LATER
-    std::vector<std::pair<GLenum, std::string>> shaderTypes = 
-        { {GL_VERTEX_SHADER, "vertex.glsl"}, {GL_FRAGMENT_SHADER, "fragment.glsl"}};
+    // std::vector<std::pair<GLenum, std::string>> shaderTypes = 
+    //     { {GL_VERTEX_SHADER, "vertex.glsl"}, {GL_FRAGMENT_SHADER, "fragment.glsl"}};
     
-    for (const std::pair<GLenum, std::string>& shaderPair : shaderTypes)
-    {   
-        std::string path = shaderPath + shaderPair.second;
-        std::cout << "Loading shader from path: " << path << std::endl;
-        Shader* shader = new Shader(path, shaderPair.first);
-        if (shader)
-        {
-            shaders.push_back(shader);
-            std::cout << "Shader loaded and added to shaders vector." << std::endl;
-        }
-        else
-        {
-            std::cerr << "Failed to load shader from path: " << path << std::endl;
-        }
-    }
+    // for (const std::pair<GLenum, std::string>& shaderPair : shaderTypes)
+    // {   
+    //     std::string path = shaderPath + shaderPair.second;
+    //     std::cout << "Loading shader from path: " << path << std::endl;
+    //     Shader* shader = new Shader(path, shaderPair.first);
+    //     if (shader)
+    //     {
+    //         shaders.push_back(shader);
+    //         std::cout << "Shader loaded and added to shaders vector." << std::endl;
+    //     }
+    //     else
+    //     {
+    //         std::cerr << "Failed to load shader from path: " << path << std::endl;
+    //     }
+    // }
 
     std::cout << "Number of game objects: " << gameObjects.size() << std::endl;
 
