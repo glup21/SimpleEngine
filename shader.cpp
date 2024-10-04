@@ -9,8 +9,13 @@ Shader::Shader(const string& filePath, GLenum shaderType)
     code = readFile(filePath);
     const char* tmp = code.c_str();
     glShaderSource(shader, 1, &tmp, NULL);
+
+}
+
+bool Shader::compileShader()
+{
     glCompileShader(shader);
-    checkCompileErrors(shader);
+    return checkCompileErrors(shader);
 }
 
 Shader::~Shader()
@@ -24,15 +29,20 @@ GLuint Shader::getShader() const
     return shader;
 }
 
-string Shader::readFile(const string& filePath) //rewrite later
+string Shader::readFile(const string& filePath)
 {
     std::ifstream file(filePath);
     std::stringstream buffer;
-    buffer << file.rdbuf();
+    string line;
+
+    while (std::getline(file, line)) {
+        buffer << line << '\n';
+    }
+
     return buffer.str();
 }
 
-void Shader::checkCompileErrors(GLuint shader)
+bool Shader::checkCompileErrors(GLuint shader)
 {
     GLint success;
     GLchar infoLog[1024];
@@ -41,5 +51,7 @@ void Shader::checkCompileErrors(GLuint shader)
     {
         glGetShaderInfoLog(shader, 1024, NULL, infoLog);
         std::cerr << "ERROR COMPILATION_FAILED\n" << infoLog << std::endl;
+        return false;
     }
+    return true;
 }

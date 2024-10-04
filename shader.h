@@ -12,12 +12,14 @@ public:
     Shader(const string& filePath, GLenum shaderType);
     ~Shader();
     GLuint getShader() const;
+    bool compileShader();
 
 private:
     GLuint shader;
     string code;
     string readFile(const string& filePath);
-    void checkCompileErrors(GLuint shader);
+    bool checkCompileErrors(GLuint shader);
+    
 };
 
 #endif 

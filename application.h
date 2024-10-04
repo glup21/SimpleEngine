@@ -24,6 +24,7 @@ public:
     void initialize();
     void run();
     void shutdown();
+    void critical_shutdown();
 
 };
 

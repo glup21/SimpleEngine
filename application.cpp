@@ -70,13 +70,28 @@ void Application::run()
     Mesh squareMesh(squarePoints);
 
     ShaderProgram triangleShaderProgram;
-    triangleShaderProgram.attachShader(Shader("./shaders/vertex.glsl", GL_VERTEX_SHADER));
-    triangleShaderProgram.attachShader(Shader("./shaders/fragment_2.glsl", GL_FRAGMENT_SHADER));
+
+    Shader* vertex = new Shader("./shaders/vertex.glsl", GL_VERTEX_SHADER);
+    Shader* fragment_1 = new Shader("./shaders/fragment_2.glsl", GL_FRAGMENT_SHADER);
+    Shader* fragment_2 = new Shader("./shaders/fragment_1.glsl", GL_FRAGMENT_SHADER);
+
+    vector<Shader*> shaders = {vertex, fragment_1, fragment_2};    
+
+    for(Shader* shader : shaders)
+    {
+        if(!shader->compileShader())
+        {
+            critical_shutdown();
+        }
+    }
+    
+    triangleShaderProgram.attachShader(*shaders.at(0));
+    triangleShaderProgram.attachShader(*shaders.at(1));
     triangleShaderProgram.linkProgram();
 
     ShaderProgram squareShaderProgram;
-    squareShaderProgram.attachShader(Shader("./shaders/vertex.glsl", GL_VERTEX_SHADER));
-    squareShaderProgram.attachShader(Shader("./shaders/fragment_1.glsl", GL_FRAGMENT_SHADER));
+    squareShaderProgram.attachShader(*shaders.at(0));
+    squareShaderProgram.attachShader(*shaders.at(2));
     squareShaderProgram.linkProgram();
 
     Model triangleModel(&triangleMesh, &triangleShaderProgram);
@@ -104,6 +119,15 @@ void Application::run()
 
 void Application::shutdown()
 {
+    glfwDestroyWindow(window);
+
+    glfwTerminate();
+    exit(EXIT_SUCCESS);
+}
+
+void Application::critical_shutdown()
+{
+    printf("CRITICALL ERROR, SHUTDOWN\n");
     glfwDestroyWindow(window);
 
     glfwTerminate();
