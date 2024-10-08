@@ -1,0 +1,20 @@
+{
+    "objects":
+    [
+        {
+            "id": "cube",
+            "type" : "model",
+            "position" : [0, 0, 0],
+            "rotation" : [0, 0, 0],
+            "scale" : [1, 1, 1],
+            "material" : "cube_mat"
+        }
+    ],
+    "materials" : 
+    [
+        {
+            "id" : "cube_mat",
+            "color" : "textures/container.jpg"
+        }
+    ]
+}

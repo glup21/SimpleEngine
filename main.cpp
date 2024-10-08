@@ -4,11 +4,6 @@
 #include <GL/glew.h>
 //Include GLFW
 #include <GLFW/glfw3.h>
-#include <glm/vec3.hpp> // glm::vec3
-#include <glm/vec4.hpp> // glm::vec4
-#include <glm/mat4x4.hpp> // glm::mat4
-#include <glm/gtc/matrix_transform.hpp> // glm::translate, glm::rotate, glm::scale, glm::perspective
-#include <glm/gtc/type_ptr.hpp> // glm::value_ptr
 
 //Include the standard C++ headers  
 #include <stdlib.h>
@@ -17,10 +12,26 @@
 #include "mesh.h"
 #include "application.h"
 #include "scene.h"
+#include <string>
+#include "configReader.h"
 
-int main()
+int main(int argc, char* argv[])
 {
-    Application* application = new Application;
+    string configPath;
+    if(argc > 1)
+    {
+       configPath =  argv[1];
+    }
+    else
+        configPath = "config/config.json";
+
+    ConfigReader configReader(configPath);
+    string scenePath = configReader.getScenePath();
+
+    if(scenePath.empty())
+        return 1;
+
+    Application* application = new Application(scenePath);
 
     application->initialize();
     application->run();

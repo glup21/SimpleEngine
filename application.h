@@ -16,9 +16,10 @@ class Application
 
     Engine* engine;
     GLFWwindow* window;
+    string scenePath;
 
 public:
-    Application();
+    Application(string scenePath);
     ~Application() = default;
 
     void initialize();

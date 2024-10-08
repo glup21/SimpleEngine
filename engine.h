@@ -9,12 +9,19 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include "shaderProgram.h"
+#include <chrono>
 
 class Engine
 {
 
     vector<IDrawableObject*> drawObjectBuffer;
+    vector<IGameObject*> gameObjects;
+    std::chrono::time_point<std::chrono::high_resolution_clock> previousTime;
     //ShaderProgram* shaderProgram;
+
+    void updateGameObjects(float delta);
+    void drawObjects();
+    float calculateDeltaTime();
 
 public:
     Engine();

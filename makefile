@@ -1,7 +1,8 @@
-PATHS = main.cpp application.cpp engine.cpp scene.cpp mesh.cpp shader.cpp model.cpp shaderProgram.cpp
+PATHS = main.cpp application.cpp texture.cpp engine.cpp scene.cpp mesh.cpp baseImage.cpp shader.cpp model.cpp shaderProgram.cpp sceneReader.cpp configReader.cpp material.cpp
+FLAGS = -lglfw -lGL -lGLEW 
 
 all:
-	g++ $(PATHS) -lglfw -lGL -lGLEW -o main
+	g++ $(PATHS) $(FLAGS) -o main
 
 debug:
-	g++ -g $(PATHS) -lglfw -lGL -lGLEW -o main && gdb ./main
+	g++ -g $(PATHS) $(FLAGS) -o main && gdb ./main

@@ -1,6 +1,9 @@
 #include "application.h"
+#include <iostream>
+#include "stb_image.h"
+#include "sceneReader.h"
 
-Application::Application()
+Application::Application(string scenePath): scenePath(scenePath)
 {
     
 }
@@ -49,59 +52,9 @@ void Application::initialize()
 
 void Application::run()
 {
-    //MANUAL SCENE CREATION, REPLACE LATER
-    vector<float> trianglePoints = {
-        0.0f, 0.75f, 0.0f,  
-        0.75f, -0.25f, 0.0f, 
-        -0.75f, -0.25f, 0.0f 
-    };
 
-    vector<float> squarePoints = {
-        -0.25f, 0.25f, 0.0f,  
-        0.25f, 0.25f, 0.0f,
-        0.25f, -0.25f, 0.0f,
-
-        0.25f, -0.25f, 0.0f,
-        -0.25f, -0.25f, 0.0f,
-        -0.25f, 0.25f, 0.0f
-    };
-
-    Mesh triangleMesh(trianglePoints);
-    Mesh squareMesh(squarePoints);
-
-    ShaderProgram triangleShaderProgram;
-
-    Shader* vertex = new Shader("./shaders/vertex.glsl", GL_VERTEX_SHADER);
-    Shader* fragment_1 = new Shader("./shaders/fragment_2.glsl", GL_FRAGMENT_SHADER);
-    Shader* fragment_2 = new Shader("./shaders/fragment_1.glsl", GL_FRAGMENT_SHADER);
-
-    vector<Shader*> shaders = {vertex, fragment_1, fragment_2};    
-
-    for(Shader* shader : shaders)
-    {
-        if(!shader->compileShader())
-        {
-            critical_shutdown();
-        }
-    }
-    
-    triangleShaderProgram.attachShader(*shaders.at(0));
-    triangleShaderProgram.attachShader(*shaders.at(1));
-    triangleShaderProgram.linkProgram();
-
-    ShaderProgram squareShaderProgram;
-    squareShaderProgram.attachShader(*shaders.at(0));
-    squareShaderProgram.attachShader(*shaders.at(2));
-    squareShaderProgram.linkProgram();
-
-    Model triangleModel(&triangleMesh, &triangleShaderProgram);
-    Model squareModel(&squareMesh, &squareShaderProgram);
-
-    vector<IGameObject*> objects;
-    objects.push_back(&triangleModel);
-    objects.push_back(&squareModel);
-
-    Scene scene(objects, "shaders/");
+    SceneReader sceneReader(scenePath);
+    Scene scene = sceneReader.readScene();
 
     engine->init(scene);
 

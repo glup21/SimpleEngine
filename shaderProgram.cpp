@@ -53,3 +53,8 @@ void ShaderProgram::checkLinkErrors()
         delete[] strInfoLog;
     }
 }
+
+GLuint ShaderProgram::getShader(int N) const
+{
+    return shaders.at(N);
+}

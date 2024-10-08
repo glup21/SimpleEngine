@@ -15,6 +15,7 @@ public:
     void linkProgram();
     void use();
     GLuint getProgram() const;
+    GLuint getShader(int N) const; //1 - vertex, 2 - fragment
 
 private:
     GLuint program;
