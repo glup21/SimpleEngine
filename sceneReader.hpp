@@ -3,7 +3,7 @@
 
 #include <string>
 #include "json.hpp"
-#include "scene.h"
+#include "scene.hpp"
 
 using std::string;
 using json = nlohmann::json;

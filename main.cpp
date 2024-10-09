@@ -9,11 +9,11 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-#include "mesh.h"
-#include "application.h"
-#include "scene.h"
+#include "mesh.hpp"
+#include "application.hpp"
+#include "scene.hpp"
 #include <string>
-#include "configReader.h"
+#include "configReader.hpp"
 
 int main(int argc, char* argv[])
 {

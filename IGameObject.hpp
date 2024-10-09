@@ -1,7 +1,7 @@
 #ifndef IGAMEOBJECT_H
 #define IGAMEOBJECT_H
 
-#include "transform.h"
+#include "transform.hpp"
 #include <glm/glm.hpp>
 #include <glm/vec3.hpp> // glm::vec3
 #include <glm/vec4.hpp> // glm::vec4

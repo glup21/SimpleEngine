@@ -1,7 +1,7 @@
-#include "application.h"
+#include "application.hpp"
 #include <iostream>
 #include "stb_image.h"
-#include "sceneReader.h"
+#include "sceneReader.hpp"
 
 Application::Application(string scenePath): scenePath(scenePath)
 {

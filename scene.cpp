@@ -1,4 +1,4 @@
-#include "scene.h"
+#include "scene.hpp"
 #include <iostream>
 
 using std::cout, std::endl;

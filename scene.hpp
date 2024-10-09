@@ -1,11 +1,11 @@
 #ifndef SCENE_H
 #define SCENE_H
 
-#include "mesh.h"
+#include "mesh.hpp"
 #include <vector>
-#include "shader.h"
+#include "shader.hpp"
 #include <string>
-#include "IGameObject.h"
+#include "IGameObject.hpp"
 using std::vector, std::pair, std::string;
 
 class Scene

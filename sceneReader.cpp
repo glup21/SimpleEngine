@@ -1,4 +1,4 @@
-#include "sceneReader.h"
+#include "sceneReader.hpp"
 #include <fstream>
 #include <iostream>
     // //MANUAL SCENE CREATION, REPLACE LATER

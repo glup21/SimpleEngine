@@ -4,22 +4,25 @@
 #include <string>
 #include <vector>
 
+using std::vector, std::string;
+
 class BaseImage
 {
 public:
     ~BaseImage() = default;
 
-    bool load(const std::string& filePath);
+    bool load(const string& filePath);
 
     int getWidth();
     int getHeight();
-    const std::vector<unsigned char>& getPixelData();
+    const vector<unsigned char>& getPixelData();
     void setPixelData(const std::vector<unsigned char>& pixelData);
 
 protected:
     int width;
     int height;
-    std::vector<unsigned char> pixelData;
+    int nrChannels;
+    vector<unsigned char> pixelData;
 };
 
 #endif 

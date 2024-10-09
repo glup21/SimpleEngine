@@ -7,7 +7,8 @@
 class Texture : public BaseImage
 {
 public:
-    Texture();
+    Texture() = default;
+    Texture(string type);
     ~Texture();
 
     bool loadFromFile(const std::string& filePath);
@@ -15,9 +16,10 @@ public:
     void unbind() const;
 
     unsigned int getID() const;
-
+    string getType() const;
 private:
     unsigned int textureID;
+    string type;
 };
 
 #endif // TEXTURE_H

@@ -7,10 +7,10 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-#include "engine.h"
-#include "scene.h"
-#include "mesh.h"
-#include "model.h"
+#include "engine.hpp"
+#include "scene.hpp"
+#include "mesh.hpp"
+#include "model.hpp"
 class Application
 {
 
