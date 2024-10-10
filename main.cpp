@@ -23,7 +23,7 @@ int main(int argc, char* argv[])
        configPath =  argv[1];
     }
     else
-        configPath = "config/config.json";
+        configPath = "../config/config.json";
 
     ConfigReader configReader(configPath);
     string scenePath = configReader.getScenePath();

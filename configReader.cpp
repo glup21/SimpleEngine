@@ -2,7 +2,7 @@
 #include <fstream>
 #include <iostream>
 
-ConfigReader::ConfigReader(const string& configPath): configPath(configPath), scene(nullptr)
+ConfigReader::ConfigReader(const string& configPath): configPath(configPath)
 {
 
     std::ifstream file(configPath);
@@ -12,13 +12,16 @@ ConfigReader::ConfigReader(const string& configPath): configPath(configPath), sc
     file >> config;
 
     if (config.contains("scene")) {
-        scene =  config["scene"].get<string>();
         std::cout << scene << std::endl;
+        scene =  config["scene"].get<string>();
+        
     } 
     else
     {
         std::cerr << "Error: scene property is not defined " << std::endl;
     }
+
+    
 
 }
 

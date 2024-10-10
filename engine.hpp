@@ -16,6 +16,10 @@ class Engine
     vector<IDrawableObject*> drawObjectBuffer;
     vector<IGameObject*> gameObjects;
     std::chrono::time_point<std::chrono::high_resolution_clock> previousTime;
+    Shader* shader;
+
+    string vertexPath;
+    string fragmentPath;
     //ShaderProgram* shaderProgram;
 
     void updateGameObjects(float delta);

@@ -6,6 +6,11 @@
 Engine::Engine() : drawObjectBuffer(){
     std::cout << "Engine constructor called. drawObjectBuffer initialized to nullptr." << std::endl;
     previousTime = std::chrono::high_resolution_clock::now();
+
+    vertexPath = "../shaders/vertex.glsl";
+    fragmentPath = "../shaders/fragment.glsl";
+
+    shader = new Shader(vertexPath, fragmentPath);
 }
 
 void Engine::init(Scene scene)
@@ -19,6 +24,8 @@ void Engine::init(Scene scene)
 
     std::cout << "drawObjectBuffer address: " << &drawObjectBuffer << std::endl;
     std::cout << "drawObjectBuffer size: " << drawObjectBuffer.size() << std::endl;
+
+
 
 }
 void Engine::run()
@@ -53,7 +60,7 @@ void Engine::drawObjects()
     for( IDrawableObject* dObj : drawObjectBuffer)
     {
 
-        dObj->draw();
+        dObj->draw(shader);
     }
 }
 float Engine::calculateDeltaTime()

@@ -252,6 +252,7 @@ SimpleEngine: CMakeFiles/SimpleEngine.dir/model.cpp.o
 SimpleEngine: CMakeFiles/SimpleEngine.dir/sceneReader.cpp.o
 SimpleEngine: CMakeFiles/SimpleEngine.dir/configReader.cpp.o
 SimpleEngine: CMakeFiles/SimpleEngine.dir/build.make
+SimpleEngine: /usr/lib64/libassimp.so.5.3.1
 SimpleEngine: CMakeFiles/SimpleEngine.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/idk/Documents/GitHub/SimpleEngine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Linking CXX executable SimpleEngine"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/SimpleEngine.dir/link.txt --verbose=$(VERBOSE)

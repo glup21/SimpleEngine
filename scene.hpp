@@ -18,7 +18,7 @@ public:
     Scene() = default;
     ~Scene() = default;
 
-    Scene(vector<IGameObject*> gObj, const string& shaderPath);
+    Scene(vector<IGameObject*> gObj);
     vector<IGameObject*>* getObjects();
     vector<IDrawableObject*> getDrawableObjects();
     vector<Shader*>* getShaders();

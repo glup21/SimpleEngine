@@ -3,9 +3,8 @@
 
 using std::cout, std::endl;
 
-Scene::Scene(std::vector<IGameObject*> gObj, const std::string& shaderPath) : gameObjects(gObj)
+Scene::Scene(std::vector<IGameObject*> gObj) : gameObjects(gObj)
 {
-    // REWORK FOR JSON CONFIG COMPATIBILITY LATER=
 
     std::cout << "Number of game objects: " << gameObjects.size() << std::endl;
 
@@ -43,8 +42,4 @@ std::vector<IGameObject*>* Scene::getObjects()
 std::vector<IDrawableObject*> Scene::getDrawableObjects()
 {
     return drawableObjects;
-}
-vector<Shader*>* Scene::getShaders()
-{
-    return &shaders;
 }

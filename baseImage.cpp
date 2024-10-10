@@ -10,7 +10,7 @@ bool BaseImage::load(const string& filePath)
         return false;
     }
 
-    pixelData.assign(imageData, imageData + (width * height * nrChannels));
+    //pixelData.assign(imageData, imageData + (width * height * nrChannels));
     stbi_image_free(imageData);
     return true;
 }

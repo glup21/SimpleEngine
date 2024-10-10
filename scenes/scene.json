@@ -2,19 +2,13 @@
     "objects":
     [
         {
-            "id": "cube",
+            "id": "backpack",
             "type" : "model",
+            "directory" : "../models/crowbar/backpack.obj",
             "position" : [0, 0, 0],
             "rotation" : [0, 0, 0],
-            "scale" : [1, 1, 1],
-            "material" : "cube_mat"
-        }
-    ],
-    "materials" : 
-    [
-        {
-            "id" : "cube_mat",
-            "color" : "textures/container.jpg"
+            "scale" : [0.1, 0.1, 0.1]
         }
     ]
+
 }

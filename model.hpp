@@ -15,7 +15,7 @@ using std::vector;
 class Model : public IGameObject, public IDrawableObject
 {
 public:
-    Model(string path);
+    Model(string path, string ID);
 
     void setup(Shader* shader) override;
     void draw(Shader* shader) override;
@@ -33,6 +33,7 @@ public:
 
     mat4 getTransformMatrix() const override;
 private:
+    string ID;
     vector<Mesh> meshes;
     string directory;
     Transform transform;
@@ -42,21 +43,6 @@ private:
     Mesh processMesh(aiMesh *mesh, const aiScene *scene);
     vector<Texture> loadMaterialTextures(aiMaterial *mat, aiTextureType type,
                                          string typeName);
-
-
-//     Mesh* mesh;
-//     Transform transform;
-//     Shader* shader;
-
-
-// public:
-//     Model(Mesh* m, Shader* sp);
-//     ~Model() = default;
-
-//     Mesh* getMesh();
-
-//     void draw(Shader* shader = nullptr) override;
-//     void setup(Shader* shader = nullptr) override;
 
 
 

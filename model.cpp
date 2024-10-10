@@ -1,12 +1,14 @@
 #include "model.hpp"
 #include <iostream>
+#include <filesystem>
 
-Model::Model(string path) : directory(path)
+namespace fs = std::filesystem;
+
+Model::Model(string path, string ID) : directory(path), ID(ID)
 {
 
     loadModel(path);
     
-
 }
 void Model::loadModel(string path)
 {
@@ -44,27 +46,15 @@ void Model::update(float delta)
 }
 void Model::draw(Shader* shader)
 {
-
+    mat4 transformMatrix = transform.getTransformMatrix();
+  
     for(unsigned int i = 0; i < meshes.size(); i++)
         meshes[i].draw(shader);
 
-    // shader->use();
-
-    // mat4 transformMatrix = transform.getTransformMatrix();
-
-    
-    // GLint transformLoc = glGetUniformLocation(shader->getID(), "transform");
-    // if (transformLoc == -1) {
-    //     std::cerr << "Error: could not find uniform 'transform'" << std::endl;
-    // } else {
-    //     glUniformMatrix4fv(transformLoc, 1, GL_FALSE, glm::value_ptr(transformMatrix));
-    // }
-    // //mesh->draw();
-
-    // GLenum err;
-    // while ((err = glGetError()) != GL_NO_ERROR) {
-    //     std::cerr << "OpenGL error after draw: " << err << std::endl;
-    // }
+    GLenum err;
+    while ((err = glGetError()) != GL_NO_ERROR) {
+        std::cerr << "OpenGL error after draw: " << err << std::endl;
+    }
 }
 Transform Model::getTransform() const
 {
@@ -176,15 +166,15 @@ Mesh Model::processMesh(aiMesh *mesh, const aiScene *scene)
 vector<Texture> Model::loadMaterialTextures(aiMaterial *mat, aiTextureType type, string typeName)
 {
     vector<Texture> textures;
+    std::cout << mat->GetTextureCount(type) << "\n";
     for(int i = 0; i < mat->GetTextureCount(type); i++)
     {
         aiString str;
         mat->GetTexture(type, i, &str);
+        fs::path texturePath = fs::path(directory) / str.C_Str();
         Texture texture(typeName);
-        texture.loadFromFile(str.C_Str());
-        //texture.id = TextureFromFile(str.C_Str(), directory);
-        // texture.type = typeName;
-        // texture.path = str;
+        std::cout << texturePath.string() << "\n";
+        texture.loadFromFile(texturePath.string());
         textures.push_back(texture);
     }
     return textures;

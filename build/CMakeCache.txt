@@ -225,7 +225,7 @@ SimpleEngine_IS_TOP_LEVEL:STATIC=ON
 SimpleEngine_SOURCE_DIR:STATIC=/home/idk/Documents/GitHub/SimpleEngine
 
 //The directory containing a CMake configuration file for assimp.
-assimp_DIR:PATH=assimp_DIR-NOTFOUND
+assimp_DIR:PATH=/usr/lib64/cmake/assimp-5.3
 
 
 ########################

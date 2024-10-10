@@ -21,6 +21,11 @@ struct Transform
             rotation(1.0f, 0.0f, 0.0f, 0.0f), 
             scale(1.0f, 1.0f, 1.0f) {}
 
+    Transform(vec3 position, quat rotation, vec3 scale)
+            : position(position), 
+            rotation(rotation), 
+            scale(scale) {}
+
     
 
     mat4 getTransformMatrix() const

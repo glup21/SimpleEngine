@@ -7,16 +7,21 @@
 #include <iostream>
 #include <GL/glew.h>
 #include <vector>
+#include <glm/glm.hpp>
 
-using std::string, std::vector; 
+using std::string, std::vector, glm::mat4; 
 
 class Shader // now its ShaderProgram with shaders inside, separate ShaderProgram class is excessive
 {
 public:
-    Shader(string &vertexPath, string &fragmentPath);
+    Shader(const std::string &vertexPath, const std::string &fragmentPath);
     ~Shader();
     GLuint getID() const;
     void use();
+
+
+    void setTransform(const string& name, mat4 value) const;
+
 
     void setBool(const string &name, bool value) const;
     void setInt(const string &name, int value) const;
@@ -26,9 +31,9 @@ private:
     GLuint ID;
     vector<GLuint> shaders;
 
-    bool compileShader(GLuint &ID, char* code, int type);
+    bool compileShader(GLuint &ID, const char* code, int type);
     bool checkCompileErrors(GLuint shader);
-    char* readFile(const string& filePath);
+    string readFile(const string& filePath);
     
 };
 

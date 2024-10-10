@@ -4,7 +4,8 @@
 #include <string>
 #include "json.hpp"
 #include "scene.hpp"
-
+#include "IGameObject.hpp"
+#include "model.hpp"
 using std::string;
 using json = nlohmann::json;
 
