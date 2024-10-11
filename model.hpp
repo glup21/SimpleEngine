@@ -10,12 +10,13 @@
 #include <assimp/Importer.hpp>
 #include <assimp/scene.h>
 #include <assimp/postprocess.h>
+#include "imageLoader.hpp"
 using std::vector;
 
 class Model : public IGameObject, public IDrawableObject
 {
 public:
-    Model(string path, string ID);
+    Model(string path, string ID, Transform transform);
 
     void setup(Shader* shader) override;
     void draw(Shader* shader) override;
@@ -37,7 +38,8 @@ private:
     vector<Mesh> meshes;
     string directory;
     Transform transform;
-
+    ImageLoader imageLoader;
+    
     void loadModel(string path);
     void processNode(aiNode *node, const aiScene *scene);
     Mesh processMesh(aiMesh *mesh, const aiScene *scene);

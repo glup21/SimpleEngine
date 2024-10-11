@@ -153,30 +153,6 @@ application.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/SimpleEngine.dir/build.make CMakeFiles/SimpleEngine.dir/application.cpp.s
 .PHONY : application.cpp.s
 
-baseImage.o: baseImage.cpp.o
-.PHONY : baseImage.o
-
-# target to build an object file
-baseImage.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SimpleEngine.dir/build.make CMakeFiles/SimpleEngine.dir/baseImage.cpp.o
-.PHONY : baseImage.cpp.o
-
-baseImage.i: baseImage.cpp.i
-.PHONY : baseImage.i
-
-# target to preprocess a source file
-baseImage.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SimpleEngine.dir/build.make CMakeFiles/SimpleEngine.dir/baseImage.cpp.i
-.PHONY : baseImage.cpp.i
-
-baseImage.s: baseImage.cpp.s
-.PHONY : baseImage.s
-
-# target to generate assembly for a file
-baseImage.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SimpleEngine.dir/build.make CMakeFiles/SimpleEngine.dir/baseImage.cpp.s
-.PHONY : baseImage.cpp.s
-
 configReader.o: configReader.cpp.o
 .PHONY : configReader.o
 
@@ -224,6 +200,30 @@ engine.s: engine.cpp.s
 engine.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/SimpleEngine.dir/build.make CMakeFiles/SimpleEngine.dir/engine.cpp.s
 .PHONY : engine.cpp.s
+
+imageLoader.o: imageLoader.cpp.o
+.PHONY : imageLoader.o
+
+# target to build an object file
+imageLoader.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SimpleEngine.dir/build.make CMakeFiles/SimpleEngine.dir/imageLoader.cpp.o
+.PHONY : imageLoader.cpp.o
+
+imageLoader.i: imageLoader.cpp.i
+.PHONY : imageLoader.i
+
+# target to preprocess a source file
+imageLoader.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SimpleEngine.dir/build.make CMakeFiles/SimpleEngine.dir/imageLoader.cpp.i
+.PHONY : imageLoader.cpp.i
+
+imageLoader.s: imageLoader.cpp.s
+.PHONY : imageLoader.s
+
+# target to generate assembly for a file
+imageLoader.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SimpleEngine.dir/build.make CMakeFiles/SimpleEngine.dir/imageLoader.cpp.s
+.PHONY : imageLoader.cpp.s
 
 main.o: main.cpp.o
 .PHONY : main.o
@@ -405,15 +405,15 @@ help:
 	@echo "... application.o"
 	@echo "... application.i"
 	@echo "... application.s"
-	@echo "... baseImage.o"
-	@echo "... baseImage.i"
-	@echo "... baseImage.s"
 	@echo "... configReader.o"
 	@echo "... configReader.i"
 	@echo "... configReader.s"
 	@echo "... engine.o"
 	@echo "... engine.i"
 	@echo "... engine.s"
+	@echo "... imageLoader.o"
+	@echo "... imageLoader.i"
+	@echo "... imageLoader.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

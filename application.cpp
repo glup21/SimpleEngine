@@ -58,8 +58,21 @@ void Application::run()
 
     engine->init(scene);
 
+    // Camera settings REPLACE LATER
+    glm::vec3 cameraPos = glm::vec3(0.0f, 0.0f, 3.0f);
+    glm::vec3 cameraFront = glm::vec3(0.0f, 0.0f, -1.0f);
+    glm::vec3 cameraUp = glm::vec3(0.0f, 1.0f, 0.0f);
+
     while (!glfwWindowShouldClose(window))
     {
+        // // Set up camera
+        // glm::mat4 view = glm::lookAt(cameraPos, cameraPos + cameraFront, cameraUp);
+        // glm::mat4 projection = glm::perspective(glm::radians(45.0f), 800.0f / 600.0f, 0.1f, 100.0f);
+
+        // Pass view and projection matrices to the engine
+        // engine->setViewMatrix(view);
+        // engine->setProjectionMatrix(projection);
+
         engine->run();
     // put the stuff we’ve been drawing onto the display
         glfwPollEvents();

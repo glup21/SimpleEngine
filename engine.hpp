@@ -26,12 +26,16 @@ class Engine
     void drawObjects();
     float calculateDeltaTime();
 
+
 public:
     Engine();
     ~Engine() = default;
     void init(Scene scene);
     void run();
     void shutdown();
+
+    void setViewMatrix(const glm::mat4& view);
+    void setProjectionMatrix(const glm::mat4& projection);
 
 };
 

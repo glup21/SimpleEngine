@@ -21,8 +21,6 @@ public:
 
 
     void setTransform(const string& name, mat4 value) const;
-
-
     void setBool(const string &name, bool value) const;
     void setInt(const string &name, int value) const;
     void setFloat(const string &name, float value) const;

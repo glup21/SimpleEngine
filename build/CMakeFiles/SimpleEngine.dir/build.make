@@ -153,24 +153,10 @@ CMakeFiles/SimpleEngine.dir/mesh.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/SimpleEngine.dir/mesh.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/idk/Documents/GitHub/SimpleEngine/mesh.cpp -o CMakeFiles/SimpleEngine.dir/mesh.cpp.s
 
-CMakeFiles/SimpleEngine.dir/baseImage.cpp.o: CMakeFiles/SimpleEngine.dir/flags.make
-CMakeFiles/SimpleEngine.dir/baseImage.cpp.o: /home/idk/Documents/GitHub/SimpleEngine/baseImage.cpp
-CMakeFiles/SimpleEngine.dir/baseImage.cpp.o: CMakeFiles/SimpleEngine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/idk/Documents/GitHub/SimpleEngine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/SimpleEngine.dir/baseImage.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/SimpleEngine.dir/baseImage.cpp.o -MF CMakeFiles/SimpleEngine.dir/baseImage.cpp.o.d -o CMakeFiles/SimpleEngine.dir/baseImage.cpp.o -c /home/idk/Documents/GitHub/SimpleEngine/baseImage.cpp
-
-CMakeFiles/SimpleEngine.dir/baseImage.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/SimpleEngine.dir/baseImage.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/idk/Documents/GitHub/SimpleEngine/baseImage.cpp > CMakeFiles/SimpleEngine.dir/baseImage.cpp.i
-
-CMakeFiles/SimpleEngine.dir/baseImage.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/SimpleEngine.dir/baseImage.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/idk/Documents/GitHub/SimpleEngine/baseImage.cpp -o CMakeFiles/SimpleEngine.dir/baseImage.cpp.s
-
 CMakeFiles/SimpleEngine.dir/shader.cpp.o: CMakeFiles/SimpleEngine.dir/flags.make
 CMakeFiles/SimpleEngine.dir/shader.cpp.o: /home/idk/Documents/GitHub/SimpleEngine/shader.cpp
 CMakeFiles/SimpleEngine.dir/shader.cpp.o: CMakeFiles/SimpleEngine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/idk/Documents/GitHub/SimpleEngine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/SimpleEngine.dir/shader.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/idk/Documents/GitHub/SimpleEngine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/SimpleEngine.dir/shader.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/SimpleEngine.dir/shader.cpp.o -MF CMakeFiles/SimpleEngine.dir/shader.cpp.o.d -o CMakeFiles/SimpleEngine.dir/shader.cpp.o -c /home/idk/Documents/GitHub/SimpleEngine/shader.cpp
 
 CMakeFiles/SimpleEngine.dir/shader.cpp.i: cmake_force
@@ -184,7 +170,7 @@ CMakeFiles/SimpleEngine.dir/shader.cpp.s: cmake_force
 CMakeFiles/SimpleEngine.dir/model.cpp.o: CMakeFiles/SimpleEngine.dir/flags.make
 CMakeFiles/SimpleEngine.dir/model.cpp.o: /home/idk/Documents/GitHub/SimpleEngine/model.cpp
 CMakeFiles/SimpleEngine.dir/model.cpp.o: CMakeFiles/SimpleEngine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/idk/Documents/GitHub/SimpleEngine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/SimpleEngine.dir/model.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/idk/Documents/GitHub/SimpleEngine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/SimpleEngine.dir/model.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/SimpleEngine.dir/model.cpp.o -MF CMakeFiles/SimpleEngine.dir/model.cpp.o.d -o CMakeFiles/SimpleEngine.dir/model.cpp.o -c /home/idk/Documents/GitHub/SimpleEngine/model.cpp
 
 CMakeFiles/SimpleEngine.dir/model.cpp.i: cmake_force
@@ -198,7 +184,7 @@ CMakeFiles/SimpleEngine.dir/model.cpp.s: cmake_force
 CMakeFiles/SimpleEngine.dir/sceneReader.cpp.o: CMakeFiles/SimpleEngine.dir/flags.make
 CMakeFiles/SimpleEngine.dir/sceneReader.cpp.o: /home/idk/Documents/GitHub/SimpleEngine/sceneReader.cpp
 CMakeFiles/SimpleEngine.dir/sceneReader.cpp.o: CMakeFiles/SimpleEngine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/idk/Documents/GitHub/SimpleEngine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/SimpleEngine.dir/sceneReader.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/idk/Documents/GitHub/SimpleEngine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/SimpleEngine.dir/sceneReader.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/SimpleEngine.dir/sceneReader.cpp.o -MF CMakeFiles/SimpleEngine.dir/sceneReader.cpp.o.d -o CMakeFiles/SimpleEngine.dir/sceneReader.cpp.o -c /home/idk/Documents/GitHub/SimpleEngine/sceneReader.cpp
 
 CMakeFiles/SimpleEngine.dir/sceneReader.cpp.i: cmake_force
@@ -212,7 +198,7 @@ CMakeFiles/SimpleEngine.dir/sceneReader.cpp.s: cmake_force
 CMakeFiles/SimpleEngine.dir/configReader.cpp.o: CMakeFiles/SimpleEngine.dir/flags.make
 CMakeFiles/SimpleEngine.dir/configReader.cpp.o: /home/idk/Documents/GitHub/SimpleEngine/configReader.cpp
 CMakeFiles/SimpleEngine.dir/configReader.cpp.o: CMakeFiles/SimpleEngine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/idk/Documents/GitHub/SimpleEngine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/SimpleEngine.dir/configReader.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/idk/Documents/GitHub/SimpleEngine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/SimpleEngine.dir/configReader.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/SimpleEngine.dir/configReader.cpp.o -MF CMakeFiles/SimpleEngine.dir/configReader.cpp.o.d -o CMakeFiles/SimpleEngine.dir/configReader.cpp.o -c /home/idk/Documents/GitHub/SimpleEngine/configReader.cpp
 
 CMakeFiles/SimpleEngine.dir/configReader.cpp.i: cmake_force
@@ -223,6 +209,20 @@ CMakeFiles/SimpleEngine.dir/configReader.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/SimpleEngine.dir/configReader.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/idk/Documents/GitHub/SimpleEngine/configReader.cpp -o CMakeFiles/SimpleEngine.dir/configReader.cpp.s
 
+CMakeFiles/SimpleEngine.dir/imageLoader.cpp.o: CMakeFiles/SimpleEngine.dir/flags.make
+CMakeFiles/SimpleEngine.dir/imageLoader.cpp.o: /home/idk/Documents/GitHub/SimpleEngine/imageLoader.cpp
+CMakeFiles/SimpleEngine.dir/imageLoader.cpp.o: CMakeFiles/SimpleEngine.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/idk/Documents/GitHub/SimpleEngine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/SimpleEngine.dir/imageLoader.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/SimpleEngine.dir/imageLoader.cpp.o -MF CMakeFiles/SimpleEngine.dir/imageLoader.cpp.o.d -o CMakeFiles/SimpleEngine.dir/imageLoader.cpp.o -c /home/idk/Documents/GitHub/SimpleEngine/imageLoader.cpp
+
+CMakeFiles/SimpleEngine.dir/imageLoader.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/SimpleEngine.dir/imageLoader.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/idk/Documents/GitHub/SimpleEngine/imageLoader.cpp > CMakeFiles/SimpleEngine.dir/imageLoader.cpp.i
+
+CMakeFiles/SimpleEngine.dir/imageLoader.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/SimpleEngine.dir/imageLoader.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/idk/Documents/GitHub/SimpleEngine/imageLoader.cpp -o CMakeFiles/SimpleEngine.dir/imageLoader.cpp.s
+
 # Object files for target SimpleEngine
 SimpleEngine_OBJECTS = \
 "CMakeFiles/SimpleEngine.dir/main.cpp.o" \
@@ -231,11 +231,11 @@ SimpleEngine_OBJECTS = \
 "CMakeFiles/SimpleEngine.dir/engine.cpp.o" \
 "CMakeFiles/SimpleEngine.dir/scene.cpp.o" \
 "CMakeFiles/SimpleEngine.dir/mesh.cpp.o" \
-"CMakeFiles/SimpleEngine.dir/baseImage.cpp.o" \
 "CMakeFiles/SimpleEngine.dir/shader.cpp.o" \
 "CMakeFiles/SimpleEngine.dir/model.cpp.o" \
 "CMakeFiles/SimpleEngine.dir/sceneReader.cpp.o" \
-"CMakeFiles/SimpleEngine.dir/configReader.cpp.o"
+"CMakeFiles/SimpleEngine.dir/configReader.cpp.o" \
+"CMakeFiles/SimpleEngine.dir/imageLoader.cpp.o"
 
 # External object files for target SimpleEngine
 SimpleEngine_EXTERNAL_OBJECTS =
@@ -246,11 +246,11 @@ SimpleEngine: CMakeFiles/SimpleEngine.dir/texture.cpp.o
 SimpleEngine: CMakeFiles/SimpleEngine.dir/engine.cpp.o
 SimpleEngine: CMakeFiles/SimpleEngine.dir/scene.cpp.o
 SimpleEngine: CMakeFiles/SimpleEngine.dir/mesh.cpp.o
-SimpleEngine: CMakeFiles/SimpleEngine.dir/baseImage.cpp.o
 SimpleEngine: CMakeFiles/SimpleEngine.dir/shader.cpp.o
 SimpleEngine: CMakeFiles/SimpleEngine.dir/model.cpp.o
 SimpleEngine: CMakeFiles/SimpleEngine.dir/sceneReader.cpp.o
 SimpleEngine: CMakeFiles/SimpleEngine.dir/configReader.cpp.o
+SimpleEngine: CMakeFiles/SimpleEngine.dir/imageLoader.cpp.o
 SimpleEngine: CMakeFiles/SimpleEngine.dir/build.make
 SimpleEngine: /usr/lib64/libassimp.so.5.3.1
 SimpleEngine: CMakeFiles/SimpleEngine.dir/link.txt

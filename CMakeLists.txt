@@ -22,11 +22,11 @@ set(SRCS
     engine.cpp
     scene.cpp
     mesh.cpp
-    baseImage.cpp
     shader.cpp
     model.cpp
     sceneReader.cpp
     configReader.cpp
+    imageLoader.cpp
 )
 
 # Add executable

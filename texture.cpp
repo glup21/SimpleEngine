@@ -1,38 +1,35 @@
 #include "texture.hpp"
 #include <iostream>
 #include <GL/glew.h>
+#include <cstring>
+/*
+    BaseImage(u_char* image, int width, int height, int nrChannels):
+        pixelData(image), width(width), height(height), nrChannels(nrChannels) {}*/
 
-Texture::Texture(string type) : textureID(0), type(type)
+Texture::Texture(const u_char* image, int width, int height, int nrChannels, std::string type)
+    : width(width), height(height), nrChannels(nrChannels), type(type)
 {
     glGenTextures(1, &textureID);
-}
-
-Texture::~Texture()
-{
-    glDeleteTextures(1, &textureID);
-}
-
-bool Texture::loadFromFile(const std::string& filePath)
-{
-    if (!load(filePath)) { 
-        std::cerr << "Failed to load texture: " << filePath << std::endl;
-        return false;
-    }
-
     glBindTexture(GL_TEXTURE_2D, textureID);
 
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);	
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
 
-    glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, getWidth(), getHeight(), 0, GL_RGBA, GL_UNSIGNED_BYTE, getPixelData().data());
+    glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_RGB, GL_UNSIGNED_BYTE, image);
     glGenerateMipmap(GL_TEXTURE_2D);
 
     glBindTexture(GL_TEXTURE_2D, 0);
-
-    return true;
 }
+
+
+Texture::~Texture()
+{
+    //glDeleteTextures(1, &textureID);
+}
+
+
 
 void Texture::bind(unsigned int unit) const
 {

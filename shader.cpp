@@ -37,6 +37,11 @@ Shader::Shader(const std::string &vertexPath, const std::string &fragmentPath)
     glDeleteShader(fragmentID);
 }
 
+GLuint Shader::getID() const
+{
+    return ID;
+}
+
 void Shader::use()
 {
     glUseProgram(ID);
@@ -44,7 +49,8 @@ void Shader::use()
 
 void Shader::setTransform(const string& name, mat4 value) const
 {
-    glUniformMatrix4fv(glGetUniformLocation(ID, name.c_str()), 1, GL_FALSE, glm::value_ptr(value));
+    //glUniformMatrix4fv(glGetUniformLocation(ID, name.c_str()), 1, GL_FALSE, glm::value_ptr(value));
+    glUniformMatrix4fv(glGetUniformLocation(ID, name.c_str()), 1, GL_FALSE, &value[0][0]);
 }
 
 void Shader::setBool(const std::string &name, bool value) const

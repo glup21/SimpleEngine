@@ -2,16 +2,20 @@
 #define TEXTURE_H
 
 #include <string>
-#include "baseImage.hpp"
+#include "imageLoader.hpp"
+#include <string>
+#include <vector>
 
-class Texture : public BaseImage
+using std::string;
+class ImageLoader;
+
+class Texture 
 {
 public:
     Texture() = default;
-    Texture(string type);
+    Texture(const u_char* image, int width, int height, int nrChannels, string type);
     ~Texture();
 
-    bool loadFromFile(const std::string& filePath);
     void bind(unsigned int unit = 0) const;
     void unbind() const;
 
@@ -20,6 +24,9 @@ public:
 private:
     unsigned int textureID;
     string type;
+    int width;
+    int height;
+    int nrChannels;
 };
 
 #endif // TEXTURE_H

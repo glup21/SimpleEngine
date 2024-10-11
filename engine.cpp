@@ -59,7 +59,7 @@ void Engine::drawObjects()
 {
     for( IDrawableObject* dObj : drawObjectBuffer)
     {
-
+        shader->use();
         dObj->draw(shader);
     }
 }
@@ -70,3 +70,15 @@ float Engine::calculateDeltaTime()
     previousTime = currentTime;
     return deltaTime.count();
 }
+
+// void Engine::setViewMatrix(const glm::mat4& view)
+// {
+//     shader->use();
+//     shader->setMat4("view", view);
+// }
+
+// void Engine::setProjectionMatrix(const glm::mat4& projection)
+// {
+//     shader->use();
+//     shader->setMat4("projection", projection);
+// }

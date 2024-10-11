@@ -43,28 +43,14 @@ void Mesh::setup(Shader* shader)
 
 void Mesh::draw(Shader* shader)
 {
-    shader->use();
-    unsigned int diffuseNr = 1;
-    unsigned int specularNr = 1;
-    for(unsigned int i = 0; i < textures.size(); i++)
-    {
-        glActiveTexture(GL_TEXTURE0 + i); // activate proper texture unit before binding
-        // retrieve texture number (the N in diffuse_textureN)
-        string number;
-        string name = textures[i].getType();
-        if(name == "texture_diffuse")
-            number = std::to_string(diffuseNr++);
-        else if(name == "texture_specular")
-            number = std::to_string(specularNr++);
+    mat4 transformMatrix = transform.getTransformMatrix();
+    shader->setTransform("transform", transformMatrix);
 
-        shader->setInt(("material." + name + number).c_str(), i);
-        glBindTexture(GL_TEXTURE_2D, textures[i].getID());
-    }
-    glActiveTexture(GL_TEXTURE0);
+    shader->setInt("textureImage", 0);
+    textures[0].bind(0);
 
     // draw mesh
     glBindVertexArray(VAO);
     glDrawElements(GL_TRIANGLES, indices.size(), GL_UNSIGNED_INT, 0);
     glBindVertexArray(0);
 }
-

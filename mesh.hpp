@@ -7,6 +7,7 @@
 #include "vertex.hpp"
 #include "texture.hpp"
 #include "shader.hpp"
+#include "transform.hpp"
 
 using std::vector;
 
@@ -16,7 +17,7 @@ public:
     vector<Vertex> vertices;
     vector<u_int> indices;
     vector<Texture> textures;
-    
+    Transform transform;
 
     Mesh(vector<Vertex> vertices, vector<u_int> indices, vector<Texture> textures);
     
