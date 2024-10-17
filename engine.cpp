@@ -4,6 +4,8 @@
 #include <iostream>
 #include "shaderFactory.hpp"
 #include "sceneReader.hpp"
+
+
 void printMat4(const glm::mat4& matrix) {
     for (int i = 0; i < 4; ++i) {
         for (int j = 0; j < 4; ++j) {
@@ -31,8 +33,9 @@ Engine::Engine() : drawObjectBuffer(){
 
 }
 
-void Engine::init(string scenePath)
+void Engine::init(string scenePath, GLFWwindow* window)
 {
+    glfwGetWindowSize(window, &width, &height);
     SceneReader sceneReader(scenePath);
     Scene scene = sceneReader.readScene(defaultShaderProgram);
 
@@ -46,8 +49,13 @@ void Engine::init(string scenePath)
     std::cout << "drawObjectBuffer address: " << &drawObjectBuffer << std::endl;
     std::cout << "drawObjectBuffer size: " << drawObjectBuffer.size() << std::endl;
 
+    inputManager = new Input(window);
 
+    glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
+    lastMousePosition = inputManager->getMousePos();
+    defaultShaderProgram->link(); //We will link individual shader programs in models if we want
 
+    this->window = window;
 }
 void Engine::run()
 {
@@ -59,17 +67,29 @@ void Engine::run()
         Update other events
     
     */
+    glfwGetWindowSize(window, &width, &height);
 
+    // Get the current window size
+    glfwGetWindowSize(window, &width, &height);
 
+    // Center the cursor at the beginning of each frame
+    glfwSetCursorPos(window, width / 2.0, height / 2.0);
 
-    defaultShaderProgram->link(); //We will link individual shader programs in models if we want
+    // Get the current mouse position (should be at the center now)
+    double xpos, ypos;
+    glfwGetCursorPos(window, &xpos, &ypos);
 
-    printMat4(camera->getViewMatrix());
+    // Calculate the mouse delta using the center of the window
+    glm::vec2 currentMousePosition(xpos, ypos);
+    glm::vec2 mouseDelta = glm::vec2(width / 2.0, height / 2.0) - currentMousePosition;
+
+    // Update the camera target based on mouse delta
+    float sensitivity = 0.1f;
+    camera->changeTarget(mouseDelta.x * sensitivity, -mouseDelta.y * sensitivity);
+
 
     defaultShaderProgram->setMat4("projectionMatrix", camera->getProjectionMatrix());
     defaultShaderProgram->setMat4("viewMatrix", camera->getViewMatrix());
-
-    
 
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     updateGameObjects(calculateDeltaTime());

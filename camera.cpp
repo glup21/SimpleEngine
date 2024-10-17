@@ -70,11 +70,13 @@ void Camera::right()
 
 void Camera::changeTarget(float deltaX, float deltaY)
 {
-    fi += deltaX;
-    alpha = glm::clamp(alpha + deltaY, -89.0f, 89.0f); 
+    fi += deltaX;  // Yaw (left/right)
+    alpha = glm::clamp(alpha + deltaY, -89.0f, 89.0f); // Pitch (up/down)
 
-    target.x=sin(alpha)* cos(fi);
-    target.z=sin(alpha)* sin(fi);
-    target.y=cos(alpha);
+    // Calculate the new forward vector
+    target.x = cos(glm::radians(alpha)) * cos(glm::radians(fi));
+    target.y = sin(glm::radians(alpha)); // Vertical component
+    target.z = cos(glm::radians(alpha)) * sin(glm::radians(fi));
 
+    target = glm::normalize(target); // Ensure the target vector is normalized
 }

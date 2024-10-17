@@ -53,7 +53,7 @@ void Application::initialize()
 void Application::run()
 {
 
-    engine->init(scenePath);
+    engine->init(scenePath, window);
     while (!glfwWindowShouldClose(window))
     {
 
