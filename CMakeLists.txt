@@ -29,6 +29,7 @@ set(SRCS
     imageLoader.cpp
     shaderProgram.cpp
     transform.cpp
+    camera.cpp
     
 )
 

@@ -1,6 +1,8 @@
 file(REMOVE_RECURSE
   "CMakeFiles/SimpleEngine.dir/application.cpp.o"
   "CMakeFiles/SimpleEngine.dir/application.cpp.o.d"
+  "CMakeFiles/SimpleEngine.dir/camera.cpp.o"
+  "CMakeFiles/SimpleEngine.dir/camera.cpp.o.d"
   "CMakeFiles/SimpleEngine.dir/configReader.cpp.o"
   "CMakeFiles/SimpleEngine.dir/configReader.cpp.o.d"
   "CMakeFiles/SimpleEngine.dir/engine.cpp.o"

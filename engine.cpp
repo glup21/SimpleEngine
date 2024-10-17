@@ -71,7 +71,6 @@ void Engine::drawObjects()
 {
     for( IDrawableObject* dObj : drawObjectBuffer)
     {
-        //shader->use(); use shaderPrograms in objects!
         dObj->draw();
     }
 }

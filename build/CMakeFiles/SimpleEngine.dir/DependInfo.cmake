@@ -9,6 +9,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/idk/Documents/GitHub/SimpleEngine/application.cpp" "CMakeFiles/SimpleEngine.dir/application.cpp.o" "gcc" "CMakeFiles/SimpleEngine.dir/application.cpp.o.d"
+  "/home/idk/Documents/GitHub/SimpleEngine/camera.cpp" "CMakeFiles/SimpleEngine.dir/camera.cpp.o" "gcc" "CMakeFiles/SimpleEngine.dir/camera.cpp.o.d"
   "/home/idk/Documents/GitHub/SimpleEngine/configReader.cpp" "CMakeFiles/SimpleEngine.dir/configReader.cpp.o" "gcc" "CMakeFiles/SimpleEngine.dir/configReader.cpp.o.d"
   "/home/idk/Documents/GitHub/SimpleEngine/engine.cpp" "CMakeFiles/SimpleEngine.dir/engine.cpp.o" "gcc" "CMakeFiles/SimpleEngine.dir/engine.cpp.o.d"
   "/home/idk/Documents/GitHub/SimpleEngine/imageLoader.cpp" "CMakeFiles/SimpleEngine.dir/imageLoader.cpp.o" "gcc" "CMakeFiles/SimpleEngine.dir/imageLoader.cpp.o.d"
