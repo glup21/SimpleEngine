@@ -249,6 +249,30 @@ imageLoader.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/SimpleEngine.dir/build.make CMakeFiles/SimpleEngine.dir/imageLoader.cpp.s
 .PHONY : imageLoader.cpp.s
 
+input.o: input.cpp.o
+.PHONY : input.o
+
+# target to build an object file
+input.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SimpleEngine.dir/build.make CMakeFiles/SimpleEngine.dir/input.cpp.o
+.PHONY : input.cpp.o
+
+input.i: input.cpp.i
+.PHONY : input.i
+
+# target to preprocess a source file
+input.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SimpleEngine.dir/build.make CMakeFiles/SimpleEngine.dir/input.cpp.i
+.PHONY : input.cpp.i
+
+input.s: input.cpp.s
+.PHONY : input.s
+
+# target to generate assembly for a file
+input.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SimpleEngine.dir/build.make CMakeFiles/SimpleEngine.dir/input.cpp.s
+.PHONY : input.cpp.s
+
 main.o: main.cpp.o
 .PHONY : main.o
 
@@ -489,6 +513,9 @@ help:
 	@echo "... imageLoader.o"
 	@echo "... imageLoader.i"
 	@echo "... imageLoader.s"
+	@echo "... input.o"
+	@echo "... input.i"
+	@echo "... input.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

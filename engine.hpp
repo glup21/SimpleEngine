@@ -3,6 +3,7 @@
 
 #include "scene.hpp"
 #include "shaderProgram.hpp"
+#include "camera.hpp"
 
 #include <GL/glew.h>
 #include <GLFW/glfw3.h>
@@ -18,6 +19,7 @@ private:
     vector<IGameObject*> gameObjects;
     std::chrono::time_point<std::chrono::high_resolution_clock> previousTime;
     ShaderProgram* defaultShaderProgram;
+    Camera* camera;
 
     string vertexPath;
     string fragmentPath;

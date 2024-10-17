@@ -9,6 +9,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/SimpleEngine.dir/engine.cpp.o.d"
   "CMakeFiles/SimpleEngine.dir/imageLoader.cpp.o"
   "CMakeFiles/SimpleEngine.dir/imageLoader.cpp.o.d"
+  "CMakeFiles/SimpleEngine.dir/input.cpp.o"
+  "CMakeFiles/SimpleEngine.dir/input.cpp.o.d"
   "CMakeFiles/SimpleEngine.dir/main.cpp.o"
   "CMakeFiles/SimpleEngine.dir/main.cpp.o.d"
   "CMakeFiles/SimpleEngine.dir/mesh.cpp.o"

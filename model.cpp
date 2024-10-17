@@ -26,7 +26,7 @@ void Model::setup()
     directory = directory.substr(0, directory.find_last_of('/'));
 
     processNode(scene->mRootNode, scene);
-    shaderProgram->link();
+    //shaderProgram->link();
 
 }
 

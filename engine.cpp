@@ -4,7 +4,14 @@
 #include <iostream>
 #include "shaderFactory.hpp"
 #include "sceneReader.hpp"
-
+void printMat4(const glm::mat4& matrix) {
+    for (int i = 0; i < 4; ++i) {
+        for (int j = 0; j < 4; ++j) {
+            std::cout << matrix[j][i] << " ";
+        }
+        std::cout << std::endl;
+    }
+}
 
 Engine::Engine() : drawObjectBuffer(){
     std::cout << "Engine constructor called. drawObjectBuffer initialized to nullptr." << std::endl;
@@ -19,6 +26,8 @@ Engine::Engine() : drawObjectBuffer(){
 
     defaultShaderProgram->attachShader(vertexShader);
     defaultShaderProgram->attachShader(fragmentShader);
+
+    camera = new Camera();
 
 }
 
@@ -50,6 +59,18 @@ void Engine::run()
         Update other events
     
     */
+
+
+
+    defaultShaderProgram->link(); //We will link individual shader programs in models if we want
+
+    printMat4(camera->getViewMatrix());
+
+    defaultShaderProgram->setMat4("projectionMatrix", camera->getProjectionMatrix());
+    defaultShaderProgram->setMat4("viewMatrix", camera->getViewMatrix());
+
+    
+
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     updateGameObjects(calculateDeltaTime());
     drawObjects();
@@ -81,4 +102,3 @@ float Engine::calculateDeltaTime()
     previousTime = currentTime;
     return deltaTime.count();
 }
-

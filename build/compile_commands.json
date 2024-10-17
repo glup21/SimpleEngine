@@ -82,5 +82,11 @@
   "command": "/usr/bin/g++    -Wall -g -std=gnu++17 -o CMakeFiles/SimpleEngine.dir/camera.cpp.o -c /home/idk/Documents/GitHub/SimpleEngine/camera.cpp",
   "file": "/home/idk/Documents/GitHub/SimpleEngine/camera.cpp",
   "output": "CMakeFiles/SimpleEngine.dir/camera.cpp.o"
+},
+{
+  "directory": "/home/idk/Documents/GitHub/SimpleEngine/build",
+  "command": "/usr/bin/g++    -Wall -g -std=gnu++17 -o CMakeFiles/SimpleEngine.dir/input.cpp.o -c /home/idk/Documents/GitHub/SimpleEngine/input.cpp",
+  "file": "/home/idk/Documents/GitHub/SimpleEngine/input.cpp",
+  "output": "CMakeFiles/SimpleEngine.dir/input.cpp.o"
 }
 ]

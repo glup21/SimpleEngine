@@ -30,6 +30,7 @@ set(SRCS
     shaderProgram.cpp
     transform.cpp
     camera.cpp
+    input.cpp
     
 )
 

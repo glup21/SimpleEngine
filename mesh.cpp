@@ -48,23 +48,6 @@ void Mesh::draw()
     mat4 transformMatrix = transform.getTransformMatrix();
     shaderProgram->setMat4("transform", transformMatrix);
 
-    vec3 target, cameraPosition, forwardVector, upVector;
-    float alpha = 0.0f;
-    float fi = 0.0f;
-    target.x=sin(alpha)* cos(fi);
-    target.z=sin(alpha)* sin(fi);
-    target.y=cos(alpha);
-
-    cameraPosition = {0,0,0};
-    forwardVector = cameraPosition + target;
-    upVector = {0,0,1};
-
-    mat4 viewMatrix = glm::lookAt(cameraPosition, forwardVector, upVector);
-    mat4 projectionMatrix = glm::perspective(70.0f, 16.0f/9.0f, 0.1f, 2.5f);
-
-    shaderProgram->setMat4("projectionMatrix", projectionMatrix);
-    shaderProgram->setMat4("viewMatrix", viewMatrix);
-
     shaderProgram->setInt("textureImage", 0);
     textures[0].bind(0);
 
