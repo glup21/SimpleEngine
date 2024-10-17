@@ -1,0 +1,68 @@
+[
+{
+  "directory": "/home/idk/Documents/GitHub/SimpleEngine/build",
+  "command": "/usr/bin/g++    -Wall -g -std=gnu++17 -o CMakeFiles/SimpleEngine.dir/main.cpp.o -c /home/idk/Documents/GitHub/SimpleEngine/main.cpp",
+  "file": "/home/idk/Documents/GitHub/SimpleEngine/main.cpp",
+  "output": "CMakeFiles/SimpleEngine.dir/main.cpp.o"
+},
+{
+  "directory": "/home/idk/Documents/GitHub/SimpleEngine/build",
+  "command": "/usr/bin/g++    -Wall -g -std=gnu++17 -o CMakeFiles/SimpleEngine.dir/application.cpp.o -c /home/idk/Documents/GitHub/SimpleEngine/application.cpp",
+  "file": "/home/idk/Documents/GitHub/SimpleEngine/application.cpp",
+  "output": "CMakeFiles/SimpleEngine.dir/application.cpp.o"
+},
+{
+  "directory": "/home/idk/Documents/GitHub/SimpleEngine/build",
+  "command": "/usr/bin/g++    -Wall -g -std=gnu++17 -o CMakeFiles/SimpleEngine.dir/texture.cpp.o -c /home/idk/Documents/GitHub/SimpleEngine/texture.cpp",
+  "file": "/home/idk/Documents/GitHub/SimpleEngine/texture.cpp",
+  "output": "CMakeFiles/SimpleEngine.dir/texture.cpp.o"
+},
+{
+  "directory": "/home/idk/Documents/GitHub/SimpleEngine/build",
+  "command": "/usr/bin/g++    -Wall -g -std=gnu++17 -o CMakeFiles/SimpleEngine.dir/engine.cpp.o -c /home/idk/Documents/GitHub/SimpleEngine/engine.cpp",
+  "file": "/home/idk/Documents/GitHub/SimpleEngine/engine.cpp",
+  "output": "CMakeFiles/SimpleEngine.dir/engine.cpp.o"
+},
+{
+  "directory": "/home/idk/Documents/GitHub/SimpleEngine/build",
+  "command": "/usr/bin/g++    -Wall -g -std=gnu++17 -o CMakeFiles/SimpleEngine.dir/scene.cpp.o -c /home/idk/Documents/GitHub/SimpleEngine/scene.cpp",
+  "file": "/home/idk/Documents/GitHub/SimpleEngine/scene.cpp",
+  "output": "CMakeFiles/SimpleEngine.dir/scene.cpp.o"
+},
+{
+  "directory": "/home/idk/Documents/GitHub/SimpleEngine/build",
+  "command": "/usr/bin/g++    -Wall -g -std=gnu++17 -o CMakeFiles/SimpleEngine.dir/mesh.cpp.o -c /home/idk/Documents/GitHub/SimpleEngine/mesh.cpp",
+  "file": "/home/idk/Documents/GitHub/SimpleEngine/mesh.cpp",
+  "output": "CMakeFiles/SimpleEngine.dir/mesh.cpp.o"
+},
+{
+  "directory": "/home/idk/Documents/GitHub/SimpleEngine/build",
+  "command": "/usr/bin/g++    -Wall -g -std=gnu++17 -o CMakeFiles/SimpleEngine.dir/shader.cpp.o -c /home/idk/Documents/GitHub/SimpleEngine/shader.cpp",
+  "file": "/home/idk/Documents/GitHub/SimpleEngine/shader.cpp",
+  "output": "CMakeFiles/SimpleEngine.dir/shader.cpp.o"
+},
+{
+  "directory": "/home/idk/Documents/GitHub/SimpleEngine/build",
+  "command": "/usr/bin/g++    -Wall -g -std=gnu++17 -o CMakeFiles/SimpleEngine.dir/model.cpp.o -c /home/idk/Documents/GitHub/SimpleEngine/model.cpp",
+  "file": "/home/idk/Documents/GitHub/SimpleEngine/model.cpp",
+  "output": "CMakeFiles/SimpleEngine.dir/model.cpp.o"
+},
+{
+  "directory": "/home/idk/Documents/GitHub/SimpleEngine/build",
+  "command": "/usr/bin/g++    -Wall -g -std=gnu++17 -o CMakeFiles/SimpleEngine.dir/sceneReader.cpp.o -c /home/idk/Documents/GitHub/SimpleEngine/sceneReader.cpp",
+  "file": "/home/idk/Documents/GitHub/SimpleEngine/sceneReader.cpp",
+  "output": "CMakeFiles/SimpleEngine.dir/sceneReader.cpp.o"
+},
+{
+  "directory": "/home/idk/Documents/GitHub/SimpleEngine/build",
+  "command": "/usr/bin/g++    -Wall -g -std=gnu++17 -o CMakeFiles/SimpleEngine.dir/configReader.cpp.o -c /home/idk/Documents/GitHub/SimpleEngine/configReader.cpp",
+  "file": "/home/idk/Documents/GitHub/SimpleEngine/configReader.cpp",
+  "output": "CMakeFiles/SimpleEngine.dir/configReader.cpp.o"
+},
+{
+  "directory": "/home/idk/Documents/GitHub/SimpleEngine/build",
+  "command": "/usr/bin/g++    -Wall -g -std=gnu++17 -o CMakeFiles/SimpleEngine.dir/imageLoader.cpp.o -c /home/idk/Documents/GitHub/SimpleEngine/imageLoader.cpp",
+  "file": "/home/idk/Documents/GitHub/SimpleEngine/imageLoader.cpp",
+  "output": "CMakeFiles/SimpleEngine.dir/imageLoader.cpp.o"
+}
+]

@@ -18,7 +18,7 @@ class Model : public IGameObject, public IDrawableObject
 public:
     Model(string path, string ID, Transform transform);
 
-    void setup(Shader* shader) override;
+    void setup(Shader* shader = nullptr) override;
     void draw(Shader* shader) override;
     void update(float delta) override;
 
@@ -40,7 +40,6 @@ private:
     Transform transform;
     ImageLoader imageLoader;
     
-    void loadModel(string path);
     void processNode(aiNode *node, const aiScene *scene);
     Mesh processMesh(aiMesh *mesh, const aiScene *scene);
     vector<Texture> loadMaterialTextures(aiMaterial *mat, aiTextureType type,

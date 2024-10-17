@@ -16,11 +16,9 @@ protected:
     string ID;
 
 public:
-    //virtual ~IGameObject() = default;
     virtual void update(float delta) = 0;
     virtual Transform getTransform() const = 0;
     virtual void setTransform(const Transform& transform) = 0;
-
 
     virtual void setPosition(const vec3& newPosition) = 0;
     virtual void setRotation(const quat& newRotation) = 0;

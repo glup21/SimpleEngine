@@ -2,6 +2,7 @@
 #define ENGINE_H
 
 #include "scene.hpp"
+#include "shaderProgram.hpp"
 
 #include <GL/glew.h>
 #include <GLFW/glfw3.h>
@@ -16,11 +17,10 @@ class Engine
     vector<IDrawableObject*> drawObjectBuffer;
     vector<IGameObject*> gameObjects;
     std::chrono::time_point<std::chrono::high_resolution_clock> previousTime;
-    Shader* shader;
+    ShaderProgram* defaultShaderProgram;
 
     string vertexPath;
     string fragmentPath;
-    //ShaderProgram* shaderProgram;
 
     void updateGameObjects(float delta);
     void drawObjects();
@@ -33,9 +33,6 @@ public:
     void init(Scene scene);
     void run();
     void shutdown();
-
-    void setViewMatrix(const glm::mat4& view);
-    void setProjectionMatrix(const glm::mat4& projection);
 
 };
 

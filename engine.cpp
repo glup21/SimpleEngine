@@ -2,6 +2,7 @@
 
 #include "engine.hpp"
 #include <iostream>
+#include "shaderFactory.hpp"
 
 Engine::Engine() : drawObjectBuffer(){
     std::cout << "Engine constructor called. drawObjectBuffer initialized to nullptr." << std::endl;
@@ -10,7 +11,13 @@ Engine::Engine() : drawObjectBuffer(){
     vertexPath = "../shaders/vertex.glsl";
     fragmentPath = "../shaders/fragment.glsl";
 
-    shader = new Shader(vertexPath, fragmentPath);
+    defaultShaderProgram = new ShaderProgram();
+    unique_ptr<Shader> vertexShader = ShaderFactory::createShader(GL_VERTEX_SHADER, vertexPath);
+    unique_ptr<Shader> fragmentShader = ShaderFactory::createShader(GL_FRAGMENT_SHADER, fragmentPath);
+
+    defaultShaderProgram->attachShader(vertexShader);
+    defaultShaderProgram->attachShader(fragmentShader);
+    //shader = new Shader(vertexPath, fragmentPath);
 }
 
 void Engine::init(Scene scene)
@@ -71,14 +78,3 @@ float Engine::calculateDeltaTime()
     return deltaTime.count();
 }
 
-// void Engine::setViewMatrix(const glm::mat4& view)
-// {
-//     shader->use();
-//     shader->setMat4("view", view);
-// }
-
-// void Engine::setProjectionMatrix(const glm::mat4& projection)
-// {
-//     shader->use();
-//     shader->setMat4("projection", projection);
-// }

@@ -1,12 +1,14 @@
 #ifndef IDRAWABLEOBJECT_H
 #define IDRAWABLEOBJECT_H
 #include "shader.hpp"
+#include "shaderProgram.hpp"
 class IDrawableObject
 {
+
+    ShaderProgram* shaderProgram;
 public:
-    virtual ~IDrawableObject() = 0;
-    virtual void draw(Shader* shader = nullptr) = 0;
-    virtual void setup(Shader* shader = nullptr) = 0;
+    virtual void draw() = 0;
+    virtual void setup() = 0;
 };
-inline IDrawableObject::~IDrawableObject() {}
+
 #endif

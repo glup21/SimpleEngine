@@ -3,14 +3,16 @@
 
 #include <string>
 #include "json.hpp"
+#include <vector>
 
-using std::string;
+using std::string, std::vector;
 using json = nlohmann::json;
 
 class ConfigReader
 {
     string configPath;
     string scene;
+    vector<string> defaultShaders;
     json config;
 
 public:

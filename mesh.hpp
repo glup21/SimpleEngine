@@ -14,19 +14,18 @@ using std::vector;
 class Mesh : public IDrawableObject
 {
 public:
-    vector<Vertex> vertices;
-    vector<u_int> indices;
-    vector<Texture> textures;
     Transform transform;
 
     Mesh(vector<Vertex> vertices, vector<u_int> indices, vector<Texture> textures);
     
     void draw(Shader* shader = nullptr) override;
     void setup(Shader* shader = nullptr) override;
-    //float* getArrayBuffer();
 
 private:
     GLuint VAO, VBO, EBO;
+    vector<Vertex> vertices;
+    vector<u_int> indices;
+    vector<Texture> textures;
 
 };
 

@@ -16,7 +16,7 @@ class SceneReader
     json sceneConfig;
 
 public:
-    SceneReader(const std::string& path) : scenePath(path) {}
+    SceneReader(const string& path) : scenePath(path) {}
     Scene readScene();
 
 };

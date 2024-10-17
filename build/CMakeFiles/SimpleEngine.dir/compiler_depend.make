@@ -15,6 +15,7 @@ CMakeFiles/SimpleEngine.dir/application.cpp.o: /home/idk/Documents/GitHub/Simple
   /home/idk/Documents/GitHub/SimpleEngine/shader.hpp \
   /home/idk/Documents/GitHub/SimpleEngine/texture.hpp \
   /home/idk/Documents/GitHub/SimpleEngine/transform.hpp \
+  /home/idk/Documents/GitHub/SimpleEngine/transformComposite.hpp \
   /home/idk/Documents/GitHub/SimpleEngine/vertex.hpp \
   /usr/include/GL/gl.h \
   /usr/include/GL/glew.h \
@@ -885,6 +886,7 @@ CMakeFiles/SimpleEngine.dir/engine.cpp.o: /home/idk/Documents/GitHub/SimpleEngin
   /home/idk/Documents/GitHub/SimpleEngine/shader.hpp \
   /home/idk/Documents/GitHub/SimpleEngine/texture.hpp \
   /home/idk/Documents/GitHub/SimpleEngine/transform.hpp \
+  /home/idk/Documents/GitHub/SimpleEngine/transformComposite.hpp \
   /home/idk/Documents/GitHub/SimpleEngine/vertex.hpp \
   /usr/include/GL/gl.h \
   /usr/include/GL/glew.h \
@@ -1596,6 +1598,7 @@ CMakeFiles/SimpleEngine.dir/main.cpp.o: /home/idk/Documents/GitHub/SimpleEngine/
   /home/idk/Documents/GitHub/SimpleEngine/shader.hpp \
   /home/idk/Documents/GitHub/SimpleEngine/texture.hpp \
   /home/idk/Documents/GitHub/SimpleEngine/transform.hpp \
+  /home/idk/Documents/GitHub/SimpleEngine/transformComposite.hpp \
   /home/idk/Documents/GitHub/SimpleEngine/vertex.hpp \
   /usr/include/GL/gl.h \
   /usr/include/GL/glew.h \
@@ -2146,6 +2149,7 @@ CMakeFiles/SimpleEngine.dir/mesh.cpp.o: /home/idk/Documents/GitHub/SimpleEngine/
   /home/idk/Documents/GitHub/SimpleEngine/shader.hpp \
   /home/idk/Documents/GitHub/SimpleEngine/texture.hpp \
   /home/idk/Documents/GitHub/SimpleEngine/transform.hpp \
+  /home/idk/Documents/GitHub/SimpleEngine/transformComposite.hpp \
   /home/idk/Documents/GitHub/SimpleEngine/vertex.hpp \
   /usr/include/GL/gl.h \
   /usr/include/GL/glew.h \
@@ -2594,6 +2598,7 @@ CMakeFiles/SimpleEngine.dir/model.cpp.o: /home/idk/Documents/GitHub/SimpleEngine
   /home/idk/Documents/GitHub/SimpleEngine/shader.hpp \
   /home/idk/Documents/GitHub/SimpleEngine/texture.hpp \
   /home/idk/Documents/GitHub/SimpleEngine/transform.hpp \
+  /home/idk/Documents/GitHub/SimpleEngine/transformComposite.hpp \
   /home/idk/Documents/GitHub/SimpleEngine/vertex.hpp \
   /usr/include/GL/gl.h \
   /usr/include/GL/glew.h \
@@ -3117,6 +3122,7 @@ CMakeFiles/SimpleEngine.dir/scene.cpp.o: /home/idk/Documents/GitHub/SimpleEngine
   /home/idk/Documents/GitHub/SimpleEngine/shader.hpp \
   /home/idk/Documents/GitHub/SimpleEngine/texture.hpp \
   /home/idk/Documents/GitHub/SimpleEngine/transform.hpp \
+  /home/idk/Documents/GitHub/SimpleEngine/transformComposite.hpp \
   /home/idk/Documents/GitHub/SimpleEngine/vertex.hpp \
   /usr/include/GL/gl.h \
   /usr/include/GL/glew.h \
@@ -3568,6 +3574,7 @@ CMakeFiles/SimpleEngine.dir/sceneReader.cpp.o: /home/idk/Documents/GitHub/Simple
   /home/idk/Documents/GitHub/SimpleEngine/shader.hpp \
   /home/idk/Documents/GitHub/SimpleEngine/texture.hpp \
   /home/idk/Documents/GitHub/SimpleEngine/transform.hpp \
+  /home/idk/Documents/GitHub/SimpleEngine/transformComposite.hpp \
   /home/idk/Documents/GitHub/SimpleEngine/vertex.hpp \
   /usr/include/GL/gl.h \
   /usr/include/GL/glew.h \
@@ -4794,6 +4801,8 @@ CMakeFiles/SimpleEngine.dir/texture.cpp.o: /home/idk/Documents/GitHub/SimpleEngi
 
 /usr/include/strings.h:
 
+/usr/include/stdio.h:
+
 /usr/include/c++/14/compare:
 
 /home/idk/Documents/GitHub/SimpleEngine/shader.hpp:
@@ -5016,8 +5025,6 @@ CMakeFiles/SimpleEngine.dir/texture.cpp.o: /home/idk/Documents/GitHub/SimpleEngi
 
 /usr/include/linux/limits.h:
 
-/usr/include/c++/14/bits/atomic_base.h:
-
 /home/idk/Documents/GitHub/SimpleEngine/scene.cpp:
 
 /usr/include/c++/14/bits/allocator.h:
@@ -5043,8 +5050,6 @@ CMakeFiles/SimpleEngine.dir/texture.cpp.o: /home/idk/Documents/GitHub/SimpleEngi
 /usr/include/c++/14/algorithm:
 
 /usr/include/bits/wordsize.h:
-
-/usr/include/stdio.h:
 
 /usr/include/assimp/scene.h:
 
@@ -5086,9 +5091,17 @@ CMakeFiles/SimpleEngine.dir/texture.cpp.o: /home/idk/Documents/GitHub/SimpleEngi
 
 /usr/include/bits/timesize.h:
 
+/usr/include/c++/14/bits/atomic_base.h:
+
+/home/idk/Documents/GitHub/SimpleEngine/transformComposite.hpp:
+
 /usr/include/assimp/vector2.inl:
 
 /home/idk/Documents/GitHub/SimpleEngine/texture.hpp:
+
+/usr/include/c++/14/bits/stl_iterator_base_funcs.h:
+
+/usr/include/glm/ext/vector_int3_sized.hpp:
 
 /usr/include/c++/14/bits/erase_if.h:
 
@@ -5109,6 +5122,8 @@ CMakeFiles/SimpleEngine.dir/texture.cpp.o: /home/idk/Documents/GitHub/SimpleEngi
 /usr/include/c++/14/bits/string_view.tcc:
 
 /usr/include/bits/stdlib-float.h:
+
+/usr/include/bits/types/cookie_io_functions_t.h:
 
 /home/idk/Documents/GitHub/SimpleEngine/scene.hpp:
 
@@ -5226,8 +5241,6 @@ CMakeFiles/SimpleEngine.dir/texture.cpp.o: /home/idk/Documents/GitHub/SimpleEngi
 
 /usr/include/bits/pthreadtypes-arch.h:
 
-/usr/include/c++/14/bits/stl_heap.h:
-
 /usr/include/c++/14/bits/valarray_array.tcc:
 
 /usr/include/bits/types/wint_t.h:
@@ -5236,15 +5249,35 @@ CMakeFiles/SimpleEngine.dir/texture.cpp.o: /home/idk/Documents/GitHub/SimpleEngi
 
 /usr/include/glm/ext/scalar_int_sized.hpp:
 
+/usr/include/bits/xopen_lim.h:
+
+/usr/include/assimp/metadata.h:
+
+/usr/include/assimp/aabb.h:
+
+/usr/include/c++/14/bits/stl_iterator.h:
+
+/usr/include/c++/14/bits/stl_algobase.h:
+
+/usr/include/c++/14/bits/hashtable_policy.h:
+
+/usr/include/asm-generic/errno-base.h:
+
 /usr/include/glm/detail/_vectorize.hpp:
+
+/usr/include/bits/stdint-intn.h:
+
+/usr/include/c++/14/bits/cxxabi_forced.h:
+
+/usr/include/bits/wctype-wchar.h:
+
+/usr/include/glm/ext/vector_float1.hpp:
+
+/usr/include/assimp/Compiler/poppack1.h:
 
 /home/idk/Documents/GitHub/SimpleEngine/application.hpp:
 
 /usr/include/c++/14/cassert:
-
-/usr/include/c++/14/bits/stl_iterator_base_funcs.h:
-
-/usr/include/glm/ext/vector_int3_sized.hpp:
 
 /home/idk/Documents/GitHub/SimpleEngine/IGameObject.hpp:
 
@@ -5256,19 +5289,7 @@ CMakeFiles/SimpleEngine.dir/texture.cpp.o: /home/idk/Documents/GitHub/SimpleEngi
 
 /usr/include/c++/14/bits/stl_tempbuf.h:
 
-/usr/include/bits/xopen_lim.h:
-
-/usr/include/assimp/metadata.h:
-
-/usr/include/c++/14/bits/stl_iterator.h:
-
-/usr/include/c++/14/bits/stl_algobase.h:
-
-/usr/include/c++/14/bits/hashtable_policy.h:
-
-/usr/include/asm-generic/errno-base.h:
-
-/usr/include/assimp/aabb.h:
+/usr/include/c++/14/bits/stl_heap.h:
 
 /usr/include/c++/14/bits/ostream_insert.h:
 
@@ -5342,8 +5363,6 @@ CMakeFiles/SimpleEngine.dir/texture.cpp.o: /home/idk/Documents/GitHub/SimpleEngi
 
 /usr/include/bits/pthreadtypes.h:
 
-/usr/include/bits/types/cookie_io_functions_t.h:
-
 /usr/include/bits/select.h:
 
 /usr/include/bits/setjmp.h:
@@ -5413,16 +5432,6 @@ CMakeFiles/SimpleEngine.dir/texture.cpp.o: /home/idk/Documents/GitHub/SimpleEngi
 /usr/include/c++/14/bits/refwrap.h:
 
 /usr/include/bits/types/struct_sched_param.h:
-
-/usr/include/assimp/Compiler/poppack1.h:
-
-/usr/include/bits/stdint-intn.h:
-
-/usr/include/c++/14/bits/cxxabi_forced.h:
-
-/usr/include/bits/wctype-wchar.h:
-
-/usr/include/glm/ext/vector_float1.hpp:
 
 /usr/include/c++/14/cstddef:
 

@@ -2,9 +2,6 @@
 #include <iostream>
 #include <GL/glew.h>
 #include <cstring>
-/*
-    BaseImage(u_char* image, int width, int height, int nrChannels):
-        pixelData(image), width(width), height(height), nrChannels(nrChannels) {}*/
 
 Texture::Texture(const u_char* image, int width, int height, int nrChannels, std::string type)
     : width(width), height(height), nrChannels(nrChannels), type(type)
@@ -26,10 +23,9 @@ Texture::Texture(const u_char* image, int width, int height, int nrChannels, std
 
 Texture::~Texture()
 {
+    //Somewhere in code texture desctructor is called before render, and I dont know where...
     //glDeleteTextures(1, &textureID);
 }
-
-
 
 void Texture::bind(unsigned int unit) const
 {

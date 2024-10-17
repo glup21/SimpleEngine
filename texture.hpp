@@ -29,4 +29,4 @@ private:
     int nrChannels;
 };
 
-#endif // TEXTURE_H
+#endif 

@@ -10,23 +10,28 @@ unordered_map<string, Texture> texturesLoaded;
 Model::Model(string path, string ID, Transform transform) : directory(path), ID(ID), transform(transform)
 {
 
-    loadModel(path);
+    //loadModel(path);
+    setup();
+    
     
 }
-void Model::loadModel(string path)
+
+void Model::setup(Shader* shader)
 {
     Assimp::Importer importer;
-    const aiScene *scene = importer.ReadFile(path, aiProcess_Triangulate | aiProcess_FlipUVs);
+    const aiScene *scene = importer.ReadFile(directory, aiProcess_Triangulate | aiProcess_FlipUVs);
 
     if(!scene || scene->mFlags & AI_SCENE_FLAGS_INCOMPLETE || !scene->mRootNode) 
     {
         std::cout << "Error: assimp:" << importer.GetErrorString() << std::endl;
         return;
     }
-    directory = path.substr(0, path.find_last_of('/'));
+    directory = directory.substr(0, directory.find_last_of('/'));
 
     processNode(scene->mRootNode, scene);
+
 }
+
 
 void Model::processNode(aiNode *node, const aiScene *scene)
 {
@@ -65,8 +70,8 @@ Mesh Model::processMesh(aiMesh *mesh, const aiScene *scene)
         if(mesh->mTextureCoords[0]) 
         {
             glm::vec2 vec;
-            vec.x = mesh->mTextureCoords[0][i].y; 
-            vec.y = mesh->mTextureCoords[0][i].x;
+            vec.x = mesh->mTextureCoords[0][i].x; 
+            vec.y = mesh->mTextureCoords[0][i].y;
             vertex.TexCoords = vec;
         }
         else
@@ -78,7 +83,7 @@ Mesh Model::processMesh(aiMesh *mesh, const aiScene *scene)
     for(u_int64_t i = 0; i < mesh->mNumFaces; i++)
     {
         aiFace face = mesh->mFaces[i];
-        for(unsigned int j = 0; j < face.mNumIndices; j++)
+        for(u_int64_t j = 0; j < face.mNumIndices; j++)
             indices.push_back(face.mIndices[j]);
     }  
     // process material
@@ -133,12 +138,6 @@ vector<Texture> Model::loadMaterialTextures(aiMaterial *mat, aiTextureType type,
     return textures;
 }
 
-void Model::setup(Shader* shader)
-{
-
-
-}
-
 void Model::update(float delta) 
 {
     
@@ -157,7 +156,9 @@ Transform Model::getTransform() const
 
 void Model::setTransform(const Transform& transform)
 {
-    this->transform = transform;
+    Transform tmp = transform;
+    tmp.rotation = glm::normalize(tmp.rotation);
+    this->transform = tmp;
 }
 
 void Model::setPosition(const vec3& newPosition)
@@ -166,7 +167,7 @@ void Model::setPosition(const vec3& newPosition)
 }
 void Model::setRotation(const quat& newRotation)
 {
-    transform.rotation = newRotation;
+    transform.rotation = glm::normalize(newRotation);
 }
 void Model::setScale(const vec3& newScale)
 {

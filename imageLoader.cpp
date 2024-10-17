@@ -10,7 +10,7 @@ u_char* ImageLoader::loadImage(const string& path, int* height, int* width, int*
         return usedPath[path]; // Return the cached image
     }
 
-    // Load the image using stb_image
+    // Load the image
     u_char* image = stbi_load(path.c_str(), width, height, nrChannels, 0);
     if (image) {
         std::cout << "Image loaded successfully: " << path << std::endl;

@@ -7,14 +7,20 @@
 #include <glm/mat4x4.hpp> // glm::mat4
 #include <glm/gtc/matrix_transform.hpp> // glm::translate, glm::rotate, glm::scale, glm::perspective
 #include <glm/gtc/type_ptr.hpp> // glm::value_ptr
-
+#include "transformComposite.hpp"
 using glm::vec3, glm::vec4, glm::mat4, glm::quat;
 
-struct Transform
+struct Transform : public TransformComposite
 {
+    // mat4 transformationMatrix;
+    // vec3 position;
+    // vec3 rotationAxis;
+    // float rotationAngle;
 
     vec3 position;
-    quat rotation;
+    quat rotation; //I was not ready for this...
+    //vec3 rotationVector;
+    //vec3 rotation;
     vec3 scale;
     Transform()
             : position(0.0f, 0.0f, 0.0f), 
