@@ -6,6 +6,8 @@
 #include "scene.hpp"
 #include "IGameObject.hpp"
 #include "model.hpp"
+#include "shaderProgram.hpp"
+
 using std::string;
 using json = nlohmann::json;
 
@@ -17,7 +19,7 @@ class SceneReader
 
 public:
     SceneReader(const string& path) : scenePath(path) {}
-    Scene readScene();
+    Scene readScene(ShaderProgram* defaultShaderProgram);
 
 };
 

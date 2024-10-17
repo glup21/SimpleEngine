@@ -21,13 +21,10 @@ public:
     virtual void setTransform(const Transform& transform) = 0;
 
     virtual void setPosition(const vec3& newPosition) = 0;
-    virtual void setRotation(const quat& newRotation) = 0;
+    virtual void setRotation(const vec3& rotationVec, const float& angle) = 0;
     virtual void setScale(const vec3& newScale) = 0;
 
-    virtual void addPosition(const vec3& addPosition) = 0;
-    virtual void addRotation(const quat& addRotation) = 0;
-
-    virtual mat4 getTransformMatrix() const = 0;
+    virtual mat4 getTransformMatrix() = 0;
 
 
 

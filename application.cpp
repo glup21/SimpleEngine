@@ -53,10 +53,7 @@ void Application::initialize()
 void Application::run()
 {
 
-    SceneReader sceneReader(scenePath);
-    Scene scene = sceneReader.readScene();
-
-    engine->init(scene);
+    engine->init(scenePath);
     while (!glfwWindowShouldClose(window))
     {
 

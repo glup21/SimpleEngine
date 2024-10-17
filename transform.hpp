@@ -1,3 +1,7 @@
+#define X_AXIS {1.0f, 0.0f, 0.0f}
+#define Y_AXIS {0.0f, 1.0f, 0.0f}
+#define Z_AXIS {0.0f, 0.0f, 1.0f}
+
 #ifndef TRANSFORM_H
 #define TRANSFORM_H
 
@@ -10,39 +14,34 @@
 #include "transformComposite.hpp"
 using glm::vec3, glm::vec4, glm::mat4, glm::quat;
 
-struct Transform : public TransformComposite
+
+
+class Transform : public TransformComposite
 {
-    // mat4 transformationMatrix;
-    // vec3 position;
-    // vec3 rotationAxis;
-    // float rotationAngle;
+private:
+    mat4 transformMatrix;
+    vec3 translationVec= vec3(0.0f);
+    vec3 rotationVec = vec3(0.0f);
+	double rotationAngle = 0.0f;
+	vec3 scaleVec = vec3(0.0f);
 
-    vec3 position;
-    quat rotation; //I was not ready for this...
-    //vec3 rotationVector;
-    //vec3 rotation;
-    vec3 scale;
-    Transform()
-            : position(0.0f, 0.0f, 0.0f), 
-            rotation(1.0f, 0.0f, 0.0f, 0.0f), 
-            scale(1.0f, 1.0f, 1.0f) {}
+public:
+    Transform();
+    Transform(vec3 position, vec3 rotationAxis, float rotationAngle, vec3 scale);
+    void rotate(float angle, float x, float y, float z);
+	void translate(float x, float y, float z);
+	void scale(float x, float y, float z);
 
-    Transform(vec3 position, quat rotation, vec3 scale)
-            : position(position), 
-            rotation(rotation), 
-            scale(scale) {}
+    mat4 getTransformMatrix() override;
+    vec3 getTranslation();
+    vec3 getRotationVector();
+    vec3 getScale();
 
+    vec3 getPosition();
+    double getRotationAngle();
+
+    void reset();
     
-
-    mat4 getTransformMatrix() const
-    {
-        mat4 matrix = mat4(1.0f);
-        matrix = glm::translate(matrix, position);
-        matrix *= glm::mat4_cast(rotation);
-        matrix = glm::scale(matrix, scale);
-
-        return matrix;
-    }
 };
 
 #endif

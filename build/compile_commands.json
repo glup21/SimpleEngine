@@ -64,5 +64,17 @@
   "command": "/usr/bin/g++    -Wall -g -std=gnu++17 -o CMakeFiles/SimpleEngine.dir/imageLoader.cpp.o -c /home/idk/Documents/GitHub/SimpleEngine/imageLoader.cpp",
   "file": "/home/idk/Documents/GitHub/SimpleEngine/imageLoader.cpp",
   "output": "CMakeFiles/SimpleEngine.dir/imageLoader.cpp.o"
+},
+{
+  "directory": "/home/idk/Documents/GitHub/SimpleEngine/build",
+  "command": "/usr/bin/g++    -Wall -g -std=gnu++17 -o CMakeFiles/SimpleEngine.dir/shaderProgram.cpp.o -c /home/idk/Documents/GitHub/SimpleEngine/shaderProgram.cpp",
+  "file": "/home/idk/Documents/GitHub/SimpleEngine/shaderProgram.cpp",
+  "output": "CMakeFiles/SimpleEngine.dir/shaderProgram.cpp.o"
+},
+{
+  "directory": "/home/idk/Documents/GitHub/SimpleEngine/build",
+  "command": "/usr/bin/g++    -Wall -g -std=gnu++17 -o CMakeFiles/SimpleEngine.dir/transform.cpp.o -c /home/idk/Documents/GitHub/SimpleEngine/transform.cpp",
+  "file": "/home/idk/Documents/GitHub/SimpleEngine/transform.cpp",
+  "output": "CMakeFiles/SimpleEngine.dir/transform.cpp.o"
 }
 ]

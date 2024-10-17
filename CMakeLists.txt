@@ -27,6 +27,9 @@ set(SRCS
     sceneReader.cpp
     configReader.cpp
     imageLoader.cpp
+    shaderProgram.cpp
+    transform.cpp
+    
 )
 
 # Add executable

@@ -369,6 +369,30 @@ shader.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/SimpleEngine.dir/build.make CMakeFiles/SimpleEngine.dir/shader.cpp.s
 .PHONY : shader.cpp.s
 
+shaderProgram.o: shaderProgram.cpp.o
+.PHONY : shaderProgram.o
+
+# target to build an object file
+shaderProgram.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SimpleEngine.dir/build.make CMakeFiles/SimpleEngine.dir/shaderProgram.cpp.o
+.PHONY : shaderProgram.cpp.o
+
+shaderProgram.i: shaderProgram.cpp.i
+.PHONY : shaderProgram.i
+
+# target to preprocess a source file
+shaderProgram.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SimpleEngine.dir/build.make CMakeFiles/SimpleEngine.dir/shaderProgram.cpp.i
+.PHONY : shaderProgram.cpp.i
+
+shaderProgram.s: shaderProgram.cpp.s
+.PHONY : shaderProgram.s
+
+# target to generate assembly for a file
+shaderProgram.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SimpleEngine.dir/build.make CMakeFiles/SimpleEngine.dir/shaderProgram.cpp.s
+.PHONY : shaderProgram.cpp.s
+
 texture.o: texture.cpp.o
 .PHONY : texture.o
 
@@ -392,6 +416,30 @@ texture.s: texture.cpp.s
 texture.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/SimpleEngine.dir/build.make CMakeFiles/SimpleEngine.dir/texture.cpp.s
 .PHONY : texture.cpp.s
+
+transform.o: transform.cpp.o
+.PHONY : transform.o
+
+# target to build an object file
+transform.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SimpleEngine.dir/build.make CMakeFiles/SimpleEngine.dir/transform.cpp.o
+.PHONY : transform.cpp.o
+
+transform.i: transform.cpp.i
+.PHONY : transform.i
+
+# target to preprocess a source file
+transform.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SimpleEngine.dir/build.make CMakeFiles/SimpleEngine.dir/transform.cpp.i
+.PHONY : transform.cpp.i
+
+transform.s: transform.cpp.s
+.PHONY : transform.s
+
+# target to generate assembly for a file
+transform.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SimpleEngine.dir/build.make CMakeFiles/SimpleEngine.dir/transform.cpp.s
+.PHONY : transform.cpp.s
 
 # Help Target
 help:
@@ -432,9 +480,15 @@ help:
 	@echo "... shader.o"
 	@echo "... shader.i"
 	@echo "... shader.s"
+	@echo "... shaderProgram.o"
+	@echo "... shaderProgram.i"
+	@echo "... shaderProgram.s"
 	@echo "... texture.o"
 	@echo "... texture.i"
 	@echo "... texture.s"
+	@echo "... transform.o"
+	@echo "... transform.i"
+	@echo "... transform.s"
 .PHONY : help
 
 

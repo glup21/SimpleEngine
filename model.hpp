@@ -16,23 +16,20 @@ using std::vector;
 class Model : public IGameObject, public IDrawableObject
 {
 public:
-    Model(string path, string ID, Transform transform);
+    Model(string path, string ID, Transform transform, ShaderProgram* shaderProgram);
 
-    void setup(Shader* shader = nullptr) override;
-    void draw(Shader* shader) override;
+    void setup() override;
+    void draw() override;
     void update(float delta) override;
 
     Transform getTransform() const override;
     void setTransform(const Transform& transform) override;
 
     void setPosition(const vec3& newPosition) override;
-    void setRotation(const quat& newRotation) override;
+    void setRotation(const vec3& rotationVec, const float& angle) override;
     void setScale(const vec3& newScale) override;
 
-    void addPosition(const vec3& addPosition) override;
-    void addRotation(const quat& addRotation) override;
-
-    mat4 getTransformMatrix() const override;
+    mat4 getTransformMatrix() override;
 private:
     string ID;
     vector<Mesh> meshes;

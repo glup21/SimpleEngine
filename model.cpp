@@ -7,16 +7,13 @@ namespace fs = std::filesystem;
 using std::unordered_map;
 unordered_map<string, Texture> texturesLoaded;
 
-Model::Model(string path, string ID, Transform transform) : directory(path), ID(ID), transform(transform)
+Model::Model(string path, string ID, Transform transform, ShaderProgram* shaderProgram) 
+    : directory(path), ID(ID), transform(transform), IDrawableObject(shaderProgram)
 {
-
-    //loadModel(path);
     setup();
-    
-    
 }
 
-void Model::setup(Shader* shader)
+void Model::setup()
 {
     Assimp::Importer importer;
     const aiScene *scene = importer.ReadFile(directory, aiProcess_Triangulate | aiProcess_FlipUVs);
@@ -29,6 +26,7 @@ void Model::setup(Shader* shader)
     directory = directory.substr(0, directory.find_last_of('/'));
 
     processNode(scene->mRootNode, scene);
+    shaderProgram->link();
 
 }
 
@@ -95,7 +93,7 @@ Mesh Model::processMesh(aiMesh *mesh, const aiScene *scene)
         textures.insert(textures.end(), diffuseMaps.begin(), diffuseMaps.end());
     }  
 
-    Mesh res(vertices, indices, textures);
+    Mesh res(vertices, indices, textures, shaderProgram);
     res.transform = transform;
     return res;
 }  
@@ -140,12 +138,35 @@ vector<Texture> Model::loadMaterialTextures(aiMaterial *mat, aiTextureType type,
 
 void Model::update(float delta) 
 {
-    
+    // // Define the target rotation angle (180 degrees) in radians
+    // const float targetRotation = glm::radians(180.0f); // Target rotation in radians
+    // const float rotationSpeed = targetRotation / 5.0f; // 180 degrees over 5 seconds
+
+    // // Keep track of the current rotation
+    // static float currentRotation = 0.0f;
+
+    // // Calculate the new rotation based on delta time
+    // currentRotation += rotationSpeed * delta; // Increment the rotation
+
+    // // Clamp the current rotation to the target rotation
+    // if (currentRotation > targetRotation) {
+    //     currentRotation = targetRotation; // Prevent overshooting
+    // }
+
+    // // Apply the rotation to the model's transform
+    // transform.rotate(glm::degrees(rotationSpeed * delta), 0.0f, 0.0f, 1.0f); // Rotate around Z axis
+
+    // // Update each mesh's transform to reflect the new rotation
+    // for (Mesh& mesh : meshes) {
+    //     mesh.transform = transform; // Make sure to assign the updated transform
+    // }
 }
-void Model::draw(Shader* shader)
+
+void Model::draw()
 {   
-    for(unsigned int i = 0; i < meshes.size(); i++)
-        meshes[i].draw(shader);
+
+    for(u_int i = 0; i < meshes.size(); i++)
+        meshes[i].draw();
 
     
 }
@@ -153,40 +174,48 @@ Transform Model::getTransform() const
 {
     return transform;
 }
+void Model::setTransform(const Transform& newTransform) 
+{
+    transform = newTransform;
 
-void Model::setTransform(const Transform& transform)
-{
-    Transform tmp = transform;
-    tmp.rotation = glm::normalize(tmp.rotation);
-    this->transform = tmp;
-}
-
-void Model::setPosition(const vec3& newPosition)
-{
-    transform.position = newPosition;
-}
-void Model::setRotation(const quat& newRotation)
-{
-    transform.rotation = glm::normalize(newRotation);
-}
-void Model::setScale(const vec3& newScale)
-{
-    transform.scale = newScale;
+    for (Mesh& mesh : meshes) {
+        mesh.transform = transform;
+    }
 }
 
-mat4 Model::getTransformMatrix() const
+void Model::setPosition(const vec3& newPosition) 
+{
+    vec3 currentPosition = transform.getPosition();
+    vec3 delta = newPosition - currentPosition;
+    transform.translate(delta.x, delta.y, delta.z);
+
+    for (Mesh& mesh : meshes) {
+        mesh.transform.translate(delta.x, delta.y, delta.z);
+    }
+}
+
+void Model::setRotation(const vec3& rotationVec, const float& angle) 
+{
+    transform.rotate(angle, rotationVec.x, rotationVec.y, rotationVec.z);
+
+    for (Mesh& mesh : meshes) {
+        mesh.transform.rotate(angle, rotationVec.x, rotationVec.y, rotationVec.z);
+    }
+}
+
+void Model::setScale(const vec3& newScale) 
+{
+    transform.scale(newScale.x, newScale.y, newScale.z);
+
+    for (Mesh& mesh : meshes) {
+        mesh.transform.scale(newScale.x, newScale.y, newScale.z);
+    }
+}
+
+
+mat4 Model::getTransformMatrix() 
 {
     return transform.getTransformMatrix();
-}
-
-void Model::addPosition(const vec3& addPosition)
-{
-    transform.position += addPosition;
-}
-
-void Model::addRotation(const quat& addRotation)
-{
-    transform.rotation = glm::normalize(addRotation * transform.rotation);
 }
 
 

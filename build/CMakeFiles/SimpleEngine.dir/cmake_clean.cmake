@@ -19,8 +19,12 @@ file(REMOVE_RECURSE
   "CMakeFiles/SimpleEngine.dir/sceneReader.cpp.o.d"
   "CMakeFiles/SimpleEngine.dir/shader.cpp.o"
   "CMakeFiles/SimpleEngine.dir/shader.cpp.o.d"
+  "CMakeFiles/SimpleEngine.dir/shaderProgram.cpp.o"
+  "CMakeFiles/SimpleEngine.dir/shaderProgram.cpp.o.d"
   "CMakeFiles/SimpleEngine.dir/texture.cpp.o"
   "CMakeFiles/SimpleEngine.dir/texture.cpp.o.d"
+  "CMakeFiles/SimpleEngine.dir/transform.cpp.o"
+  "CMakeFiles/SimpleEngine.dir/transform.cpp.o.d"
   "SimpleEngine"
   "SimpleEngine.pdb"
 )

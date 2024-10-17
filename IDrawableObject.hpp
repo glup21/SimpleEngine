@@ -4,9 +4,10 @@
 #include "shaderProgram.hpp"
 class IDrawableObject
 {
-
+protected:
     ShaderProgram* shaderProgram;
-public:
+public: 
+    IDrawableObject(ShaderProgram* shaderProgram) : shaderProgram(shaderProgram) {}
     virtual void draw() = 0;
     virtual void setup() = 0;
 };

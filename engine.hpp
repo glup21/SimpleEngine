@@ -13,7 +13,7 @@
 
 class Engine
 {
-
+private:
     vector<IDrawableObject*> drawObjectBuffer;
     vector<IGameObject*> gameObjects;
     std::chrono::time_point<std::chrono::high_resolution_clock> previousTime;
@@ -30,7 +30,7 @@ class Engine
 public:
     Engine();
     ~Engine() = default;
-    void init(Scene scene);
+    void init(string scenePath);
     void run();
     void shutdown();
 

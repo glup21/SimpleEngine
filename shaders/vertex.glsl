@@ -15,6 +15,7 @@ uniform mat4 viewMatrix;
 void main()
 {
     TexCoords = aTexCoords;
+    Normal = aNormal;
     FragPos = vec3(transform * vec4(aPos, 1.0));
 
     //gl_Position = projectionMatrix * viewMatrix * transform * vec4(aPos, 1.0);

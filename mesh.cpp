@@ -1,13 +1,13 @@
 #include "mesh.hpp"
 #include <iostream>
 
-Mesh::Mesh(vector<Vertex> vertices, vector<u_int> indices, vector<Texture> textures) :
-    vertices(vertices), indices(indices), textures(textures)
+Mesh::Mesh(vector<Vertex> vertices, vector<u_int> indices, vector<Texture> textures, ShaderProgram* shaderProgram) :
+    vertices(vertices), indices(indices), textures(textures), IDrawableObject(shaderProgram)
 {
     setup();
 }
 
-void Mesh::setup(Shader* shader)
+void Mesh::setup()
 {
 
     glGenVertexArrays(1, &VAO); //Create VAO, VBO, EBO
@@ -39,12 +39,14 @@ void Mesh::setup(Shader* shader)
     glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, sizeof(Vertex), (void*)offsetof(Vertex, TexCoords));
 
     glBindVertexArray(0);
+
+    shaderProgram->link();
 }
 
-void Mesh::draw(Shader* shader)
+void Mesh::draw()
 {
     mat4 transformMatrix = transform.getTransformMatrix();
-    shader->setTransform("transform", transformMatrix);
+    shaderProgram->setMat4("transform", transformMatrix);
 
     vec3 target, cameraPosition, forwardVector, upVector;
     float alpha = 0.0f;
@@ -60,11 +62,13 @@ void Mesh::draw(Shader* shader)
     mat4 viewMatrix = glm::lookAt(cameraPosition, forwardVector, upVector);
     mat4 projectionMatrix = glm::perspective(70.0f, 16.0f/9.0f, 0.1f, 2.5f);
 
-    shader->setTransform("projectionMatrix", projectionMatrix);
-    shader->setTransform("viewMatrix", viewMatrix);
+    shaderProgram->setMat4("projectionMatrix", projectionMatrix);
+    shaderProgram->setMat4("viewMatrix", viewMatrix);
 
-    shader->setInt("textureImage", 0);
+    shaderProgram->setInt("textureImage", 0);
     textures[0].bind(0);
+
+    shaderProgram->use();
 
     glBindVertexArray(VAO);
     glDrawElements(GL_TRIANGLES, indices.size(), GL_UNSIGNED_INT, 0);

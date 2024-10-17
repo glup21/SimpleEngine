@@ -3,10 +3,10 @@
 ShaderProgram::ShaderProgram() : ID(glCreateProgram()) {}
 ShaderProgram::~ShaderProgram() { glDeleteProgram(ID); }
 
-void ShaderProgram::attachShader(unique_ptr<Shader> shader)
+void ShaderProgram::attachShader(Shader* shader)
 {
     glAttachShader(ID, shader->getID());
-    shaders.push_back(std::move(shader));
+    shaders.push_back(shader);
 }
 
 void ShaderProgram::link() {
@@ -26,4 +26,13 @@ void ShaderProgram::checkLinkErrors()
         std::cout << "ERROR: SHADER LINKING ERROR: " << infoLog << std::endl;
     }
 
+}
+
+void ShaderProgram::setMat4(const string& name, glm::mat4 value)
+{
+    glUniformMatrix4fv(glGetUniformLocation(ID, name.c_str()), 1, GL_FALSE, &value[0][0]);
+}
+void ShaderProgram::setInt(const string& name, int value)
+{
+    glUniform1i(glGetUniformLocation(ID, name.c_str()), value); 
 }

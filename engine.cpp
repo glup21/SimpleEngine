@@ -3,6 +3,8 @@
 #include "engine.hpp"
 #include <iostream>
 #include "shaderFactory.hpp"
+#include "sceneReader.hpp"
+
 
 Engine::Engine() : drawObjectBuffer(){
     std::cout << "Engine constructor called. drawObjectBuffer initialized to nullptr." << std::endl;
@@ -12,16 +14,19 @@ Engine::Engine() : drawObjectBuffer(){
     fragmentPath = "../shaders/fragment.glsl";
 
     defaultShaderProgram = new ShaderProgram();
-    unique_ptr<Shader> vertexShader = ShaderFactory::createShader(GL_VERTEX_SHADER, vertexPath);
-    unique_ptr<Shader> fragmentShader = ShaderFactory::createShader(GL_FRAGMENT_SHADER, fragmentPath);
+    Shader* vertexShader = ShaderFactory::createShader(GL_VERTEX_SHADER, vertexPath);
+    Shader* fragmentShader = ShaderFactory::createShader(GL_FRAGMENT_SHADER, fragmentPath);
 
     defaultShaderProgram->attachShader(vertexShader);
     defaultShaderProgram->attachShader(fragmentShader);
-    //shader = new Shader(vertexPath, fragmentPath);
+
 }
 
-void Engine::init(Scene scene)
+void Engine::init(string scenePath)
 {
+    SceneReader sceneReader(scenePath);
+    Scene scene = sceneReader.readScene(defaultShaderProgram);
+
     //Load and init shaders
     std::cout << "Initializing engine with scene." << std::endl;
     std::cout << "Engine object address: " << this << std::endl;
@@ -66,8 +71,8 @@ void Engine::drawObjects()
 {
     for( IDrawableObject* dObj : drawObjectBuffer)
     {
-        shader->use();
-        dObj->draw(shader);
+        //shader->use(); use shaderPrograms in objects!
+        dObj->draw();
     }
 }
 float Engine::calculateDeltaTime()

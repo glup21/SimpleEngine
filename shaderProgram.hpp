@@ -9,7 +9,7 @@ using std::unique_ptr;
 class ShaderProgram
 {
 private:
-    vector<unique_ptr<Shader>> shaders;
+    vector<Shader*> shaders;
     GLuint ID;
 
     void checkLinkErrors();
@@ -18,9 +18,12 @@ public:
     ShaderProgram();
     ~ShaderProgram();
 
-    void attachShader(unique_ptr<Shader> shader);
+    void attachShader(Shader* shader);
     void link();
     void use();
+
+    void setMat4(const string& name, glm::mat4 value);
+    void setInt(const string& name, int value);
 
 
 };

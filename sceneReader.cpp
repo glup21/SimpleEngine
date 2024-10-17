@@ -6,7 +6,7 @@
 #include <glm/vec4.hpp>
 #include "transform.hpp"
 
-Scene SceneReader::readScene()
+Scene SceneReader::readScene(ShaderProgram* defaultShaderProgram)
 {
 
     std::ifstream file(scenePath);
@@ -33,12 +33,22 @@ Scene SceneReader::readScene()
             {
                 
                 glm::vec3 v_position{position[0], position[1], position[2]};
-                //glm::quat v_rotation{1.0f, rotation[0], rotation[1], rotation[2]};
-                glm:: quat v_rotation = glm::normalize(glm::quat(glm::radians(vec3(rotation[0], rotation[1], rotation[2]))));
+                glm::vec3 v_rotation{rotation[0], rotation[1], rotation[2]};
                 glm::vec3 v_scale{scale[0], scale[1], scale[2]};
-            
-                Transform transform(v_position, glm::normalize(v_rotation), v_scale);
-                Model* model = new Model(directory, id, transform); 
+                Transform transform;
+                
+                transform.scale(v_scale.x, v_scale.y, v_scale.z); 
+                
+                transform.rotate(v_rotation.x, 1.0f, 0.0f, 0.0f); 
+                transform.rotate(v_rotation.y, 0.0f, 1.0f, 0.0f); 
+                transform.rotate(v_rotation.z, 0.0f, 0.0f, 1.0f);
+
+                transform.translate(v_position.x, v_position.y, v_position.z); 
+                
+ 
+
+
+                Model* model = new Model(directory, id, transform, defaultShaderProgram); 
 
                 gObj.push_back(model);
 
