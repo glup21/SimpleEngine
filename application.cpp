@@ -8,7 +8,7 @@ void framebuffer_size_callback(GLFWwindow* window, int width, int height) {
     glViewport(0, 0, width, height);
 }
 
-Application::Application(string scenePath): scenePath(scenePath)
+Application::Application(ConfigReader* configReader): configReader(configReader)
 {
     
 }
@@ -24,8 +24,8 @@ void Application::initialize()
         fprintf(stderr, "ERROR: could not start GLFW3\n");
         exit(EXIT_FAILURE); 
     }
-
-    window = glfwCreateWindow(800, 600, "SimpleEngine", NULL, NULL);
+    scenePath = configReader->getScenePath();
+    window = glfwCreateWindow(1024, 768, "SimpleEngine", NULL, NULL);
     if (!window){
         glfwTerminate();
         exit(EXIT_FAILURE);
@@ -51,7 +51,7 @@ void Application::initialize()
     glfwGetVersion(&major, &minor, &revision);
     printf("Using GLFW %i.%i.%i\n", major, minor, revision);
 
-    engine = new Engine(window);
+    engine = new Engine(window, configReader->getCameraSettings());
 
     glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);
 

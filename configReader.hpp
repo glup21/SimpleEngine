@@ -4,6 +4,7 @@
 #include <string>
 #include "json.hpp"
 #include <vector>
+#include "cameraSettings.hpp"
 
 using std::string, std::vector;
 using json = nlohmann::json;
@@ -14,11 +15,13 @@ class ConfigReader
     string scene;
     vector<string> defaultShaders;
     json config;
+    CameraSettings cameraSettings;
 
 public:
     ConfigReader(const string& configPath);
 
-    string getScenePath();    
+    string getScenePath();  
+    CameraSettings getCameraSettings();  
 };
 
 #endif 

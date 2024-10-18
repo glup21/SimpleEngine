@@ -11,15 +11,18 @@
 #include "scene.hpp"
 #include "mesh.hpp"
 #include "model.hpp"
+#include "configReader.hpp"
+
 class Application
 {
 
     Engine* engine;
     GLFWwindow* window;
+    ConfigReader* configReader;
     string scenePath;
 
 public:
-    Application(string scenePath);
+    Application(ConfigReader* configReader);
     ~Application() = default;
 
     void initialize();

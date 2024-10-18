@@ -13,6 +13,7 @@
 #include <chrono>
 #include <glm/vec2.hpp>
 #include "input.hpp"
+#include "cameraSettings.hpp"
 
 using glm::vec2;
 
@@ -41,7 +42,7 @@ private:
 
 
 public:
-    Engine(GLFWwindow* window);
+    Engine(GLFWwindow* window, CameraSettings cameraSettings);
     ~Engine() = default;
     void init(string scenePath);
     void run();

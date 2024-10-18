@@ -3,8 +3,8 @@
 #include <glm/glm.hpp>
 #include <iostream>
 
-Camera::Camera(GLFWwindow* window) :
-    position(0,0,0), alpha(0.0f), fi(0.0f), upVector(0.0f, 1.0f, 0.0f), window(window)
+Camera::Camera(GLFWwindow* window, CameraSettings settings) :
+    position(0,0,0), alpha(0.0f), fi(0.0f), upVector(0.0f, 1.0f, 0.0f), window(window), settings(settings)
 {
     target.x = glm::cos(glm::radians(fi)) * glm::cos(glm::radians(alpha));
     target.y = glm::sin(glm::radians(alpha)); 
@@ -23,7 +23,7 @@ glm::mat4 Camera::getProjectionMatrix()
     int width, height;
     glfwGetWindowSize(window, &width, &height);
     ratio = static_cast<float>(width)/static_cast<double>(height);
-    return glm::perspective(glm::radians(angle), ratio, nearDistance, farDistance);
+    return glm::perspective(glm::radians(settings.fov), ratio, settings.nearPlane, settings.farPlane);
 }
 
 glm::vec3 Camera::getPosition() const
@@ -59,22 +59,22 @@ void Camera::move(vector<bool> keys, float deltaTime)
 
     if (movement != glm::vec3(0.0f)) 
         movement = glm::normalize(movement);
-        
-    position += movement * speed * deltaTime;
+
+    position += movement * settings.movingSpeed * deltaTime;
     std::cout << "Position: " << position.x << " " << position.y << " " << position.z << std::endl;
 
 }
 
 void Camera::changeTarget(float deltaX, float deltaY, float delta)
 {
-    fi += deltaX * sensitivity * delta;
+    fi += deltaX * settings.lookSensitivity * delta;
     if (fi < 0) {
         fi += 360;
     } else if (fi >= 360) {
         fi -= 360; 
     }
 
-    alpha = glm::clamp(alpha + (deltaY * sensitivity * delta), -89.0f, 89.0f); 
+    alpha = glm::clamp(alpha + (deltaY * settings.lookSensitivity * delta), -89.0f, 89.0f); 
     target.x = glm::cos(glm::radians(fi)) * glm::cos(glm::radians(alpha));
     target.y = glm::sin(glm::radians(alpha)); 
     target.z = glm::sin(glm::radians(fi)) * glm::cos(glm::radians(alpha));

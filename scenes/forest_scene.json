@@ -4,7 +4,7 @@
         {
             "id": "forest",
             "type" : "model",
-            "directory" : "../models/forest/trees.obj",
+            "directory" : "../models/forest/Tree1.obj",
             "position" : [0, 0, 0],
             "rotation" : [0, 0, 0], 
             "scale" : [1, 1, 1]

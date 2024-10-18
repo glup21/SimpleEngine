@@ -22,7 +22,7 @@ void key_callback(GLFWwindow* window, int key, int scancode, int action, int mod
     }
 }
 
-Engine::Engine(GLFWwindow* window) : drawObjectBuffer(){
+Engine::Engine(GLFWwindow* window, CameraSettings cameraSettings) : drawObjectBuffer(){
     std::cout << "Engine constructor called. drawObjectBuffer initialized to nullptr." << std::endl;
     previousTime = std::chrono::high_resolution_clock::now();
 
@@ -37,7 +37,7 @@ Engine::Engine(GLFWwindow* window) : drawObjectBuffer(){
     defaultShaderProgram->attachShader(fragmentShader);
     
     this->window = window;
-    camera = new Camera(window);
+    camera = new Camera(window, cameraSettings);
 
 
 }

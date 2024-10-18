@@ -31,7 +31,7 @@ int main(int argc, char* argv[])
     if(scenePath.empty())
         return 1;
 
-    Application* application = new Application(scenePath);
+    Application* application = new Application(&configReader);
 
     application->initialize();
     application->run();

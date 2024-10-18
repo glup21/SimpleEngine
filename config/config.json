@@ -1,4 +1,11 @@
 {
-    "scene" : "../scenes/scene.json"
+    "scene" : "../scenes/forest_scene.json",
+    "camera" : {
+        "fov" : 45.0,
+        "nearPlane" : 0.1,
+        "farPlane" : 100.0,
+        "lookSensitivity" : 150.0,
+        "movingSpeed" : 0.2
+    }
     
 }

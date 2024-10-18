@@ -7,6 +7,8 @@ CMakeFiles/SimpleEngine.dir/application.cpp.o
  /home/idk/Documents/GitHub/SimpleEngine/IGameObject.hpp
  /home/idk/Documents/GitHub/SimpleEngine/application.hpp
  /home/idk/Documents/GitHub/SimpleEngine/camera.hpp
+ /home/idk/Documents/GitHub/SimpleEngine/cameraSettings.hpp
+ /home/idk/Documents/GitHub/SimpleEngine/configReader.hpp
  /home/idk/Documents/GitHub/SimpleEngine/engine.hpp
  /home/idk/Documents/GitHub/SimpleEngine/imageLoader.hpp
  /home/idk/Documents/GitHub/SimpleEngine/input.hpp
@@ -567,6 +569,7 @@ CMakeFiles/SimpleEngine.dir/application.cpp.o
 CMakeFiles/SimpleEngine.dir/camera.cpp.o
  /home/idk/Documents/GitHub/SimpleEngine/camera.cpp
  /home/idk/Documents/GitHub/SimpleEngine/camera.hpp
+ /home/idk/Documents/GitHub/SimpleEngine/cameraSettings.hpp
  /home/idk/Documents/GitHub/SimpleEngine/shader.hpp
  /home/idk/Documents/GitHub/SimpleEngine/shaderProgram.hpp
  /usr/include/GL/gl.h
@@ -980,6 +983,7 @@ CMakeFiles/SimpleEngine.dir/camera.cpp.o
 
 CMakeFiles/SimpleEngine.dir/configReader.cpp.o
  /home/idk/Documents/GitHub/SimpleEngine/configReader.cpp
+ /home/idk/Documents/GitHub/SimpleEngine/cameraSettings.hpp
  /home/idk/Documents/GitHub/SimpleEngine/configReader.hpp
  /home/idk/Documents/GitHub/SimpleEngine/json.hpp
  /usr/include/alloca.h
@@ -1300,6 +1304,7 @@ CMakeFiles/SimpleEngine.dir/engine.cpp.o
  /home/idk/Documents/GitHub/SimpleEngine/IDrawableObject.hpp
  /home/idk/Documents/GitHub/SimpleEngine/IGameObject.hpp
  /home/idk/Documents/GitHub/SimpleEngine/camera.hpp
+ /home/idk/Documents/GitHub/SimpleEngine/cameraSettings.hpp
  /home/idk/Documents/GitHub/SimpleEngine/configReader.hpp
  /home/idk/Documents/GitHub/SimpleEngine/engine.hpp
  /home/idk/Documents/GitHub/SimpleEngine/imageLoader.hpp
@@ -2187,6 +2192,7 @@ CMakeFiles/SimpleEngine.dir/main.cpp.o
  /home/idk/Documents/GitHub/SimpleEngine/IGameObject.hpp
  /home/idk/Documents/GitHub/SimpleEngine/application.hpp
  /home/idk/Documents/GitHub/SimpleEngine/camera.hpp
+ /home/idk/Documents/GitHub/SimpleEngine/cameraSettings.hpp
  /home/idk/Documents/GitHub/SimpleEngine/configReader.hpp
  /home/idk/Documents/GitHub/SimpleEngine/engine.hpp
  /home/idk/Documents/GitHub/SimpleEngine/imageLoader.hpp

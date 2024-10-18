@@ -3,7 +3,7 @@
 
 #include "shaderProgram.hpp"
 #include <GLFW/glfw3.h>
-
+#include "cameraSettings.hpp"
 using glm::vec3, glm::mat4;
 
 class Camera
@@ -17,17 +17,13 @@ private:
     GLFWwindow* window;
 
     float ratio;
-    float angle = 45.0f;
-    float nearDistance = 0.1f;
-    float farDistance = 100.0f;
     float alpha;
     float fi;
 
-    float sensitivity = 150.0f;
-    float speed = 0.1f;
+    CameraSettings settings;
 
 public:
-    Camera(GLFWwindow* window);
+    Camera(GLFWwindow* window, CameraSettings settings);
     mat4 getViewMatrix() const;
     mat4 getProjectionMatrix();
     vec3 getPosition() const;

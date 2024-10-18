@@ -21,6 +21,19 @@ ConfigReader::ConfigReader(const string& configPath): configPath(configPath)
         std::cerr << "Error: scene property is not defined " << std::endl;
     }
 
+    if(config.contains("camera"))
+    {
+        json cameraConfig = config["camera"];
+
+        cameraSettings.fov = cameraConfig["fov"].get<float>();
+        cameraSettings.nearPlane = cameraConfig["nearPlane"].get<float>();
+        cameraSettings.farPlane = cameraConfig["farPlane"].get<float>();
+        cameraSettings.lookSensitivity = cameraConfig["lookSensitivity"].get<float>();
+        cameraSettings.movingSpeed = cameraConfig["movingSpeed"].get<float>();
+    }
+    else
+        std::cerr << "Error: camera settings are not defined " << std::endl;
+
     
 
 }
@@ -29,4 +42,7 @@ string ConfigReader::getScenePath()
 {
     return scene;
 }
-
+CameraSettings ConfigReader::getCameraSettings()
+{
+    return cameraSettings;
+}

@@ -5,7 +5,7 @@
             "id": "backpack",
             "type" : "model",
             "directory" : "../models/backpack/backpack.obj",
-            "position" : [0, 0.25, 0],
+            "position" : [0, 0, -0.25],
             "rotation" : [90, 0, 0], 
             "scale" : [0.05, 0.05, 0.05]
         },
