@@ -30,6 +30,8 @@ private:
     int width;
     int height;
 
+    double xpos, ypos;
+
     string vertexPath;
     string fragmentPath;
 
@@ -39,9 +41,9 @@ private:
 
 
 public:
-    Engine();
+    Engine(GLFWwindow* window);
     ~Engine() = default;
-    void init(string scenePath, GLFWwindow* window);
+    void init(string scenePath);
     void run();
     void shutdown();
 

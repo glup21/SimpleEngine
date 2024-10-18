@@ -5,17 +5,24 @@
 #include "shaderFactory.hpp"
 #include "sceneReader.hpp"
 
+bool isWindowFocused = true;
+vector<bool> keys(100, false);
 
-void printMat4(const glm::mat4& matrix) {
-    for (int i = 0; i < 4; ++i) {
-        for (int j = 0; j < 4; ++j) {
-            std::cout << matrix[j][i] << " ";
-        }
-        std::cout << std::endl;
+void window_focus_callback(GLFWwindow* window, int focused) {
+    isWindowFocused = (focused == GLFW_TRUE);
+}
+
+void key_callback(GLFWwindow* window, int key, int scancode, int action, int mods)
+{
+    if (action == GLFW_PRESS) {
+        keys[key] = true;  
+    }
+    else if (action == GLFW_RELEASE) {
+        keys[key] = false; 
     }
 }
 
-Engine::Engine() : drawObjectBuffer(){
+Engine::Engine(GLFWwindow* window) : drawObjectBuffer(){
     std::cout << "Engine constructor called. drawObjectBuffer initialized to nullptr." << std::endl;
     previousTime = std::chrono::high_resolution_clock::now();
 
@@ -28,12 +35,14 @@ Engine::Engine() : drawObjectBuffer(){
 
     defaultShaderProgram->attachShader(vertexShader);
     defaultShaderProgram->attachShader(fragmentShader);
+    
+    this->window = window;
+    camera = new Camera(window);
 
-    camera = new Camera();
 
 }
 
-void Engine::init(string scenePath, GLFWwindow* window)
+void Engine::init(string scenePath)
 {
     glfwGetWindowSize(window, &width, &height);
     SceneReader sceneReader(scenePath);
@@ -52,6 +61,9 @@ void Engine::init(string scenePath, GLFWwindow* window)
     inputManager = new Input(window);
 
     glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
+    glfwSetWindowFocusCallback(window, window_focus_callback);
+    glfwSetKeyCallback(window, key_callback);
+
     lastMousePosition = inputManager->getMousePos();
     defaultShaderProgram->link(); //We will link individual shader programs in models if we want
 
@@ -59,34 +71,25 @@ void Engine::init(string scenePath, GLFWwindow* window)
 }
 void Engine::run()
 {
-
-    /*
-        Clear screen
-        Update game objects
-        Draw each model
-        Update other events
-    
-    */
+    float deltaTime = calculateDeltaTime();
     glfwGetWindowSize(window, &width, &height);
+    //mouse movement
+    if(isWindowFocused)
+    {
+        glfwGetCursorPos(window, &xpos, &ypos);
 
-    // Get the current window size
-    glfwGetWindowSize(window, &width, &height);
+        vec2 mouseDelta(width / 2.0 - xpos, height / 2.0 - ypos);
 
-    // Center the cursor at the beginning of each frame
+        if (glm::length(mouseDelta) > 0.01f)
+        {
+            mouseDelta = glm::normalize(mouseDelta);
+            camera->changeTarget(-mouseDelta.x, mouseDelta.y, deltaTime);
+        }
+    }
     glfwSetCursorPos(window, width / 2.0, height / 2.0);
 
-    // Get the current mouse position (should be at the center now)
-    double xpos, ypos;
-    glfwGetCursorPos(window, &xpos, &ypos);
-
-    // Calculate the mouse delta using the center of the window
-    glm::vec2 currentMousePosition(xpos, ypos);
-    glm::vec2 mouseDelta = glm::vec2(width / 2.0, height / 2.0) - currentMousePosition;
-
-    // Update the camera target based on mouse delta
-    float sensitivity = 0.1f;
-    camera->changeTarget(mouseDelta.x * sensitivity, -mouseDelta.y * sensitivity);
-
+    //camera movement
+    camera->move(keys, deltaTime);
 
     defaultShaderProgram->setMat4("projectionMatrix", camera->getProjectionMatrix());
     defaultShaderProgram->setMat4("viewMatrix", camera->getViewMatrix());

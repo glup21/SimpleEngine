@@ -3,6 +3,11 @@
 #include "stb_image.h"
 #include "sceneReader.hpp"
 
+void framebuffer_size_callback(GLFWwindow* window, int width, int height) {
+    // Make the viewport match the new window size
+    glViewport(0, 0, width, height);
+}
+
 Application::Application(string scenePath): scenePath(scenePath)
 {
     
@@ -46,19 +51,20 @@ void Application::initialize()
     glfwGetVersion(&major, &minor, &revision);
     printf("Using GLFW %i.%i.%i\n", major, minor, revision);
 
-    engine = new Engine();
+    engine = new Engine(window);
+
+    glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);
 
 }
 
 void Application::run()
 {
 
-    engine->init(scenePath, window);
+    engine->init(scenePath);
     while (!glfwWindowShouldClose(window))
     {
 
         engine->run();
-    // put the stuff we’ve been drawing onto the display
         glfwPollEvents();
         glfwSwapBuffers(window);
     }

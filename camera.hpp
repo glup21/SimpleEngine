@@ -2,6 +2,7 @@
 #define CAMERA_H
 
 #include "shaderProgram.hpp"
+#include <GLFW/glfw3.h>
 
 using glm::vec3, glm::mat4;
 
@@ -12,28 +13,29 @@ private:
 	vec3 position;
 	vec3 upVector;
     vec3 target;
-	vec3 forwardVector;
+    vec3 currentTarget;
+    GLFWwindow* window;
 
-    float ratio = 16.0f/9.0f;
-    float angle = 70.0f;
-    float nearDistance = 0.01f;
+    float ratio;
+    float angle = 45.0f;
+    float nearDistance = 0.1f;
     float farDistance = 100.0f;
-    float speed = 0.1f;
     float alpha;
     float fi;
 
+    float sensitivity = 150.0f;
+    float speed = 0.1f;
+
 public:
-    Camera(float x = 0.0f, float y = 0.0f, float z = 0.0f, float alpha = 0.0f, float fi = 0.0f);
+    Camera(GLFWwindow* window);
     mat4 getViewMatrix() const;
-    mat4 getProjectionMatrix() const;
+    mat4 getProjectionMatrix();
     vec3 getPosition() const;
     vec3 getForwardVector() const;
+    vec3 getRightVector() const;
 
-    void forward();
-	void left();
-	void backward();
-	void right();
-    void changeTarget(float deltaX, float deltaY);
+    void move(vector<bool> keys, float deltaTime);
+    void changeTarget(float deltaX, float deltaY, float delta);
 };
 
 #endif

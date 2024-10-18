@@ -570,6 +570,7 @@ CMakeFiles/SimpleEngine.dir/camera.cpp.o: /home/idk/Documents/GitHub/SimpleEngin
   /usr/include/GL/gl.h \
   /usr/include/GL/glew.h \
   /usr/include/GL/glu.h \
+  /usr/include/GLFW/glfw3.h \
   /usr/include/alloca.h \
   /usr/include/asm-generic/errno-base.h \
   /usr/include/asm-generic/errno.h \
