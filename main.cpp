@@ -1,11 +1,6 @@
-// Open window and initalizes Engine
-
-//Include GLEW
 #include <GL/glew.h>
-//Include GLFW
 #include <GLFW/glfw3.h>
-
-//Include the standard C++ headers  
+ 
 #include <stdlib.h>
 #include <stdio.h>
 

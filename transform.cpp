@@ -23,27 +23,26 @@ Transform::Transform(vec3 position, vec3 rotationAxis, float rotationAngle, vec3
 void Transform::rotate(float angle, float x, float y, float z) 
 {
     mat4 rotationMatrix = glm::rotate(mat4(1.0f), glm::radians(angle), vec3(x, y, z));
-    transformMatrix = rotationMatrix * transformMatrix; // Pre-multiply for correct order
-    rotationVec = vec3(x, y, z); // Update rotation axis
-    rotationAngle += angle; // Accumulate rotation angle if needed
+    transformMatrix = rotationMatrix * transformMatrix; 
+    rotationVec = vec3(x, y, z); 
+    rotationAngle += angle; 
 }
 
 void Transform::translate(float x, float y, float z) 
 {
     mat4 translationMatrix = glm::translate(mat4(1.0f), vec3(x, y, z));
-    transformMatrix = translationMatrix * transformMatrix; // Pre-multiply for correct order
-    translationVec += vec3(x, y, z); // Accumulate translation
+    transformMatrix = translationMatrix * transformMatrix; 
+    translationVec += vec3(x, y, z); 
 }
 
 void Transform::scale(float x, float y, float z) 
 {
     mat4 scalingMatrix = glm::scale(mat4(1.0f), vec3(x, y, z));
-    transformMatrix = scalingMatrix * transformMatrix; // Pre-multiply for correct order
-    scaleVec.x *= x; // Cumulative scaling in X
-    scaleVec.y *= y; // Cumulative scaling in Y
-    scaleVec.z *= z; // Cumulative scaling in Z
+    transformMatrix = scalingMatrix * transformMatrix; 
+    scaleVec.x *= x; 
+    scaleVec.y *= y; 
+    scaleVec.z *= z; 
 }
-
 mat4 Transform::getTransformMatrix()
 {
     return transformMatrix;

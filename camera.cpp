@@ -61,7 +61,6 @@ void Camera::move(vector<bool> keys, float deltaTime)
         movement = glm::normalize(movement);
 
     position += movement * settings.movingSpeed * deltaTime;
-    std::cout << "Position: " << position.x << " " << position.y << " " << position.z << std::endl;
 
 }
 

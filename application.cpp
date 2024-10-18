@@ -3,8 +3,9 @@
 #include "stb_image.h"
 #include "sceneReader.hpp"
 
-void framebuffer_size_callback(GLFWwindow* window, int width, int height) {
-    // Make the viewport match the new window size
+void framebuffer_size_callback(GLFWwindow* window, int width, int height)
+{
+
     glViewport(0, 0, width, height);
 }
 

@@ -3,8 +3,10 @@
 #include <filesystem>
 #include <memory> 
 #include <unordered_map>
+
 namespace fs = std::filesystem;
 using std::unordered_map;
+
 unordered_map<string, Texture> texturesLoaded;
 
 Model::Model(string path, string ID, Transform transform, ShaderProgram* shaderProgram) 
@@ -16,20 +18,18 @@ Model::Model(string path, string ID, Transform transform, ShaderProgram* shaderP
 void Model::setup()
 {
     Assimp::Importer importer;
-    const aiScene *scene = importer.ReadFile(directory, aiProcess_Triangulate | aiProcess_FlipUVs);
+    const aiScene *scene = importer.ReadFile(directory, aiProcess_Triangulate | aiProcess_FlipUVs | aiProcess_JoinIdenticalVertices | aiProcess_SortByPType);
 
     if(!scene || scene->mFlags & AI_SCENE_FLAGS_INCOMPLETE || !scene->mRootNode) 
     {
-        std::cout << "Error: assimp:" << importer.GetErrorString() << std::endl;
+        std::cout << "Error: assimp: " << importer.GetErrorString() << std::endl;
         return;
     }
+
+    // Set directory for texture loading
     directory = directory.substr(0, directory.find_last_of('/'));
-
     processNode(scene->mRootNode, scene);
-    //shaderProgram->link();
-
 }
-
 
 void Model::processNode(aiNode *node, const aiScene *scene)
 {
@@ -55,25 +55,31 @@ Mesh Model::processMesh(aiMesh *mesh, const aiScene *scene)
         Vertex vertex;
 
         glm::vec3 vector;
+        vec3 normal;
         vector.x = mesh->mVertices[i].x;
         vector.y = mesh->mVertices[i].y;
         vector.z = mesh->mVertices[i].z;
         vertex.Position = vector;
 
-        vector.x = mesh->mNormals[i].x;
-        vector.y = mesh->mNormals[i].y;
-        vector.z = mesh->mNormals[i].z;
-        vertex.Normal = vector;  
+        if (mesh->HasNormals()) {
+            normal.x = mesh->mNormals[i].x;
+            normal.y = mesh->mNormals[i].y;
+            normal.z = mesh->mNormals[i].z;
 
-        if(mesh->mTextureCoords[0]) 
-        {
+            vertex.Normal = normal;
+        } else {
+            vertex.Normal = vec3(0.0f); // Optional: Set default normal
+        }
+
+        if (mesh->HasTextureCoords(0)) {
             glm::vec2 vec;
-            vec.x = mesh->mTextureCoords[0][i].x; 
+            vec.x = mesh->mTextureCoords[0][i].x;
             vec.y = mesh->mTextureCoords[0][i].y;
             vertex.TexCoords = vec;
         }
-        else
-            vertex.TexCoords = glm::vec2(0.0f, 0.0f);  
+        else {
+            vertex.TexCoords = glm::vec2(0.0f, 0.0f); // No texture coordinates
+        }
         
         vertices.push_back(vertex);
     }
@@ -84,12 +90,12 @@ Mesh Model::processMesh(aiMesh *mesh, const aiScene *scene)
         for(u_int64_t j = 0; j < face.mNumIndices; j++)
             indices.push_back(face.mIndices[j]);
     }  
-    // process material
+
+    // Process materials
     if(mesh->mMaterialIndex >= 0)
     {
         aiMaterial *material = scene->mMaterials[mesh->mMaterialIndex];
-        vector<Texture> diffuseMaps = loadMaterialTextures(material, 
-                                            aiTextureType_DIFFUSE, "texture_diffuse");
+        vector<Texture> diffuseMaps = loadMaterialTextures(material, aiTextureType_DIFFUSE, "texture_diffuse");
         textures.insert(textures.end(), diffuseMaps.begin(), diffuseMaps.end());
     }  
 
@@ -101,36 +107,32 @@ Mesh Model::processMesh(aiMesh *mesh, const aiScene *scene)
 vector<Texture> Model::loadMaterialTextures(aiMaterial *mat, aiTextureType type, string typeName)
 {
     vector<Texture> textures;
-    
+
     for(int i = 0; i < mat->GetTextureCount(type); i++)
     {
         aiString str;
         mat->GetTexture(type, i, &str);
-        bool skip = false;
+        
         string texturePath = directory + "/" + str.C_Str();
-        for(unsigned int j = 0; j < texturesLoaded.size(); j++)
+        
+        if(texturesLoaded.find(texturePath) != texturesLoaded.end())
         {
-            if(texturesLoaded.find(texturePath) != texturesLoaded.end())
-            {
-                textures.push_back(texturesLoaded[texturePath]);
-                skip = true; 
-                break;
-            }
+            textures.push_back(texturesLoaded[texturePath]);
+            continue; 
         }
         
-        if(!skip)
-        {
-            int width, height, nrChannels;
-            u_char* tmp = imageLoader.loadImage(texturePath, &height, &width, &nrChannels);
+        // Load texture
+        int width, height, nrChannels;
+        u_char* tmp = imageLoader.loadImage(texturePath, &height, &width, &nrChannels);
 
+        if (tmp) {
             Texture texture(tmp, width, height, nrChannels, typeName);
-
-            std::cout << "Loaded texture from path: " << texturePath << "\n";
             textures.push_back(texture);
-
             texturesLoaded[texturePath] = texture;
+            std::cout << "Loaded texture from path: " << texturePath << "\n";
+        } else {
+            std::cerr << "Failed to load texture from path: " << texturePath << "\n";
         }
-
     }
 
     return textures;
@@ -138,42 +140,20 @@ vector<Texture> Model::loadMaterialTextures(aiMaterial *mat, aiTextureType type,
 
 void Model::update(float delta) 
 {
-    // // Define the target rotation angle (180 degrees) in radians
-    // const float targetRotation = glm::radians(180.0f); // Target rotation in radians
-    // const float rotationSpeed = targetRotation / 5.0f; // 180 degrees over 5 seconds
-
-    // // Keep track of the current rotation
-    // static float currentRotation = 0.0f;
-
-    // // Calculate the new rotation based on delta time
-    // currentRotation += rotationSpeed * delta; // Increment the rotation
-
-    // // Clamp the current rotation to the target rotation
-    // if (currentRotation > targetRotation) {
-    //     currentRotation = targetRotation; // Prevent overshooting
-    // }
-
-    // // Apply the rotation to the model's transform
-    // transform.rotate(glm::degrees(rotationSpeed * delta), 0.0f, 0.0f, 1.0f); // Rotate around Z axis
-
-    // // Update each mesh's transform to reflect the new rotation
-    // for (Mesh& mesh : meshes) {
-    //     mesh.transform = transform; // Make sure to assign the updated transform
-    // }
+   
 }
 
 void Model::draw()
 {   
-
     for(u_int i = 0; i < meshes.size(); i++)
         meshes[i].draw();
-
-    
 }
+
 Transform Model::getTransform() const
 {
     return transform;
 }
+
 void Model::setTransform(const Transform& newTransform) 
 {
     transform = newTransform;
@@ -212,10 +192,8 @@ void Model::setScale(const vec3& newScale)
     }
 }
 
-
 mat4 Model::getTransformMatrix() 
 {
     return transform.getTransformMatrix();
 }
-
 

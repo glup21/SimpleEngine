@@ -42,11 +42,7 @@ Scene SceneReader::readScene(ShaderProgram* defaultShaderProgram)
                 transform.rotate(v_rotation.x, 1.0f, 0.0f, 0.0f); 
                 transform.rotate(v_rotation.y, 0.0f, 1.0f, 0.0f); 
                 transform.rotate(v_rotation.z, 0.0f, 0.0f, 1.0f);
-
                 transform.translate(v_position.x, v_position.y, v_position.z); 
-                
- 
-
 
                 Model* model = new Model(directory, id, transform, defaultShaderProgram); 
 

@@ -5,9 +5,9 @@
             "id": "forest",
             "type" : "model",
             "directory" : "../models/forest/Tree1.obj",
-            "position" : [0, 0, 0],
+            "position" : [0, -1, 0],
             "rotation" : [0, 0, 0], 
-            "scale" : [1, 1, 1]
+            "scale" : [0.02, 0.02, 0.02]
         }
     ]
 

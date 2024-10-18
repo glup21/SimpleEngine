@@ -44,7 +44,12 @@ Engine::Engine(GLFWwindow* window, CameraSettings cameraSettings) : drawObjectBu
 
 void Engine::init(string scenePath)
 {
+    glEnable(GL_DEPTH_TEST);
+    glDepthFunc(GL_LESS);
+    glEnable(GL_BLEND);
+    glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
     glfwGetWindowSize(window, &width, &height);
+    
     SceneReader sceneReader(scenePath);
     Scene scene = sceneReader.readScene(defaultShaderProgram);
 
