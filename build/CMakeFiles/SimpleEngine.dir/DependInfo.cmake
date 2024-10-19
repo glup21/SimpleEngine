@@ -8,21 +8,21 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/idk/Documents/GitHub/SimpleEngine/application.cpp" "CMakeFiles/SimpleEngine.dir/application.cpp.o" "gcc" "CMakeFiles/SimpleEngine.dir/application.cpp.o.d"
-  "/home/idk/Documents/GitHub/SimpleEngine/camera.cpp" "CMakeFiles/SimpleEngine.dir/camera.cpp.o" "gcc" "CMakeFiles/SimpleEngine.dir/camera.cpp.o.d"
-  "/home/idk/Documents/GitHub/SimpleEngine/configReader.cpp" "CMakeFiles/SimpleEngine.dir/configReader.cpp.o" "gcc" "CMakeFiles/SimpleEngine.dir/configReader.cpp.o.d"
-  "/home/idk/Documents/GitHub/SimpleEngine/engine.cpp" "CMakeFiles/SimpleEngine.dir/engine.cpp.o" "gcc" "CMakeFiles/SimpleEngine.dir/engine.cpp.o.d"
-  "/home/idk/Documents/GitHub/SimpleEngine/imageLoader.cpp" "CMakeFiles/SimpleEngine.dir/imageLoader.cpp.o" "gcc" "CMakeFiles/SimpleEngine.dir/imageLoader.cpp.o.d"
-  "/home/idk/Documents/GitHub/SimpleEngine/input.cpp" "CMakeFiles/SimpleEngine.dir/input.cpp.o" "gcc" "CMakeFiles/SimpleEngine.dir/input.cpp.o.d"
-  "/home/idk/Documents/GitHub/SimpleEngine/main.cpp" "CMakeFiles/SimpleEngine.dir/main.cpp.o" "gcc" "CMakeFiles/SimpleEngine.dir/main.cpp.o.d"
-  "/home/idk/Documents/GitHub/SimpleEngine/mesh.cpp" "CMakeFiles/SimpleEngine.dir/mesh.cpp.o" "gcc" "CMakeFiles/SimpleEngine.dir/mesh.cpp.o.d"
-  "/home/idk/Documents/GitHub/SimpleEngine/model.cpp" "CMakeFiles/SimpleEngine.dir/model.cpp.o" "gcc" "CMakeFiles/SimpleEngine.dir/model.cpp.o.d"
-  "/home/idk/Documents/GitHub/SimpleEngine/scene.cpp" "CMakeFiles/SimpleEngine.dir/scene.cpp.o" "gcc" "CMakeFiles/SimpleEngine.dir/scene.cpp.o.d"
-  "/home/idk/Documents/GitHub/SimpleEngine/sceneReader.cpp" "CMakeFiles/SimpleEngine.dir/sceneReader.cpp.o" "gcc" "CMakeFiles/SimpleEngine.dir/sceneReader.cpp.o.d"
-  "/home/idk/Documents/GitHub/SimpleEngine/shader.cpp" "CMakeFiles/SimpleEngine.dir/shader.cpp.o" "gcc" "CMakeFiles/SimpleEngine.dir/shader.cpp.o.d"
-  "/home/idk/Documents/GitHub/SimpleEngine/shaderProgram.cpp" "CMakeFiles/SimpleEngine.dir/shaderProgram.cpp.o" "gcc" "CMakeFiles/SimpleEngine.dir/shaderProgram.cpp.o.d"
-  "/home/idk/Documents/GitHub/SimpleEngine/texture.cpp" "CMakeFiles/SimpleEngine.dir/texture.cpp.o" "gcc" "CMakeFiles/SimpleEngine.dir/texture.cpp.o.d"
-  "/home/idk/Documents/GitHub/SimpleEngine/transform.cpp" "CMakeFiles/SimpleEngine.dir/transform.cpp.o" "gcc" "CMakeFiles/SimpleEngine.dir/transform.cpp.o.d"
+  "/home/idk/Documents/GitHub/SimpleEngine/core/src/application.cpp" "CMakeFiles/SimpleEngine.dir/core/src/application.cpp.o" "gcc" "CMakeFiles/SimpleEngine.dir/core/src/application.cpp.o.d"
+  "/home/idk/Documents/GitHub/SimpleEngine/core/src/config/configReader.cpp" "CMakeFiles/SimpleEngine.dir/core/src/config/configReader.cpp.o" "gcc" "CMakeFiles/SimpleEngine.dir/core/src/config/configReader.cpp.o.d"
+  "/home/idk/Documents/GitHub/SimpleEngine/core/src/engine/camera.cpp" "CMakeFiles/SimpleEngine.dir/core/src/engine/camera.cpp.o" "gcc" "CMakeFiles/SimpleEngine.dir/core/src/engine/camera.cpp.o.d"
+  "/home/idk/Documents/GitHub/SimpleEngine/core/src/engine/engine.cpp" "CMakeFiles/SimpleEngine.dir/core/src/engine/engine.cpp.o" "gcc" "CMakeFiles/SimpleEngine.dir/core/src/engine/engine.cpp.o.d"
+  "/home/idk/Documents/GitHub/SimpleEngine/core/src/engine/imageLoader.cpp" "CMakeFiles/SimpleEngine.dir/core/src/engine/imageLoader.cpp.o" "gcc" "CMakeFiles/SimpleEngine.dir/core/src/engine/imageLoader.cpp.o.d"
+  "/home/idk/Documents/GitHub/SimpleEngine/core/src/engine/input.cpp" "CMakeFiles/SimpleEngine.dir/core/src/engine/input.cpp.o" "gcc" "CMakeFiles/SimpleEngine.dir/core/src/engine/input.cpp.o.d"
+  "/home/idk/Documents/GitHub/SimpleEngine/core/src/engine/shader.cpp" "CMakeFiles/SimpleEngine.dir/core/src/engine/shader.cpp.o" "gcc" "CMakeFiles/SimpleEngine.dir/core/src/engine/shader.cpp.o.d"
+  "/home/idk/Documents/GitHub/SimpleEngine/core/src/engine/shaderProgram.cpp" "CMakeFiles/SimpleEngine.dir/core/src/engine/shaderProgram.cpp.o" "gcc" "CMakeFiles/SimpleEngine.dir/core/src/engine/shaderProgram.cpp.o.d"
+  "/home/idk/Documents/GitHub/SimpleEngine/core/src/engine/texture.cpp" "CMakeFiles/SimpleEngine.dir/core/src/engine/texture.cpp.o" "gcc" "CMakeFiles/SimpleEngine.dir/core/src/engine/texture.cpp.o.d"
+  "/home/idk/Documents/GitHub/SimpleEngine/core/src/engine/transform.cpp" "CMakeFiles/SimpleEngine.dir/core/src/engine/transform.cpp.o" "gcc" "CMakeFiles/SimpleEngine.dir/core/src/engine/transform.cpp.o.d"
+  "/home/idk/Documents/GitHub/SimpleEngine/core/src/main.cpp" "CMakeFiles/SimpleEngine.dir/core/src/main.cpp.o" "gcc" "CMakeFiles/SimpleEngine.dir/core/src/main.cpp.o.d"
+  "/home/idk/Documents/GitHub/SimpleEngine/core/src/scene/mesh.cpp" "CMakeFiles/SimpleEngine.dir/core/src/scene/mesh.cpp.o" "gcc" "CMakeFiles/SimpleEngine.dir/core/src/scene/mesh.cpp.o.d"
+  "/home/idk/Documents/GitHub/SimpleEngine/core/src/scene/model.cpp" "CMakeFiles/SimpleEngine.dir/core/src/scene/model.cpp.o" "gcc" "CMakeFiles/SimpleEngine.dir/core/src/scene/model.cpp.o.d"
+  "/home/idk/Documents/GitHub/SimpleEngine/core/src/scene/scene.cpp" "CMakeFiles/SimpleEngine.dir/core/src/scene/scene.cpp.o" "gcc" "CMakeFiles/SimpleEngine.dir/core/src/scene/scene.cpp.o.d"
+  "/home/idk/Documents/GitHub/SimpleEngine/core/src/scene/sceneReader.cpp" "CMakeFiles/SimpleEngine.dir/core/src/scene/sceneReader.cpp.o" "gcc" "CMakeFiles/SimpleEngine.dir/core/src/scene/sceneReader.cpp.o.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

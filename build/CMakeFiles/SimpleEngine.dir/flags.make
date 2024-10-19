@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/g++
 CXX_DEFINES = 
 
-CXX_INCLUDES = 
+CXX_INCLUDES = -I/home/idk/Documents/GitHub/SimpleEngine/core/headers
 
 CXX_FLAGS =  -Wall -g -std=gnu++17
 

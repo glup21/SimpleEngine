@@ -129,365 +129,365 @@ SimpleEngine/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/SimpleEngine.dir/build.make CMakeFiles/SimpleEngine.dir/build
 .PHONY : SimpleEngine/fast
 
-application.o: application.cpp.o
-.PHONY : application.o
+core/src/application.o: core/src/application.cpp.o
+.PHONY : core/src/application.o
 
 # target to build an object file
-application.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SimpleEngine.dir/build.make CMakeFiles/SimpleEngine.dir/application.cpp.o
-.PHONY : application.cpp.o
+core/src/application.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SimpleEngine.dir/build.make CMakeFiles/SimpleEngine.dir/core/src/application.cpp.o
+.PHONY : core/src/application.cpp.o
 
-application.i: application.cpp.i
-.PHONY : application.i
+core/src/application.i: core/src/application.cpp.i
+.PHONY : core/src/application.i
 
 # target to preprocess a source file
-application.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SimpleEngine.dir/build.make CMakeFiles/SimpleEngine.dir/application.cpp.i
-.PHONY : application.cpp.i
+core/src/application.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SimpleEngine.dir/build.make CMakeFiles/SimpleEngine.dir/core/src/application.cpp.i
+.PHONY : core/src/application.cpp.i
 
-application.s: application.cpp.s
-.PHONY : application.s
+core/src/application.s: core/src/application.cpp.s
+.PHONY : core/src/application.s
 
 # target to generate assembly for a file
-application.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SimpleEngine.dir/build.make CMakeFiles/SimpleEngine.dir/application.cpp.s
-.PHONY : application.cpp.s
+core/src/application.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SimpleEngine.dir/build.make CMakeFiles/SimpleEngine.dir/core/src/application.cpp.s
+.PHONY : core/src/application.cpp.s
 
-camera.o: camera.cpp.o
-.PHONY : camera.o
+core/src/config/configReader.o: core/src/config/configReader.cpp.o
+.PHONY : core/src/config/configReader.o
 
 # target to build an object file
-camera.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SimpleEngine.dir/build.make CMakeFiles/SimpleEngine.dir/camera.cpp.o
-.PHONY : camera.cpp.o
+core/src/config/configReader.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SimpleEngine.dir/build.make CMakeFiles/SimpleEngine.dir/core/src/config/configReader.cpp.o
+.PHONY : core/src/config/configReader.cpp.o
 
-camera.i: camera.cpp.i
-.PHONY : camera.i
+core/src/config/configReader.i: core/src/config/configReader.cpp.i
+.PHONY : core/src/config/configReader.i
 
 # target to preprocess a source file
-camera.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SimpleEngine.dir/build.make CMakeFiles/SimpleEngine.dir/camera.cpp.i
-.PHONY : camera.cpp.i
+core/src/config/configReader.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SimpleEngine.dir/build.make CMakeFiles/SimpleEngine.dir/core/src/config/configReader.cpp.i
+.PHONY : core/src/config/configReader.cpp.i
 
-camera.s: camera.cpp.s
-.PHONY : camera.s
+core/src/config/configReader.s: core/src/config/configReader.cpp.s
+.PHONY : core/src/config/configReader.s
 
 # target to generate assembly for a file
-camera.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SimpleEngine.dir/build.make CMakeFiles/SimpleEngine.dir/camera.cpp.s
-.PHONY : camera.cpp.s
+core/src/config/configReader.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SimpleEngine.dir/build.make CMakeFiles/SimpleEngine.dir/core/src/config/configReader.cpp.s
+.PHONY : core/src/config/configReader.cpp.s
 
-configReader.o: configReader.cpp.o
-.PHONY : configReader.o
+core/src/engine/camera.o: core/src/engine/camera.cpp.o
+.PHONY : core/src/engine/camera.o
 
 # target to build an object file
-configReader.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SimpleEngine.dir/build.make CMakeFiles/SimpleEngine.dir/configReader.cpp.o
-.PHONY : configReader.cpp.o
+core/src/engine/camera.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SimpleEngine.dir/build.make CMakeFiles/SimpleEngine.dir/core/src/engine/camera.cpp.o
+.PHONY : core/src/engine/camera.cpp.o
 
-configReader.i: configReader.cpp.i
-.PHONY : configReader.i
+core/src/engine/camera.i: core/src/engine/camera.cpp.i
+.PHONY : core/src/engine/camera.i
 
 # target to preprocess a source file
-configReader.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SimpleEngine.dir/build.make CMakeFiles/SimpleEngine.dir/configReader.cpp.i
-.PHONY : configReader.cpp.i
+core/src/engine/camera.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SimpleEngine.dir/build.make CMakeFiles/SimpleEngine.dir/core/src/engine/camera.cpp.i
+.PHONY : core/src/engine/camera.cpp.i
 
-configReader.s: configReader.cpp.s
-.PHONY : configReader.s
+core/src/engine/camera.s: core/src/engine/camera.cpp.s
+.PHONY : core/src/engine/camera.s
 
 # target to generate assembly for a file
-configReader.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SimpleEngine.dir/build.make CMakeFiles/SimpleEngine.dir/configReader.cpp.s
-.PHONY : configReader.cpp.s
+core/src/engine/camera.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SimpleEngine.dir/build.make CMakeFiles/SimpleEngine.dir/core/src/engine/camera.cpp.s
+.PHONY : core/src/engine/camera.cpp.s
 
-engine.o: engine.cpp.o
-.PHONY : engine.o
+core/src/engine/engine.o: core/src/engine/engine.cpp.o
+.PHONY : core/src/engine/engine.o
 
 # target to build an object file
-engine.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SimpleEngine.dir/build.make CMakeFiles/SimpleEngine.dir/engine.cpp.o
-.PHONY : engine.cpp.o
+core/src/engine/engine.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SimpleEngine.dir/build.make CMakeFiles/SimpleEngine.dir/core/src/engine/engine.cpp.o
+.PHONY : core/src/engine/engine.cpp.o
 
-engine.i: engine.cpp.i
-.PHONY : engine.i
+core/src/engine/engine.i: core/src/engine/engine.cpp.i
+.PHONY : core/src/engine/engine.i
 
 # target to preprocess a source file
-engine.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SimpleEngine.dir/build.make CMakeFiles/SimpleEngine.dir/engine.cpp.i
-.PHONY : engine.cpp.i
+core/src/engine/engine.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SimpleEngine.dir/build.make CMakeFiles/SimpleEngine.dir/core/src/engine/engine.cpp.i
+.PHONY : core/src/engine/engine.cpp.i
 
-engine.s: engine.cpp.s
-.PHONY : engine.s
+core/src/engine/engine.s: core/src/engine/engine.cpp.s
+.PHONY : core/src/engine/engine.s
 
 # target to generate assembly for a file
-engine.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SimpleEngine.dir/build.make CMakeFiles/SimpleEngine.dir/engine.cpp.s
-.PHONY : engine.cpp.s
+core/src/engine/engine.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SimpleEngine.dir/build.make CMakeFiles/SimpleEngine.dir/core/src/engine/engine.cpp.s
+.PHONY : core/src/engine/engine.cpp.s
 
-imageLoader.o: imageLoader.cpp.o
-.PHONY : imageLoader.o
+core/src/engine/imageLoader.o: core/src/engine/imageLoader.cpp.o
+.PHONY : core/src/engine/imageLoader.o
 
 # target to build an object file
-imageLoader.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SimpleEngine.dir/build.make CMakeFiles/SimpleEngine.dir/imageLoader.cpp.o
-.PHONY : imageLoader.cpp.o
+core/src/engine/imageLoader.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SimpleEngine.dir/build.make CMakeFiles/SimpleEngine.dir/core/src/engine/imageLoader.cpp.o
+.PHONY : core/src/engine/imageLoader.cpp.o
 
-imageLoader.i: imageLoader.cpp.i
-.PHONY : imageLoader.i
+core/src/engine/imageLoader.i: core/src/engine/imageLoader.cpp.i
+.PHONY : core/src/engine/imageLoader.i
 
 # target to preprocess a source file
-imageLoader.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SimpleEngine.dir/build.make CMakeFiles/SimpleEngine.dir/imageLoader.cpp.i
-.PHONY : imageLoader.cpp.i
+core/src/engine/imageLoader.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SimpleEngine.dir/build.make CMakeFiles/SimpleEngine.dir/core/src/engine/imageLoader.cpp.i
+.PHONY : core/src/engine/imageLoader.cpp.i
 
-imageLoader.s: imageLoader.cpp.s
-.PHONY : imageLoader.s
+core/src/engine/imageLoader.s: core/src/engine/imageLoader.cpp.s
+.PHONY : core/src/engine/imageLoader.s
 
 # target to generate assembly for a file
-imageLoader.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SimpleEngine.dir/build.make CMakeFiles/SimpleEngine.dir/imageLoader.cpp.s
-.PHONY : imageLoader.cpp.s
+core/src/engine/imageLoader.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SimpleEngine.dir/build.make CMakeFiles/SimpleEngine.dir/core/src/engine/imageLoader.cpp.s
+.PHONY : core/src/engine/imageLoader.cpp.s
 
-input.o: input.cpp.o
-.PHONY : input.o
+core/src/engine/input.o: core/src/engine/input.cpp.o
+.PHONY : core/src/engine/input.o
 
 # target to build an object file
-input.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SimpleEngine.dir/build.make CMakeFiles/SimpleEngine.dir/input.cpp.o
-.PHONY : input.cpp.o
+core/src/engine/input.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SimpleEngine.dir/build.make CMakeFiles/SimpleEngine.dir/core/src/engine/input.cpp.o
+.PHONY : core/src/engine/input.cpp.o
 
-input.i: input.cpp.i
-.PHONY : input.i
+core/src/engine/input.i: core/src/engine/input.cpp.i
+.PHONY : core/src/engine/input.i
 
 # target to preprocess a source file
-input.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SimpleEngine.dir/build.make CMakeFiles/SimpleEngine.dir/input.cpp.i
-.PHONY : input.cpp.i
+core/src/engine/input.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SimpleEngine.dir/build.make CMakeFiles/SimpleEngine.dir/core/src/engine/input.cpp.i
+.PHONY : core/src/engine/input.cpp.i
 
-input.s: input.cpp.s
-.PHONY : input.s
+core/src/engine/input.s: core/src/engine/input.cpp.s
+.PHONY : core/src/engine/input.s
 
 # target to generate assembly for a file
-input.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SimpleEngine.dir/build.make CMakeFiles/SimpleEngine.dir/input.cpp.s
-.PHONY : input.cpp.s
+core/src/engine/input.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SimpleEngine.dir/build.make CMakeFiles/SimpleEngine.dir/core/src/engine/input.cpp.s
+.PHONY : core/src/engine/input.cpp.s
 
-main.o: main.cpp.o
-.PHONY : main.o
+core/src/engine/shader.o: core/src/engine/shader.cpp.o
+.PHONY : core/src/engine/shader.o
 
 # target to build an object file
-main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SimpleEngine.dir/build.make CMakeFiles/SimpleEngine.dir/main.cpp.o
-.PHONY : main.cpp.o
+core/src/engine/shader.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SimpleEngine.dir/build.make CMakeFiles/SimpleEngine.dir/core/src/engine/shader.cpp.o
+.PHONY : core/src/engine/shader.cpp.o
 
-main.i: main.cpp.i
-.PHONY : main.i
+core/src/engine/shader.i: core/src/engine/shader.cpp.i
+.PHONY : core/src/engine/shader.i
 
 # target to preprocess a source file
-main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SimpleEngine.dir/build.make CMakeFiles/SimpleEngine.dir/main.cpp.i
-.PHONY : main.cpp.i
+core/src/engine/shader.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SimpleEngine.dir/build.make CMakeFiles/SimpleEngine.dir/core/src/engine/shader.cpp.i
+.PHONY : core/src/engine/shader.cpp.i
 
-main.s: main.cpp.s
-.PHONY : main.s
+core/src/engine/shader.s: core/src/engine/shader.cpp.s
+.PHONY : core/src/engine/shader.s
 
 # target to generate assembly for a file
-main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SimpleEngine.dir/build.make CMakeFiles/SimpleEngine.dir/main.cpp.s
-.PHONY : main.cpp.s
+core/src/engine/shader.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SimpleEngine.dir/build.make CMakeFiles/SimpleEngine.dir/core/src/engine/shader.cpp.s
+.PHONY : core/src/engine/shader.cpp.s
 
-mesh.o: mesh.cpp.o
-.PHONY : mesh.o
+core/src/engine/shaderProgram.o: core/src/engine/shaderProgram.cpp.o
+.PHONY : core/src/engine/shaderProgram.o
 
 # target to build an object file
-mesh.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SimpleEngine.dir/build.make CMakeFiles/SimpleEngine.dir/mesh.cpp.o
-.PHONY : mesh.cpp.o
+core/src/engine/shaderProgram.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SimpleEngine.dir/build.make CMakeFiles/SimpleEngine.dir/core/src/engine/shaderProgram.cpp.o
+.PHONY : core/src/engine/shaderProgram.cpp.o
 
-mesh.i: mesh.cpp.i
-.PHONY : mesh.i
+core/src/engine/shaderProgram.i: core/src/engine/shaderProgram.cpp.i
+.PHONY : core/src/engine/shaderProgram.i
 
 # target to preprocess a source file
-mesh.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SimpleEngine.dir/build.make CMakeFiles/SimpleEngine.dir/mesh.cpp.i
-.PHONY : mesh.cpp.i
+core/src/engine/shaderProgram.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SimpleEngine.dir/build.make CMakeFiles/SimpleEngine.dir/core/src/engine/shaderProgram.cpp.i
+.PHONY : core/src/engine/shaderProgram.cpp.i
 
-mesh.s: mesh.cpp.s
-.PHONY : mesh.s
+core/src/engine/shaderProgram.s: core/src/engine/shaderProgram.cpp.s
+.PHONY : core/src/engine/shaderProgram.s
 
 # target to generate assembly for a file
-mesh.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SimpleEngine.dir/build.make CMakeFiles/SimpleEngine.dir/mesh.cpp.s
-.PHONY : mesh.cpp.s
+core/src/engine/shaderProgram.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SimpleEngine.dir/build.make CMakeFiles/SimpleEngine.dir/core/src/engine/shaderProgram.cpp.s
+.PHONY : core/src/engine/shaderProgram.cpp.s
 
-model.o: model.cpp.o
-.PHONY : model.o
+core/src/engine/texture.o: core/src/engine/texture.cpp.o
+.PHONY : core/src/engine/texture.o
 
 # target to build an object file
-model.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SimpleEngine.dir/build.make CMakeFiles/SimpleEngine.dir/model.cpp.o
-.PHONY : model.cpp.o
+core/src/engine/texture.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SimpleEngine.dir/build.make CMakeFiles/SimpleEngine.dir/core/src/engine/texture.cpp.o
+.PHONY : core/src/engine/texture.cpp.o
 
-model.i: model.cpp.i
-.PHONY : model.i
+core/src/engine/texture.i: core/src/engine/texture.cpp.i
+.PHONY : core/src/engine/texture.i
 
 # target to preprocess a source file
-model.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SimpleEngine.dir/build.make CMakeFiles/SimpleEngine.dir/model.cpp.i
-.PHONY : model.cpp.i
+core/src/engine/texture.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SimpleEngine.dir/build.make CMakeFiles/SimpleEngine.dir/core/src/engine/texture.cpp.i
+.PHONY : core/src/engine/texture.cpp.i
 
-model.s: model.cpp.s
-.PHONY : model.s
+core/src/engine/texture.s: core/src/engine/texture.cpp.s
+.PHONY : core/src/engine/texture.s
 
 # target to generate assembly for a file
-model.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SimpleEngine.dir/build.make CMakeFiles/SimpleEngine.dir/model.cpp.s
-.PHONY : model.cpp.s
+core/src/engine/texture.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SimpleEngine.dir/build.make CMakeFiles/SimpleEngine.dir/core/src/engine/texture.cpp.s
+.PHONY : core/src/engine/texture.cpp.s
 
-scene.o: scene.cpp.o
-.PHONY : scene.o
+core/src/engine/transform.o: core/src/engine/transform.cpp.o
+.PHONY : core/src/engine/transform.o
 
 # target to build an object file
-scene.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SimpleEngine.dir/build.make CMakeFiles/SimpleEngine.dir/scene.cpp.o
-.PHONY : scene.cpp.o
+core/src/engine/transform.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SimpleEngine.dir/build.make CMakeFiles/SimpleEngine.dir/core/src/engine/transform.cpp.o
+.PHONY : core/src/engine/transform.cpp.o
 
-scene.i: scene.cpp.i
-.PHONY : scene.i
+core/src/engine/transform.i: core/src/engine/transform.cpp.i
+.PHONY : core/src/engine/transform.i
 
 # target to preprocess a source file
-scene.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SimpleEngine.dir/build.make CMakeFiles/SimpleEngine.dir/scene.cpp.i
-.PHONY : scene.cpp.i
+core/src/engine/transform.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SimpleEngine.dir/build.make CMakeFiles/SimpleEngine.dir/core/src/engine/transform.cpp.i
+.PHONY : core/src/engine/transform.cpp.i
 
-scene.s: scene.cpp.s
-.PHONY : scene.s
+core/src/engine/transform.s: core/src/engine/transform.cpp.s
+.PHONY : core/src/engine/transform.s
 
 # target to generate assembly for a file
-scene.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SimpleEngine.dir/build.make CMakeFiles/SimpleEngine.dir/scene.cpp.s
-.PHONY : scene.cpp.s
+core/src/engine/transform.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SimpleEngine.dir/build.make CMakeFiles/SimpleEngine.dir/core/src/engine/transform.cpp.s
+.PHONY : core/src/engine/transform.cpp.s
 
-sceneReader.o: sceneReader.cpp.o
-.PHONY : sceneReader.o
+core/src/main.o: core/src/main.cpp.o
+.PHONY : core/src/main.o
 
 # target to build an object file
-sceneReader.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SimpleEngine.dir/build.make CMakeFiles/SimpleEngine.dir/sceneReader.cpp.o
-.PHONY : sceneReader.cpp.o
+core/src/main.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SimpleEngine.dir/build.make CMakeFiles/SimpleEngine.dir/core/src/main.cpp.o
+.PHONY : core/src/main.cpp.o
 
-sceneReader.i: sceneReader.cpp.i
-.PHONY : sceneReader.i
+core/src/main.i: core/src/main.cpp.i
+.PHONY : core/src/main.i
 
 # target to preprocess a source file
-sceneReader.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SimpleEngine.dir/build.make CMakeFiles/SimpleEngine.dir/sceneReader.cpp.i
-.PHONY : sceneReader.cpp.i
+core/src/main.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SimpleEngine.dir/build.make CMakeFiles/SimpleEngine.dir/core/src/main.cpp.i
+.PHONY : core/src/main.cpp.i
 
-sceneReader.s: sceneReader.cpp.s
-.PHONY : sceneReader.s
+core/src/main.s: core/src/main.cpp.s
+.PHONY : core/src/main.s
 
 # target to generate assembly for a file
-sceneReader.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SimpleEngine.dir/build.make CMakeFiles/SimpleEngine.dir/sceneReader.cpp.s
-.PHONY : sceneReader.cpp.s
+core/src/main.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SimpleEngine.dir/build.make CMakeFiles/SimpleEngine.dir/core/src/main.cpp.s
+.PHONY : core/src/main.cpp.s
 
-shader.o: shader.cpp.o
-.PHONY : shader.o
+core/src/scene/mesh.o: core/src/scene/mesh.cpp.o
+.PHONY : core/src/scene/mesh.o
 
 # target to build an object file
-shader.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SimpleEngine.dir/build.make CMakeFiles/SimpleEngine.dir/shader.cpp.o
-.PHONY : shader.cpp.o
+core/src/scene/mesh.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SimpleEngine.dir/build.make CMakeFiles/SimpleEngine.dir/core/src/scene/mesh.cpp.o
+.PHONY : core/src/scene/mesh.cpp.o
 
-shader.i: shader.cpp.i
-.PHONY : shader.i
+core/src/scene/mesh.i: core/src/scene/mesh.cpp.i
+.PHONY : core/src/scene/mesh.i
 
 # target to preprocess a source file
-shader.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SimpleEngine.dir/build.make CMakeFiles/SimpleEngine.dir/shader.cpp.i
-.PHONY : shader.cpp.i
+core/src/scene/mesh.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SimpleEngine.dir/build.make CMakeFiles/SimpleEngine.dir/core/src/scene/mesh.cpp.i
+.PHONY : core/src/scene/mesh.cpp.i
 
-shader.s: shader.cpp.s
-.PHONY : shader.s
+core/src/scene/mesh.s: core/src/scene/mesh.cpp.s
+.PHONY : core/src/scene/mesh.s
 
 # target to generate assembly for a file
-shader.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SimpleEngine.dir/build.make CMakeFiles/SimpleEngine.dir/shader.cpp.s
-.PHONY : shader.cpp.s
+core/src/scene/mesh.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SimpleEngine.dir/build.make CMakeFiles/SimpleEngine.dir/core/src/scene/mesh.cpp.s
+.PHONY : core/src/scene/mesh.cpp.s
 
-shaderProgram.o: shaderProgram.cpp.o
-.PHONY : shaderProgram.o
+core/src/scene/model.o: core/src/scene/model.cpp.o
+.PHONY : core/src/scene/model.o
 
 # target to build an object file
-shaderProgram.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SimpleEngine.dir/build.make CMakeFiles/SimpleEngine.dir/shaderProgram.cpp.o
-.PHONY : shaderProgram.cpp.o
+core/src/scene/model.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SimpleEngine.dir/build.make CMakeFiles/SimpleEngine.dir/core/src/scene/model.cpp.o
+.PHONY : core/src/scene/model.cpp.o
 
-shaderProgram.i: shaderProgram.cpp.i
-.PHONY : shaderProgram.i
+core/src/scene/model.i: core/src/scene/model.cpp.i
+.PHONY : core/src/scene/model.i
 
 # target to preprocess a source file
-shaderProgram.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SimpleEngine.dir/build.make CMakeFiles/SimpleEngine.dir/shaderProgram.cpp.i
-.PHONY : shaderProgram.cpp.i
+core/src/scene/model.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SimpleEngine.dir/build.make CMakeFiles/SimpleEngine.dir/core/src/scene/model.cpp.i
+.PHONY : core/src/scene/model.cpp.i
 
-shaderProgram.s: shaderProgram.cpp.s
-.PHONY : shaderProgram.s
+core/src/scene/model.s: core/src/scene/model.cpp.s
+.PHONY : core/src/scene/model.s
 
 # target to generate assembly for a file
-shaderProgram.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SimpleEngine.dir/build.make CMakeFiles/SimpleEngine.dir/shaderProgram.cpp.s
-.PHONY : shaderProgram.cpp.s
+core/src/scene/model.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SimpleEngine.dir/build.make CMakeFiles/SimpleEngine.dir/core/src/scene/model.cpp.s
+.PHONY : core/src/scene/model.cpp.s
 
-texture.o: texture.cpp.o
-.PHONY : texture.o
+core/src/scene/scene.o: core/src/scene/scene.cpp.o
+.PHONY : core/src/scene/scene.o
 
 # target to build an object file
-texture.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SimpleEngine.dir/build.make CMakeFiles/SimpleEngine.dir/texture.cpp.o
-.PHONY : texture.cpp.o
+core/src/scene/scene.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SimpleEngine.dir/build.make CMakeFiles/SimpleEngine.dir/core/src/scene/scene.cpp.o
+.PHONY : core/src/scene/scene.cpp.o
 
-texture.i: texture.cpp.i
-.PHONY : texture.i
+core/src/scene/scene.i: core/src/scene/scene.cpp.i
+.PHONY : core/src/scene/scene.i
 
 # target to preprocess a source file
-texture.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SimpleEngine.dir/build.make CMakeFiles/SimpleEngine.dir/texture.cpp.i
-.PHONY : texture.cpp.i
+core/src/scene/scene.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SimpleEngine.dir/build.make CMakeFiles/SimpleEngine.dir/core/src/scene/scene.cpp.i
+.PHONY : core/src/scene/scene.cpp.i
 
-texture.s: texture.cpp.s
-.PHONY : texture.s
+core/src/scene/scene.s: core/src/scene/scene.cpp.s
+.PHONY : core/src/scene/scene.s
 
 # target to generate assembly for a file
-texture.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SimpleEngine.dir/build.make CMakeFiles/SimpleEngine.dir/texture.cpp.s
-.PHONY : texture.cpp.s
+core/src/scene/scene.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SimpleEngine.dir/build.make CMakeFiles/SimpleEngine.dir/core/src/scene/scene.cpp.s
+.PHONY : core/src/scene/scene.cpp.s
 
-transform.o: transform.cpp.o
-.PHONY : transform.o
+core/src/scene/sceneReader.o: core/src/scene/sceneReader.cpp.o
+.PHONY : core/src/scene/sceneReader.o
 
 # target to build an object file
-transform.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SimpleEngine.dir/build.make CMakeFiles/SimpleEngine.dir/transform.cpp.o
-.PHONY : transform.cpp.o
+core/src/scene/sceneReader.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SimpleEngine.dir/build.make CMakeFiles/SimpleEngine.dir/core/src/scene/sceneReader.cpp.o
+.PHONY : core/src/scene/sceneReader.cpp.o
 
-transform.i: transform.cpp.i
-.PHONY : transform.i
+core/src/scene/sceneReader.i: core/src/scene/sceneReader.cpp.i
+.PHONY : core/src/scene/sceneReader.i
 
 # target to preprocess a source file
-transform.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SimpleEngine.dir/build.make CMakeFiles/SimpleEngine.dir/transform.cpp.i
-.PHONY : transform.cpp.i
+core/src/scene/sceneReader.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SimpleEngine.dir/build.make CMakeFiles/SimpleEngine.dir/core/src/scene/sceneReader.cpp.i
+.PHONY : core/src/scene/sceneReader.cpp.i
 
-transform.s: transform.cpp.s
-.PHONY : transform.s
+core/src/scene/sceneReader.s: core/src/scene/sceneReader.cpp.s
+.PHONY : core/src/scene/sceneReader.s
 
 # target to generate assembly for a file
-transform.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SimpleEngine.dir/build.make CMakeFiles/SimpleEngine.dir/transform.cpp.s
-.PHONY : transform.cpp.s
+core/src/scene/sceneReader.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SimpleEngine.dir/build.make CMakeFiles/SimpleEngine.dir/core/src/scene/sceneReader.cpp.s
+.PHONY : core/src/scene/sceneReader.cpp.s
 
 # Help Target
 help:
@@ -498,51 +498,51 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... SimpleEngine"
-	@echo "... application.o"
-	@echo "... application.i"
-	@echo "... application.s"
-	@echo "... camera.o"
-	@echo "... camera.i"
-	@echo "... camera.s"
-	@echo "... configReader.o"
-	@echo "... configReader.i"
-	@echo "... configReader.s"
-	@echo "... engine.o"
-	@echo "... engine.i"
-	@echo "... engine.s"
-	@echo "... imageLoader.o"
-	@echo "... imageLoader.i"
-	@echo "... imageLoader.s"
-	@echo "... input.o"
-	@echo "... input.i"
-	@echo "... input.s"
-	@echo "... main.o"
-	@echo "... main.i"
-	@echo "... main.s"
-	@echo "... mesh.o"
-	@echo "... mesh.i"
-	@echo "... mesh.s"
-	@echo "... model.o"
-	@echo "... model.i"
-	@echo "... model.s"
-	@echo "... scene.o"
-	@echo "... scene.i"
-	@echo "... scene.s"
-	@echo "... sceneReader.o"
-	@echo "... sceneReader.i"
-	@echo "... sceneReader.s"
-	@echo "... shader.o"
-	@echo "... shader.i"
-	@echo "... shader.s"
-	@echo "... shaderProgram.o"
-	@echo "... shaderProgram.i"
-	@echo "... shaderProgram.s"
-	@echo "... texture.o"
-	@echo "... texture.i"
-	@echo "... texture.s"
-	@echo "... transform.o"
-	@echo "... transform.i"
-	@echo "... transform.s"
+	@echo "... core/src/application.o"
+	@echo "... core/src/application.i"
+	@echo "... core/src/application.s"
+	@echo "... core/src/config/configReader.o"
+	@echo "... core/src/config/configReader.i"
+	@echo "... core/src/config/configReader.s"
+	@echo "... core/src/engine/camera.o"
+	@echo "... core/src/engine/camera.i"
+	@echo "... core/src/engine/camera.s"
+	@echo "... core/src/engine/engine.o"
+	@echo "... core/src/engine/engine.i"
+	@echo "... core/src/engine/engine.s"
+	@echo "... core/src/engine/imageLoader.o"
+	@echo "... core/src/engine/imageLoader.i"
+	@echo "... core/src/engine/imageLoader.s"
+	@echo "... core/src/engine/input.o"
+	@echo "... core/src/engine/input.i"
+	@echo "... core/src/engine/input.s"
+	@echo "... core/src/engine/shader.o"
+	@echo "... core/src/engine/shader.i"
+	@echo "... core/src/engine/shader.s"
+	@echo "... core/src/engine/shaderProgram.o"
+	@echo "... core/src/engine/shaderProgram.i"
+	@echo "... core/src/engine/shaderProgram.s"
+	@echo "... core/src/engine/texture.o"
+	@echo "... core/src/engine/texture.i"
+	@echo "... core/src/engine/texture.s"
+	@echo "... core/src/engine/transform.o"
+	@echo "... core/src/engine/transform.i"
+	@echo "... core/src/engine/transform.s"
+	@echo "... core/src/main.o"
+	@echo "... core/src/main.i"
+	@echo "... core/src/main.s"
+	@echo "... core/src/scene/mesh.o"
+	@echo "... core/src/scene/mesh.i"
+	@echo "... core/src/scene/mesh.s"
+	@echo "... core/src/scene/model.o"
+	@echo "... core/src/scene/model.i"
+	@echo "... core/src/scene/model.s"
+	@echo "... core/src/scene/scene.o"
+	@echo "... core/src/scene/scene.i"
+	@echo "... core/src/scene/scene.s"
+	@echo "... core/src/scene/sceneReader.o"
+	@echo "... core/src/scene/sceneReader.i"
+	@echo "... core/src/scene/sceneReader.s"
 .PHONY : help
 
 

@@ -16,22 +16,28 @@ include_directories(${ASSIMP_INCLUDE_DIRS})
 
 # Source files
 set(SRCS
-    main.cpp
-    application.cpp
-    texture.cpp
-    engine.cpp
-    scene.cpp
-    mesh.cpp
-    shader.cpp
-    model.cpp
-    sceneReader.cpp
-    configReader.cpp
-    imageLoader.cpp
-    shaderProgram.cpp
-    transform.cpp
-    camera.cpp
-    input.cpp
-    
+    # Main
+    core/src/main.cpp
+    core/src/application.cpp
+
+    # Engine
+    core/src/engine/texture.cpp
+    core/src/engine/engine.cpp
+    core/src/engine/transform.cpp
+    core/src/engine/camera.cpp
+    core/src/engine/input.cpp
+    core/src/engine/imageLoader.cpp
+    core/src/engine/shader.cpp
+    core/src/engine/shaderProgram.cpp
+
+    # Config
+    core/src/config/configReader.cpp
+
+    # Scene
+    core/src/scene/scene.cpp
+    core/src/scene/mesh.cpp
+    core/src/scene/model.cpp
+    core/src/scene/sceneReader.cpp
 )
 
 # Add executable
@@ -39,6 +45,9 @@ add_executable(${PROJECT_NAME} ${SRCS})
 
 # Link libraries
 target_link_libraries(${PROJECT_NAME} ${ASSIMP_LIBRARIES} glfw GL GLEW)
+
+# Add include directory
+target_include_directories(${PROJECT_NAME} PRIVATE core/headers)
 
 # Debug target
 set(CMAKE_BUILD_TYPE Debug)
