@@ -26,19 +26,22 @@ Engine::Engine(GLFWwindow* window, CameraSettings cameraSettings) : drawObjectBu
     std::cout << "Engine constructor called. drawObjectBuffer initialized to nullptr." << std::endl;
     previousTime = std::chrono::high_resolution_clock::now();
 
+    this->window = window;
+    camera = new Camera(window, cameraSettings);
+
     vertexPath = "../core/src/engine/shaders/vertex.glsl";
     fragmentPath = "../core/src/engine/shaders/fragment.glsl";
 
     defaultShaderProgram = new ShaderProgram();
-    Shader* vertexShader = ShaderFactory::createShader(GL_VERTEX_SHADER, vertexPath);
-    Shader* fragmentShader = ShaderFactory::createShader(GL_FRAGMENT_SHADER, fragmentPath);
+    Shader* vertexShader = ShaderFactory::createShader(GL_VERTEX_SHADER, vertexPath, camera);
+    Shader* fragmentShader = ShaderFactory::createShader(GL_FRAGMENT_SHADER, fragmentPath, camera);
+
+    vertexShader->subscribe();
 
     defaultShaderProgram->attachShader(vertexShader);
     defaultShaderProgram->attachShader(fragmentShader);
-    
-    this->window = window;
-    camera = new Camera(window, cameraSettings);
 
+    vertexShader->attachShaderProgram(defaultShaderProgram);
 
 }
 
@@ -95,10 +98,11 @@ void Engine::run()
 
     //camera movement
     camera->move(keys, deltaTime);
+    camera->notifySubscribers();
 
-    defaultShaderProgram->setMat4("projectionMatrix", camera->getProjectionMatrix());
-    defaultShaderProgram->setMat4("viewMatrix", camera->getViewMatrix());
-    defaultShaderProgram->setVec3("cameraPosition", camera->getPosition());
+    // defaultShaderProgram->setMat4("projectionMatrix", camera->getProjectionMatrix());
+    // defaultShaderProgram->setMat4("viewMatrix", camera->getViewMatrix());
+    // defaultShaderProgram->setVec3("cameraPosition", camera->getPosition());
 
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     updateGameObjects(calculateDeltaTime());

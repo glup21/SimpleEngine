@@ -5,10 +5,13 @@
 #include <GLFW/glfw3.h>
 #include "cameraSettings.hpp"
 #include "transform.hpp"
+#include "publisher.hpp"
 
 using glm::vec3, glm::mat4;
 
-class Camera
+class Shader;
+
+class Camera : public Publisher
 {
 private:
     TransformComposite transform; 

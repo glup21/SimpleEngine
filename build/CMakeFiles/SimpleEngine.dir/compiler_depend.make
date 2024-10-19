@@ -4,6 +4,7 @@
 CMakeFiles/SimpleEngine.dir/core/src/application.cpp.o: /home/idk/Documents/GitHub/SimpleEngine/core/src/application.cpp \
   /home/idk/Documents/GitHub/SimpleEngine/core/headers/IDrawableObject.hpp \
   /home/idk/Documents/GitHub/SimpleEngine/core/headers/IGameObject.hpp \
+  /home/idk/Documents/GitHub/SimpleEngine/core/headers/ISubscriber.hpp \
   /home/idk/Documents/GitHub/SimpleEngine/core/headers/application.hpp \
   /home/idk/Documents/GitHub/SimpleEngine/core/headers/camera.hpp \
   /home/idk/Documents/GitHub/SimpleEngine/core/headers/cameraSettings.hpp \
@@ -14,6 +15,7 @@ CMakeFiles/SimpleEngine.dir/core/src/application.cpp.o: /home/idk/Documents/GitH
   /home/idk/Documents/GitHub/SimpleEngine/core/headers/json.hpp \
   /home/idk/Documents/GitHub/SimpleEngine/core/headers/mesh.hpp \
   /home/idk/Documents/GitHub/SimpleEngine/core/headers/model.hpp \
+  /home/idk/Documents/GitHub/SimpleEngine/core/headers/publisher.hpp \
   /home/idk/Documents/GitHub/SimpleEngine/core/headers/scene.hpp \
   /home/idk/Documents/GitHub/SimpleEngine/core/headers/sceneReader.hpp \
   /home/idk/Documents/GitHub/SimpleEngine/core/headers/shader.hpp \
@@ -883,8 +885,10 @@ CMakeFiles/SimpleEngine.dir/core/src/config/configReader.cpp.o: /home/idk/Docume
   /usr/lib/gcc/x86_64-redhat-linux/14/include/stdint.h
 
 CMakeFiles/SimpleEngine.dir/core/src/engine/camera.cpp.o: /home/idk/Documents/GitHub/SimpleEngine/core/src/engine/camera.cpp \
+  /home/idk/Documents/GitHub/SimpleEngine/core/headers/ISubscriber.hpp \
   /home/idk/Documents/GitHub/SimpleEngine/core/headers/camera.hpp \
   /home/idk/Documents/GitHub/SimpleEngine/core/headers/cameraSettings.hpp \
+  /home/idk/Documents/GitHub/SimpleEngine/core/headers/publisher.hpp \
   /home/idk/Documents/GitHub/SimpleEngine/core/headers/shader.hpp \
   /home/idk/Documents/GitHub/SimpleEngine/core/headers/shaderProgram.hpp \
   /home/idk/Documents/GitHub/SimpleEngine/core/headers/transform.hpp \
@@ -993,6 +997,8 @@ CMakeFiles/SimpleEngine.dir/core/src/engine/camera.cpp.o: /home/idk/Documents/Gi
   /usr/include/c++/14/bits/cpp_type_traits.h \
   /usr/include/c++/14/bits/cxxabi_forced.h \
   /usr/include/c++/14/bits/cxxabi_init_exception.h \
+  /usr/include/c++/14/bits/enable_special_members.h \
+  /usr/include/c++/14/bits/erase_if.h \
   /usr/include/c++/14/bits/exception.h \
   /usr/include/c++/14/bits/exception_defines.h \
   /usr/include/c++/14/bits/exception_ptr.h \
@@ -1000,6 +1006,8 @@ CMakeFiles/SimpleEngine.dir/core/src/engine/camera.cpp.o: /home/idk/Documents/Gi
   /usr/include/c++/14/bits/functexcept.h \
   /usr/include/c++/14/bits/functional_hash.h \
   /usr/include/c++/14/bits/hash_bytes.h \
+  /usr/include/c++/14/bits/hashtable.h \
+  /usr/include/c++/14/bits/hashtable_policy.h \
   /usr/include/c++/14/bits/invoke.h \
   /usr/include/c++/14/bits/ios_base.h \
   /usr/include/c++/14/bits/istream.tcc \
@@ -1013,6 +1021,7 @@ CMakeFiles/SimpleEngine.dir/core/src/engine/camera.cpp.o: /home/idk/Documents/Gi
   /usr/include/c++/14/bits/move.h \
   /usr/include/c++/14/bits/nested_exception.h \
   /usr/include/c++/14/bits/new_allocator.h \
+  /usr/include/c++/14/bits/node_handle.h \
   /usr/include/c++/14/bits/ostream.tcc \
   /usr/include/c++/14/bits/ostream_insert.h \
   /usr/include/c++/14/bits/postypes.h \
@@ -1044,6 +1053,7 @@ CMakeFiles/SimpleEngine.dir/core/src/engine/camera.cpp.o: /home/idk/Documents/Gi
   /usr/include/c++/14/bits/string_view.tcc \
   /usr/include/c++/14/bits/stringfwd.h \
   /usr/include/c++/14/bits/unique_ptr.h \
+  /usr/include/c++/14/bits/unordered_map.h \
   /usr/include/c++/14/bits/uses_allocator.h \
   /usr/include/c++/14/bits/uses_allocator_args.h \
   /usr/include/c++/14/bits/utility.h \
@@ -1108,6 +1118,7 @@ CMakeFiles/SimpleEngine.dir/core/src/engine/camera.cpp.o: /home/idk/Documents/Gi
   /usr/include/c++/14/tuple \
   /usr/include/c++/14/type_traits \
   /usr/include/c++/14/typeinfo \
+  /usr/include/c++/14/unordered_map \
   /usr/include/c++/14/vector \
   /usr/include/c++/14/x86_64-redhat-linux/bits/atomic_word.h \
   /usr/include/c++/14/x86_64-redhat-linux/bits/basic_file.h \
@@ -1340,6 +1351,7 @@ CMakeFiles/SimpleEngine.dir/core/src/engine/camera.cpp.o: /home/idk/Documents/Gi
 CMakeFiles/SimpleEngine.dir/core/src/engine/engine.cpp.o: /home/idk/Documents/GitHub/SimpleEngine/core/src/engine/engine.cpp \
   /home/idk/Documents/GitHub/SimpleEngine/core/headers/IDrawableObject.hpp \
   /home/idk/Documents/GitHub/SimpleEngine/core/headers/IGameObject.hpp \
+  /home/idk/Documents/GitHub/SimpleEngine/core/headers/ISubscriber.hpp \
   /home/idk/Documents/GitHub/SimpleEngine/core/headers/camera.hpp \
   /home/idk/Documents/GitHub/SimpleEngine/core/headers/cameraSettings.hpp \
   /home/idk/Documents/GitHub/SimpleEngine/core/headers/configReader.hpp \
@@ -1349,6 +1361,7 @@ CMakeFiles/SimpleEngine.dir/core/src/engine/engine.cpp.o: /home/idk/Documents/Gi
   /home/idk/Documents/GitHub/SimpleEngine/core/headers/json.hpp \
   /home/idk/Documents/GitHub/SimpleEngine/core/headers/mesh.hpp \
   /home/idk/Documents/GitHub/SimpleEngine/core/headers/model.hpp \
+  /home/idk/Documents/GitHub/SimpleEngine/core/headers/publisher.hpp \
   /home/idk/Documents/GitHub/SimpleEngine/core/headers/scene.hpp \
   /home/idk/Documents/GitHub/SimpleEngine/core/headers/sceneReader.hpp \
   /home/idk/Documents/GitHub/SimpleEngine/core/headers/shader.hpp \
@@ -2222,10 +2235,18 @@ CMakeFiles/SimpleEngine.dir/core/src/engine/input.cpp.o: /home/idk/Documents/Git
   /usr/lib/gcc/x86_64-redhat-linux/14/include/stdint.h
 
 CMakeFiles/SimpleEngine.dir/core/src/engine/shader.cpp.o: /home/idk/Documents/GitHub/SimpleEngine/core/src/engine/shader.cpp \
+  /home/idk/Documents/GitHub/SimpleEngine/core/headers/ISubscriber.hpp \
+  /home/idk/Documents/GitHub/SimpleEngine/core/headers/camera.hpp \
+  /home/idk/Documents/GitHub/SimpleEngine/core/headers/cameraSettings.hpp \
+  /home/idk/Documents/GitHub/SimpleEngine/core/headers/publisher.hpp \
   /home/idk/Documents/GitHub/SimpleEngine/core/headers/shader.hpp \
+  /home/idk/Documents/GitHub/SimpleEngine/core/headers/shaderProgram.hpp \
+  /home/idk/Documents/GitHub/SimpleEngine/core/headers/transform.hpp \
+  /home/idk/Documents/GitHub/SimpleEngine/core/headers/transformComposite.hpp \
   /usr/include/GL/gl.h \
   /usr/include/GL/glew.h \
   /usr/include/GL/glu.h \
+  /usr/include/GLFW/glfw3.h \
   /usr/include/alloca.h \
   /usr/include/asm-generic/errno-base.h \
   /usr/include/asm-generic/errno.h \
@@ -2306,10 +2327,15 @@ CMakeFiles/SimpleEngine.dir/core/src/engine/shader.cpp.o: /home/idk/Documents/Gi
   /usr/include/bits/wctype-wchar.h \
   /usr/include/bits/wordsize.h \
   /usr/include/bits/xopen_lim.h \
+  /usr/include/c++/14/backward/auto_ptr.h \
   /usr/include/c++/14/backward/binders.h \
   /usr/include/c++/14/bit \
+  /usr/include/c++/14/bits/align.h \
   /usr/include/c++/14/bits/alloc_traits.h \
+  /usr/include/c++/14/bits/allocated_ptr.h \
   /usr/include/c++/14/bits/allocator.h \
+  /usr/include/c++/14/bits/atomic_base.h \
+  /usr/include/c++/14/bits/atomic_lockfree_defines.h \
   /usr/include/c++/14/bits/basic_ios.h \
   /usr/include/c++/14/bits/basic_ios.tcc \
   /usr/include/c++/14/bits/basic_string.h \
@@ -2321,6 +2347,8 @@ CMakeFiles/SimpleEngine.dir/core/src/engine/shader.cpp.o: /home/idk/Documents/Gi
   /usr/include/c++/14/bits/cpp_type_traits.h \
   /usr/include/c++/14/bits/cxxabi_forced.h \
   /usr/include/c++/14/bits/cxxabi_init_exception.h \
+  /usr/include/c++/14/bits/enable_special_members.h \
+  /usr/include/c++/14/bits/erase_if.h \
   /usr/include/c++/14/bits/exception.h \
   /usr/include/c++/14/bits/exception_defines.h \
   /usr/include/c++/14/bits/exception_ptr.h \
@@ -2328,6 +2356,8 @@ CMakeFiles/SimpleEngine.dir/core/src/engine/shader.cpp.o: /home/idk/Documents/Gi
   /usr/include/c++/14/bits/functexcept.h \
   /usr/include/c++/14/bits/functional_hash.h \
   /usr/include/c++/14/bits/hash_bytes.h \
+  /usr/include/c++/14/bits/hashtable.h \
+  /usr/include/c++/14/bits/hashtable_policy.h \
   /usr/include/c++/14/bits/invoke.h \
   /usr/include/c++/14/bits/ios_base.h \
   /usr/include/c++/14/bits/istream.tcc \
@@ -2341,6 +2371,7 @@ CMakeFiles/SimpleEngine.dir/core/src/engine/shader.cpp.o: /home/idk/Documents/Gi
   /usr/include/c++/14/bits/move.h \
   /usr/include/c++/14/bits/nested_exception.h \
   /usr/include/c++/14/bits/new_allocator.h \
+  /usr/include/c++/14/bits/node_handle.h \
   /usr/include/c++/14/bits/ostream.tcc \
   /usr/include/c++/14/bits/ostream_insert.h \
   /usr/include/c++/14/bits/postypes.h \
@@ -2349,6 +2380,9 @@ CMakeFiles/SimpleEngine.dir/core/src/engine/shader.cpp.o: /home/idk/Documents/Gi
   /usr/include/c++/14/bits/range_access.h \
   /usr/include/c++/14/bits/refwrap.h \
   /usr/include/c++/14/bits/requires_hosted.h \
+  /usr/include/c++/14/bits/shared_ptr.h \
+  /usr/include/c++/14/bits/shared_ptr_atomic.h \
+  /usr/include/c++/14/bits/shared_ptr_base.h \
   /usr/include/c++/14/bits/specfun.h \
   /usr/include/c++/14/bits/sstream.tcc \
   /usr/include/c++/14/bits/std_abs.h \
@@ -2360,12 +2394,16 @@ CMakeFiles/SimpleEngine.dir/core/src/engine/shader.cpp.o: /home/idk/Documents/Gi
   /usr/include/c++/14/bits/stl_iterator_base_funcs.h \
   /usr/include/c++/14/bits/stl_iterator_base_types.h \
   /usr/include/c++/14/bits/stl_pair.h \
+  /usr/include/c++/14/bits/stl_raw_storage_iter.h \
+  /usr/include/c++/14/bits/stl_tempbuf.h \
   /usr/include/c++/14/bits/stl_uninitialized.h \
   /usr/include/c++/14/bits/stl_vector.h \
   /usr/include/c++/14/bits/streambuf.tcc \
   /usr/include/c++/14/bits/streambuf_iterator.h \
   /usr/include/c++/14/bits/string_view.tcc \
   /usr/include/c++/14/bits/stringfwd.h \
+  /usr/include/c++/14/bits/unique_ptr.h \
+  /usr/include/c++/14/bits/unordered_map.h \
   /usr/include/c++/14/bits/uses_allocator.h \
   /usr/include/c++/14/bits/uses_allocator_args.h \
   /usr/include/c++/14/bits/utility.h \
@@ -2389,8 +2427,10 @@ CMakeFiles/SimpleEngine.dir/core/src/engine/shader.cpp.o: /home/idk/Documents/Gi
   /usr/include/c++/14/debug/assertions.h \
   /usr/include/c++/14/debug/debug.h \
   /usr/include/c++/14/exception \
+  /usr/include/c++/14/ext/aligned_buffer.h \
   /usr/include/c++/14/ext/alloc_traits.h \
   /usr/include/c++/14/ext/atomicity.h \
+  /usr/include/c++/14/ext/concurrence.h \
   /usr/include/c++/14/ext/numeric_traits.h \
   /usr/include/c++/14/ext/string_conversions.h \
   /usr/include/c++/14/ext/type_traits.h \
@@ -2401,8 +2441,11 @@ CMakeFiles/SimpleEngine.dir/core/src/engine/shader.cpp.o: /home/idk/Documents/Gi
   /usr/include/c++/14/iostream \
   /usr/include/c++/14/istream \
   /usr/include/c++/14/limits \
+  /usr/include/c++/14/memory \
   /usr/include/c++/14/new \
   /usr/include/c++/14/ostream \
+  /usr/include/c++/14/pstl/execution_defs.h \
+  /usr/include/c++/14/pstl/glue_memory_defs.h \
   /usr/include/c++/14/pstl/pstl_config.h \
   /usr/include/c++/14/sstream \
   /usr/include/c++/14/stdexcept \
@@ -2425,6 +2468,7 @@ CMakeFiles/SimpleEngine.dir/core/src/engine/shader.cpp.o: /home/idk/Documents/Gi
   /usr/include/c++/14/tuple \
   /usr/include/c++/14/type_traits \
   /usr/include/c++/14/typeinfo \
+  /usr/include/c++/14/unordered_map \
   /usr/include/c++/14/vector \
   /usr/include/c++/14/x86_64-redhat-linux/bits/atomic_word.h \
   /usr/include/c++/14/x86_64-redhat-linux/bits/basic_file.h \
@@ -2655,11 +2699,18 @@ CMakeFiles/SimpleEngine.dir/core/src/engine/shader.cpp.o: /home/idk/Documents/Gi
   /usr/lib/gcc/x86_64-redhat-linux/14/include/syslimits.h
 
 CMakeFiles/SimpleEngine.dir/core/src/engine/shaderProgram.cpp.o: /home/idk/Documents/GitHub/SimpleEngine/core/src/engine/shaderProgram.cpp \
+  /home/idk/Documents/GitHub/SimpleEngine/core/headers/ISubscriber.hpp \
+  /home/idk/Documents/GitHub/SimpleEngine/core/headers/camera.hpp \
+  /home/idk/Documents/GitHub/SimpleEngine/core/headers/cameraSettings.hpp \
+  /home/idk/Documents/GitHub/SimpleEngine/core/headers/publisher.hpp \
   /home/idk/Documents/GitHub/SimpleEngine/core/headers/shader.hpp \
   /home/idk/Documents/GitHub/SimpleEngine/core/headers/shaderProgram.hpp \
+  /home/idk/Documents/GitHub/SimpleEngine/core/headers/transform.hpp \
+  /home/idk/Documents/GitHub/SimpleEngine/core/headers/transformComposite.hpp \
   /usr/include/GL/gl.h \
   /usr/include/GL/glew.h \
   /usr/include/GL/glu.h \
+  /usr/include/GLFW/glfw3.h \
   /usr/include/alloca.h \
   /usr/include/asm-generic/errno-base.h \
   /usr/include/asm-generic/errno.h \
@@ -2760,6 +2811,8 @@ CMakeFiles/SimpleEngine.dir/core/src/engine/shaderProgram.cpp.o: /home/idk/Docum
   /usr/include/c++/14/bits/cpp_type_traits.h \
   /usr/include/c++/14/bits/cxxabi_forced.h \
   /usr/include/c++/14/bits/cxxabi_init_exception.h \
+  /usr/include/c++/14/bits/enable_special_members.h \
+  /usr/include/c++/14/bits/erase_if.h \
   /usr/include/c++/14/bits/exception.h \
   /usr/include/c++/14/bits/exception_defines.h \
   /usr/include/c++/14/bits/exception_ptr.h \
@@ -2767,6 +2820,8 @@ CMakeFiles/SimpleEngine.dir/core/src/engine/shaderProgram.cpp.o: /home/idk/Docum
   /usr/include/c++/14/bits/functexcept.h \
   /usr/include/c++/14/bits/functional_hash.h \
   /usr/include/c++/14/bits/hash_bytes.h \
+  /usr/include/c++/14/bits/hashtable.h \
+  /usr/include/c++/14/bits/hashtable_policy.h \
   /usr/include/c++/14/bits/invoke.h \
   /usr/include/c++/14/bits/ios_base.h \
   /usr/include/c++/14/bits/istream.tcc \
@@ -2780,6 +2835,7 @@ CMakeFiles/SimpleEngine.dir/core/src/engine/shaderProgram.cpp.o: /home/idk/Docum
   /usr/include/c++/14/bits/move.h \
   /usr/include/c++/14/bits/nested_exception.h \
   /usr/include/c++/14/bits/new_allocator.h \
+  /usr/include/c++/14/bits/node_handle.h \
   /usr/include/c++/14/bits/ostream.tcc \
   /usr/include/c++/14/bits/ostream_insert.h \
   /usr/include/c++/14/bits/postypes.h \
@@ -2811,6 +2867,7 @@ CMakeFiles/SimpleEngine.dir/core/src/engine/shaderProgram.cpp.o: /home/idk/Docum
   /usr/include/c++/14/bits/string_view.tcc \
   /usr/include/c++/14/bits/stringfwd.h \
   /usr/include/c++/14/bits/unique_ptr.h \
+  /usr/include/c++/14/bits/unordered_map.h \
   /usr/include/c++/14/bits/uses_allocator.h \
   /usr/include/c++/14/bits/uses_allocator_args.h \
   /usr/include/c++/14/bits/utility.h \
@@ -2828,6 +2885,7 @@ CMakeFiles/SimpleEngine.dir/core/src/engine/shaderProgram.cpp.o: /home/idk/Docum
   /usr/include/c++/14/cstdint \
   /usr/include/c++/14/cstdio \
   /usr/include/c++/14/cstdlib \
+  /usr/include/c++/14/cstring \
   /usr/include/c++/14/cwchar \
   /usr/include/c++/14/cwctype \
   /usr/include/c++/14/debug/assertions.h \
@@ -2874,6 +2932,7 @@ CMakeFiles/SimpleEngine.dir/core/src/engine/shaderProgram.cpp.o: /home/idk/Docum
   /usr/include/c++/14/tuple \
   /usr/include/c++/14/type_traits \
   /usr/include/c++/14/typeinfo \
+  /usr/include/c++/14/unordered_map \
   /usr/include/c++/14/vector \
   /usr/include/c++/14/x86_64-redhat-linux/bits/atomic_word.h \
   /usr/include/c++/14/x86_64-redhat-linux/bits/basic_file.h \
@@ -2908,6 +2967,7 @@ CMakeFiles/SimpleEngine.dir/core/src/engine/shaderProgram.cpp.o: /home/idk/Docum
   /usr/include/glm/detail/func_vector_relational.inl \
   /usr/include/glm/detail/qualifier.hpp \
   /usr/include/glm/detail/setup.hpp \
+  /usr/include/glm/detail/type_float.hpp \
   /usr/include/glm/detail/type_half.hpp \
   /usr/include/glm/detail/type_half.inl \
   /usr/include/glm/detail/type_mat2x2.hpp \
@@ -2928,6 +2988,8 @@ CMakeFiles/SimpleEngine.dir/core/src/engine/shaderProgram.cpp.o: /home/idk/Docum
   /usr/include/glm/detail/type_mat4x3.inl \
   /usr/include/glm/detail/type_mat4x4.hpp \
   /usr/include/glm/detail/type_mat4x4.inl \
+  /usr/include/glm/detail/type_quat.hpp \
+  /usr/include/glm/detail/type_quat.inl \
   /usr/include/glm/detail/type_vec1.hpp \
   /usr/include/glm/detail/type_vec1.inl \
   /usr/include/glm/detail/type_vec2.hpp \
@@ -2937,6 +2999,8 @@ CMakeFiles/SimpleEngine.dir/core/src/engine/shaderProgram.cpp.o: /home/idk/Docum
   /usr/include/glm/detail/type_vec4.hpp \
   /usr/include/glm/detail/type_vec4.inl \
   /usr/include/glm/exponential.hpp \
+  /usr/include/glm/ext/matrix_clip_space.hpp \
+  /usr/include/glm/ext/matrix_clip_space.inl \
   /usr/include/glm/ext/matrix_double2x2.hpp \
   /usr/include/glm/ext/matrix_double2x2_precision.hpp \
   /usr/include/glm/ext/matrix_double2x3.hpp \
@@ -2973,32 +3037,64 @@ CMakeFiles/SimpleEngine.dir/core/src/engine/shaderProgram.cpp.o: /home/idk/Docum
   /usr/include/glm/ext/matrix_float4x3_precision.hpp \
   /usr/include/glm/ext/matrix_float4x4.hpp \
   /usr/include/glm/ext/matrix_float4x4_precision.hpp \
+  /usr/include/glm/ext/matrix_projection.hpp \
+  /usr/include/glm/ext/matrix_projection.inl \
+  /usr/include/glm/ext/matrix_transform.hpp \
+  /usr/include/glm/ext/matrix_transform.inl \
+  /usr/include/glm/ext/quaternion_common.hpp \
+  /usr/include/glm/ext/quaternion_common.inl \
+  /usr/include/glm/ext/quaternion_double.hpp \
+  /usr/include/glm/ext/quaternion_double_precision.hpp \
+  /usr/include/glm/ext/quaternion_float.hpp \
+  /usr/include/glm/ext/quaternion_float_precision.hpp \
+  /usr/include/glm/ext/quaternion_geometric.hpp \
+  /usr/include/glm/ext/quaternion_geometric.inl \
+  /usr/include/glm/ext/quaternion_relational.hpp \
+  /usr/include/glm/ext/quaternion_relational.inl \
+  /usr/include/glm/ext/quaternion_transform.hpp \
+  /usr/include/glm/ext/quaternion_transform.inl \
+  /usr/include/glm/ext/quaternion_trigonometric.hpp \
+  /usr/include/glm/ext/quaternion_trigonometric.inl \
+  /usr/include/glm/ext/scalar_constants.hpp \
+  /usr/include/glm/ext/scalar_constants.inl \
   /usr/include/glm/ext/scalar_int_sized.hpp \
   /usr/include/glm/ext/scalar_uint_sized.hpp \
+  /usr/include/glm/ext/vector_bool1.hpp \
+  /usr/include/glm/ext/vector_bool1_precision.hpp \
   /usr/include/glm/ext/vector_bool2.hpp \
   /usr/include/glm/ext/vector_bool2_precision.hpp \
   /usr/include/glm/ext/vector_bool3.hpp \
   /usr/include/glm/ext/vector_bool3_precision.hpp \
   /usr/include/glm/ext/vector_bool4.hpp \
   /usr/include/glm/ext/vector_bool4_precision.hpp \
+  /usr/include/glm/ext/vector_double1.hpp \
+  /usr/include/glm/ext/vector_double1_precision.hpp \
   /usr/include/glm/ext/vector_double2.hpp \
   /usr/include/glm/ext/vector_double2_precision.hpp \
   /usr/include/glm/ext/vector_double3.hpp \
   /usr/include/glm/ext/vector_double3_precision.hpp \
   /usr/include/glm/ext/vector_double4.hpp \
   /usr/include/glm/ext/vector_double4_precision.hpp \
+  /usr/include/glm/ext/vector_float1.hpp \
+  /usr/include/glm/ext/vector_float1_precision.hpp \
   /usr/include/glm/ext/vector_float2.hpp \
   /usr/include/glm/ext/vector_float2_precision.hpp \
   /usr/include/glm/ext/vector_float3.hpp \
   /usr/include/glm/ext/vector_float3_precision.hpp \
   /usr/include/glm/ext/vector_float4.hpp \
   /usr/include/glm/ext/vector_float4_precision.hpp \
+  /usr/include/glm/ext/vector_int1.hpp \
+  /usr/include/glm/ext/vector_int1_sized.hpp \
   /usr/include/glm/ext/vector_int2.hpp \
   /usr/include/glm/ext/vector_int2_sized.hpp \
   /usr/include/glm/ext/vector_int3.hpp \
   /usr/include/glm/ext/vector_int3_sized.hpp \
   /usr/include/glm/ext/vector_int4.hpp \
   /usr/include/glm/ext/vector_int4_sized.hpp \
+  /usr/include/glm/ext/vector_relational.hpp \
+  /usr/include/glm/ext/vector_relational.inl \
+  /usr/include/glm/ext/vector_uint1.hpp \
+  /usr/include/glm/ext/vector_uint1_sized.hpp \
   /usr/include/glm/ext/vector_uint2.hpp \
   /usr/include/glm/ext/vector_uint2_sized.hpp \
   /usr/include/glm/ext/vector_uint3.hpp \
@@ -3008,6 +3104,17 @@ CMakeFiles/SimpleEngine.dir/core/src/engine/shaderProgram.cpp.o: /home/idk/Docum
   /usr/include/glm/fwd.hpp \
   /usr/include/glm/geometric.hpp \
   /usr/include/glm/glm.hpp \
+  /usr/include/glm/gtc/constants.hpp \
+  /usr/include/glm/gtc/constants.inl \
+  /usr/include/glm/gtc/epsilon.hpp \
+  /usr/include/glm/gtc/epsilon.inl \
+  /usr/include/glm/gtc/matrix_transform.hpp \
+  /usr/include/glm/gtc/matrix_transform.inl \
+  /usr/include/glm/gtc/quaternion.hpp \
+  /usr/include/glm/gtc/quaternion.inl \
+  /usr/include/glm/gtc/type_ptr.hpp \
+  /usr/include/glm/gtc/type_ptr.inl \
+  /usr/include/glm/gtc/vec1.hpp \
   /usr/include/glm/integer.hpp \
   /usr/include/glm/mat2x2.hpp \
   /usr/include/glm/mat2x3.hpp \
@@ -3039,6 +3146,8 @@ CMakeFiles/SimpleEngine.dir/core/src/engine/shaderProgram.cpp.o: /home/idk/Docum
   /usr/include/stdint.h \
   /usr/include/stdio.h \
   /usr/include/stdlib.h \
+  /usr/include/string.h \
+  /usr/include/strings.h \
   /usr/include/sys/cdefs.h \
   /usr/include/sys/select.h \
   /usr/include/sys/single_threaded.h \
@@ -3604,6 +3713,7 @@ CMakeFiles/SimpleEngine.dir/core/src/engine/transform.cpp.o: /home/idk/Documents
 CMakeFiles/SimpleEngine.dir/core/src/main.cpp.o: /home/idk/Documents/GitHub/SimpleEngine/core/src/main.cpp \
   /home/idk/Documents/GitHub/SimpleEngine/core/headers/IDrawableObject.hpp \
   /home/idk/Documents/GitHub/SimpleEngine/core/headers/IGameObject.hpp \
+  /home/idk/Documents/GitHub/SimpleEngine/core/headers/ISubscriber.hpp \
   /home/idk/Documents/GitHub/SimpleEngine/core/headers/application.hpp \
   /home/idk/Documents/GitHub/SimpleEngine/core/headers/camera.hpp \
   /home/idk/Documents/GitHub/SimpleEngine/core/headers/cameraSettings.hpp \
@@ -3614,6 +3724,7 @@ CMakeFiles/SimpleEngine.dir/core/src/main.cpp.o: /home/idk/Documents/GitHub/Simp
   /home/idk/Documents/GitHub/SimpleEngine/core/headers/json.hpp \
   /home/idk/Documents/GitHub/SimpleEngine/core/headers/mesh.hpp \
   /home/idk/Documents/GitHub/SimpleEngine/core/headers/model.hpp \
+  /home/idk/Documents/GitHub/SimpleEngine/core/headers/publisher.hpp \
   /home/idk/Documents/GitHub/SimpleEngine/core/headers/scene.hpp \
   /home/idk/Documents/GitHub/SimpleEngine/core/headers/shader.hpp \
   /home/idk/Documents/GitHub/SimpleEngine/core/headers/shaderProgram.hpp \
@@ -4165,8 +4276,12 @@ CMakeFiles/SimpleEngine.dir/core/src/main.cpp.o: /home/idk/Documents/GitHub/Simp
 
 CMakeFiles/SimpleEngine.dir/core/src/scene/mesh.cpp.o: /home/idk/Documents/GitHub/SimpleEngine/core/src/scene/mesh.cpp \
   /home/idk/Documents/GitHub/SimpleEngine/core/headers/IDrawableObject.hpp \
+  /home/idk/Documents/GitHub/SimpleEngine/core/headers/ISubscriber.hpp \
+  /home/idk/Documents/GitHub/SimpleEngine/core/headers/camera.hpp \
+  /home/idk/Documents/GitHub/SimpleEngine/core/headers/cameraSettings.hpp \
   /home/idk/Documents/GitHub/SimpleEngine/core/headers/imageLoader.hpp \
   /home/idk/Documents/GitHub/SimpleEngine/core/headers/mesh.hpp \
+  /home/idk/Documents/GitHub/SimpleEngine/core/headers/publisher.hpp \
   /home/idk/Documents/GitHub/SimpleEngine/core/headers/shader.hpp \
   /home/idk/Documents/GitHub/SimpleEngine/core/headers/shaderProgram.hpp \
   /home/idk/Documents/GitHub/SimpleEngine/core/headers/texture.hpp \
@@ -4176,6 +4291,7 @@ CMakeFiles/SimpleEngine.dir/core/src/scene/mesh.cpp.o: /home/idk/Documents/GitHu
   /usr/include/GL/gl.h \
   /usr/include/GL/glew.h \
   /usr/include/GL/glu.h \
+  /usr/include/GLFW/glfw3.h \
   /usr/include/alloca.h \
   /usr/include/asm-generic/errno-base.h \
   /usr/include/asm-generic/errno.h \
@@ -4276,6 +4392,7 @@ CMakeFiles/SimpleEngine.dir/core/src/scene/mesh.cpp.o: /home/idk/Documents/GitHu
   /usr/include/c++/14/bits/cpp_type_traits.h \
   /usr/include/c++/14/bits/cxxabi_forced.h \
   /usr/include/c++/14/bits/cxxabi_init_exception.h \
+  /usr/include/c++/14/bits/enable_special_members.h \
   /usr/include/c++/14/bits/erase_if.h \
   /usr/include/c++/14/bits/exception.h \
   /usr/include/c++/14/bits/exception_defines.h \
@@ -4284,6 +4401,8 @@ CMakeFiles/SimpleEngine.dir/core/src/scene/mesh.cpp.o: /home/idk/Documents/GitHu
   /usr/include/c++/14/bits/functexcept.h \
   /usr/include/c++/14/bits/functional_hash.h \
   /usr/include/c++/14/bits/hash_bytes.h \
+  /usr/include/c++/14/bits/hashtable.h \
+  /usr/include/c++/14/bits/hashtable_policy.h \
   /usr/include/c++/14/bits/invoke.h \
   /usr/include/c++/14/bits/ios_base.h \
   /usr/include/c++/14/bits/istream.tcc \
@@ -4332,6 +4451,7 @@ CMakeFiles/SimpleEngine.dir/core/src/scene/mesh.cpp.o: /home/idk/Documents/GitHu
   /usr/include/c++/14/bits/string_view.tcc \
   /usr/include/c++/14/bits/stringfwd.h \
   /usr/include/c++/14/bits/unique_ptr.h \
+  /usr/include/c++/14/bits/unordered_map.h \
   /usr/include/c++/14/bits/uses_allocator.h \
   /usr/include/c++/14/bits/uses_allocator_args.h \
   /usr/include/c++/14/bits/utility.h \
@@ -4397,6 +4517,7 @@ CMakeFiles/SimpleEngine.dir/core/src/scene/mesh.cpp.o: /home/idk/Documents/GitHu
   /usr/include/c++/14/tuple \
   /usr/include/c++/14/type_traits \
   /usr/include/c++/14/typeinfo \
+  /usr/include/c++/14/unordered_map \
   /usr/include/c++/14/vector \
   /usr/include/c++/14/x86_64-redhat-linux/bits/atomic_word.h \
   /usr/include/c++/14/x86_64-redhat-linux/bits/basic_file.h \
@@ -4629,10 +4750,14 @@ CMakeFiles/SimpleEngine.dir/core/src/scene/mesh.cpp.o: /home/idk/Documents/GitHu
 CMakeFiles/SimpleEngine.dir/core/src/scene/model.cpp.o: /home/idk/Documents/GitHub/SimpleEngine/core/src/scene/model.cpp \
   /home/idk/Documents/GitHub/SimpleEngine/core/headers/IDrawableObject.hpp \
   /home/idk/Documents/GitHub/SimpleEngine/core/headers/IGameObject.hpp \
+  /home/idk/Documents/GitHub/SimpleEngine/core/headers/ISubscriber.hpp \
+  /home/idk/Documents/GitHub/SimpleEngine/core/headers/camera.hpp \
+  /home/idk/Documents/GitHub/SimpleEngine/core/headers/cameraSettings.hpp \
   /home/idk/Documents/GitHub/SimpleEngine/core/headers/defaultAssets.hpp \
   /home/idk/Documents/GitHub/SimpleEngine/core/headers/imageLoader.hpp \
   /home/idk/Documents/GitHub/SimpleEngine/core/headers/mesh.hpp \
   /home/idk/Documents/GitHub/SimpleEngine/core/headers/model.hpp \
+  /home/idk/Documents/GitHub/SimpleEngine/core/headers/publisher.hpp \
   /home/idk/Documents/GitHub/SimpleEngine/core/headers/shader.hpp \
   /home/idk/Documents/GitHub/SimpleEngine/core/headers/shaderProgram.hpp \
   /home/idk/Documents/GitHub/SimpleEngine/core/headers/texture.hpp \
@@ -4642,6 +4767,7 @@ CMakeFiles/SimpleEngine.dir/core/src/scene/model.cpp.o: /home/idk/Documents/GitH
   /usr/include/GL/gl.h \
   /usr/include/GL/glew.h \
   /usr/include/GL/glu.h \
+  /usr/include/GLFW/glfw3.h \
   /usr/include/alloca.h \
   /usr/include/asm-generic/errno-base.h \
   /usr/include/asm-generic/errno.h \
@@ -5155,8 +5281,12 @@ CMakeFiles/SimpleEngine.dir/core/src/scene/model.cpp.o: /home/idk/Documents/GitH
 CMakeFiles/SimpleEngine.dir/core/src/scene/scene.cpp.o: /home/idk/Documents/GitHub/SimpleEngine/core/src/scene/scene.cpp \
   /home/idk/Documents/GitHub/SimpleEngine/core/headers/IDrawableObject.hpp \
   /home/idk/Documents/GitHub/SimpleEngine/core/headers/IGameObject.hpp \
+  /home/idk/Documents/GitHub/SimpleEngine/core/headers/ISubscriber.hpp \
+  /home/idk/Documents/GitHub/SimpleEngine/core/headers/camera.hpp \
+  /home/idk/Documents/GitHub/SimpleEngine/core/headers/cameraSettings.hpp \
   /home/idk/Documents/GitHub/SimpleEngine/core/headers/imageLoader.hpp \
   /home/idk/Documents/GitHub/SimpleEngine/core/headers/mesh.hpp \
+  /home/idk/Documents/GitHub/SimpleEngine/core/headers/publisher.hpp \
   /home/idk/Documents/GitHub/SimpleEngine/core/headers/scene.hpp \
   /home/idk/Documents/GitHub/SimpleEngine/core/headers/shader.hpp \
   /home/idk/Documents/GitHub/SimpleEngine/core/headers/shaderProgram.hpp \
@@ -5167,6 +5297,7 @@ CMakeFiles/SimpleEngine.dir/core/src/scene/scene.cpp.o: /home/idk/Documents/GitH
   /usr/include/GL/gl.h \
   /usr/include/GL/glew.h \
   /usr/include/GL/glu.h \
+  /usr/include/GLFW/glfw3.h \
   /usr/include/alloca.h \
   /usr/include/asm-generic/errno-base.h \
   /usr/include/asm-generic/errno.h \
@@ -5267,6 +5398,7 @@ CMakeFiles/SimpleEngine.dir/core/src/scene/scene.cpp.o: /home/idk/Documents/GitH
   /usr/include/c++/14/bits/cpp_type_traits.h \
   /usr/include/c++/14/bits/cxxabi_forced.h \
   /usr/include/c++/14/bits/cxxabi_init_exception.h \
+  /usr/include/c++/14/bits/enable_special_members.h \
   /usr/include/c++/14/bits/erase_if.h \
   /usr/include/c++/14/bits/exception.h \
   /usr/include/c++/14/bits/exception_defines.h \
@@ -5275,6 +5407,8 @@ CMakeFiles/SimpleEngine.dir/core/src/scene/scene.cpp.o: /home/idk/Documents/GitH
   /usr/include/c++/14/bits/functexcept.h \
   /usr/include/c++/14/bits/functional_hash.h \
   /usr/include/c++/14/bits/hash_bytes.h \
+  /usr/include/c++/14/bits/hashtable.h \
+  /usr/include/c++/14/bits/hashtable_policy.h \
   /usr/include/c++/14/bits/invoke.h \
   /usr/include/c++/14/bits/ios_base.h \
   /usr/include/c++/14/bits/istream.tcc \
@@ -5323,6 +5457,7 @@ CMakeFiles/SimpleEngine.dir/core/src/scene/scene.cpp.o: /home/idk/Documents/GitH
   /usr/include/c++/14/bits/string_view.tcc \
   /usr/include/c++/14/bits/stringfwd.h \
   /usr/include/c++/14/bits/unique_ptr.h \
+  /usr/include/c++/14/bits/unordered_map.h \
   /usr/include/c++/14/bits/uses_allocator.h \
   /usr/include/c++/14/bits/uses_allocator_args.h \
   /usr/include/c++/14/bits/utility.h \
@@ -5388,6 +5523,7 @@ CMakeFiles/SimpleEngine.dir/core/src/scene/scene.cpp.o: /home/idk/Documents/GitH
   /usr/include/c++/14/tuple \
   /usr/include/c++/14/type_traits \
   /usr/include/c++/14/typeinfo \
+  /usr/include/c++/14/unordered_map \
   /usr/include/c++/14/vector \
   /usr/include/c++/14/x86_64-redhat-linux/bits/atomic_word.h \
   /usr/include/c++/14/x86_64-redhat-linux/bits/basic_file.h \
@@ -5620,10 +5756,14 @@ CMakeFiles/SimpleEngine.dir/core/src/scene/scene.cpp.o: /home/idk/Documents/GitH
 CMakeFiles/SimpleEngine.dir/core/src/scene/sceneReader.cpp.o: /home/idk/Documents/GitHub/SimpleEngine/core/src/scene/sceneReader.cpp \
   /home/idk/Documents/GitHub/SimpleEngine/core/headers/IDrawableObject.hpp \
   /home/idk/Documents/GitHub/SimpleEngine/core/headers/IGameObject.hpp \
+  /home/idk/Documents/GitHub/SimpleEngine/core/headers/ISubscriber.hpp \
+  /home/idk/Documents/GitHub/SimpleEngine/core/headers/camera.hpp \
+  /home/idk/Documents/GitHub/SimpleEngine/core/headers/cameraSettings.hpp \
   /home/idk/Documents/GitHub/SimpleEngine/core/headers/imageLoader.hpp \
   /home/idk/Documents/GitHub/SimpleEngine/core/headers/json.hpp \
   /home/idk/Documents/GitHub/SimpleEngine/core/headers/mesh.hpp \
   /home/idk/Documents/GitHub/SimpleEngine/core/headers/model.hpp \
+  /home/idk/Documents/GitHub/SimpleEngine/core/headers/publisher.hpp \
   /home/idk/Documents/GitHub/SimpleEngine/core/headers/scene.hpp \
   /home/idk/Documents/GitHub/SimpleEngine/core/headers/sceneReader.hpp \
   /home/idk/Documents/GitHub/SimpleEngine/core/headers/shader.hpp \
@@ -5635,6 +5775,7 @@ CMakeFiles/SimpleEngine.dir/core/src/scene/sceneReader.cpp.o: /home/idk/Document
   /usr/include/GL/gl.h \
   /usr/include/GL/glew.h \
   /usr/include/GL/glu.h \
+  /usr/include/GLFW/glfw3.h \
   /usr/include/alloca.h \
   /usr/include/asm-generic/errno-base.h \
   /usr/include/asm-generic/errno.h \
@@ -6230,13 +6371,7 @@ CMakeFiles/SimpleEngine.dir/core/src/scene/sceneReader.cpp.o: /home/idk/Document
 
 /usr/include/stb_image.h:
 
-/home/idk/Documents/GitHub/SimpleEngine/core/src/engine/camera.cpp:
-
-/usr/include/c++/14/chrono:
-
-/usr/include/c++/14/exception:
-
-/usr/include/c++/14/cfloat:
+/usr/include/locale.h:
 
 /usr/include/c++/14/cerrno:
 
@@ -6323,6 +6458,8 @@ CMakeFiles/SimpleEngine.dir/core/src/scene/sceneReader.cpp.o: /home/idk/Document
 /usr/include/c++/14/bits/memoryfwd.h:
 
 /usr/include/c++/14/bits/memory_resource.h:
+
+/usr/include/c++/14/cfloat:
 
 /usr/include/c++/14/bits/locale_facets_nonio.tcc:
 
@@ -6474,11 +6611,13 @@ CMakeFiles/SimpleEngine.dir/core/src/scene/sceneReader.cpp.o: /home/idk/Document
 
 /usr/include/glm/ext/vector_double2_precision.hpp:
 
-/usr/include/assimp/vector2.inl:
+/usr/include/c++/14/bits/valarray_array.tcc:
 
-/home/idk/Documents/GitHub/SimpleEngine/core/headers/shaderProgram.hpp:
+/usr/include/bits/types/wint_t.h:
 
-/usr/include/c++/14/typeinfo:
+/usr/include/c++/14/ext/alloc_traits.h:
+
+/usr/include/glm/ext/scalar_int_sized.hpp:
 
 /usr/include/assimp/vector2.h:
 
@@ -6490,9 +6629,9 @@ CMakeFiles/SimpleEngine.dir/core/src/scene/sceneReader.cpp.o: /home/idk/Document
 
 /usr/include/bits/stdint-uintn.h:
 
-/usr/include/assimp/vector3.h:
-
 /usr/include/assimp/scene.h:
+
+/usr/include/assimp/vector3.h:
 
 /usr/include/bits/timesize.h:
 
@@ -6567,10 +6706,6 @@ CMakeFiles/SimpleEngine.dir/core/src/scene/sceneReader.cpp.o: /home/idk/Document
 /home/idk/Documents/GitHub/SimpleEngine/core/src/engine/shader.cpp:
 
 /usr/include/glm/ext/vector_int3_sized.hpp:
-
-/home/idk/Documents/GitHub/SimpleEngine/core/headers/model.hpp:
-
-/usr/include/glm/ext/vector_relational.inl:
 
 /usr/include/c++/14/bits/uniform_int_dist.h:
 
@@ -6654,19 +6789,15 @@ CMakeFiles/SimpleEngine.dir/core/src/scene/sceneReader.cpp.o: /home/idk/Document
 
 /usr/include/assimp/postprocess.h:
 
-/home/idk/Documents/GitHub/SimpleEngine/core/src/application.cpp:
+/usr/include/glm/detail/_vectorize.hpp:
 
-/usr/include/c++/14/string_view:
+/home/idk/Documents/GitHub/SimpleEngine/core/headers/vertex.hpp:
 
-/usr/include/bits/pthreadtypes.h:
+/usr/include/bits/types/clockid_t.h:
 
-/usr/include/bits/locale.h:
+/usr/include/glm/ext/vector_float1.hpp:
 
-/home/idk/Documents/GitHub/SimpleEngine/core/headers/IGameObject.hpp:
-
-/usr/include/c++/14/streambuf:
-
-/home/idk/Documents/GitHub/SimpleEngine/core/headers/sceneReader.hpp:
+/usr/include/assimp/Compiler/poppack1.h:
 
 /home/idk/Documents/GitHub/SimpleEngine/core/headers/texture.hpp:
 
@@ -6674,9 +6805,31 @@ CMakeFiles/SimpleEngine.dir/core/src/scene/sceneReader.cpp.o: /home/idk/Document
 
 /usr/include/glm/detail/type_mat3x2.hpp:
 
-/usr/include/glm/ext/vector_float1.hpp:
+/home/idk/Documents/GitHub/SimpleEngine/core/headers/model.hpp:
 
-/usr/include/assimp/Compiler/poppack1.h:
+/usr/include/glm/ext/vector_relational.inl:
+
+/home/idk/Documents/GitHub/SimpleEngine/core/src/application.cpp:
+
+/usr/include/c++/14/string_view:
+
+/usr/include/bits/pthreadtypes.h:
+
+/home/idk/Documents/GitHub/SimpleEngine/core/headers/publisher.hpp:
+
+/usr/include/bits/locale.h:
+
+/home/idk/Documents/GitHub/SimpleEngine/core/headers/IGameObject.hpp:
+
+/usr/include/c++/14/streambuf:
+
+/usr/include/c++/14/bit:
+
+/usr/include/assimp/material.h:
+
+/usr/include/glm/ext/matrix_double4x3_precision.hpp:
+
+/home/idk/Documents/GitHub/SimpleEngine/core/headers/sceneReader.hpp:
 
 /usr/include/c++/14/compare:
 
@@ -6690,23 +6843,17 @@ CMakeFiles/SimpleEngine.dir/core/src/scene/sceneReader.cpp.o: /home/idk/Document
 
 /usr/include/glm/ext/vector_int1_sized.hpp:
 
-/home/idk/Documents/GitHub/SimpleEngine/core/headers/vertex.hpp:
+/home/idk/Documents/GitHub/SimpleEngine/core/headers/shaderProgram.hpp:
 
-/usr/include/bits/types/clockid_t.h:
-
-/usr/include/c++/14/bits/cxxabi_forced.h:
-
-/usr/include/bits/wctype-wchar.h:
+/usr/include/c++/14/typeinfo:
 
 /usr/include/bits/stdint-intn.h:
 
-/usr/include/c++/14/bit:
+/usr/include/bits/wctype-wchar.h:
 
-/usr/include/glm/ext/matrix_double4x3_precision.hpp:
+/usr/include/c++/14/bits/cxxabi_forced.h:
 
-/usr/include/assimp/material.h:
-
-/usr/include/glm/detail/_vectorize.hpp:
+/usr/include/assimp/vector2.inl:
 
 /usr/include/c++/14/bits/sstream.tcc:
 
@@ -6715,14 +6862,6 @@ CMakeFiles/SimpleEngine.dir/core/src/scene/sceneReader.cpp.o: /home/idk/Document
 /usr/include/assimp/defs.h:
 
 /usr/include/glm/ext/vector_bool4_precision.hpp:
-
-/usr/include/c++/14/bits/valarray_array.tcc:
-
-/usr/include/bits/types/wint_t.h:
-
-/usr/include/c++/14/ext/alloc_traits.h:
-
-/usr/include/glm/ext/scalar_int_sized.hpp:
 
 /usr/include/assimp/anim.h:
 
@@ -6743,8 +6882,6 @@ CMakeFiles/SimpleEngine.dir/core/src/scene/sceneReader.cpp.o: /home/idk/Document
 /usr/include/c++/14/bits/quoted_string.h:
 
 /usr/include/assimp/color4.inl:
-
-/usr/include/bits/floatn.h:
 
 /usr/include/c++/14/bits/ostream_insert.h:
 
@@ -6807,6 +6944,12 @@ CMakeFiles/SimpleEngine.dir/core/src/scene/sceneReader.cpp.o: /home/idk/Document
 /usr/include/bits/types/timer_t.h:
 
 /usr/include/bits/pthreadtypes-arch.h:
+
+/usr/include/bits/floatn.h:
+
+/home/idk/Documents/GitHub/SimpleEngine/core/headers/ISubscriber.hpp:
+
+/usr/include/c++/14/debug/assertions.h:
 
 /usr/include/bits/types/cookie_io_functions_t.h:
 
@@ -6872,6 +7015,12 @@ CMakeFiles/SimpleEngine.dir/core/src/scene/sceneReader.cpp.o: /home/idk/Document
 
 /usr/include/bits/types/struct_sched_param.h:
 
+/home/idk/Documents/GitHub/SimpleEngine/core/src/engine/camera.cpp:
+
+/usr/include/c++/14/chrono:
+
+/usr/include/c++/14/exception:
+
 /usr/include/c++/14/climits:
 
 /usr/include/c++/14/clocale:
@@ -6897,8 +7046,6 @@ CMakeFiles/SimpleEngine.dir/core/src/scene/sceneReader.cpp.o: /home/idk/Document
 /usr/include/c++/14/x86_64-redhat-linux/bits/cpu_defines.h:
 
 /usr/include/c++/14/cwctype:
-
-/usr/include/c++/14/debug/assertions.h:
 
 /usr/include/c++/14/bits/slice_array.h:
 
@@ -7123,8 +7270,6 @@ CMakeFiles/SimpleEngine.dir/core/src/scene/sceneReader.cpp.o: /home/idk/Document
 /usr/include/glm/simd/platform.h:
 
 /usr/include/glm/detail/type_vec4.hpp:
-
-/usr/include/locale.h:
 
 /usr/include/glm/ext/matrix_clip_space.hpp:
 

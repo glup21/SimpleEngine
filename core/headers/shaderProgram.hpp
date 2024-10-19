@@ -3,8 +3,12 @@
 
 #include "shader.hpp"
 #include <memory>
+#include <string>
+#include <vector>
 
-using std::unique_ptr;
+using std::unique_ptr, std::string, std::vector;
+
+class Shader;
 
 class ShaderProgram
 {
