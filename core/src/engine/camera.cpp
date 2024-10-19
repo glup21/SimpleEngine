@@ -41,7 +41,7 @@ glm::vec3 Camera::getRightVector()
     return glm::normalize(glm::cross(getForwardVector(), upVector));
 }
 
-void Camera::move(vector<bool> keys, float deltaTime)
+void Camera::move(const vector<bool>& keys, const float& deltaTime)
 {
     vec3 forwardVector = getForwardVector();
     vec3 rightVector = getRightVector();
@@ -64,25 +64,34 @@ void Camera::move(vector<bool> keys, float deltaTime)
     if (movement != glm::vec3(0.0f)) 
         movement = glm::normalize(movement);
 
-    // Update the camera's position using the composite transform
     addPosition(movement * settings.movingSpeed * deltaTime);
 }
 
-void Camera::changeTarget(float deltaX, float deltaY, float delta)
+void Camera::changeTarget(const float& deltaX, const float& deltaY, const float& delta)
 {
-    // Update fi (yaw) and alpha (pitch) based on mouse movement
     float fi = glm::degrees(atan2(target.z, target.x));
     float alpha = glm::degrees(asin(target.y));
 
     fi += deltaX * settings.lookSensitivity * delta;
     alpha = glm::clamp(alpha + deltaY * settings.lookSensitivity * delta, -89.0f, 89.0f);
 
-    // Calculate new target vector
     target.x = glm::cos(glm::radians(fi)) * glm::cos(glm::radians(alpha));
     target.y = glm::sin(glm::radians(alpha));
     target.z = glm::sin(glm::radians(fi)) * glm::cos(glm::radians(alpha));
 
     target = glm::normalize(target);
+}
+
+
+void Camera::update(const vector<bool>& keys, const float& deltaX, const float& deltaY,  const float& deltaTime)
+{
+
+    changeTarget(deltaX, deltaY, deltaTime);
+    move(keys, deltaTime);
+
+
+    notifySubscribers();
+    
 }
 
 TransformComposite Camera::getTransform() const
@@ -99,12 +108,12 @@ void Camera::addPosition(const vec3& newPosition)
 {
     Transform* translationTransform = new Transform();
     translationTransform->translate(newPosition.x, newPosition.y, newPosition.z);
-    transform.addTransform(translationTransform);  // Add translation to composite
+    transform.addTransform(translationTransform);  
 }
 
 void Camera::addRotation(const vec3& rotationVec, const float& angle)
 {
     Transform* rotationTransform = new Transform();
     rotationTransform->rotate(angle, rotationVec.x, rotationVec.y, rotationVec.z);
-    transform.addTransform(rotationTransform);  // Add rotation to composite
+    transform.addTransform(rotationTransform);  
 }

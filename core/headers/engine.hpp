@@ -38,7 +38,7 @@ private:
 
     void updateGameObjects(float delta);
     void drawObjects();
-    float calculateDeltaTime();
+    double calculateDeltaTime();
 
 
 public:

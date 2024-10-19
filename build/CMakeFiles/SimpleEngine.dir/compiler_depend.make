@@ -1566,6 +1566,7 @@ CMakeFiles/SimpleEngine.dir/core/src/engine/engine.cpp.o: /home/idk/Documents/Gi
   /usr/include/c++/14/bits/sstream.tcc \
   /usr/include/c++/14/bits/std_abs.h \
   /usr/include/c++/14/bits/std_function.h \
+  /usr/include/c++/14/bits/std_thread.h \
   /usr/include/c++/14/bits/stl_algo.h \
   /usr/include/c++/14/bits/stl_algobase.h \
   /usr/include/c++/14/bits/stl_bvector.h \
@@ -1590,6 +1591,7 @@ CMakeFiles/SimpleEngine.dir/core/src/engine/engine.cpp.o: /home/idk/Documents/Gi
   /usr/include/c++/14/bits/streambuf_iterator.h \
   /usr/include/c++/14/bits/string_view.tcc \
   /usr/include/c++/14/bits/stringfwd.h \
+  /usr/include/c++/14/bits/this_thread_sleep.h \
   /usr/include/c++/14/bits/uniform_int_dist.h \
   /usr/include/c++/14/bits/unique_ptr.h \
   /usr/include/c++/14/bits/unordered_map.h \
@@ -1662,6 +1664,7 @@ CMakeFiles/SimpleEngine.dir/core/src/engine/engine.cpp.o: /home/idk/Documents/Gi
   /usr/include/c++/14/string \
   /usr/include/c++/14/string_view \
   /usr/include/c++/14/system_error \
+  /usr/include/c++/14/thread \
   /usr/include/c++/14/tr1/bessel_function.tcc \
   /usr/include/c++/14/tr1/beta_function.tcc \
   /usr/include/c++/14/tr1/ell_integral.tcc \
@@ -6340,6 +6343,12 @@ CMakeFiles/SimpleEngine.dir/core/src/scene/sceneReader.cpp.o: /home/idk/Document
 /usr/lib/gcc/x86_64-redhat-linux/14/include/emmintrin.h:
 
 /home/idk/Documents/GitHub/SimpleEngine/core/src/engine/imageLoader.cpp:
+
+/usr/include/c++/14/thread:
+
+/usr/include/c++/14/bits/this_thread_sleep.h:
+
+/usr/include/c++/14/bits/std_thread.h:
 
 /home/idk/Documents/GitHub/SimpleEngine/core/headers/shaderFactory.hpp:
 

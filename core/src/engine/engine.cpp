@@ -4,11 +4,13 @@
 #include <iostream>
 #include "shaderFactory.hpp"
 #include "sceneReader.hpp"
+#include <thread>
 
 bool isWindowFocused = true;
 vector<bool> keys(100, false);
 
-void window_focus_callback(GLFWwindow* window, int focused) {
+void window_focus_callback(GLFWwindow* window, int focused) 
+{
     isWindowFocused = (focused == GLFW_TRUE);
 }
 
@@ -42,7 +44,6 @@ Engine::Engine(GLFWwindow* window, CameraSettings cameraSettings) : drawObjectBu
     defaultShaderProgram->attachShader(fragmentShader);
 
     vertexShader->attachShaderProgram(defaultShaderProgram);
-
 }
 
 void Engine::init(string scenePath)
@@ -56,7 +57,7 @@ void Engine::init(string scenePath)
     SceneReader sceneReader(scenePath);
     Scene scene = sceneReader.readScene(defaultShaderProgram);
 
-    //Load and init shaders
+    // Load and init shaders
     std::cout << "Initializing engine with scene." << std::endl;
     std::cout << "Engine object address: " << this << std::endl;
 
@@ -73,65 +74,86 @@ void Engine::init(string scenePath)
     glfwSetKeyCallback(window, key_callback);
 
     lastMousePosition = inputManager->getMousePos();
-    defaultShaderProgram->link(); //We will link individual shader programs in models if we want
-
-    this->window = window;
+    defaultShaderProgram->link(); // We will link individual shader programs in models if we want
 }
+
 void Engine::run()
 {
-    float deltaTime = calculateDeltaTime();
-    glfwGetWindowSize(window, &width, &height);
-    //mouse movement
-    if(isWindowFocused)
-    {
-        glfwGetCursorPos(window, &xpos, &ypos);
+    const double targetFPS = 60.0; 
+    const double targetFrameTime = 1.0 / targetFPS; 
 
+    while (!glfwWindowShouldClose(window))
+    {
+        auto frameStartTime = std::chrono::high_resolution_clock::now();  
+        double deltaTime = calculateDeltaTime();
+
+        glfwGetWindowSize(window, &width, &height);
         vec2 mouseDelta(width / 2.0 - xpos, height / 2.0 - ypos);
 
-        if (glm::length(mouseDelta) > 0.01f)
+        // Mouse movement
+        if (isWindowFocused)
         {
-            mouseDelta = glm::normalize(mouseDelta);
-            camera->changeTarget(-mouseDelta.x, mouseDelta.y, deltaTime);
+            glfwGetCursorPos(window, &xpos, &ypos);
+            vec2 mouseDelta(width / 2.0 - xpos, height / 2.0 - ypos);
+
+            if (glm::length(mouseDelta) > 0.01f)
+            {
+                mouseDelta = glm::normalize(mouseDelta);
+                camera->changeTarget(-mouseDelta.x, mouseDelta.y, deltaTime);
+            }
+        }
+        glfwSetCursorPos(window, width / 2.0, height / 2.0);
+
+        // Camera movement
+        camera->move(keys, deltaTime);
+        camera->notifySubscribers();
+
+        // Clear screen
+        glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+
+        // Update and draw game objects
+        updateGameObjects(deltaTime);
+        drawObjects();
+
+        glfwSwapBuffers(window);
+        glfwPollEvents();
+
+        //FPS limitation
+        auto frameEndTime = std::chrono::high_resolution_clock::now();  
+        std::chrono::duration<double> frameDuration = frameEndTime - frameStartTime;
+
+        if (frameDuration.count() < targetFrameTime)
+        {
+            // Sleep for the remaining time to maintain the frame rate
+            double sleepTime = targetFrameTime - frameDuration.count();
+            std::this_thread::sleep_for(std::chrono::duration<double>(sleepTime));
         }
     }
-    glfwSetCursorPos(window, width / 2.0, height / 2.0);
-
-    //camera movement
-    camera->move(keys, deltaTime);
-    camera->notifySubscribers();
-
-    // defaultShaderProgram->setMat4("projectionMatrix", camera->getProjectionMatrix());
-    // defaultShaderProgram->setMat4("viewMatrix", camera->getViewMatrix());
-    // defaultShaderProgram->setVec3("cameraPosition", camera->getPosition());
-
-    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-    updateGameObjects(calculateDeltaTime());
-    drawObjects();
-
 }
+
 void Engine::shutdown()
 {
-
+    // Implement shutdown logic if needed
 }
 
 void Engine::updateGameObjects(float delta)
 {
-
-    for(IGameObject* gObj : gameObjects)
+    for (IGameObject* gObj : gameObjects)
         gObj->update(delta);
-
 }
+
 void Engine::drawObjects()
 {
-    for( IDrawableObject* dObj : drawObjectBuffer)
+    for (IDrawableObject* dObj : drawObjectBuffer)
     {
         dObj->draw();
     }
 }
-float Engine::calculateDeltaTime()
+
+double Engine::calculateDeltaTime()
 {
     auto currentTime = std::chrono::high_resolution_clock::now();
-    std::chrono::duration<float> deltaTime = currentTime - previousTime;
+    std::chrono::duration<double> deltaTime = currentTime - previousTime;
     previousTime = currentTime;
     return deltaTime.count();
 }

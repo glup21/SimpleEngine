@@ -29,8 +29,9 @@ public:
     vec3 getForwardVector();
     vec3 getRightVector();
 
-    void move(vector<bool> keys, float deltaTime);
-    void changeTarget(float deltaX, float deltaY, float delta);
+    void move(const vector<bool>& keys, const float& deltaTime);
+    void changeTarget(const float& deltaX, const float& deltaY, const float& delta);
+    void update(const vector<bool>& keys, const float& deltaX, const float& deltaY,  const float& deltaTime);
 
     TransformComposite getTransform() const;
     void setTransform(const Transform& transform);

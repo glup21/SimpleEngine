@@ -40,36 +40,12 @@ void Shader::checkCompileErrors()
 }
 
 void Shader::update()
-{ 
-    
+{  
     //maybe later expand it for different Publishers 
-    std::cout << "Update! 1\n";
 
     parentShaderProgram->setMat4("viewMatrix", camera->getViewMatrix());
     parentShaderProgram->setMat4("projectionMatrix", camera->getProjectionMatrix());
     parentShaderProgram->setVec3("cameraPosition", camera->getPosition());
-    // GLuint uniformID = glGetUniformLocation(ID, "viewMatrix");
-    // if(uniformID != -1)
-    // {
-    //     std::cout << "Update! 2\n";
-    //     mat4 viewMatrix = camera->getViewMatrix();
-    //     glUniformMatrix4fv(uniformID, 1, GL_FALSE, &viewMatrix[0][0]);
-    // }
-
-    // uniformID = glGetUniformLocation(ID, "projectionMatrix");
-    // if(uniformID != -1)
-    // {
-    //     mat4 projectionMatrix = camera->getProjectionMatrix();
-    //     glUniformMatrix4fv(uniformID, 1, GL_FALSE, &projectionMatrix[0][0]);
-    // }
-
-    // uniformID = glGetUniformLocation(ID, "cameraPosition");
-
-    // if(uniformID != -1)
-    // {
-    //     vec3 cameraPosition = camera->getPosition();
-    //     glUniform3fv(uniformID, 1, &cameraPosition[0]);
-    // }
 
 }
 
