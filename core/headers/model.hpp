@@ -6,11 +6,7 @@
 #include "IGameObject.hpp"
 #include "IDrawableObject.hpp"
 #include <vector>
-//object loader
-#include <assimp/Importer.hpp>
-#include <assimp/scene.h>
-#include <assimp/postprocess.h>
-#include "imageLoader.hpp"
+
 using std::vector;
 
 class Model : public IGameObject, public IDrawableObject

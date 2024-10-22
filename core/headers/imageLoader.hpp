@@ -5,8 +5,10 @@
 #include <vector>
 #include <map>
 #include <string>
+#include "ILoader.hpp"
+
 using std::vector, std::map, std::pair, std::string;
-class ImageLoader
+class ImageLoader : public ILoader
 {
 private:
     map<string, u_char*> usedPath;

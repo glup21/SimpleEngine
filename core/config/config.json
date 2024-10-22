@@ -5,7 +5,7 @@
         "nearPlane" : 0.1,
         "farPlane" : 100.0,
         "lookSensitivity" : 200.0,
-        "movingSpeed" : 1
+        "movingSpeed" : 3
     }
     
 }

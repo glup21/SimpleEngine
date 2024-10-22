@@ -34,11 +34,9 @@ Engine::Engine(GLFWwindow* window, CameraSettings cameraSettings) : drawObjectBu
     vertexPath = "../core/src/engine/shaders/vertex.glsl";
     fragmentPath = "../core/src/engine/shaders/fragment.glsl";
 
-    defaultShaderProgram = new ShaderProgram();
+    defaultShaderProgram = new ShaderProgram(camera);
     Shader* vertexShader = ShaderFactory::createShader(GL_VERTEX_SHADER, vertexPath, camera);
     Shader* fragmentShader = ShaderFactory::createShader(GL_FRAGMENT_SHADER, fragmentPath, camera);
-
-    vertexShader->subscribe();
 
     defaultShaderProgram->attachShader(vertexShader);
     defaultShaderProgram->attachShader(fragmentShader);
@@ -133,7 +131,7 @@ void Engine::run()
 
 void Engine::shutdown()
 {
-    // Implement shutdown logic if needed
+
 }
 
 void Engine::updateGameObjects(float delta)

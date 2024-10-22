@@ -1,6 +1,9 @@
 #include "shaderProgram.hpp"
 
-ShaderProgram::ShaderProgram() : ID(glCreateProgram()) {}
+ShaderProgram::ShaderProgram(Camera* camera) : ID(glCreateProgram()), camera(camera) 
+{
+    subscribe();
+}
 ShaderProgram::~ShaderProgram() { glDeleteProgram(ID); }
 
 void ShaderProgram::attachShader(Shader* shader)
@@ -39,4 +42,19 @@ void ShaderProgram::setInt(const string& name, int value)
 void ShaderProgram::setVec3(const string& name, glm::vec3 value)
 {
     glUniform3f(glGetUniformLocation(ID, name.c_str()), value.x, value.y, value.z); 
+}
+
+void ShaderProgram::update()
+{
+    //maybe later expand it for different Publishers 
+
+    setMat4("viewMatrix", camera->getViewMatrix());
+    setMat4("projectionMatrix", camera->getProjectionMatrix());
+    setVec3("cameraPosition", camera->getPosition());
+
+}
+
+void ShaderProgram::subscribe()
+{
+    camera->addSubscriber(this);
 }
