@@ -26,9 +26,9 @@ set(SRCS
     core/src/engine/transform.cpp
     core/src/engine/camera.cpp
     core/src/engine/input.cpp
-    core/src/engine/imageLoader.cpp
     core/src/engine/shader.cpp
     core/src/engine/shaderProgram.cpp
+    core/src/engine/pointLight.cpp
 
     # Config
     core/src/config/configReader.cpp
@@ -40,8 +40,12 @@ set(SRCS
     core/src/scene/sceneReader.cpp
 
     #Loaders
-    core/src/engine/modelFactory.cpp
+    core/src/engine/imageLoader.cpp
     core/src/engine/loaders/modelLoader.cpp
+
+    #Factories
+    core/src/engine/factories/gameObjectFactory.cpp
+    core/src/engine/factories/modelFactory.cpp
 )
 
 # Add executable

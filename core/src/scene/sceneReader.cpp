@@ -6,6 +6,7 @@
 #include <glm/vec4.hpp>
 #include "transform.hpp"
 #include "gameObjectFactory.hpp"
+#include "pointLight.hpp"
 
 Scene SceneReader::readScene(ShaderProgram* defaultShaderProgram)
 {
@@ -25,15 +26,15 @@ Scene SceneReader::readScene(ShaderProgram* defaultShaderProgram)
     {
         for(auto& obj : sceneConfig["objects"])
         {
-            string id = obj.value("id", "");
             string type = obj.value("type", "");
-            string directory = obj.value("directory", "");
-            vector<float> position = obj.value("position", vector<float>{});
-            vector<float> rotation = obj.value("rotation", vector<float>{});
-            vector<float> scale = obj.value("scale", vector<float>{});
-
             if (type == "model")
             {
+                string id = obj.value("id", "");
+                string directory = obj.value("directory", "");
+                vector<float> position = obj.value("position", vector<float>{});
+                vector<float> rotation = obj.value("rotation", vector<float>{});
+                vector<float> scale = obj.value("scale", vector<float>{});
+
                 glm::vec3 v_position{position[0], position[1], position[2]};
                 glm::vec3 v_rotation{rotation[0], rotation[1], rotation[2]};
                 glm::vec3 v_scale{scale[0], scale[1], scale[2]};
@@ -48,9 +49,14 @@ Scene SceneReader::readScene(ShaderProgram* defaultShaderProgram)
 
                 gObj.push_back(model);
             }
-            else if(type == "light")
+            else if(type == "point_light")
             {
+                vector<float> position = obj.value("position", vector<float>{});
+                glm::vec3 v_position{position[0], position[1], position[2]};
+                shared_ptr<PointLight> light = objectFactory.createLight();
 
+                light->addPosition(v_position);
+                gObj.push_back(light);
             }
     }
 

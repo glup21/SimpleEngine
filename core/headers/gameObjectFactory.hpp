@@ -6,6 +6,7 @@
 #include <memory>
 #include "shaderProgram.hpp"
 #include "model.hpp"
+#include "pointLight.hpp"
 
 using std::unique_ptr, std::shared_ptr;
 
@@ -20,6 +21,7 @@ public:
     ~GameObjectFactory() = default;
 
     shared_ptr<Model> createModel(string path, string ID); //other ways of creation implement later
+    shared_ptr<PointLight> createLight();
 };
 
 #endif

@@ -43,12 +43,6 @@
 },
 {
   "directory": "/home/idk/Documents/GitHub/SimpleEngine/build",
-  "command": "/usr/bin/g++  -I/home/idk/Documents/GitHub/SimpleEngine/core/headers  -Wall -g -std=gnu++17 -o CMakeFiles/SimpleEngine.dir/core/src/engine/imageLoader.cpp.o -c /home/idk/Documents/GitHub/SimpleEngine/core/src/engine/imageLoader.cpp",
-  "file": "/home/idk/Documents/GitHub/SimpleEngine/core/src/engine/imageLoader.cpp",
-  "output": "CMakeFiles/SimpleEngine.dir/core/src/engine/imageLoader.cpp.o"
-},
-{
-  "directory": "/home/idk/Documents/GitHub/SimpleEngine/build",
   "command": "/usr/bin/g++  -I/home/idk/Documents/GitHub/SimpleEngine/core/headers  -Wall -g -std=gnu++17 -o CMakeFiles/SimpleEngine.dir/core/src/engine/shader.cpp.o -c /home/idk/Documents/GitHub/SimpleEngine/core/src/engine/shader.cpp",
   "file": "/home/idk/Documents/GitHub/SimpleEngine/core/src/engine/shader.cpp",
   "output": "CMakeFiles/SimpleEngine.dir/core/src/engine/shader.cpp.o"
@@ -58,6 +52,12 @@
   "command": "/usr/bin/g++  -I/home/idk/Documents/GitHub/SimpleEngine/core/headers  -Wall -g -std=gnu++17 -o CMakeFiles/SimpleEngine.dir/core/src/engine/shaderProgram.cpp.o -c /home/idk/Documents/GitHub/SimpleEngine/core/src/engine/shaderProgram.cpp",
   "file": "/home/idk/Documents/GitHub/SimpleEngine/core/src/engine/shaderProgram.cpp",
   "output": "CMakeFiles/SimpleEngine.dir/core/src/engine/shaderProgram.cpp.o"
+},
+{
+  "directory": "/home/idk/Documents/GitHub/SimpleEngine/build",
+  "command": "/usr/bin/g++  -I/home/idk/Documents/GitHub/SimpleEngine/core/headers  -Wall -g -std=gnu++17 -o CMakeFiles/SimpleEngine.dir/core/src/engine/pointLight.cpp.o -c /home/idk/Documents/GitHub/SimpleEngine/core/src/engine/pointLight.cpp",
+  "file": "/home/idk/Documents/GitHub/SimpleEngine/core/src/engine/pointLight.cpp",
+  "output": "CMakeFiles/SimpleEngine.dir/core/src/engine/pointLight.cpp.o"
 },
 {
   "directory": "/home/idk/Documents/GitHub/SimpleEngine/build",
@@ -91,14 +91,26 @@
 },
 {
   "directory": "/home/idk/Documents/GitHub/SimpleEngine/build",
-  "command": "/usr/bin/g++  -I/home/idk/Documents/GitHub/SimpleEngine/core/headers  -Wall -g -std=gnu++17 -o CMakeFiles/SimpleEngine.dir/core/src/engine/modelFactory.cpp.o -c /home/idk/Documents/GitHub/SimpleEngine/core/src/engine/modelFactory.cpp",
-  "file": "/home/idk/Documents/GitHub/SimpleEngine/core/src/engine/modelFactory.cpp",
-  "output": "CMakeFiles/SimpleEngine.dir/core/src/engine/modelFactory.cpp.o"
+  "command": "/usr/bin/g++  -I/home/idk/Documents/GitHub/SimpleEngine/core/headers  -Wall -g -std=gnu++17 -o CMakeFiles/SimpleEngine.dir/core/src/engine/imageLoader.cpp.o -c /home/idk/Documents/GitHub/SimpleEngine/core/src/engine/imageLoader.cpp",
+  "file": "/home/idk/Documents/GitHub/SimpleEngine/core/src/engine/imageLoader.cpp",
+  "output": "CMakeFiles/SimpleEngine.dir/core/src/engine/imageLoader.cpp.o"
 },
 {
   "directory": "/home/idk/Documents/GitHub/SimpleEngine/build",
   "command": "/usr/bin/g++  -I/home/idk/Documents/GitHub/SimpleEngine/core/headers  -Wall -g -std=gnu++17 -o CMakeFiles/SimpleEngine.dir/core/src/engine/loaders/modelLoader.cpp.o -c /home/idk/Documents/GitHub/SimpleEngine/core/src/engine/loaders/modelLoader.cpp",
   "file": "/home/idk/Documents/GitHub/SimpleEngine/core/src/engine/loaders/modelLoader.cpp",
   "output": "CMakeFiles/SimpleEngine.dir/core/src/engine/loaders/modelLoader.cpp.o"
+},
+{
+  "directory": "/home/idk/Documents/GitHub/SimpleEngine/build",
+  "command": "/usr/bin/g++  -I/home/idk/Documents/GitHub/SimpleEngine/core/headers  -Wall -g -std=gnu++17 -o CMakeFiles/SimpleEngine.dir/core/src/engine/factories/gameObjectFactory.cpp.o -c /home/idk/Documents/GitHub/SimpleEngine/core/src/engine/factories/gameObjectFactory.cpp",
+  "file": "/home/idk/Documents/GitHub/SimpleEngine/core/src/engine/factories/gameObjectFactory.cpp",
+  "output": "CMakeFiles/SimpleEngine.dir/core/src/engine/factories/gameObjectFactory.cpp.o"
+},
+{
+  "directory": "/home/idk/Documents/GitHub/SimpleEngine/build",
+  "command": "/usr/bin/g++  -I/home/idk/Documents/GitHub/SimpleEngine/core/headers  -Wall -g -std=gnu++17 -o CMakeFiles/SimpleEngine.dir/core/src/engine/factories/modelFactory.cpp.o -c /home/idk/Documents/GitHub/SimpleEngine/core/src/engine/factories/modelFactory.cpp",
+  "file": "/home/idk/Documents/GitHub/SimpleEngine/core/src/engine/factories/modelFactory.cpp",
+  "output": "CMakeFiles/SimpleEngine.dir/core/src/engine/factories/modelFactory.cpp.o"
 }
 ]
