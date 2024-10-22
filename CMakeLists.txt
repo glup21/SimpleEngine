@@ -38,6 +38,10 @@ set(SRCS
     core/src/scene/mesh.cpp
     core/src/scene/model.cpp
     core/src/scene/sceneReader.cpp
+
+    #Loaders
+    core/src/engine/modelFactory.cpp
+    core/src/engine/loaders/modelLoader.cpp
 )
 
 # Add executable

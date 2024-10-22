@@ -14,6 +14,8 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/idk/Documents/GitHub/SimpleEngine/core/src/engine/engine.cpp" "CMakeFiles/SimpleEngine.dir/core/src/engine/engine.cpp.o" "gcc" "CMakeFiles/SimpleEngine.dir/core/src/engine/engine.cpp.o.d"
   "/home/idk/Documents/GitHub/SimpleEngine/core/src/engine/imageLoader.cpp" "CMakeFiles/SimpleEngine.dir/core/src/engine/imageLoader.cpp.o" "gcc" "CMakeFiles/SimpleEngine.dir/core/src/engine/imageLoader.cpp.o.d"
   "/home/idk/Documents/GitHub/SimpleEngine/core/src/engine/input.cpp" "CMakeFiles/SimpleEngine.dir/core/src/engine/input.cpp.o" "gcc" "CMakeFiles/SimpleEngine.dir/core/src/engine/input.cpp.o.d"
+  "/home/idk/Documents/GitHub/SimpleEngine/core/src/engine/loaders/modelLoader.cpp" "CMakeFiles/SimpleEngine.dir/core/src/engine/loaders/modelLoader.cpp.o" "gcc" "CMakeFiles/SimpleEngine.dir/core/src/engine/loaders/modelLoader.cpp.o.d"
+  "/home/idk/Documents/GitHub/SimpleEngine/core/src/engine/modelFactory.cpp" "CMakeFiles/SimpleEngine.dir/core/src/engine/modelFactory.cpp.o" "gcc" "CMakeFiles/SimpleEngine.dir/core/src/engine/modelFactory.cpp.o.d"
   "/home/idk/Documents/GitHub/SimpleEngine/core/src/engine/shader.cpp" "CMakeFiles/SimpleEngine.dir/core/src/engine/shader.cpp.o" "gcc" "CMakeFiles/SimpleEngine.dir/core/src/engine/shader.cpp.o.d"
   "/home/idk/Documents/GitHub/SimpleEngine/core/src/engine/shaderProgram.cpp" "CMakeFiles/SimpleEngine.dir/core/src/engine/shaderProgram.cpp.o" "gcc" "CMakeFiles/SimpleEngine.dir/core/src/engine/shaderProgram.cpp.o.d"
   "/home/idk/Documents/GitHub/SimpleEngine/core/src/engine/texture.cpp" "CMakeFiles/SimpleEngine.dir/core/src/engine/texture.cpp.o" "gcc" "CMakeFiles/SimpleEngine.dir/core/src/engine/texture.cpp.o.d"

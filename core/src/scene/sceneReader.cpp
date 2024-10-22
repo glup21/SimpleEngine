@@ -5,9 +5,12 @@
 #include <glm/vec3.hpp> 
 #include <glm/vec4.hpp>
 #include "transform.hpp"
+#include "gameObjectFactory.hpp"
 
 Scene SceneReader::readScene(ShaderProgram* defaultShaderProgram)
 {
+    //ModelFactory modelFactory(defaultShaderProgram);
+    GameObjectFactory objectFactory(defaultShaderProgram);
 
     std::ifstream file(scenePath);
     if (!file.is_open()) {
@@ -16,7 +19,7 @@ Scene SceneReader::readScene(ShaderProgram* defaultShaderProgram)
     file >> sceneConfig;
 
     
-    vector<IGameObject*> gObj;
+    vector<shared_ptr<IGameObject>> gObj;
 
     if(sceneConfig.contains("objects"))
     {
@@ -29,35 +32,27 @@ Scene SceneReader::readScene(ShaderProgram* defaultShaderProgram)
             vector<float> rotation = obj.value("rotation", vector<float>{});
             vector<float> scale = obj.value("scale", vector<float>{});
 
-            if(type == "model")
+            if (type == "model")
             {
-                
                 glm::vec3 v_position{position[0], position[1], position[2]};
                 glm::vec3 v_rotation{rotation[0], rotation[1], rotation[2]};
                 glm::vec3 v_scale{scale[0], scale[1], scale[2]};
-                Transform transform;
-                
-                // transform.scale(v_scale.x, v_scale.y, v_scale.z); 
-                
-                // transform.rotate(v_rotation.x, 1.0f, 0.0f, 0.0f); 
-                // transform.rotate(v_rotation.y, 0.0f, 1.0f, 0.0f); 
-                // transform.rotate(v_rotation.z, 0.0f, 0.0f, 1.0f);
-                // transform.translate(v_position.x, v_position.y, v_position.z); 
 
-                Model* model = new Model(directory, id, defaultShaderProgram); 
+                std::shared_ptr<Model> model = objectFactory.createModel(directory, id);
 
                 model->addScale(v_scale);
                 model->addRotation({1.0f, 0.0f, 0.0f}, v_rotation.x);
                 model->addRotation({0.0f, 1.0f, 0.0f}, v_rotation.y);
                 model->addRotation({0.0f, 0.0f, 1.0f}, v_rotation.z);
-
                 model->addPosition(v_position);
 
-
                 gObj.push_back(model);
+            }
+            else if(type == "light")
+            {
 
             }
-        }
+    }
 
 
     }

@@ -1,7 +1,7 @@
 #include "mesh.hpp"
 #include <iostream>
 
-Mesh::Mesh(vector<Vertex> vertices, vector<u_int> indices, vector<Texture> textures, ShaderProgram* shaderProgram) :
+Mesh::Mesh(vector<Vertex> vertices, vector<u_int> indices, vector<Texture*> textures, ShaderProgram* shaderProgram) :
     vertices(vertices), indices(indices), textures(textures), IDrawableObject(shaderProgram)
 {
     setup();
@@ -9,7 +9,6 @@ Mesh::Mesh(vector<Vertex> vertices, vector<u_int> indices, vector<Texture> textu
 
 void Mesh::setup()
 {
-
     glGenVertexArrays(1, &VAO); //Create VAO, VBO, EBO
     glGenBuffers(1, &VBO);
     glGenBuffers(1, &EBO);
@@ -49,13 +48,15 @@ void Mesh::draw()
     shaderProgram->setMat4("transform", transformMatrix);
 
     shaderProgram->setInt("textureImage", 0);
-    textures[0].bind(0);
+    textures[0]->bind(0);
 
     shaderProgram->use();
 
     glBindVertexArray(VAO);
     glDrawElements(GL_TRIANGLES, indices.size(), GL_UNSIGNED_INT, 0);
     glBindVertexArray(0);
+
+
 }
 
 

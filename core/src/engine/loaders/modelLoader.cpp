@@ -1,6 +1,7 @@
 #include "modelLoader.hpp"
+#include "defaultAssets.hpp"
 
-ModelLoader::ModelLoader(ShaderProgram* shaderProgram) {}
+ModelLoader::ModelLoader() {}
 
 ModelLoader::ModelData ModelLoader::loadModel(string path)
 {
@@ -12,36 +13,36 @@ ModelLoader::ModelData ModelLoader::loadModel(string path)
     if(!scene || scene->mFlags & AI_SCENE_FLAGS_INCOMPLETE || !scene->mRootNode) 
     {
         std::cout << "Error: assimp: " << importer.GetErrorString() << std::endl;
-        return;
+        return res;
     }
 
-    // Set directory for texture loading
+    // Set path for texture loading
     path = path.substr(0, path.find_last_of('/'));
-    processNode(scene->mRootNode, scene, res);
+    processNode(scene->mRootNode, scene, res, path);
 
     return res;
 
 }
 
 
-void ModelLoader::processNode(aiNode* node, const aiScene* scene, ModelData& modelData)
+void ModelLoader::processNode(aiNode* node, const aiScene* scene, ModelData& modelData, string path)
 {
     for(u_int64_t i = 0; i < node->mNumMeshes; i++)
     {
         aiMesh *mesh = scene->mMeshes[node->mMeshes[i]]; 
-        modelData.meshes.push_back(processMesh(mesh, scene, modelData));			
+        processMesh(mesh, scene, modelData, path);			
     }
     for(u_int64_t i = 0; i < node->mNumChildren; i++)
     {
-        processNode(node->mChildren[i], scene, modelData);
+        processNode(node->mChildren[i], scene, modelData, path);
     }
 }  
 
-Mesh ModelLoader::processMesh(aiMesh* mesh, const aiScene* scene, ModelData& modelData)
+void ModelLoader::processMesh(aiMesh* mesh, const aiScene* scene, ModelData& modelData, string path)
 {
     vector<Vertex> vertices;
     vector<u_int> indices;
-    vector<Texture> textures;
+    vector<Texture*> textures;
 
     for(u_int64_t i = 0; i < mesh->mNumVertices; i++)
     {
@@ -89,31 +90,30 @@ Mesh ModelLoader::processMesh(aiMesh* mesh, const aiScene* scene, ModelData& mod
     {
         aiMaterial *material = scene->mMaterials[mesh->mMaterialIndex];
         
-        vector<Texture> diffuseMaps = loadMaterialTextures(material, aiTextureType_DIFFUSE, "texture_diffuse");
+        vector<Texture*> diffuseMaps = loadMaterialTextures(material, aiTextureType_DIFFUSE, "texture_diffuse", path);
         textures.insert(textures.end(), diffuseMaps.begin(), diffuseMaps.end());
     }  
 
-    Mesh res(vertices, indices, textures, shaderProgram);
-    modelData.meshes.push_back(res);
-    return res;
+    MeshData md{vertices, indices, textures};
+    modelData.meshData.push_back(md);
 }  
 
-vector<Texture> ModelLoader::loadMaterialTextures(aiMaterial *mat, aiTextureType type, string typeName)
+vector<Texture*> ModelLoader::loadMaterialTextures(aiMaterial *mat, aiTextureType type, string typeName, string path)
 {
     DefaultAssets defaultAssets;
     string defaultTexturePath = defaultAssets.defaultTexturePath;
-    vector<Texture> textures;
+    vector<Texture*> textures;
 
     for(int i = 0; i < mat->GetTextureCount(type); i++)
     {
         aiString str;
         mat->GetTexture(type, i, &str);
     
-        string texturePath = directory + "/" + str.C_Str();
+        string texturePath = path + "/" + str.C_Str();
         
-        if(texturesLoaded.find(texturePath) != texturesLoaded.end())
+        if(loadedTextures.find(texturePath) != loadedTextures.end())
         {
-            textures.push_back(texturesLoaded[texturePath]);
+            textures.push_back(loadedTextures[texturePath]);
             continue; 
         }
         
@@ -123,9 +123,10 @@ vector<Texture> ModelLoader::loadMaterialTextures(aiMaterial *mat, aiTextureType
 
         if (tmp) 
         {
-            Texture texture(tmp, width, height, nrChannels, typeName);
+            //Texture texture(tmp, width, height, nrChannels, typeName);
+            Texture* texture = new Texture(tmp, width, height, nrChannels, typeName);
             textures.push_back(texture);
-            texturesLoaded[texturePath] = texture;
+            loadedTextures[texturePath] = texture;
             std::cout << "Loaded texture from path: " << texturePath << "\n";
         } 
         else 
@@ -133,19 +134,19 @@ vector<Texture> ModelLoader::loadMaterialTextures(aiMaterial *mat, aiTextureType
             std::cerr << "Failed to load texture from path: " << texturePath << "\n";
             std::cerr << "Using default texture instead.\n";
 
-            texturePath = directory + "/" + defaultTexturePath.c_str();
+            texturePath = path + "/" + defaultTexturePath.c_str();
             tmp = imageLoader.loadImage(texturePath, &height, &width, &nrChannels);
 
-            Texture texture(tmp, width, height, nrChannels, typeName);
+            Texture* texture = new Texture(tmp, width, height, nrChannels, typeName);
             textures.push_back(texture);
-            texturesLoaded[texturePath] = texture;
+            loadedTextures[texturePath] = texture;
             std::cout << "Loaded texture from path: " << texturePath << "\n";
         }
     }
 
     if(textures.size() == 0)
     {
-        string texturePath = directory + "/" + defaultTexturePath.c_str();
+        string texturePath = path + "/" + defaultTexturePath.c_str();
         std::cout << "No textures on model! Replacing with default texture.\n";
         std::cout << "Default texture path: " << texturePath << "\n";
         
@@ -154,9 +155,9 @@ vector<Texture> ModelLoader::loadMaterialTextures(aiMaterial *mat, aiTextureType
 
         if (tmp) 
         {
-            Texture texture(tmp, width, height, nrChannels, typeName);
+            Texture* texture = new Texture(tmp, width, height, nrChannels, typeName);
             textures.push_back(texture);
-            texturesLoaded[texturePath] = texture;
+            loadedTextures[texturePath] = texture;
             std::cout << "Loaded texture from path: " << texturePath << "\n";
         } 
     }

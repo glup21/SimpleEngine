@@ -6,20 +6,21 @@
 #include "shader.hpp"
 #include <string>
 #include "IGameObject.hpp"
-using std::vector, std::pair, std::string;
+#include <memory>
+using std::vector, std::pair, std::string, std::shared_ptr;
 
 class Scene
 {
-    vector<IGameObject*> gameObjects;
+    vector<shared_ptr<IGameObject>> gameObjects;
     vector<IDrawableObject*> drawableObjects;
-    vector<Shader*> shaders;
+    vector<Shader*> shaders; // I dont need this
 
 public:
     Scene() = default;
     ~Scene() = default;
 
-    Scene(vector<IGameObject*> gObj);
-    vector<IGameObject*>* getObjects();
+    Scene(vector<shared_ptr<IGameObject>> gObj);
+    vector<shared_ptr<IGameObject>>* getObjects();
     vector<IDrawableObject*> getDrawableObjects();
     vector<Shader*>* getShaders();
     

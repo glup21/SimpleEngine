@@ -279,6 +279,34 @@ CMakeFiles/SimpleEngine.dir/core/src/scene/sceneReader.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/SimpleEngine.dir/core/src/scene/sceneReader.cpp.s"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/idk/Documents/GitHub/SimpleEngine/core/src/scene/sceneReader.cpp -o CMakeFiles/SimpleEngine.dir/core/src/scene/sceneReader.cpp.s
 
+CMakeFiles/SimpleEngine.dir/core/src/engine/modelFactory.cpp.o: CMakeFiles/SimpleEngine.dir/flags.make
+CMakeFiles/SimpleEngine.dir/core/src/engine/modelFactory.cpp.o: /home/idk/Documents/GitHub/SimpleEngine/core/src/engine/modelFactory.cpp
+CMakeFiles/SimpleEngine.dir/core/src/engine/modelFactory.cpp.o: CMakeFiles/SimpleEngine.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/idk/Documents/GitHub/SimpleEngine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/SimpleEngine.dir/core/src/engine/modelFactory.cpp.o"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/SimpleEngine.dir/core/src/engine/modelFactory.cpp.o -MF CMakeFiles/SimpleEngine.dir/core/src/engine/modelFactory.cpp.o.d -o CMakeFiles/SimpleEngine.dir/core/src/engine/modelFactory.cpp.o -c /home/idk/Documents/GitHub/SimpleEngine/core/src/engine/modelFactory.cpp
+
+CMakeFiles/SimpleEngine.dir/core/src/engine/modelFactory.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/SimpleEngine.dir/core/src/engine/modelFactory.cpp.i"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/idk/Documents/GitHub/SimpleEngine/core/src/engine/modelFactory.cpp > CMakeFiles/SimpleEngine.dir/core/src/engine/modelFactory.cpp.i
+
+CMakeFiles/SimpleEngine.dir/core/src/engine/modelFactory.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/SimpleEngine.dir/core/src/engine/modelFactory.cpp.s"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/idk/Documents/GitHub/SimpleEngine/core/src/engine/modelFactory.cpp -o CMakeFiles/SimpleEngine.dir/core/src/engine/modelFactory.cpp.s
+
+CMakeFiles/SimpleEngine.dir/core/src/engine/loaders/modelLoader.cpp.o: CMakeFiles/SimpleEngine.dir/flags.make
+CMakeFiles/SimpleEngine.dir/core/src/engine/loaders/modelLoader.cpp.o: /home/idk/Documents/GitHub/SimpleEngine/core/src/engine/loaders/modelLoader.cpp
+CMakeFiles/SimpleEngine.dir/core/src/engine/loaders/modelLoader.cpp.o: CMakeFiles/SimpleEngine.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/idk/Documents/GitHub/SimpleEngine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/SimpleEngine.dir/core/src/engine/loaders/modelLoader.cpp.o"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/SimpleEngine.dir/core/src/engine/loaders/modelLoader.cpp.o -MF CMakeFiles/SimpleEngine.dir/core/src/engine/loaders/modelLoader.cpp.o.d -o CMakeFiles/SimpleEngine.dir/core/src/engine/loaders/modelLoader.cpp.o -c /home/idk/Documents/GitHub/SimpleEngine/core/src/engine/loaders/modelLoader.cpp
+
+CMakeFiles/SimpleEngine.dir/core/src/engine/loaders/modelLoader.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/SimpleEngine.dir/core/src/engine/loaders/modelLoader.cpp.i"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/idk/Documents/GitHub/SimpleEngine/core/src/engine/loaders/modelLoader.cpp > CMakeFiles/SimpleEngine.dir/core/src/engine/loaders/modelLoader.cpp.i
+
+CMakeFiles/SimpleEngine.dir/core/src/engine/loaders/modelLoader.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/SimpleEngine.dir/core/src/engine/loaders/modelLoader.cpp.s"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/idk/Documents/GitHub/SimpleEngine/core/src/engine/loaders/modelLoader.cpp -o CMakeFiles/SimpleEngine.dir/core/src/engine/loaders/modelLoader.cpp.s
+
 # Object files for target SimpleEngine
 SimpleEngine_OBJECTS = \
 "CMakeFiles/SimpleEngine.dir/core/src/main.cpp.o" \
@@ -295,7 +323,9 @@ SimpleEngine_OBJECTS = \
 "CMakeFiles/SimpleEngine.dir/core/src/scene/scene.cpp.o" \
 "CMakeFiles/SimpleEngine.dir/core/src/scene/mesh.cpp.o" \
 "CMakeFiles/SimpleEngine.dir/core/src/scene/model.cpp.o" \
-"CMakeFiles/SimpleEngine.dir/core/src/scene/sceneReader.cpp.o"
+"CMakeFiles/SimpleEngine.dir/core/src/scene/sceneReader.cpp.o" \
+"CMakeFiles/SimpleEngine.dir/core/src/engine/modelFactory.cpp.o" \
+"CMakeFiles/SimpleEngine.dir/core/src/engine/loaders/modelLoader.cpp.o"
 
 # External object files for target SimpleEngine
 SimpleEngine_EXTERNAL_OBJECTS =
@@ -315,10 +345,12 @@ SimpleEngine: CMakeFiles/SimpleEngine.dir/core/src/scene/scene.cpp.o
 SimpleEngine: CMakeFiles/SimpleEngine.dir/core/src/scene/mesh.cpp.o
 SimpleEngine: CMakeFiles/SimpleEngine.dir/core/src/scene/model.cpp.o
 SimpleEngine: CMakeFiles/SimpleEngine.dir/core/src/scene/sceneReader.cpp.o
+SimpleEngine: CMakeFiles/SimpleEngine.dir/core/src/engine/modelFactory.cpp.o
+SimpleEngine: CMakeFiles/SimpleEngine.dir/core/src/engine/loaders/modelLoader.cpp.o
 SimpleEngine: CMakeFiles/SimpleEngine.dir/build.make
 SimpleEngine: /usr/lib64/libassimp.so.5.3.1
 SimpleEngine: CMakeFiles/SimpleEngine.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/idk/Documents/GitHub/SimpleEngine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Linking CXX executable SimpleEngine"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/idk/Documents/GitHub/SimpleEngine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Linking CXX executable SimpleEngine"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/SimpleEngine.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

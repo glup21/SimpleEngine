@@ -1,4 +1,4 @@
-#ifndef ILODER_H
+#ifndef ILOADER_H
 #define ILOADER_H
 
 class ILoader
@@ -6,4 +6,4 @@ class ILoader
 
 };
 
-#endif ILOADER_H
+#endif 

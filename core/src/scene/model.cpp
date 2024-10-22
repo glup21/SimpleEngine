@@ -10,26 +10,16 @@ using std::unordered_map;
 
 unordered_map<string, Texture> texturesLoaded;
 
-Model::Model(string path, string ID, ShaderProgram* shaderProgram) 
-    : directory(path), ID(ID), transform(), IDrawableObject(shaderProgram)
+Model::Model(string ID, ShaderProgram* shaderProgram, vector<Mesh> meshes) 
+    : ID(ID), transform(), IDrawableObject(shaderProgram), meshes(meshes)
 {
     setup();
 }
-//Loading - MOVE TO SEPARATE CLASS AND REWRITE THIS GARBAGE
 void Model::setup()
 {
-    Assimp::Importer importer;
-    const aiScene *scene = importer.ReadFile(directory, aiProcess_Triangulate | aiProcess_FlipUVs | aiProcess_JoinIdenticalVertices | aiProcess_SortByPType);
 
-    if(!scene || scene->mFlags & AI_SCENE_FLAGS_INCOMPLETE || !scene->mRootNode) 
-    {
-        std::cout << "Error: assimp: " << importer.GetErrorString() << std::endl;
-        return;
-    }
 
-    // Set directory for texture loading
-    directory = directory.substr(0, directory.find_last_of('/'));
-    processNode(scene->mRootNode, scene);
+
 }
 
 //Behaviour and render
@@ -47,6 +37,7 @@ void Model::draw()
 {   
     for(u_int i = 0; i < meshes.size(); i++)
         meshes[i].draw();
+
 }
 
 //Transform

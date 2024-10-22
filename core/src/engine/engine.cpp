@@ -136,7 +136,7 @@ void Engine::shutdown()
 
 void Engine::updateGameObjects(float delta)
 {
-    for (IGameObject* gObj : gameObjects)
+    for (shared_ptr<IGameObject> gObj : gameObjects)
         gObj->update(delta);
 }
 

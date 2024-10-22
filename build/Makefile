@@ -273,6 +273,54 @@ core/src/engine/input.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/SimpleEngine.dir/build.make CMakeFiles/SimpleEngine.dir/core/src/engine/input.cpp.s
 .PHONY : core/src/engine/input.cpp.s
 
+core/src/engine/loaders/modelLoader.o: core/src/engine/loaders/modelLoader.cpp.o
+.PHONY : core/src/engine/loaders/modelLoader.o
+
+# target to build an object file
+core/src/engine/loaders/modelLoader.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SimpleEngine.dir/build.make CMakeFiles/SimpleEngine.dir/core/src/engine/loaders/modelLoader.cpp.o
+.PHONY : core/src/engine/loaders/modelLoader.cpp.o
+
+core/src/engine/loaders/modelLoader.i: core/src/engine/loaders/modelLoader.cpp.i
+.PHONY : core/src/engine/loaders/modelLoader.i
+
+# target to preprocess a source file
+core/src/engine/loaders/modelLoader.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SimpleEngine.dir/build.make CMakeFiles/SimpleEngine.dir/core/src/engine/loaders/modelLoader.cpp.i
+.PHONY : core/src/engine/loaders/modelLoader.cpp.i
+
+core/src/engine/loaders/modelLoader.s: core/src/engine/loaders/modelLoader.cpp.s
+.PHONY : core/src/engine/loaders/modelLoader.s
+
+# target to generate assembly for a file
+core/src/engine/loaders/modelLoader.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SimpleEngine.dir/build.make CMakeFiles/SimpleEngine.dir/core/src/engine/loaders/modelLoader.cpp.s
+.PHONY : core/src/engine/loaders/modelLoader.cpp.s
+
+core/src/engine/modelFactory.o: core/src/engine/modelFactory.cpp.o
+.PHONY : core/src/engine/modelFactory.o
+
+# target to build an object file
+core/src/engine/modelFactory.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SimpleEngine.dir/build.make CMakeFiles/SimpleEngine.dir/core/src/engine/modelFactory.cpp.o
+.PHONY : core/src/engine/modelFactory.cpp.o
+
+core/src/engine/modelFactory.i: core/src/engine/modelFactory.cpp.i
+.PHONY : core/src/engine/modelFactory.i
+
+# target to preprocess a source file
+core/src/engine/modelFactory.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SimpleEngine.dir/build.make CMakeFiles/SimpleEngine.dir/core/src/engine/modelFactory.cpp.i
+.PHONY : core/src/engine/modelFactory.cpp.i
+
+core/src/engine/modelFactory.s: core/src/engine/modelFactory.cpp.s
+.PHONY : core/src/engine/modelFactory.s
+
+# target to generate assembly for a file
+core/src/engine/modelFactory.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SimpleEngine.dir/build.make CMakeFiles/SimpleEngine.dir/core/src/engine/modelFactory.cpp.s
+.PHONY : core/src/engine/modelFactory.cpp.s
+
 core/src/engine/shader.o: core/src/engine/shader.cpp.o
 .PHONY : core/src/engine/shader.o
 
@@ -516,6 +564,12 @@ help:
 	@echo "... core/src/engine/input.o"
 	@echo "... core/src/engine/input.i"
 	@echo "... core/src/engine/input.s"
+	@echo "... core/src/engine/loaders/modelLoader.o"
+	@echo "... core/src/engine/loaders/modelLoader.i"
+	@echo "... core/src/engine/loaders/modelLoader.s"
+	@echo "... core/src/engine/modelFactory.o"
+	@echo "... core/src/engine/modelFactory.i"
+	@echo "... core/src/engine/modelFactory.s"
 	@echo "... core/src/engine/shader.o"
 	@echo "... core/src/engine/shader.i"
 	@echo "... core/src/engine/shader.s"

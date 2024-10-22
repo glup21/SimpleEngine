@@ -16,7 +16,7 @@ class Mesh : public IDrawableObject
 public:
     
 
-    Mesh(vector<Vertex> vertices, vector<u_int> indices, vector<Texture> textures, ShaderProgram* shaderProgram);
+    Mesh(vector<Vertex> vertices, vector<u_int> indices, vector<Texture*> textures, ShaderProgram* shaderProgram);
     
     void draw() override;
     void setup() override;
@@ -37,7 +37,7 @@ private:
     GLuint VAO, VBO, EBO;
     vector<Vertex> vertices;
     vector<u_int> indices;
-    vector<Texture> textures;
+    vector<Texture*> textures;
 
 };
 

@@ -21,7 +21,7 @@ class Engine
 {
 private:
     vector<IDrawableObject*> drawObjectBuffer;
-    vector<IGameObject*> gameObjects;
+    vector<shared_ptr<IGameObject>> gameObjects;
     std::chrono::time_point<std::chrono::high_resolution_clock> previousTime;
     ShaderProgram* defaultShaderProgram;
     Camera* camera;

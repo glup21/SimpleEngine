@@ -12,7 +12,7 @@ using std::vector;
 class Model : public IGameObject, public IDrawableObject
 {
 public:
-    Model(string path, string ID, ShaderProgram* shaderProgram);
+    Model(string ID, ShaderProgram* shaderProgram, vector<Mesh> meshes);
 
     void setup() override;
     void draw() override;
@@ -33,14 +33,6 @@ private:
     vector<Mesh> meshes;
     string directory;
     TransformComposite transform;
-    ImageLoader imageLoader;
-    
-    void processNode(aiNode *node, const aiScene *scene);
-    Mesh processMesh(aiMesh *mesh, const aiScene *scene);
-    vector<Texture> loadMaterialTextures(aiMaterial *mat, aiTextureType type,
-                                         string typeName);
-
-
 
 };
 

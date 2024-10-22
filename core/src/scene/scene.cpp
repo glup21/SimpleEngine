@@ -3,18 +3,18 @@
 
 using std::cout, std::endl;
 
-Scene::Scene(std::vector<IGameObject*> gObj) : gameObjects(gObj)
+Scene::Scene(vector<shared_ptr<IGameObject>> gObj) : gameObjects(gObj)
 {
 
     std::cout << "Number of game objects: " << gameObjects.size() << std::endl;
 
     for (size_t i = 0; i < gameObjects.size(); ++i)
     {
-        IGameObject* obj = gameObjects[i];
+        shared_ptr<IGameObject> obj = gameObjects[i];
         if (obj)
         {
             std::cout << "Processing game object at index " << i << std::endl;
-            IDrawableObject* drawable = dynamic_cast<IDrawableObject*>(obj);
+            IDrawableObject* drawable = dynamic_cast<IDrawableObject*>(obj.get());
             if (drawable)
             {
                 drawableObjects.push_back(drawable);
@@ -34,7 +34,7 @@ Scene::Scene(std::vector<IGameObject*> gObj) : gameObjects(gObj)
     std::cout << "Number of drawable objects: " << drawableObjects.size() << std::endl;
 }
 
-std::vector<IGameObject*>* Scene::getObjects()
+vector<shared_ptr<IGameObject>>* Scene::getObjects()
 {
     return &gameObjects;
 }

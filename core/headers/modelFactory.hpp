@@ -6,20 +6,27 @@
 #include "texture.hpp"
 #include "modelLoader.hpp"
 #include <unordered_map>
-
-using std::unordered_map, std::string;
+#include "modelLoader.hpp"
+#include "shaderProgram.hpp"
+#include "transform.hpp"
+#include <memory>
+using std::unordered_map, std::string, std::shared_ptr, std::make_shared;
 
 class ModelFactory : public IObjectFactory
 {
 private:
 
-    unordered_map<string, Model> cachedModels;
+    unordered_map<string, ModelLoader::ModelData> cachedModels;
+    ModelLoader modelLoader;
+    ShaderProgram* defaultShaderProgram;
+
+    shared_ptr<Model> makeModelFromData(ModelLoader::ModelData modelData, string ID, ShaderProgram* defaultShaderProgram);
 
 public:
-    ModelFactory() = default;
-    ~ModelFactory();
+    ModelFactory(ShaderProgram* defaultShaderProgram);
+    ~ModelFactory() = default;
 
-    Model createModel(string path);
+    shared_ptr<Model> createModel(string path, string ID);
 
 };
 
