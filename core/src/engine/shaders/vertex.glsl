@@ -18,7 +18,7 @@ void main()
     WorldNormal = aNormal;
     FragPos = vec3(transform * vec4(aPos, 1.0));
 
-    //gl_Position = projectionMatrix * viewMatrix * transform * vec4(aPos, 1.0);
+
     gl_Position = projectionMatrix * viewMatrix * transform * vec4(aPos, 1.0);
-    //gl_Position = transform * vec4(aPos, 1.0);
+ 
 }

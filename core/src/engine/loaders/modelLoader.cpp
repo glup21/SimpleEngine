@@ -62,7 +62,7 @@ void ModelLoader::processMesh(aiMesh* mesh, const aiScene* scene, ModelData& mod
 
             vertex.Normal = normal;
         } else {
-            vertex.Normal = vec3(0.0f); 
+            vertex.Normal = vec3(1.0f); 
         }
 
         if (mesh->HasTextureCoords(0)) {

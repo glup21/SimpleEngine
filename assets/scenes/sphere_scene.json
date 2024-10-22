@@ -1,0 +1,18 @@
+{
+    "objects":
+    [
+        {
+            "id": "sphere",
+            "type" : "model",
+            "directory" : "../assets/models/sphere/sphere.obj",
+            "position" : [0, 0, 0],
+            "rotation" : [0, 0, 0], 
+            "scale" : [0.1, 0.1, 0.1]
+        },
+        {
+            "type" : "point_light",
+            "position" : [0,2,0]
+        }
+    ]
+
+}
