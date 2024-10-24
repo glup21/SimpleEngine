@@ -34,7 +34,11 @@ ConfigReader::ConfigReader(const string& configPath): configPath(configPath)
     else
         std::cerr << "Error: camera settings are not defined " << std::endl;
 
-    
+    if(config.contains("vertex_shader"))
+        vertexShaderPath = config["vertex_shader"].get<string>();
+
+    if(config.contains("fragment_shader"))
+        fragmentShaderPath = config["fragment_shader"].get<string>();
 
 }
 
@@ -45,4 +49,13 @@ string ConfigReader::getScenePath()
 CameraSettings ConfigReader::getCameraSettings()
 {
     return cameraSettings;
+}
+
+string ConfigReader::getVertexShaderPath()
+{
+    return vertexShaderPath;
+}
+string ConfigReader::getFragmentShaderPath()
+{
+    return fragmentShaderPath;
 }

@@ -24,16 +24,16 @@ void key_callback(GLFWwindow* window, int key, int scancode, int action, int mod
     }
 }
 
-Engine::Engine(GLFWwindow* window, CameraSettings cameraSettings) : drawObjectBuffer(){
+Engine::Engine(GLFWwindow* window, ConfigReader* configReader) : drawObjectBuffer(), configReader(configReader){
     std::cout << "Engine constructor called. drawObjectBuffer initialized to nullptr." << std::endl;
     previousTime = std::chrono::high_resolution_clock::now();
 
     this->window = window;
-    camera = new Camera(window, cameraSettings);
+    camera = new Camera(window, configReader->getCameraSettings());
 
-    vertexPath = "../core/src/engine/shaders/vertex.glsl";
-    fragmentPath = "../core/src/engine/shaders/fragment.glsl";
-
+    vertexPath = configReader->getVertexShaderPath();
+    fragmentPath = configReader->getFragmentShaderPath();
+    
     defaultShaderProgram = new ShaderProgram(camera);
     Shader* vertexShader = ShaderFactory::createShader(GL_VERTEX_SHADER, vertexPath, camera);
     Shader* fragmentShader = ShaderFactory::createShader(GL_FRAGMENT_SHADER, fragmentPath, camera);

@@ -14,6 +14,7 @@
 #include <glm/vec2.hpp>
 #include "input.hpp"
 #include "cameraSettings.hpp"
+#include "configReader.hpp"
 
 using glm::vec2;
 
@@ -28,6 +29,7 @@ private:
     Input* inputManager;
     vec2 lastMousePosition;
     GLFWwindow* window;
+    ConfigReader* configReader;
     int width;
     int height;
 
@@ -42,7 +44,7 @@ private:
 
 
 public:
-    Engine(GLFWwindow* window, CameraSettings cameraSettings);
+    Engine(GLFWwindow* window, ConfigReader* configReader);
     ~Engine() = default;
     void init(string scenePath);
     void run();

@@ -13,15 +13,18 @@ class ConfigReader
 {
     string configPath;
     string scene;
-    vector<string> defaultShaders;
     json config;
     CameraSettings cameraSettings;
+    string vertexShaderPath;
+    string fragmentShaderPath;
 
 public:
     ConfigReader(const string& configPath);
 
     string getScenePath();  
-    CameraSettings getCameraSettings();  
+    CameraSettings getCameraSettings();
+    string getVertexShaderPath();
+    string getFragmentShaderPath();
 };
 
 #endif 

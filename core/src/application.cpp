@@ -52,7 +52,7 @@ void Application::initialize()
     glfwGetVersion(&major, &minor, &revision);
     printf("Using GLFW %i.%i.%i\n", major, minor, revision);
 
-    engine = new Engine(window, configReader->getCameraSettings());
+    engine = new Engine(window, configReader);
 
     glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);
 
