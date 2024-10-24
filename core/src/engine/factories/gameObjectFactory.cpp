@@ -13,5 +13,5 @@ shared_ptr<Model> GameObjectFactory::createModel(string path, string ID)
 
 shared_ptr<PointLight> GameObjectFactory::createLight()
 {
-    return std::make_shared<PointLight>(defaultShaderProgram);
+    return std::make_shared<PointLight>();
 }

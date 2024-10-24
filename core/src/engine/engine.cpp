@@ -34,7 +34,8 @@ Engine::Engine(GLFWwindow* window, ConfigReader* configReader) : drawObjectBuffe
     vertexPath = configReader->getVertexShaderPath();
     fragmentPath = configReader->getFragmentShaderPath();
     
-    defaultShaderProgram = new ShaderProgram(camera);
+    defaultShaderProgram = new ShaderProgram();
+    defaultShaderProgram->observe(camera);
     Shader* vertexShader = ShaderFactory::createShader(GL_VERTEX_SHADER, vertexPath, camera);
     Shader* fragmentShader = ShaderFactory::createShader(GL_FRAGMENT_SHADER, fragmentPath, camera);
 
@@ -104,7 +105,7 @@ void Engine::run()
 
         // Camera movement
         camera->move(keys, deltaTime);
-        camera->notifySubscribers();
+        camera->notifyObservers();
 
         // Clear screen
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);

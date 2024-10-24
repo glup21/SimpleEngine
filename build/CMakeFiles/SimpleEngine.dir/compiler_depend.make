@@ -1001,8 +1001,6 @@ CMakeFiles/SimpleEngine.dir/core/src/engine/camera.cpp.o: /home/idk/Documents/Gi
   /usr/include/c++/14/bits/cpp_type_traits.h \
   /usr/include/c++/14/bits/cxxabi_forced.h \
   /usr/include/c++/14/bits/cxxabi_init_exception.h \
-  /usr/include/c++/14/bits/enable_special_members.h \
-  /usr/include/c++/14/bits/erase_if.h \
   /usr/include/c++/14/bits/exception.h \
   /usr/include/c++/14/bits/exception_defines.h \
   /usr/include/c++/14/bits/exception_ptr.h \
@@ -1010,8 +1008,6 @@ CMakeFiles/SimpleEngine.dir/core/src/engine/camera.cpp.o: /home/idk/Documents/Gi
   /usr/include/c++/14/bits/functexcept.h \
   /usr/include/c++/14/bits/functional_hash.h \
   /usr/include/c++/14/bits/hash_bytes.h \
-  /usr/include/c++/14/bits/hashtable.h \
-  /usr/include/c++/14/bits/hashtable_policy.h \
   /usr/include/c++/14/bits/invoke.h \
   /usr/include/c++/14/bits/ios_base.h \
   /usr/include/c++/14/bits/istream.tcc \
@@ -1025,7 +1021,6 @@ CMakeFiles/SimpleEngine.dir/core/src/engine/camera.cpp.o: /home/idk/Documents/Gi
   /usr/include/c++/14/bits/move.h \
   /usr/include/c++/14/bits/nested_exception.h \
   /usr/include/c++/14/bits/new_allocator.h \
-  /usr/include/c++/14/bits/node_handle.h \
   /usr/include/c++/14/bits/ostream.tcc \
   /usr/include/c++/14/bits/ostream_insert.h \
   /usr/include/c++/14/bits/postypes.h \
@@ -1057,7 +1052,6 @@ CMakeFiles/SimpleEngine.dir/core/src/engine/camera.cpp.o: /home/idk/Documents/Gi
   /usr/include/c++/14/bits/string_view.tcc \
   /usr/include/c++/14/bits/stringfwd.h \
   /usr/include/c++/14/bits/unique_ptr.h \
-  /usr/include/c++/14/bits/unordered_map.h \
   /usr/include/c++/14/bits/uses_allocator.h \
   /usr/include/c++/14/bits/uses_allocator_args.h \
   /usr/include/c++/14/bits/utility.h \
@@ -1122,7 +1116,6 @@ CMakeFiles/SimpleEngine.dir/core/src/engine/camera.cpp.o: /home/idk/Documents/Gi
   /usr/include/c++/14/tuple \
   /usr/include/c++/14/type_traits \
   /usr/include/c++/14/typeinfo \
-  /usr/include/c++/14/unordered_map \
   /usr/include/c++/14/vector \
   /usr/include/c++/14/x86_64-redhat-linux/bits/atomic_word.h \
   /usr/include/c++/14/x86_64-redhat-linux/bits/basic_file.h \
@@ -3905,8 +3898,6 @@ CMakeFiles/SimpleEngine.dir/core/src/engine/pointLight.cpp.o: /home/idk/Document
   /usr/include/c++/14/bits/cpp_type_traits.h \
   /usr/include/c++/14/bits/cxxabi_forced.h \
   /usr/include/c++/14/bits/cxxabi_init_exception.h \
-  /usr/include/c++/14/bits/enable_special_members.h \
-  /usr/include/c++/14/bits/erase_if.h \
   /usr/include/c++/14/bits/exception.h \
   /usr/include/c++/14/bits/exception_defines.h \
   /usr/include/c++/14/bits/exception_ptr.h \
@@ -3914,8 +3905,6 @@ CMakeFiles/SimpleEngine.dir/core/src/engine/pointLight.cpp.o: /home/idk/Document
   /usr/include/c++/14/bits/functexcept.h \
   /usr/include/c++/14/bits/functional_hash.h \
   /usr/include/c++/14/bits/hash_bytes.h \
-  /usr/include/c++/14/bits/hashtable.h \
-  /usr/include/c++/14/bits/hashtable_policy.h \
   /usr/include/c++/14/bits/invoke.h \
   /usr/include/c++/14/bits/ios_base.h \
   /usr/include/c++/14/bits/istream.tcc \
@@ -3929,7 +3918,6 @@ CMakeFiles/SimpleEngine.dir/core/src/engine/pointLight.cpp.o: /home/idk/Document
   /usr/include/c++/14/bits/move.h \
   /usr/include/c++/14/bits/nested_exception.h \
   /usr/include/c++/14/bits/new_allocator.h \
-  /usr/include/c++/14/bits/node_handle.h \
   /usr/include/c++/14/bits/ostream.tcc \
   /usr/include/c++/14/bits/ostream_insert.h \
   /usr/include/c++/14/bits/postypes.h \
@@ -3961,7 +3949,6 @@ CMakeFiles/SimpleEngine.dir/core/src/engine/pointLight.cpp.o: /home/idk/Document
   /usr/include/c++/14/bits/string_view.tcc \
   /usr/include/c++/14/bits/stringfwd.h \
   /usr/include/c++/14/bits/unique_ptr.h \
-  /usr/include/c++/14/bits/unordered_map.h \
   /usr/include/c++/14/bits/uses_allocator.h \
   /usr/include/c++/14/bits/uses_allocator_args.h \
   /usr/include/c++/14/bits/utility.h \
@@ -4026,7 +4013,6 @@ CMakeFiles/SimpleEngine.dir/core/src/engine/pointLight.cpp.o: /home/idk/Document
   /usr/include/c++/14/tuple \
   /usr/include/c++/14/type_traits \
   /usr/include/c++/14/typeinfo \
-  /usr/include/c++/14/unordered_map \
   /usr/include/c++/14/vector \
   /usr/include/c++/14/x86_64-redhat-linux/bits/atomic_word.h \
   /usr/include/c++/14/x86_64-redhat-linux/bits/basic_file.h \
@@ -4369,8 +4355,6 @@ CMakeFiles/SimpleEngine.dir/core/src/engine/shader.cpp.o: /home/idk/Documents/Gi
   /usr/include/c++/14/bits/cpp_type_traits.h \
   /usr/include/c++/14/bits/cxxabi_forced.h \
   /usr/include/c++/14/bits/cxxabi_init_exception.h \
-  /usr/include/c++/14/bits/enable_special_members.h \
-  /usr/include/c++/14/bits/erase_if.h \
   /usr/include/c++/14/bits/exception.h \
   /usr/include/c++/14/bits/exception_defines.h \
   /usr/include/c++/14/bits/exception_ptr.h \
@@ -4378,8 +4362,6 @@ CMakeFiles/SimpleEngine.dir/core/src/engine/shader.cpp.o: /home/idk/Documents/Gi
   /usr/include/c++/14/bits/functexcept.h \
   /usr/include/c++/14/bits/functional_hash.h \
   /usr/include/c++/14/bits/hash_bytes.h \
-  /usr/include/c++/14/bits/hashtable.h \
-  /usr/include/c++/14/bits/hashtable_policy.h \
   /usr/include/c++/14/bits/invoke.h \
   /usr/include/c++/14/bits/ios_base.h \
   /usr/include/c++/14/bits/istream.tcc \
@@ -4393,7 +4375,6 @@ CMakeFiles/SimpleEngine.dir/core/src/engine/shader.cpp.o: /home/idk/Documents/Gi
   /usr/include/c++/14/bits/move.h \
   /usr/include/c++/14/bits/nested_exception.h \
   /usr/include/c++/14/bits/new_allocator.h \
-  /usr/include/c++/14/bits/node_handle.h \
   /usr/include/c++/14/bits/ostream.tcc \
   /usr/include/c++/14/bits/ostream_insert.h \
   /usr/include/c++/14/bits/postypes.h \
@@ -4425,7 +4406,6 @@ CMakeFiles/SimpleEngine.dir/core/src/engine/shader.cpp.o: /home/idk/Documents/Gi
   /usr/include/c++/14/bits/string_view.tcc \
   /usr/include/c++/14/bits/stringfwd.h \
   /usr/include/c++/14/bits/unique_ptr.h \
-  /usr/include/c++/14/bits/unordered_map.h \
   /usr/include/c++/14/bits/uses_allocator.h \
   /usr/include/c++/14/bits/uses_allocator_args.h \
   /usr/include/c++/14/bits/utility.h \
@@ -4490,7 +4470,6 @@ CMakeFiles/SimpleEngine.dir/core/src/engine/shader.cpp.o: /home/idk/Documents/Gi
   /usr/include/c++/14/tuple \
   /usr/include/c++/14/type_traits \
   /usr/include/c++/14/typeinfo \
-  /usr/include/c++/14/unordered_map \
   /usr/include/c++/14/vector \
   /usr/include/c++/14/x86_64-redhat-linux/bits/atomic_word.h \
   /usr/include/c++/14/x86_64-redhat-linux/bits/basic_file.h \
@@ -4721,9 +4700,11 @@ CMakeFiles/SimpleEngine.dir/core/src/engine/shader.cpp.o: /home/idk/Documents/Gi
   /usr/lib/gcc/x86_64-redhat-linux/14/include/syslimits.h
 
 CMakeFiles/SimpleEngine.dir/core/src/engine/shaderProgram.cpp.o: /home/idk/Documents/GitHub/SimpleEngine/core/src/engine/shaderProgram.cpp \
+  /home/idk/Documents/GitHub/SimpleEngine/core/headers/IGameObject.hpp \
   /home/idk/Documents/GitHub/SimpleEngine/core/headers/IObserver.hpp \
   /home/idk/Documents/GitHub/SimpleEngine/core/headers/camera.hpp \
   /home/idk/Documents/GitHub/SimpleEngine/core/headers/cameraSettings.hpp \
+  /home/idk/Documents/GitHub/SimpleEngine/core/headers/pointLight.hpp \
   /home/idk/Documents/GitHub/SimpleEngine/core/headers/shader.hpp \
   /home/idk/Documents/GitHub/SimpleEngine/core/headers/shaderProgram.hpp \
   /home/idk/Documents/GitHub/SimpleEngine/core/headers/subject.hpp \
@@ -4833,8 +4814,6 @@ CMakeFiles/SimpleEngine.dir/core/src/engine/shaderProgram.cpp.o: /home/idk/Docum
   /usr/include/c++/14/bits/cpp_type_traits.h \
   /usr/include/c++/14/bits/cxxabi_forced.h \
   /usr/include/c++/14/bits/cxxabi_init_exception.h \
-  /usr/include/c++/14/bits/enable_special_members.h \
-  /usr/include/c++/14/bits/erase_if.h \
   /usr/include/c++/14/bits/exception.h \
   /usr/include/c++/14/bits/exception_defines.h \
   /usr/include/c++/14/bits/exception_ptr.h \
@@ -4842,8 +4821,6 @@ CMakeFiles/SimpleEngine.dir/core/src/engine/shaderProgram.cpp.o: /home/idk/Docum
   /usr/include/c++/14/bits/functexcept.h \
   /usr/include/c++/14/bits/functional_hash.h \
   /usr/include/c++/14/bits/hash_bytes.h \
-  /usr/include/c++/14/bits/hashtable.h \
-  /usr/include/c++/14/bits/hashtable_policy.h \
   /usr/include/c++/14/bits/invoke.h \
   /usr/include/c++/14/bits/ios_base.h \
   /usr/include/c++/14/bits/istream.tcc \
@@ -4857,7 +4834,6 @@ CMakeFiles/SimpleEngine.dir/core/src/engine/shaderProgram.cpp.o: /home/idk/Docum
   /usr/include/c++/14/bits/move.h \
   /usr/include/c++/14/bits/nested_exception.h \
   /usr/include/c++/14/bits/new_allocator.h \
-  /usr/include/c++/14/bits/node_handle.h \
   /usr/include/c++/14/bits/ostream.tcc \
   /usr/include/c++/14/bits/ostream_insert.h \
   /usr/include/c++/14/bits/postypes.h \
@@ -4889,7 +4865,6 @@ CMakeFiles/SimpleEngine.dir/core/src/engine/shaderProgram.cpp.o: /home/idk/Docum
   /usr/include/c++/14/bits/string_view.tcc \
   /usr/include/c++/14/bits/stringfwd.h \
   /usr/include/c++/14/bits/unique_ptr.h \
-  /usr/include/c++/14/bits/unordered_map.h \
   /usr/include/c++/14/bits/uses_allocator.h \
   /usr/include/c++/14/bits/uses_allocator_args.h \
   /usr/include/c++/14/bits/utility.h \
@@ -4954,7 +4929,6 @@ CMakeFiles/SimpleEngine.dir/core/src/engine/shaderProgram.cpp.o: /home/idk/Docum
   /usr/include/c++/14/tuple \
   /usr/include/c++/14/type_traits \
   /usr/include/c++/14/typeinfo \
-  /usr/include/c++/14/unordered_map \
   /usr/include/c++/14/vector \
   /usr/include/c++/14/x86_64-redhat-linux/bits/atomic_word.h \
   /usr/include/c++/14/x86_64-redhat-linux/bits/basic_file.h \
@@ -6387,7 +6361,6 @@ CMakeFiles/SimpleEngine.dir/core/src/scene/mesh.cpp.o: /home/idk/Documents/GitHu
   /usr/include/c++/14/bits/cpp_type_traits.h \
   /usr/include/c++/14/bits/cxxabi_forced.h \
   /usr/include/c++/14/bits/cxxabi_init_exception.h \
-  /usr/include/c++/14/bits/enable_special_members.h \
   /usr/include/c++/14/bits/erase_if.h \
   /usr/include/c++/14/bits/exception.h \
   /usr/include/c++/14/bits/exception_defines.h \
@@ -6396,8 +6369,6 @@ CMakeFiles/SimpleEngine.dir/core/src/scene/mesh.cpp.o: /home/idk/Documents/GitHu
   /usr/include/c++/14/bits/functexcept.h \
   /usr/include/c++/14/bits/functional_hash.h \
   /usr/include/c++/14/bits/hash_bytes.h \
-  /usr/include/c++/14/bits/hashtable.h \
-  /usr/include/c++/14/bits/hashtable_policy.h \
   /usr/include/c++/14/bits/invoke.h \
   /usr/include/c++/14/bits/ios_base.h \
   /usr/include/c++/14/bits/istream.tcc \
@@ -6446,7 +6417,6 @@ CMakeFiles/SimpleEngine.dir/core/src/scene/mesh.cpp.o: /home/idk/Documents/GitHu
   /usr/include/c++/14/bits/string_view.tcc \
   /usr/include/c++/14/bits/stringfwd.h \
   /usr/include/c++/14/bits/unique_ptr.h \
-  /usr/include/c++/14/bits/unordered_map.h \
   /usr/include/c++/14/bits/uses_allocator.h \
   /usr/include/c++/14/bits/uses_allocator_args.h \
   /usr/include/c++/14/bits/utility.h \
@@ -6512,7 +6482,6 @@ CMakeFiles/SimpleEngine.dir/core/src/scene/mesh.cpp.o: /home/idk/Documents/GitHu
   /usr/include/c++/14/tuple \
   /usr/include/c++/14/type_traits \
   /usr/include/c++/14/typeinfo \
-  /usr/include/c++/14/unordered_map \
   /usr/include/c++/14/vector \
   /usr/include/c++/14/x86_64-redhat-linux/bits/atomic_word.h \
   /usr/include/c++/14/x86_64-redhat-linux/bits/basic_file.h \
@@ -7359,7 +7328,6 @@ CMakeFiles/SimpleEngine.dir/core/src/scene/scene.cpp.o: /home/idk/Documents/GitH
   /usr/include/c++/14/bits/cpp_type_traits.h \
   /usr/include/c++/14/bits/cxxabi_forced.h \
   /usr/include/c++/14/bits/cxxabi_init_exception.h \
-  /usr/include/c++/14/bits/enable_special_members.h \
   /usr/include/c++/14/bits/erase_if.h \
   /usr/include/c++/14/bits/exception.h \
   /usr/include/c++/14/bits/exception_defines.h \
@@ -7368,8 +7336,6 @@ CMakeFiles/SimpleEngine.dir/core/src/scene/scene.cpp.o: /home/idk/Documents/GitH
   /usr/include/c++/14/bits/functexcept.h \
   /usr/include/c++/14/bits/functional_hash.h \
   /usr/include/c++/14/bits/hash_bytes.h \
-  /usr/include/c++/14/bits/hashtable.h \
-  /usr/include/c++/14/bits/hashtable_policy.h \
   /usr/include/c++/14/bits/invoke.h \
   /usr/include/c++/14/bits/ios_base.h \
   /usr/include/c++/14/bits/istream.tcc \
@@ -7418,7 +7384,6 @@ CMakeFiles/SimpleEngine.dir/core/src/scene/scene.cpp.o: /home/idk/Documents/GitH
   /usr/include/c++/14/bits/string_view.tcc \
   /usr/include/c++/14/bits/stringfwd.h \
   /usr/include/c++/14/bits/unique_ptr.h \
-  /usr/include/c++/14/bits/unordered_map.h \
   /usr/include/c++/14/bits/uses_allocator.h \
   /usr/include/c++/14/bits/uses_allocator_args.h \
   /usr/include/c++/14/bits/utility.h \
@@ -7484,7 +7449,6 @@ CMakeFiles/SimpleEngine.dir/core/src/scene/scene.cpp.o: /home/idk/Documents/GitH
   /usr/include/c++/14/tuple \
   /usr/include/c++/14/type_traits \
   /usr/include/c++/14/typeinfo \
-  /usr/include/c++/14/unordered_map \
   /usr/include/c++/14/vector \
   /usr/include/c++/14/x86_64-redhat-linux/bits/atomic_word.h \
   /usr/include/c++/14/x86_64-redhat-linux/bits/basic_file.h \

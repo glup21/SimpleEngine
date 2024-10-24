@@ -57,6 +57,8 @@ Scene SceneReader::readScene(ShaderProgram* defaultShaderProgram)
 
                 light->addPosition(v_position);
                 gObj.push_back(light);
+
+                defaultShaderProgram->observe(light.get());
             }
     }
 

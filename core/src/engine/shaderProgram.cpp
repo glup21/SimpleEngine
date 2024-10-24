@@ -1,8 +1,8 @@
 #include "shaderProgram.hpp"
+#include "pointLight.hpp"
 
-ShaderProgram::ShaderProgram(Camera* camera) : ID(glCreateProgram()), camera(camera) 
+ShaderProgram::ShaderProgram() : ID(glCreateProgram())
 {
-    subscribe();
 }
 ShaderProgram::~ShaderProgram() { glDeleteProgram(ID); }
 
@@ -44,17 +44,27 @@ void ShaderProgram::setVec3(const string& name, glm::vec3 value)
     glUniform3f(glGetUniformLocation(ID, name.c_str()), value.x, value.y, value.z); 
 }
 
-void ShaderProgram::update()
+void ShaderProgram::update(Subject* subject)
 {
-    //maybe later expand it for different Publishers 
+    Camera* camera = dynamic_cast<Camera*>(subject);
+    if(camera)
+    {
+        setMat4("viewMatrix", camera->getViewMatrix());
+        setMat4("projectionMatrix", camera->getProjectionMatrix());
+        setVec3("cameraPosition", camera->getPosition());
+        return;
+    }
+    PointLight* light = dynamic_cast<PointLight*>(subject);
+    if(light)
+    {
+        setVec3("LightPosition", vec3(light->getTransformMatrix()[3]));
+        return;
+    } 
 
-    setMat4("viewMatrix", camera->getViewMatrix());
-    setMat4("projectionMatrix", camera->getProjectionMatrix());
-    setVec3("cameraPosition", camera->getPosition());
 
 }
 
-void ShaderProgram::subscribe()
+void ShaderProgram::observe(Subject* subject)
 {
-    camera->addSubscriber(this);
+    subject->addObserver(this);
 }

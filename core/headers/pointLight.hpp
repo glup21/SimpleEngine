@@ -5,16 +5,13 @@
 #include "IGameObject.hpp"
 #include "shaderProgram.hpp"
 
-class PointLight : public IGameObject
+class PointLight : public IGameObject, public Subject
 {
 private:
     TransformComposite transform;
-    ShaderProgram* shaderProgram;
-
-    float time;
 
 public:
-    PointLight(ShaderProgram* shaderProgram);
+    PointLight();
     ~PointLight() = default;
 
     void addPosition(const vec3& newPosition);

@@ -90,7 +90,7 @@ void Camera::update(const vector<bool>& keys, const float& deltaX, const float& 
     move(keys, deltaTime);
 
 
-    notifySubscribers();
+    notifyObservers();
     
 }
 

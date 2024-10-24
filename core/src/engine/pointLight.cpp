@@ -1,7 +1,7 @@
 #include "pointLight.hpp"
 #include <cmath> 
 
-PointLight::PointLight(ShaderProgram* shaderProgram) : shaderProgram(shaderProgram), time(0.0f)
+PointLight::PointLight()
 {
 }
 
@@ -19,6 +19,6 @@ mat4 PointLight::getTransformMatrix()
 
 void PointLight::update(float delta)
 {
-    shaderProgram->setVec3("LightPosition", vec3(getTransformMatrix()[3]));
-
+    //shaderProgram->setVec3("LightPosition", vec3(getTransformMatrix()[3]));
+    notifyObservers();
 }

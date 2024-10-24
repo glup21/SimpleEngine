@@ -2,33 +2,31 @@
 #define SUBJECT_H
 
 #include <vector>
-#include <unordered_map>
-#include "IObserver.hpp"
+//#include "IObserver.hpp"
 
-using std::vector, std::unordered_map;
+class IObserver;
+
 class Subject
 {
-protected:
-    unordered_map<IObserver*, int> subscribers;
+private:
+    std::vector<IObserver*> observers;
+
 public:
     Subject() = default;
-    ~Subject() = default;
+    virtual ~Subject() = default;
 
-    void addSubscriber(IObserver* sub)
+    void addObserver(IObserver* observer)
     {
-        subscribers[sub] = 1; //placeholder, using map for fast lookup
-    }
-    void removeSubscriber(IObserver* sub)
-    {
-        subscribers.erase(sub);
-    }
-    void notifySubscribers()
-    {
-        for(std::pair<IObserver*, int> sub : subscribers)
-            sub.first->update();
+        observers.push_back(observer);
     }
 
-
+    void notifyObservers()
+    {
+        for (IObserver* observer : observers)
+        {
+            observer->update(this);
+        }
+    }
 };
 
-#endif
+#endif // SUBJECT_H

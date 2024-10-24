@@ -25,7 +25,7 @@ void main()
     
     float proximityToWhite = length(vec3(1.0) - texColor.rgb);
     float shininess = proximityToWhite * 128.0;
-    float specularCoeff = 0.3;
+    float specularCoeff = 0.5;
 
     //light calculation
     vec4 ambient = vec4(0.1, 0.1, 0.1, 1.0) * texColor;

@@ -18,12 +18,11 @@ class ShaderProgram : public IObserver
 private:
     vector<Shader*> shaders; //we dont need vector 
     GLuint ID;
-    Camera* camera;
 
     void checkLinkErrors();
 
 public:
-    ShaderProgram(Camera* camera);
+    ShaderProgram();
     ~ShaderProgram();
 
     void attachShader(Shader* shader);
@@ -35,8 +34,8 @@ public:
     void setInt(const string& name, int value);
     void setVec3(const string& name, glm::vec3 value);
 
-    void update() override;
-    void subscribe();
+    void update(Subject* subject) override;
+    void observe(Subject* subject);
 
 
 };

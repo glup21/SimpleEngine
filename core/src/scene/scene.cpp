@@ -24,6 +24,8 @@ Scene::Scene(vector<shared_ptr<IGameObject>> gObj) : gameObjects(gObj)
             {
                 std::cerr << "Failed to cast IGameObject to IDrawableObject at index " << i << std::endl;
             }
+
+
         }
         else
         {
