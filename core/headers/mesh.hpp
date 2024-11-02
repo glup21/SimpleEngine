@@ -7,7 +7,6 @@
 #include "vertex.hpp"
 #include "texture.hpp"
 #include "shader.hpp"
-#include "transform.hpp"
 
 using std::vector;
 
@@ -29,7 +28,6 @@ public:
     void addRotation(const vec3& rotationVec, const float& angle);
     void addScale(const vec3& newScale);
 
-    //returns overall transform, with all children
     mat4 getTransformMatrix();
 
 private:

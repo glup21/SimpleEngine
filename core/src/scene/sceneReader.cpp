@@ -4,13 +4,11 @@
 #include <glm/glm.hpp>
 #include <glm/vec3.hpp> 
 #include <glm/vec4.hpp>
-#include "transform.hpp"
 #include "gameObjectFactory.hpp"
 #include "pointLight.hpp"
 
 Scene SceneReader::readScene(ShaderProgram* defaultShaderProgram)
 {
-    //ModelFactory modelFactory(defaultShaderProgram);
     GameObjectFactory objectFactory(defaultShaderProgram);
 
     std::ifstream file(scenePath);

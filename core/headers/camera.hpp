@@ -4,15 +4,14 @@
 #include "shaderProgram.hpp"
 #include <GLFW/glfw3.h>
 #include "cameraSettings.hpp"
-#include "transform.hpp"
+#include "transformComposite.hpp"
 #include "subject.hpp"
 
 using glm::vec3, glm::mat4;
 
 class ShaderProgram;
 
-class Camera : public Subject
-{
+class Camera : public Subject {
 private:
     TransformComposite transform; 
     vec3 target;
@@ -31,15 +30,13 @@ public:
 
     void move(const vector<bool>& keys, const float& deltaTime);
     void changeTarget(const float& deltaX, const float& deltaY, const float& delta);
-    void update(const vector<bool>& keys, const float& deltaX, const float& deltaY,  const float& deltaTime);
+    void update(const vector<bool>& keys, const float& deltaX, const float& deltaY, const float& deltaTime);
 
     TransformComposite getTransform() const;
-    void setTransform(const Transform& transform);
+    void setTransform(const TransformComposite& transform);
 
     void addPosition(const vec3& newPosition);
     void addRotation(const vec3& rotationVec, const float& angle);
-
-
 };
 
 #endif

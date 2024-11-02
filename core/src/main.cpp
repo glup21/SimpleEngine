@@ -21,10 +21,6 @@ int main(int argc, char* argv[])
         configPath = "../core/config/config.json";
 
     ConfigReader configReader(configPath);
-    string scenePath = configReader.getScenePath();
-
-    if(scenePath.empty())
-        return 1;
 
     Application* application = new Application(&configReader);
 

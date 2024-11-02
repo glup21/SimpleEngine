@@ -50,6 +50,8 @@ public:
     void run();
     void shutdown();
 
+    void loadScene(int sceneID);
+
 };
 
 #endif

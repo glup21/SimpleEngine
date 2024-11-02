@@ -1,5 +1,5 @@
 {
-    "scene" : "../assets/scenes/scene.json",
+    "scenes" : "../assets/scenes",
     "camera" : {
         "fov" : 45.0,
         "nearPlane" : 0.1,

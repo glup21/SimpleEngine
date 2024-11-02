@@ -5,8 +5,9 @@
 #include "IGameObject.hpp"
 #include "shaderProgram.hpp"
 
-class PointLight : public IGameObject, public Subject
-{
+using glm::vec3, glm::mat4;
+
+class PointLight : public IGameObject, public Subject {
 private:
     TransformComposite transform;
 
@@ -19,12 +20,11 @@ public:
 
     void update(float delta) override;
 
-    TransformComposite getTransform() const { return transform;}
-    void setTransform(const TransformComposite& transform){ this->transform = transform;}
+    TransformComposite getTransform() const { return transform; }
+    void setTransform(const TransformComposite& transform) { this->transform = transform; }
 
-    void addRotation(const vec3& rotationVec, const float& angle){}
-    void addScale(const vec3& newScale){}
-
+    void addRotation(const vec3& rotationVec, const float& angle) {}
+    void addScale(const vec3& newScale) {}
 };
 
 #endif

@@ -26,7 +26,6 @@ public:
     void addRotation(const vec3& rotationVec, const float& angle) override;
     void addScale(const vec3& newScale) override;
 
-    //returns overall transform, with all children
     mat4 getTransformMatrix() override;
 private:
     string ID;

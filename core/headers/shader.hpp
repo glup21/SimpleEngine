@@ -17,7 +17,7 @@ using std::string, std::vector, glm::mat4;
 class Camera;
 class ShaderProgram;
 
-class Shader//Shader is now Shader again! ShaderProgram class is back!
+class Shader
 {
 private:
     Camera* camera;

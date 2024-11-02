@@ -11,17 +11,17 @@
 #include <glm/gtc/type_ptr.hpp> // glm::value_ptr
 
 
-using std::vector;
+using std::vector, glm::mat4, glm::vec3, glm::vec4;
 
 class TransformComposite
 {
 private:
     vector<TransformComposite*> transforms;
-    glm::mat4 combinedMatrix;
+    mat4 combinedMatrix;
 
 public:
     TransformComposite() = default;
-    virtual glm::mat4 getTransformMatrix();
+    virtual mat4 getTransformMatrix();
     void addTransform(TransformComposite* transform);
 
 };

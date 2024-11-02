@@ -41,7 +41,7 @@ vector<shared_ptr<IGameObject>>* Scene::getObjects()
     return &gameObjects;
 }
 
-std::vector<IDrawableObject*> Scene::getDrawableObjects()
+vector<IDrawableObject*> Scene::getDrawableObjects()
 {
     return drawableObjects;
 }

@@ -1,0 +1,40 @@
+Aktuální stav
+
+    Přepínání scén za běhu (Ano/Ne) (kde a jak): 
+        Yes, in Engine class, when number keys are pressed it loads scene,
+        corresponding to that number. Order is determined by order in scenes directory.
+
+    a) Základní scéna (Ano/Ne) 
+        No, because I dont have simple polygon render, and dont want to add it 
+
+    b) Scéna s lesem (Ano/Ne) 
+        Yes
+
+    c) Scéna se čtyřmi kuličkami (Ano/Ne) 
+        Yes, but their transform is off, maybe something wrong with models themselves.
+
+    d) Scéna pro demonstraci použití všech shaderů (Konstantní, Lambert, Phong a Blinn) (Ano/Ne) 
+        Yes, with backpacks ( totaly not stolen from learnopengl.com )
+
+    Světlo (Ano/Ne) (kde a jak máte naimplementováno, jak se updatuje změna světla)
+        Yes. Implemented in PointLight class. Uses Observer pattern to notify defaultShaderProgram (or other shaderPrograms)
+        when position is changed.
+
+    Základní třídy (ShaderProgram, DrowableObject, Camera, Controller) (Ano/Ne) (kdo zodpovídá za vykreslování, kde jsou uloženy modely, shadery atd.)
+        Yes, but without controller (need to add later)
+    Transformace (Composite pattern) (Ano/Ne) (Máte pro transformace základní třídy? Co a jak jste použili?)
+        Yes. Used TransformComposite class and Position, Rotation and Scale as its children.
+    Základy OOP
+
+    a) Encapsulation (zapouzdření) (Ano/Ne) (Kde a jak?)
+        Everywhere where necessary.
+
+    b) Inheritance (dědičnost) (Ano/Ne) (Kde a jak?)
+        Yes, all over the place: IGameObject->Model, IDrawableObject->Model, IObserver->ShaderProgram and so on.
+
+    c) Polymorphism (polymorfismus neboli mnohotvárnost) (Ano/Ne) (Kde a jak?)
+        Yes, in Scene when parsing GameObjects and trying to find DrowableObjects.
+
+    Vertex a fragment shadery prosím uložte do textových souboru a použijte přiložený ShaderLoader pro jejich načítání (Ano/Ne) (Kde a jak jste použili?)
+        Yes and no. I have shader code in files, but I dont want to use ShaderLoader provided, because I already have my implementation
+        and changing it would be tiresome and unneseccary.
