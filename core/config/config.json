@@ -1,11 +1,13 @@
 {
-    "scene" : "../assets/scenes/forest_scene.json",
+    "scenes" : "../assets/scenes",
     "camera" : {
         "fov" : 45.0,
         "nearPlane" : 0.1,
         "farPlane" : 100.0,
         "lookSensitivity" : 200.0,
-        "movingSpeed" : 1
-    }
+        "movingSpeed" : 3
+    },
+    "vertex_shader" : "../core/src/engine/shaders/vertex.glsl",
+    "fragment_shader" : "../core/src/engine/shaders/fragment_main.glsl"
     
 }

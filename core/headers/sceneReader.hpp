@@ -7,7 +7,7 @@
 #include "IGameObject.hpp"
 #include "model.hpp"
 #include "shaderProgram.hpp"
-
+#include "modelFactory.hpp"
 using std::string;
 using json = nlohmann::json;
 

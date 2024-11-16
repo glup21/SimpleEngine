@@ -8,7 +8,7 @@
 #include <GL/glew.h>
 #include <vector>
 #include <glm/glm.hpp>
-#include "ISubscriber.hpp"
+#include "IObserver.hpp"
 #include "camera.hpp"
 #include "shaderProgram.hpp"
 
@@ -17,7 +17,7 @@ using std::string, std::vector, glm::mat4;
 class Camera;
 class ShaderProgram;
 
-class Shader : public ISubscriber //Shader is now Shader again! ShaderProgram class is back!
+class Shader
 {
 private:
     Camera* camera;
@@ -32,9 +32,6 @@ public:
     void attachShaderProgram(ShaderProgram* parentShaderProgram);
     void compile(const string& source);
     GLuint getID();
-
-    void update() override;
-    void subscribe();
 
 };
 

@@ -1,4 +1,4 @@
-# Install script for directory: /home/idk/Documents/GitHub/SimpleEngine
+# Install script for directory: /home/vival/Documents/Study/Github/SimpleEngine-university
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -50,5 +50,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/idk/Documents/GitHub/SimpleEngine/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/vival/Documents/Study/Github/SimpleEngine-university/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

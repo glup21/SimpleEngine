@@ -6,17 +6,13 @@
 #include "IGameObject.hpp"
 #include "IDrawableObject.hpp"
 #include <vector>
-//object loader
-#include <assimp/Importer.hpp>
-#include <assimp/scene.h>
-#include <assimp/postprocess.h>
-#include "imageLoader.hpp"
+
 using std::vector;
 
 class Model : public IGameObject, public IDrawableObject
 {
 public:
-    Model(string path, string ID, ShaderProgram* shaderProgram);
+    Model(string ID, ShaderProgram* shaderProgram, vector<Mesh> meshes);
 
     void setup() override;
     void draw() override;
@@ -30,21 +26,12 @@ public:
     void addRotation(const vec3& rotationVec, const float& angle) override;
     void addScale(const vec3& newScale) override;
 
-    //returns overall transform, with all children
     mat4 getTransformMatrix() override;
 private:
     string ID;
     vector<Mesh> meshes;
     string directory;
     TransformComposite transform;
-    ImageLoader imageLoader;
-    
-    void processNode(aiNode *node, const aiScene *scene);
-    Mesh processMesh(aiMesh *mesh, const aiScene *scene);
-    vector<Texture> loadMaterialTextures(aiMaterial *mat, aiTextureType type,
-                                         string typeName);
-
-
 
 };
 

@@ -25,7 +25,7 @@ void Application::initialize()
         fprintf(stderr, "ERROR: could not start GLFW3\n");
         exit(EXIT_FAILURE); 
     }
-    scenePath = configReader->getScenePath();
+    scenePath = configReader->getScenePath(0);
     window = glfwCreateWindow(1024, 768, "SimpleEngine", NULL, NULL);
     if (!window){
         glfwTerminate();
@@ -35,7 +35,7 @@ void Application::initialize()
     glfwMakeContextCurrent(window);
     glfwSwapInterval(1);
 
-        // start GLEW extension handler
+
     glewExperimental = GL_TRUE;
     if (glewInit() != GLEW_OK) {
         fprintf(stderr, "ERROR: could not initialize GLEW\n");
@@ -52,7 +52,7 @@ void Application::initialize()
     glfwGetVersion(&major, &minor, &revision);
     printf("Using GLFW %i.%i.%i\n", major, minor, revision);
 
-    engine = new Engine(window, configReader->getCameraSettings());
+    engine = new Engine(window, configReader);
 
     glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);
 

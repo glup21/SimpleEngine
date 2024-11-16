@@ -4,26 +4,46 @@
         {
             "id": "backpack",
             "type" : "model",
-            "directory" : "../models/backpack/backpack.obj",
-            "position" : [0, 0, -0.25],
-            "rotation" : [90, 0, 0], 
-            "scale" : [0.05, 0.05, 0.05]
+            "directory" : "../assets/models/backpack/backpack.obj",
+            "position" : [0, 0, 0],
+            "rotation" : [0, 0, 0], 
+            "scale" : [0.1, 0.1, 0.1]
         },
         {
             "id": "backpack",
             "type" : "model",
-            "directory" : "../models/backpack/backpack.obj",
-            "position" : [0, 0.25, 0.25],
-            "rotation" : [90, 0, 0], 
-            "scale" : [0.05, 0.05, 0.05]
+            "directory" : "../assets/models/backpack/backpack.obj",
+            "position" : [-3, 0, -3],
+            "rotation" : [0, 0, 45], 
+            "scale" : [0.1, 0.1, 0.1]
         },
         {
             "id": "backpack",
             "type" : "model",
-            "directory" : "../models/backpack/backpack.obj",
-            "position" : [0.25, 0.25, 0],
-            "rotation" : [90, 0, 0], 
-            "scale" : [0.05, 0.05, 0.05]
+            "directory" : "../assets/models/backpack/backpack.obj",
+            "position" : [5, 0, -5],
+            "rotation" : [0, 0, 45], 
+            "scale" : [0.1, 0.1, 0.1]
+        },
+        {
+            "id": "backpack",
+            "type" : "model",
+            "directory" : "../assets/models/backpack/backpack.obj",
+            "position" : [-7, 0, -7],
+            "rotation" : [0, 0, 45], 
+            "scale" : [0.1, 0.1, 0.1]
+        },
+        {
+            "id": "backpack",
+            "type" : "model",
+            "directory" : "../assets/models/backpack/backpack.obj",
+            "position" : [10, 0, -10],
+            "rotation" : [0, 0, 45], 
+            "scale" : [0.1, 0.1, 0.1]
+        },
+        {
+            "type" : "point_light",
+            "position" : [-1,-1,-1]
         }
     ]
 

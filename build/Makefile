@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/idk/Documents/GitHub/SimpleEngine
+CMAKE_SOURCE_DIR = /home/vival/Documents/Study/Github/SimpleEngine-university
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/idk/Documents/GitHub/SimpleEngine/build
+CMAKE_BINARY_DIR = /home/vival/Documents/Study/Github/SimpleEngine-university/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -87,9 +87,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/idk/Documents/GitHub/SimpleEngine/build/CMakeFiles /home/idk/Documents/GitHub/SimpleEngine/build//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/vival/Documents/Study/Github/SimpleEngine-university/build/CMakeFiles /home/vival/Documents/Study/Github/SimpleEngine-university/build//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/idk/Documents/GitHub/SimpleEngine/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/vival/Documents/Study/Github/SimpleEngine-university/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -225,6 +225,54 @@ core/src/engine/engine.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/SimpleEngine.dir/build.make CMakeFiles/SimpleEngine.dir/core/src/engine/engine.cpp.s
 .PHONY : core/src/engine/engine.cpp.s
 
+core/src/engine/factories/gameObjectFactory.o: core/src/engine/factories/gameObjectFactory.cpp.o
+.PHONY : core/src/engine/factories/gameObjectFactory.o
+
+# target to build an object file
+core/src/engine/factories/gameObjectFactory.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SimpleEngine.dir/build.make CMakeFiles/SimpleEngine.dir/core/src/engine/factories/gameObjectFactory.cpp.o
+.PHONY : core/src/engine/factories/gameObjectFactory.cpp.o
+
+core/src/engine/factories/gameObjectFactory.i: core/src/engine/factories/gameObjectFactory.cpp.i
+.PHONY : core/src/engine/factories/gameObjectFactory.i
+
+# target to preprocess a source file
+core/src/engine/factories/gameObjectFactory.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SimpleEngine.dir/build.make CMakeFiles/SimpleEngine.dir/core/src/engine/factories/gameObjectFactory.cpp.i
+.PHONY : core/src/engine/factories/gameObjectFactory.cpp.i
+
+core/src/engine/factories/gameObjectFactory.s: core/src/engine/factories/gameObjectFactory.cpp.s
+.PHONY : core/src/engine/factories/gameObjectFactory.s
+
+# target to generate assembly for a file
+core/src/engine/factories/gameObjectFactory.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SimpleEngine.dir/build.make CMakeFiles/SimpleEngine.dir/core/src/engine/factories/gameObjectFactory.cpp.s
+.PHONY : core/src/engine/factories/gameObjectFactory.cpp.s
+
+core/src/engine/factories/modelFactory.o: core/src/engine/factories/modelFactory.cpp.o
+.PHONY : core/src/engine/factories/modelFactory.o
+
+# target to build an object file
+core/src/engine/factories/modelFactory.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SimpleEngine.dir/build.make CMakeFiles/SimpleEngine.dir/core/src/engine/factories/modelFactory.cpp.o
+.PHONY : core/src/engine/factories/modelFactory.cpp.o
+
+core/src/engine/factories/modelFactory.i: core/src/engine/factories/modelFactory.cpp.i
+.PHONY : core/src/engine/factories/modelFactory.i
+
+# target to preprocess a source file
+core/src/engine/factories/modelFactory.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SimpleEngine.dir/build.make CMakeFiles/SimpleEngine.dir/core/src/engine/factories/modelFactory.cpp.i
+.PHONY : core/src/engine/factories/modelFactory.cpp.i
+
+core/src/engine/factories/modelFactory.s: core/src/engine/factories/modelFactory.cpp.s
+.PHONY : core/src/engine/factories/modelFactory.s
+
+# target to generate assembly for a file
+core/src/engine/factories/modelFactory.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SimpleEngine.dir/build.make CMakeFiles/SimpleEngine.dir/core/src/engine/factories/modelFactory.cpp.s
+.PHONY : core/src/engine/factories/modelFactory.cpp.s
+
 core/src/engine/imageLoader.o: core/src/engine/imageLoader.cpp.o
 .PHONY : core/src/engine/imageLoader.o
 
@@ -272,6 +320,54 @@ core/src/engine/input.s: core/src/engine/input.cpp.s
 core/src/engine/input.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/SimpleEngine.dir/build.make CMakeFiles/SimpleEngine.dir/core/src/engine/input.cpp.s
 .PHONY : core/src/engine/input.cpp.s
+
+core/src/engine/loaders/modelLoader.o: core/src/engine/loaders/modelLoader.cpp.o
+.PHONY : core/src/engine/loaders/modelLoader.o
+
+# target to build an object file
+core/src/engine/loaders/modelLoader.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SimpleEngine.dir/build.make CMakeFiles/SimpleEngine.dir/core/src/engine/loaders/modelLoader.cpp.o
+.PHONY : core/src/engine/loaders/modelLoader.cpp.o
+
+core/src/engine/loaders/modelLoader.i: core/src/engine/loaders/modelLoader.cpp.i
+.PHONY : core/src/engine/loaders/modelLoader.i
+
+# target to preprocess a source file
+core/src/engine/loaders/modelLoader.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SimpleEngine.dir/build.make CMakeFiles/SimpleEngine.dir/core/src/engine/loaders/modelLoader.cpp.i
+.PHONY : core/src/engine/loaders/modelLoader.cpp.i
+
+core/src/engine/loaders/modelLoader.s: core/src/engine/loaders/modelLoader.cpp.s
+.PHONY : core/src/engine/loaders/modelLoader.s
+
+# target to generate assembly for a file
+core/src/engine/loaders/modelLoader.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SimpleEngine.dir/build.make CMakeFiles/SimpleEngine.dir/core/src/engine/loaders/modelLoader.cpp.s
+.PHONY : core/src/engine/loaders/modelLoader.cpp.s
+
+core/src/engine/pointLight.o: core/src/engine/pointLight.cpp.o
+.PHONY : core/src/engine/pointLight.o
+
+# target to build an object file
+core/src/engine/pointLight.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SimpleEngine.dir/build.make CMakeFiles/SimpleEngine.dir/core/src/engine/pointLight.cpp.o
+.PHONY : core/src/engine/pointLight.cpp.o
+
+core/src/engine/pointLight.i: core/src/engine/pointLight.cpp.i
+.PHONY : core/src/engine/pointLight.i
+
+# target to preprocess a source file
+core/src/engine/pointLight.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SimpleEngine.dir/build.make CMakeFiles/SimpleEngine.dir/core/src/engine/pointLight.cpp.i
+.PHONY : core/src/engine/pointLight.cpp.i
+
+core/src/engine/pointLight.s: core/src/engine/pointLight.cpp.s
+.PHONY : core/src/engine/pointLight.s
+
+# target to generate assembly for a file
+core/src/engine/pointLight.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SimpleEngine.dir/build.make CMakeFiles/SimpleEngine.dir/core/src/engine/pointLight.cpp.s
+.PHONY : core/src/engine/pointLight.cpp.s
 
 core/src/engine/shader.o: core/src/engine/shader.cpp.o
 .PHONY : core/src/engine/shader.o
@@ -345,29 +441,29 @@ core/src/engine/texture.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/SimpleEngine.dir/build.make CMakeFiles/SimpleEngine.dir/core/src/engine/texture.cpp.s
 .PHONY : core/src/engine/texture.cpp.s
 
-core/src/engine/transform.o: core/src/engine/transform.cpp.o
-.PHONY : core/src/engine/transform.o
+core/src/engine/transformComposite.o: core/src/engine/transformComposite.cpp.o
+.PHONY : core/src/engine/transformComposite.o
 
 # target to build an object file
-core/src/engine/transform.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SimpleEngine.dir/build.make CMakeFiles/SimpleEngine.dir/core/src/engine/transform.cpp.o
-.PHONY : core/src/engine/transform.cpp.o
+core/src/engine/transformComposite.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SimpleEngine.dir/build.make CMakeFiles/SimpleEngine.dir/core/src/engine/transformComposite.cpp.o
+.PHONY : core/src/engine/transformComposite.cpp.o
 
-core/src/engine/transform.i: core/src/engine/transform.cpp.i
-.PHONY : core/src/engine/transform.i
+core/src/engine/transformComposite.i: core/src/engine/transformComposite.cpp.i
+.PHONY : core/src/engine/transformComposite.i
 
 # target to preprocess a source file
-core/src/engine/transform.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SimpleEngine.dir/build.make CMakeFiles/SimpleEngine.dir/core/src/engine/transform.cpp.i
-.PHONY : core/src/engine/transform.cpp.i
+core/src/engine/transformComposite.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SimpleEngine.dir/build.make CMakeFiles/SimpleEngine.dir/core/src/engine/transformComposite.cpp.i
+.PHONY : core/src/engine/transformComposite.cpp.i
 
-core/src/engine/transform.s: core/src/engine/transform.cpp.s
-.PHONY : core/src/engine/transform.s
+core/src/engine/transformComposite.s: core/src/engine/transformComposite.cpp.s
+.PHONY : core/src/engine/transformComposite.s
 
 # target to generate assembly for a file
-core/src/engine/transform.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SimpleEngine.dir/build.make CMakeFiles/SimpleEngine.dir/core/src/engine/transform.cpp.s
-.PHONY : core/src/engine/transform.cpp.s
+core/src/engine/transformComposite.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SimpleEngine.dir/build.make CMakeFiles/SimpleEngine.dir/core/src/engine/transformComposite.cpp.s
+.PHONY : core/src/engine/transformComposite.cpp.s
 
 core/src/main.o: core/src/main.cpp.o
 .PHONY : core/src/main.o
@@ -510,12 +606,24 @@ help:
 	@echo "... core/src/engine/engine.o"
 	@echo "... core/src/engine/engine.i"
 	@echo "... core/src/engine/engine.s"
+	@echo "... core/src/engine/factories/gameObjectFactory.o"
+	@echo "... core/src/engine/factories/gameObjectFactory.i"
+	@echo "... core/src/engine/factories/gameObjectFactory.s"
+	@echo "... core/src/engine/factories/modelFactory.o"
+	@echo "... core/src/engine/factories/modelFactory.i"
+	@echo "... core/src/engine/factories/modelFactory.s"
 	@echo "... core/src/engine/imageLoader.o"
 	@echo "... core/src/engine/imageLoader.i"
 	@echo "... core/src/engine/imageLoader.s"
 	@echo "... core/src/engine/input.o"
 	@echo "... core/src/engine/input.i"
 	@echo "... core/src/engine/input.s"
+	@echo "... core/src/engine/loaders/modelLoader.o"
+	@echo "... core/src/engine/loaders/modelLoader.i"
+	@echo "... core/src/engine/loaders/modelLoader.s"
+	@echo "... core/src/engine/pointLight.o"
+	@echo "... core/src/engine/pointLight.i"
+	@echo "... core/src/engine/pointLight.s"
 	@echo "... core/src/engine/shader.o"
 	@echo "... core/src/engine/shader.i"
 	@echo "... core/src/engine/shader.s"
@@ -525,9 +633,9 @@ help:
 	@echo "... core/src/engine/texture.o"
 	@echo "... core/src/engine/texture.i"
 	@echo "... core/src/engine/texture.s"
-	@echo "... core/src/engine/transform.o"
-	@echo "... core/src/engine/transform.i"
-	@echo "... core/src/engine/transform.s"
+	@echo "... core/src/engine/transformComposite.o"
+	@echo "... core/src/engine/transformComposite.i"
+	@echo "... core/src/engine/transformComposite.s"
 	@echo "... core/src/main.o"
 	@echo "... core/src/main.i"
 	@echo "... core/src/main.s"

@@ -39,17 +39,3 @@ void Shader::checkCompileErrors()
     }
 }
 
-void Shader::update()
-{  
-    //maybe later expand it for different Publishers 
-
-    parentShaderProgram->setMat4("viewMatrix", camera->getViewMatrix());
-    parentShaderProgram->setMat4("projectionMatrix", camera->getProjectionMatrix());
-    parentShaderProgram->setVec3("cameraPosition", camera->getPosition());
-
-}
-
-void Shader::subscribe()
-{
-    camera->addSubscriber(this);
-}

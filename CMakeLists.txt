@@ -5,6 +5,9 @@ project(SimpleEngine)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 
+find_package(glfw3 REQUIRED)
+find_package(GLEW REQUIRED)
+
 # Compiler flags
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall")
 
@@ -23,12 +26,12 @@ set(SRCS
     # Engine
     core/src/engine/texture.cpp
     core/src/engine/engine.cpp
-    core/src/engine/transform.cpp
     core/src/engine/camera.cpp
     core/src/engine/input.cpp
-    core/src/engine/imageLoader.cpp
     core/src/engine/shader.cpp
     core/src/engine/shaderProgram.cpp
+    core/src/engine/pointLight.cpp
+    core/src/engine/transformComposite.cpp
 
     # Config
     core/src/config/configReader.cpp
@@ -38,6 +41,14 @@ set(SRCS
     core/src/scene/mesh.cpp
     core/src/scene/model.cpp
     core/src/scene/sceneReader.cpp
+
+    #Loaders
+    core/src/engine/imageLoader.cpp
+    core/src/engine/loaders/modelLoader.cpp
+
+    #Factories
+    core/src/engine/factories/gameObjectFactory.cpp
+    core/src/engine/factories/modelFactory.cpp
 )
 
 # Add executable

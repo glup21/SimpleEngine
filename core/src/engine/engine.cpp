@@ -1,10 +1,9 @@
-// Provides render pipeline
-
 #include "engine.hpp"
 #include <iostream>
+#include <thread>
+#include <glm/glm.hpp>
 #include "shaderFactory.hpp"
 #include "sceneReader.hpp"
-#include <thread>
 
 bool isWindowFocused = true;
 vector<bool> keys(100, false);
@@ -14,143 +13,145 @@ void window_focus_callback(GLFWwindow* window, int focused)
     isWindowFocused = (focused == GLFW_TRUE);
 }
 
-void key_callback(GLFWwindow* window, int key, int scancode, int action, int mods)
+void key_callback(GLFWwindow* window, int key, int scancode, int action, int mods) 
 {
+
     if (action == GLFW_PRESS) {
-        keys[key] = true;  
-    }
-    else if (action == GLFW_RELEASE) {
-        keys[key] = false; 
-    }
+        keys[key] = true;
+
+        if (key >= GLFW_KEY_0 && key <= GLFW_KEY_9) 
+        {
+            int sceneID = key - GLFW_KEY_0; 
+            Engine* engine = static_cast<Engine*>(glfwGetWindowUserPointer(window));
+
+            engine->loadScene(sceneID-1); 
+
+        }
+    } else if (action == GLFW_RELEASE) 
+        keys[key] = false;
+    
 }
 
-Engine::Engine(GLFWwindow* window, CameraSettings cameraSettings) : drawObjectBuffer(){
-    std::cout << "Engine constructor called. drawObjectBuffer initialized to nullptr." << std::endl;
+Engine::Engine(GLFWwindow* window, ConfigReader* configReader) 
+    : window(window), configReader(configReader) 
+{
     previousTime = std::chrono::high_resolution_clock::now();
 
-    this->window = window;
-    camera = new Camera(window, cameraSettings);
-
-    vertexPath = "../core/src/engine/shaders/vertex.glsl";
-    fragmentPath = "../core/src/engine/shaders/fragment.glsl";
+    camera = new Camera(window, configReader->getCameraSettings());
 
     defaultShaderProgram = new ShaderProgram();
-    Shader* vertexShader = ShaderFactory::createShader(GL_VERTEX_SHADER, vertexPath, camera);
-    Shader* fragmentShader = ShaderFactory::createShader(GL_FRAGMENT_SHADER, fragmentPath, camera);
+    defaultShaderProgram->observe(camera);
 
-    vertexShader->subscribe();
+    Shader* vertexShader = ShaderFactory::createShader(GL_VERTEX_SHADER, configReader->getVertexShaderPath(), camera);
+    Shader* fragmentShader = ShaderFactory::createShader(GL_FRAGMENT_SHADER, configReader->getFragmentShaderPath(), camera);
 
     defaultShaderProgram->attachShader(vertexShader);
     defaultShaderProgram->attachShader(fragmentShader);
+    defaultShaderProgram->link();
 
-    vertexShader->attachShaderProgram(defaultShaderProgram);
+    glfwSetWindowUserPointer(window, this);
+    glfwSetWindowFocusCallback(window, window_focus_callback);
+    glfwSetKeyCallback(window, key_callback);
 }
 
-void Engine::init(string scenePath)
+
+void Engine::init(string scenePath) 
 {
     glEnable(GL_DEPTH_TEST);
     glDepthFunc(GL_LESS);
     glEnable(GL_BLEND);
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+
     glfwGetWindowSize(window, &width, &height);
-    
+
     SceneReader sceneReader(scenePath);
     Scene scene = sceneReader.readScene(defaultShaderProgram);
 
-    // Load and init shaders
-    std::cout << "Initializing engine with scene." << std::endl;
-    std::cout << "Engine object address: " << this << std::endl;
-
     drawObjectBuffer = scene.getDrawableObjects();
     gameObjects = *scene.getObjects();
-
-    std::cout << "drawObjectBuffer address: " << &drawObjectBuffer << std::endl;
-    std::cout << "drawObjectBuffer size: " << drawObjectBuffer.size() << std::endl;
-
-    inputManager = new Input(window);
-
-    glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
-    glfwSetWindowFocusCallback(window, window_focus_callback);
-    glfwSetKeyCallback(window, key_callback);
-
-    lastMousePosition = inputManager->getMousePos();
-    defaultShaderProgram->link(); // We will link individual shader programs in models if we want
 }
 
-void Engine::run()
+void Engine::run() 
 {
-    const double targetFPS = 60.0; 
-    const double targetFrameTime = 1.0 / targetFPS; 
+    double targetFPS = 60.0; 
+    double targetFrameTime = 1.0 / targetFPS; 
 
-    while (!glfwWindowShouldClose(window))
+    while (!glfwWindowShouldClose(window)) 
     {
         auto frameStartTime = std::chrono::high_resolution_clock::now();  
         double deltaTime = calculateDeltaTime();
 
+
         glfwGetWindowSize(window, &width, &height);
-        vec2 mouseDelta(width / 2.0 - xpos, height / 2.0 - ypos);
+        double xpos, ypos;
+        glfwGetCursorPos(window, &xpos, &ypos);
+        glm::vec2 mouseDelta(width / 2.0 - xpos, height / 2.0 - ypos);
 
-        // Mouse movement
-        if (isWindowFocused)
+        if (isWindowFocused && glm::length(mouseDelta) > 0.01f) 
         {
-            glfwGetCursorPos(window, &xpos, &ypos);
-            vec2 mouseDelta(width / 2.0 - xpos, height / 2.0 - ypos);
-
-            if (glm::length(mouseDelta) > 0.01f)
-            {
-                mouseDelta = glm::normalize(mouseDelta);
-                camera->changeTarget(-mouseDelta.x, mouseDelta.y, deltaTime);
-            }
+            mouseDelta = glm::normalize(mouseDelta);
+            camera->changeTarget(-mouseDelta.x, mouseDelta.y, deltaTime);
         }
         glfwSetCursorPos(window, width / 2.0, height / 2.0);
 
-        // Camera movement
         camera->move(keys, deltaTime);
-        camera->notifySubscribers();
+        camera->notifyObservers();
 
-        // Clear screen
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-        // Update and draw game objects
         updateGameObjects(deltaTime);
         drawObjects();
 
         glfwSwapBuffers(window);
         glfwPollEvents();
 
-        //FPS limitation
+        // FPS control
         auto frameEndTime = std::chrono::high_resolution_clock::now();  
         std::chrono::duration<double> frameDuration = frameEndTime - frameStartTime;
 
-        if (frameDuration.count() < targetFrameTime)
-        {
-            // Sleep for the remaining time to maintain the frame rate
-            double sleepTime = targetFrameTime - frameDuration.count();
-            std::this_thread::sleep_for(std::chrono::duration<double>(sleepTime));
-        }
+        if (frameDuration.count() < targetFrameTime) 
+            std::this_thread::sleep_for(std::chrono::duration<double>(targetFrameTime - frameDuration.count()));
+        
     }
 }
 
-void Engine::shutdown()
+
+void Engine::loadScene(int sceneID) 
 {
-    // Implement shutdown logic if needed
+    string scenePath = configReader->getScenePath(sceneID);
+    if (!scenePath.empty()) {
+        std::cout << "Loading scene: " << scenePath << std::endl;
+        init(scenePath); 
+    } 
+    else 
+        std::cerr << "Error: Scene ID " << sceneID << " is out of range." << std::endl;
+    
 }
 
-void Engine::updateGameObjects(float delta)
+
+void Engine::shutdown() 
 {
-    for (IGameObject* gObj : gameObjects)
+    delete camera;
+    delete defaultShaderProgram;
+}
+
+
+void Engine::updateGameObjects(float delta) 
+{
+    for (auto& gObj : gameObjects)
         gObj->update(delta);
 }
 
+
 void Engine::drawObjects()
 {
-    for (IDrawableObject* dObj : drawObjectBuffer)
-    {
+    for (auto dObj : drawObjectBuffer) 
         dObj->draw();
-    }
+    
 }
 
-double Engine::calculateDeltaTime()
+
+double Engine::calculateDeltaTime() 
 {
     auto currentTime = std::chrono::high_resolution_clock::now();
     std::chrono::duration<double> deltaTime = currentTime - previousTime;

@@ -1,6 +1,9 @@
 #include "shaderProgram.hpp"
+#include "pointLight.hpp"
 
-ShaderProgram::ShaderProgram() : ID(glCreateProgram()) {}
+ShaderProgram::ShaderProgram() : ID(glCreateProgram())
+{
+}
 ShaderProgram::~ShaderProgram() { glDeleteProgram(ID); }
 
 void ShaderProgram::attachShader(Shader* shader)
@@ -39,4 +42,30 @@ void ShaderProgram::setInt(const string& name, int value)
 void ShaderProgram::setVec3(const string& name, glm::vec3 value)
 {
     glUniform3f(glGetUniformLocation(ID, name.c_str()), value.x, value.y, value.z); 
+}
+
+void ShaderProgram::update(Subject* subject)
+{
+    Camera* camera = dynamic_cast<Camera*>(subject);
+    if(camera)
+    {
+        setMat4("viewMatrix", camera->getViewMatrix());
+        setMat4("projectionMatrix", camera->getProjectionMatrix());
+        setVec3("cameraPosition", camera->getPosition());
+        return;
+    }
+    PointLight* light = dynamic_cast<PointLight*>(subject);
+    if(light)
+    {
+        setVec3("LightPosition", vec3(light->getTransformMatrix()[3]));
+        return;
+    } 
+
+
+}
+
+void ShaderProgram::observe(Subject* subject)
+{
+    subject->addObserver(this);
+    std::cout << "Observing!" << std::endl;
 }

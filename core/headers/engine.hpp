@@ -14,6 +14,7 @@
 #include <glm/vec2.hpp>
 #include "input.hpp"
 #include "cameraSettings.hpp"
+#include "configReader.hpp"
 
 using glm::vec2;
 
@@ -21,13 +22,14 @@ class Engine
 {
 private:
     vector<IDrawableObject*> drawObjectBuffer;
-    vector<IGameObject*> gameObjects;
+    vector<shared_ptr<IGameObject>> gameObjects;
     std::chrono::time_point<std::chrono::high_resolution_clock> previousTime;
     ShaderProgram* defaultShaderProgram;
     Camera* camera;
     Input* inputManager;
     vec2 lastMousePosition;
     GLFWwindow* window;
+    ConfigReader* configReader;
     int width;
     int height;
 
@@ -42,11 +44,13 @@ private:
 
 
 public:
-    Engine(GLFWwindow* window, CameraSettings cameraSettings);
+    Engine(GLFWwindow* window, ConfigReader* configReader);
     ~Engine() = default;
     void init(string scenePath);
     void run();
     void shutdown();
+
+    void loadScene(int sceneID);
 
 };
 

@@ -12,16 +12,20 @@ using json = nlohmann::json;
 class ConfigReader
 {
     string configPath;
-    string scene;
-    vector<string> defaultShaders;
+    string scenesPath;
+    vector<string> scenes;
     json config;
     CameraSettings cameraSettings;
+    string vertexShaderPath;
+    string fragmentShaderPath;
 
 public:
     ConfigReader(const string& configPath);
 
-    string getScenePath();  
-    CameraSettings getCameraSettings();  
+    string getScenePath(int ID);  
+    CameraSettings getCameraSettings();
+    string getVertexShaderPath();
+    string getFragmentShaderPath();
 };
 
 #endif 

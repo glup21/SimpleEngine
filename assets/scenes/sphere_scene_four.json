@@ -1,0 +1,41 @@
+{
+    "objects": [
+        {
+            "id": "sphere0",
+            "type": "model",
+            "directory": "../assets/models/sphere/sphere.obj",
+            "position": [2, 0, 2],
+            "rotation": [0, 0, 0],
+            "scale": [0.1, 0.1, 0.1]
+        },
+        {
+            "id": "sphere1",
+            "type": "model",
+            "directory": "../assets/models/sphere/sphere.obj",
+            "position": [2, 0, -2],
+            "rotation": [0, 0, 0],
+            "scale": [0.1, 0.1, 0.1]
+        },
+        {
+            "id": "sphere2",
+            "type": "model",
+            "directory": "../assets/models/sphere/sphere.obj",
+            "position": [-2, 0, -2],
+            "rotation": [0, 0, 0],
+            "scale": [0.1, 0.1, 0.1]
+        },
+        {
+            "id": "sphere3",
+            "type": "model",
+            "directory": "../assets/models/sphere/sphere.obj",
+            "position": [-2, 0, 2],
+            "rotation": [0, 0, 0],
+            "scale": [0.1, 0.1, 0.1]
+        },
+        {
+            "id": "point_light",
+            "type": "point_light",
+            "position": [0, 0, 0]
+        }
+    ]
+}
