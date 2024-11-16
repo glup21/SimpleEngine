@@ -2,10 +2,10 @@
 #define CAMERA_H
 
 #include "shaderProgram.hpp"
-#include <GLFW/glfw3.h>
 #include "cameraSettings.hpp"
 #include "transformComposite.hpp"
 #include "subject.hpp"
+#include <GLFW/glfw3.h>
 
 using glm::vec3, glm::mat4;
 

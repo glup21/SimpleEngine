@@ -78,12 +78,30 @@ void ModelLoader::processMesh(aiMesh* mesh, const aiScene* scene, ModelData& mod
         vertices.push_back(vertex);
     }
 
+
     for(u_int64_t i = 0; i < mesh->mNumFaces; i++)
     {
         aiFace face = mesh->mFaces[i];
+
         for(u_int64_t j = 0; j < face.mNumIndices; j++)
+        {
+            if (!mesh->HasNormals())
+            {
+                vec3 v0 = vertices[face.mIndices[0]].Position;
+                vec3 v1 = vertices[face.mIndices[1]].Position;
+                vec3 v2 = vertices[face.mIndices[2]].Position;
+                vec3 edge1 = v1 - v0;
+                vec3 edge2 = v2 - v0;
+                vec3 faceNormal = glm::normalize(glm::cross(edge1, edge2));
+                vertices[face.mIndices[0]].Normal += faceNormal;
+                vertices[face.mIndices[1]].Normal += faceNormal;
+                vertices[face.mIndices[2]].Normal += faceNormal;
+
+            }
             indices.push_back(face.mIndices[j]);
-    }  
+
+        }
+    }
 
     // Process materials
     if(mesh->mMaterialIndex >= 0)

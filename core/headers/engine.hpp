@@ -1,13 +1,12 @@
 #ifndef ENGINE_H
 #define ENGINE_H
 
-#include "scene.hpp"
-#include "shaderProgram.hpp"
-#include "camera.hpp"
-
 #include <GL/glew.h>
 #include <GLFW/glfw3.h>
 
+#include "scene.hpp"
+#include "shaderProgram.hpp"
+#include "camera.hpp"
 #include <stdlib.h>
 #include <stdio.h>
 #include <chrono>
@@ -18,6 +17,8 @@
 
 using glm::vec2;
 
+class Input;
+
 class Engine
 {
 private:
@@ -26,10 +27,10 @@ private:
     std::chrono::time_point<std::chrono::high_resolution_clock> previousTime;
     ShaderProgram* defaultShaderProgram;
     Camera* camera;
-    Input* inputManager;
     vec2 lastMousePosition;
     GLFWwindow* window;
     ConfigReader* configReader;
+    Input* input;
     int width;
     int height;
 
@@ -40,7 +41,7 @@ private:
 
     void updateGameObjects(float delta);
     void drawObjects();
-    double calculateDeltaTime();
+    
 
 
 public:
@@ -50,8 +51,9 @@ public:
     void run();
     void shutdown();
 
-    void loadScene(int sceneID);
-
+    Camera* getCamera();
+    double getDeltaTime();
+    void addInput(Input* input);
 };
 
 #endif

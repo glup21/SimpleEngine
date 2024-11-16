@@ -5,33 +5,6 @@
 #include "shaderFactory.hpp"
 #include "sceneReader.hpp"
 
-bool isWindowFocused = true;
-vector<bool> keys(100, false);
-
-void window_focus_callback(GLFWwindow* window, int focused) 
-{
-    isWindowFocused = (focused == GLFW_TRUE);
-}
-
-void key_callback(GLFWwindow* window, int key, int scancode, int action, int mods) 
-{
-
-    if (action == GLFW_PRESS) {
-        keys[key] = true;
-
-        if (key >= GLFW_KEY_0 && key <= GLFW_KEY_9) 
-        {
-            int sceneID = key - GLFW_KEY_0; 
-            Engine* engine = static_cast<Engine*>(glfwGetWindowUserPointer(window));
-
-            engine->loadScene(sceneID-1); 
-
-        }
-    } else if (action == GLFW_RELEASE) 
-        keys[key] = false;
-    
-}
-
 Engine::Engine(GLFWwindow* window, ConfigReader* configReader) 
     : window(window), configReader(configReader) 
 {
@@ -49,9 +22,7 @@ Engine::Engine(GLFWwindow* window, ConfigReader* configReader)
     defaultShaderProgram->attachShader(fragmentShader);
     defaultShaderProgram->link();
 
-    glfwSetWindowUserPointer(window, this);
-    glfwSetWindowFocusCallback(window, window_focus_callback);
-    glfwSetKeyCallback(window, key_callback);
+    
 }
 
 
@@ -79,26 +50,10 @@ void Engine::run()
     while (!glfwWindowShouldClose(window)) 
     {
         auto frameStartTime = std::chrono::high_resolution_clock::now();  
-        double deltaTime = calculateDeltaTime();
-
-
-        glfwGetWindowSize(window, &width, &height);
-        double xpos, ypos;
-        glfwGetCursorPos(window, &xpos, &ypos);
-        glm::vec2 mouseDelta(width / 2.0 - xpos, height / 2.0 - ypos);
-
-        if (isWindowFocused && glm::length(mouseDelta) > 0.01f) 
-        {
-            mouseDelta = glm::normalize(mouseDelta);
-            camera->changeTarget(-mouseDelta.x, mouseDelta.y, deltaTime);
-        }
-        glfwSetCursorPos(window, width / 2.0, height / 2.0);
-
-        camera->move(keys, deltaTime);
-        camera->notifyObservers();
+        double deltaTime = getDeltaTime();
+        input->updateInput(deltaTime);
 
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-
         updateGameObjects(deltaTime);
         drawObjects();
 
@@ -107,27 +62,13 @@ void Engine::run()
 
         // FPS control
         auto frameEndTime = std::chrono::high_resolution_clock::now();  
+        
         std::chrono::duration<double> frameDuration = frameEndTime - frameStartTime;
-
         if (frameDuration.count() < targetFrameTime) 
             std::this_thread::sleep_for(std::chrono::duration<double>(targetFrameTime - frameDuration.count()));
         
     }
 }
-
-
-void Engine::loadScene(int sceneID) 
-{
-    string scenePath = configReader->getScenePath(sceneID);
-    if (!scenePath.empty()) {
-        std::cout << "Loading scene: " << scenePath << std::endl;
-        init(scenePath); 
-    } 
-    else 
-        std::cerr << "Error: Scene ID " << sceneID << " is out of range." << std::endl;
-    
-}
-
 
 void Engine::shutdown() 
 {
@@ -151,10 +92,20 @@ void Engine::drawObjects()
 }
 
 
-double Engine::calculateDeltaTime() 
+double Engine::getDeltaTime() 
 {
     auto currentTime = std::chrono::high_resolution_clock::now();
     std::chrono::duration<double> deltaTime = currentTime - previousTime;
     previousTime = currentTime;
     return deltaTime.count();
+}
+
+Camera* Engine::getCamera()
+{
+    return camera;
+}
+
+void Engine::addInput(Input* input)
+{
+    this->input = input;
 }

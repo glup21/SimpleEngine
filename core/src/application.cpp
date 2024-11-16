@@ -9,7 +9,8 @@ void framebuffer_size_callback(GLFWwindow* window, int width, int height)
     glViewport(0, 0, width, height);
 }
 
-Application::Application(ConfigReader* configReader): configReader(configReader)
+
+Application::Application(ConfigReader* configReader): configReader(configReader), engine(nullptr)
 {
     
 }
@@ -52,16 +53,18 @@ void Application::initialize()
     glfwGetVersion(&major, &minor, &revision);
     printf("Using GLFW %i.%i.%i\n", major, minor, revision);
 
-    engine = new Engine(window, configReader);
-
     glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);
+
+    
+
+    loadScene(0);
+    input = new Input(window, this, engine);
+    engine->addInput(input);
 
 }
 
 void Application::run()
 {
-
-    engine->init(scenePath);
     while (!glfwWindowShouldClose(window))
     {
 
@@ -89,4 +92,20 @@ void Application::critical_shutdown()
 
     glfwTerminate();
     exit(EXIT_SUCCESS);
+}
+
+void Application::loadScene(int sceneID)
+{
+
+    if(engine != nullptr)
+    {
+        engine->shutdown();
+        delete(engine);
+        engine = nullptr;
+    }
+
+    engine = new Engine(window, configReader);
+
+    engine->init(configReader->getScenePath(sceneID));
+
 }

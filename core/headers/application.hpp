@@ -12,6 +12,10 @@
 #include "mesh.hpp"
 #include "model.hpp"
 #include "configReader.hpp"
+#include "input.hpp"
+
+class Engine;
+class Input;
 
 class Application
 {
@@ -20,6 +24,7 @@ class Application
     GLFWwindow* window;
     ConfigReader* configReader;
     string scenePath;
+    Input* input;
 
 public:
     Application(ConfigReader* configReader);
@@ -29,6 +34,7 @@ public:
     void run();
     void shutdown();
     void critical_shutdown();
+    void loadScene(int sceneID);
 
 };
 

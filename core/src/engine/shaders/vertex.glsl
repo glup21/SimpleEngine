@@ -15,7 +15,7 @@ uniform mat4 viewMatrix;
 void main()
 {
     TexCoords = aTexCoords;
-    WorldNormal = aNormal;
+    WorldNormal = aNormal * transpose(inverse(mat3(transform)));
     FragPos = vec3(transform * vec4(aPos, 1.0));
 
 

@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/vival/Documents/Study/Github/SimpleEngine-university
+CMAKE_SOURCE_DIR = /home/vival/Documents/GitHub/SimpleEngine
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/vival/Documents/Study/Github/SimpleEngine-university/build
+CMAKE_BINARY_DIR = /home/vival/Documents/GitHub/SimpleEngine/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/SimpleEngine.dir/depend.make
@@ -70,270 +70,270 @@ include CMakeFiles/SimpleEngine.dir/progress.make
 include CMakeFiles/SimpleEngine.dir/flags.make
 
 CMakeFiles/SimpleEngine.dir/core/src/main.cpp.o: CMakeFiles/SimpleEngine.dir/flags.make
-CMakeFiles/SimpleEngine.dir/core/src/main.cpp.o: /home/vival/Documents/Study/Github/SimpleEngine-university/core/src/main.cpp
+CMakeFiles/SimpleEngine.dir/core/src/main.cpp.o: /home/vival/Documents/GitHub/SimpleEngine/core/src/main.cpp
 CMakeFiles/SimpleEngine.dir/core/src/main.cpp.o: CMakeFiles/SimpleEngine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/vival/Documents/Study/Github/SimpleEngine-university/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/SimpleEngine.dir/core/src/main.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/SimpleEngine.dir/core/src/main.cpp.o -MF CMakeFiles/SimpleEngine.dir/core/src/main.cpp.o.d -o CMakeFiles/SimpleEngine.dir/core/src/main.cpp.o -c /home/vival/Documents/Study/Github/SimpleEngine-university/core/src/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/vival/Documents/GitHub/SimpleEngine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/SimpleEngine.dir/core/src/main.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/SimpleEngine.dir/core/src/main.cpp.o -MF CMakeFiles/SimpleEngine.dir/core/src/main.cpp.o.d -o CMakeFiles/SimpleEngine.dir/core/src/main.cpp.o -c /home/vival/Documents/GitHub/SimpleEngine/core/src/main.cpp
 
 CMakeFiles/SimpleEngine.dir/core/src/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/SimpleEngine.dir/core/src/main.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/vival/Documents/Study/Github/SimpleEngine-university/core/src/main.cpp > CMakeFiles/SimpleEngine.dir/core/src/main.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/vival/Documents/GitHub/SimpleEngine/core/src/main.cpp > CMakeFiles/SimpleEngine.dir/core/src/main.cpp.i
 
 CMakeFiles/SimpleEngine.dir/core/src/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/SimpleEngine.dir/core/src/main.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/vival/Documents/Study/Github/SimpleEngine-university/core/src/main.cpp -o CMakeFiles/SimpleEngine.dir/core/src/main.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/vival/Documents/GitHub/SimpleEngine/core/src/main.cpp -o CMakeFiles/SimpleEngine.dir/core/src/main.cpp.s
 
 CMakeFiles/SimpleEngine.dir/core/src/application.cpp.o: CMakeFiles/SimpleEngine.dir/flags.make
-CMakeFiles/SimpleEngine.dir/core/src/application.cpp.o: /home/vival/Documents/Study/Github/SimpleEngine-university/core/src/application.cpp
+CMakeFiles/SimpleEngine.dir/core/src/application.cpp.o: /home/vival/Documents/GitHub/SimpleEngine/core/src/application.cpp
 CMakeFiles/SimpleEngine.dir/core/src/application.cpp.o: CMakeFiles/SimpleEngine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/vival/Documents/Study/Github/SimpleEngine-university/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/SimpleEngine.dir/core/src/application.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/SimpleEngine.dir/core/src/application.cpp.o -MF CMakeFiles/SimpleEngine.dir/core/src/application.cpp.o.d -o CMakeFiles/SimpleEngine.dir/core/src/application.cpp.o -c /home/vival/Documents/Study/Github/SimpleEngine-university/core/src/application.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/vival/Documents/GitHub/SimpleEngine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/SimpleEngine.dir/core/src/application.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/SimpleEngine.dir/core/src/application.cpp.o -MF CMakeFiles/SimpleEngine.dir/core/src/application.cpp.o.d -o CMakeFiles/SimpleEngine.dir/core/src/application.cpp.o -c /home/vival/Documents/GitHub/SimpleEngine/core/src/application.cpp
 
 CMakeFiles/SimpleEngine.dir/core/src/application.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/SimpleEngine.dir/core/src/application.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/vival/Documents/Study/Github/SimpleEngine-university/core/src/application.cpp > CMakeFiles/SimpleEngine.dir/core/src/application.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/vival/Documents/GitHub/SimpleEngine/core/src/application.cpp > CMakeFiles/SimpleEngine.dir/core/src/application.cpp.i
 
 CMakeFiles/SimpleEngine.dir/core/src/application.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/SimpleEngine.dir/core/src/application.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/vival/Documents/Study/Github/SimpleEngine-university/core/src/application.cpp -o CMakeFiles/SimpleEngine.dir/core/src/application.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/vival/Documents/GitHub/SimpleEngine/core/src/application.cpp -o CMakeFiles/SimpleEngine.dir/core/src/application.cpp.s
 
 CMakeFiles/SimpleEngine.dir/core/src/engine/texture.cpp.o: CMakeFiles/SimpleEngine.dir/flags.make
-CMakeFiles/SimpleEngine.dir/core/src/engine/texture.cpp.o: /home/vival/Documents/Study/Github/SimpleEngine-university/core/src/engine/texture.cpp
+CMakeFiles/SimpleEngine.dir/core/src/engine/texture.cpp.o: /home/vival/Documents/GitHub/SimpleEngine/core/src/engine/texture.cpp
 CMakeFiles/SimpleEngine.dir/core/src/engine/texture.cpp.o: CMakeFiles/SimpleEngine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/vival/Documents/Study/Github/SimpleEngine-university/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/SimpleEngine.dir/core/src/engine/texture.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/SimpleEngine.dir/core/src/engine/texture.cpp.o -MF CMakeFiles/SimpleEngine.dir/core/src/engine/texture.cpp.o.d -o CMakeFiles/SimpleEngine.dir/core/src/engine/texture.cpp.o -c /home/vival/Documents/Study/Github/SimpleEngine-university/core/src/engine/texture.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/vival/Documents/GitHub/SimpleEngine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/SimpleEngine.dir/core/src/engine/texture.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/SimpleEngine.dir/core/src/engine/texture.cpp.o -MF CMakeFiles/SimpleEngine.dir/core/src/engine/texture.cpp.o.d -o CMakeFiles/SimpleEngine.dir/core/src/engine/texture.cpp.o -c /home/vival/Documents/GitHub/SimpleEngine/core/src/engine/texture.cpp
 
 CMakeFiles/SimpleEngine.dir/core/src/engine/texture.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/SimpleEngine.dir/core/src/engine/texture.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/vival/Documents/Study/Github/SimpleEngine-university/core/src/engine/texture.cpp > CMakeFiles/SimpleEngine.dir/core/src/engine/texture.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/vival/Documents/GitHub/SimpleEngine/core/src/engine/texture.cpp > CMakeFiles/SimpleEngine.dir/core/src/engine/texture.cpp.i
 
 CMakeFiles/SimpleEngine.dir/core/src/engine/texture.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/SimpleEngine.dir/core/src/engine/texture.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/vival/Documents/Study/Github/SimpleEngine-university/core/src/engine/texture.cpp -o CMakeFiles/SimpleEngine.dir/core/src/engine/texture.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/vival/Documents/GitHub/SimpleEngine/core/src/engine/texture.cpp -o CMakeFiles/SimpleEngine.dir/core/src/engine/texture.cpp.s
 
 CMakeFiles/SimpleEngine.dir/core/src/engine/engine.cpp.o: CMakeFiles/SimpleEngine.dir/flags.make
-CMakeFiles/SimpleEngine.dir/core/src/engine/engine.cpp.o: /home/vival/Documents/Study/Github/SimpleEngine-university/core/src/engine/engine.cpp
+CMakeFiles/SimpleEngine.dir/core/src/engine/engine.cpp.o: /home/vival/Documents/GitHub/SimpleEngine/core/src/engine/engine.cpp
 CMakeFiles/SimpleEngine.dir/core/src/engine/engine.cpp.o: CMakeFiles/SimpleEngine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/vival/Documents/Study/Github/SimpleEngine-university/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/SimpleEngine.dir/core/src/engine/engine.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/SimpleEngine.dir/core/src/engine/engine.cpp.o -MF CMakeFiles/SimpleEngine.dir/core/src/engine/engine.cpp.o.d -o CMakeFiles/SimpleEngine.dir/core/src/engine/engine.cpp.o -c /home/vival/Documents/Study/Github/SimpleEngine-university/core/src/engine/engine.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/vival/Documents/GitHub/SimpleEngine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/SimpleEngine.dir/core/src/engine/engine.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/SimpleEngine.dir/core/src/engine/engine.cpp.o -MF CMakeFiles/SimpleEngine.dir/core/src/engine/engine.cpp.o.d -o CMakeFiles/SimpleEngine.dir/core/src/engine/engine.cpp.o -c /home/vival/Documents/GitHub/SimpleEngine/core/src/engine/engine.cpp
 
 CMakeFiles/SimpleEngine.dir/core/src/engine/engine.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/SimpleEngine.dir/core/src/engine/engine.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/vival/Documents/Study/Github/SimpleEngine-university/core/src/engine/engine.cpp > CMakeFiles/SimpleEngine.dir/core/src/engine/engine.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/vival/Documents/GitHub/SimpleEngine/core/src/engine/engine.cpp > CMakeFiles/SimpleEngine.dir/core/src/engine/engine.cpp.i
 
 CMakeFiles/SimpleEngine.dir/core/src/engine/engine.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/SimpleEngine.dir/core/src/engine/engine.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/vival/Documents/Study/Github/SimpleEngine-university/core/src/engine/engine.cpp -o CMakeFiles/SimpleEngine.dir/core/src/engine/engine.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/vival/Documents/GitHub/SimpleEngine/core/src/engine/engine.cpp -o CMakeFiles/SimpleEngine.dir/core/src/engine/engine.cpp.s
 
 CMakeFiles/SimpleEngine.dir/core/src/engine/camera.cpp.o: CMakeFiles/SimpleEngine.dir/flags.make
-CMakeFiles/SimpleEngine.dir/core/src/engine/camera.cpp.o: /home/vival/Documents/Study/Github/SimpleEngine-university/core/src/engine/camera.cpp
+CMakeFiles/SimpleEngine.dir/core/src/engine/camera.cpp.o: /home/vival/Documents/GitHub/SimpleEngine/core/src/engine/camera.cpp
 CMakeFiles/SimpleEngine.dir/core/src/engine/camera.cpp.o: CMakeFiles/SimpleEngine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/vival/Documents/Study/Github/SimpleEngine-university/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/SimpleEngine.dir/core/src/engine/camera.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/SimpleEngine.dir/core/src/engine/camera.cpp.o -MF CMakeFiles/SimpleEngine.dir/core/src/engine/camera.cpp.o.d -o CMakeFiles/SimpleEngine.dir/core/src/engine/camera.cpp.o -c /home/vival/Documents/Study/Github/SimpleEngine-university/core/src/engine/camera.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/vival/Documents/GitHub/SimpleEngine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/SimpleEngine.dir/core/src/engine/camera.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/SimpleEngine.dir/core/src/engine/camera.cpp.o -MF CMakeFiles/SimpleEngine.dir/core/src/engine/camera.cpp.o.d -o CMakeFiles/SimpleEngine.dir/core/src/engine/camera.cpp.o -c /home/vival/Documents/GitHub/SimpleEngine/core/src/engine/camera.cpp
 
 CMakeFiles/SimpleEngine.dir/core/src/engine/camera.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/SimpleEngine.dir/core/src/engine/camera.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/vival/Documents/Study/Github/SimpleEngine-university/core/src/engine/camera.cpp > CMakeFiles/SimpleEngine.dir/core/src/engine/camera.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/vival/Documents/GitHub/SimpleEngine/core/src/engine/camera.cpp > CMakeFiles/SimpleEngine.dir/core/src/engine/camera.cpp.i
 
 CMakeFiles/SimpleEngine.dir/core/src/engine/camera.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/SimpleEngine.dir/core/src/engine/camera.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/vival/Documents/Study/Github/SimpleEngine-university/core/src/engine/camera.cpp -o CMakeFiles/SimpleEngine.dir/core/src/engine/camera.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/vival/Documents/GitHub/SimpleEngine/core/src/engine/camera.cpp -o CMakeFiles/SimpleEngine.dir/core/src/engine/camera.cpp.s
 
 CMakeFiles/SimpleEngine.dir/core/src/engine/input.cpp.o: CMakeFiles/SimpleEngine.dir/flags.make
-CMakeFiles/SimpleEngine.dir/core/src/engine/input.cpp.o: /home/vival/Documents/Study/Github/SimpleEngine-university/core/src/engine/input.cpp
+CMakeFiles/SimpleEngine.dir/core/src/engine/input.cpp.o: /home/vival/Documents/GitHub/SimpleEngine/core/src/engine/input.cpp
 CMakeFiles/SimpleEngine.dir/core/src/engine/input.cpp.o: CMakeFiles/SimpleEngine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/vival/Documents/Study/Github/SimpleEngine-university/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/SimpleEngine.dir/core/src/engine/input.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/SimpleEngine.dir/core/src/engine/input.cpp.o -MF CMakeFiles/SimpleEngine.dir/core/src/engine/input.cpp.o.d -o CMakeFiles/SimpleEngine.dir/core/src/engine/input.cpp.o -c /home/vival/Documents/Study/Github/SimpleEngine-university/core/src/engine/input.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/vival/Documents/GitHub/SimpleEngine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/SimpleEngine.dir/core/src/engine/input.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/SimpleEngine.dir/core/src/engine/input.cpp.o -MF CMakeFiles/SimpleEngine.dir/core/src/engine/input.cpp.o.d -o CMakeFiles/SimpleEngine.dir/core/src/engine/input.cpp.o -c /home/vival/Documents/GitHub/SimpleEngine/core/src/engine/input.cpp
 
 CMakeFiles/SimpleEngine.dir/core/src/engine/input.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/SimpleEngine.dir/core/src/engine/input.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/vival/Documents/Study/Github/SimpleEngine-university/core/src/engine/input.cpp > CMakeFiles/SimpleEngine.dir/core/src/engine/input.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/vival/Documents/GitHub/SimpleEngine/core/src/engine/input.cpp > CMakeFiles/SimpleEngine.dir/core/src/engine/input.cpp.i
 
 CMakeFiles/SimpleEngine.dir/core/src/engine/input.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/SimpleEngine.dir/core/src/engine/input.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/vival/Documents/Study/Github/SimpleEngine-university/core/src/engine/input.cpp -o CMakeFiles/SimpleEngine.dir/core/src/engine/input.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/vival/Documents/GitHub/SimpleEngine/core/src/engine/input.cpp -o CMakeFiles/SimpleEngine.dir/core/src/engine/input.cpp.s
 
 CMakeFiles/SimpleEngine.dir/core/src/engine/shader.cpp.o: CMakeFiles/SimpleEngine.dir/flags.make
-CMakeFiles/SimpleEngine.dir/core/src/engine/shader.cpp.o: /home/vival/Documents/Study/Github/SimpleEngine-university/core/src/engine/shader.cpp
+CMakeFiles/SimpleEngine.dir/core/src/engine/shader.cpp.o: /home/vival/Documents/GitHub/SimpleEngine/core/src/engine/shader.cpp
 CMakeFiles/SimpleEngine.dir/core/src/engine/shader.cpp.o: CMakeFiles/SimpleEngine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/vival/Documents/Study/Github/SimpleEngine-university/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/SimpleEngine.dir/core/src/engine/shader.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/SimpleEngine.dir/core/src/engine/shader.cpp.o -MF CMakeFiles/SimpleEngine.dir/core/src/engine/shader.cpp.o.d -o CMakeFiles/SimpleEngine.dir/core/src/engine/shader.cpp.o -c /home/vival/Documents/Study/Github/SimpleEngine-university/core/src/engine/shader.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/vival/Documents/GitHub/SimpleEngine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/SimpleEngine.dir/core/src/engine/shader.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/SimpleEngine.dir/core/src/engine/shader.cpp.o -MF CMakeFiles/SimpleEngine.dir/core/src/engine/shader.cpp.o.d -o CMakeFiles/SimpleEngine.dir/core/src/engine/shader.cpp.o -c /home/vival/Documents/GitHub/SimpleEngine/core/src/engine/shader.cpp
 
 CMakeFiles/SimpleEngine.dir/core/src/engine/shader.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/SimpleEngine.dir/core/src/engine/shader.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/vival/Documents/Study/Github/SimpleEngine-university/core/src/engine/shader.cpp > CMakeFiles/SimpleEngine.dir/core/src/engine/shader.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/vival/Documents/GitHub/SimpleEngine/core/src/engine/shader.cpp > CMakeFiles/SimpleEngine.dir/core/src/engine/shader.cpp.i
 
 CMakeFiles/SimpleEngine.dir/core/src/engine/shader.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/SimpleEngine.dir/core/src/engine/shader.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/vival/Documents/Study/Github/SimpleEngine-university/core/src/engine/shader.cpp -o CMakeFiles/SimpleEngine.dir/core/src/engine/shader.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/vival/Documents/GitHub/SimpleEngine/core/src/engine/shader.cpp -o CMakeFiles/SimpleEngine.dir/core/src/engine/shader.cpp.s
 
 CMakeFiles/SimpleEngine.dir/core/src/engine/shaderProgram.cpp.o: CMakeFiles/SimpleEngine.dir/flags.make
-CMakeFiles/SimpleEngine.dir/core/src/engine/shaderProgram.cpp.o: /home/vival/Documents/Study/Github/SimpleEngine-university/core/src/engine/shaderProgram.cpp
+CMakeFiles/SimpleEngine.dir/core/src/engine/shaderProgram.cpp.o: /home/vival/Documents/GitHub/SimpleEngine/core/src/engine/shaderProgram.cpp
 CMakeFiles/SimpleEngine.dir/core/src/engine/shaderProgram.cpp.o: CMakeFiles/SimpleEngine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/vival/Documents/Study/Github/SimpleEngine-university/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/SimpleEngine.dir/core/src/engine/shaderProgram.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/SimpleEngine.dir/core/src/engine/shaderProgram.cpp.o -MF CMakeFiles/SimpleEngine.dir/core/src/engine/shaderProgram.cpp.o.d -o CMakeFiles/SimpleEngine.dir/core/src/engine/shaderProgram.cpp.o -c /home/vival/Documents/Study/Github/SimpleEngine-university/core/src/engine/shaderProgram.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/vival/Documents/GitHub/SimpleEngine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/SimpleEngine.dir/core/src/engine/shaderProgram.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/SimpleEngine.dir/core/src/engine/shaderProgram.cpp.o -MF CMakeFiles/SimpleEngine.dir/core/src/engine/shaderProgram.cpp.o.d -o CMakeFiles/SimpleEngine.dir/core/src/engine/shaderProgram.cpp.o -c /home/vival/Documents/GitHub/SimpleEngine/core/src/engine/shaderProgram.cpp
 
 CMakeFiles/SimpleEngine.dir/core/src/engine/shaderProgram.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/SimpleEngine.dir/core/src/engine/shaderProgram.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/vival/Documents/Study/Github/SimpleEngine-university/core/src/engine/shaderProgram.cpp > CMakeFiles/SimpleEngine.dir/core/src/engine/shaderProgram.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/vival/Documents/GitHub/SimpleEngine/core/src/engine/shaderProgram.cpp > CMakeFiles/SimpleEngine.dir/core/src/engine/shaderProgram.cpp.i
 
 CMakeFiles/SimpleEngine.dir/core/src/engine/shaderProgram.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/SimpleEngine.dir/core/src/engine/shaderProgram.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/vival/Documents/Study/Github/SimpleEngine-university/core/src/engine/shaderProgram.cpp -o CMakeFiles/SimpleEngine.dir/core/src/engine/shaderProgram.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/vival/Documents/GitHub/SimpleEngine/core/src/engine/shaderProgram.cpp -o CMakeFiles/SimpleEngine.dir/core/src/engine/shaderProgram.cpp.s
 
 CMakeFiles/SimpleEngine.dir/core/src/engine/pointLight.cpp.o: CMakeFiles/SimpleEngine.dir/flags.make
-CMakeFiles/SimpleEngine.dir/core/src/engine/pointLight.cpp.o: /home/vival/Documents/Study/Github/SimpleEngine-university/core/src/engine/pointLight.cpp
+CMakeFiles/SimpleEngine.dir/core/src/engine/pointLight.cpp.o: /home/vival/Documents/GitHub/SimpleEngine/core/src/engine/pointLight.cpp
 CMakeFiles/SimpleEngine.dir/core/src/engine/pointLight.cpp.o: CMakeFiles/SimpleEngine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/vival/Documents/Study/Github/SimpleEngine-university/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/SimpleEngine.dir/core/src/engine/pointLight.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/SimpleEngine.dir/core/src/engine/pointLight.cpp.o -MF CMakeFiles/SimpleEngine.dir/core/src/engine/pointLight.cpp.o.d -o CMakeFiles/SimpleEngine.dir/core/src/engine/pointLight.cpp.o -c /home/vival/Documents/Study/Github/SimpleEngine-university/core/src/engine/pointLight.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/vival/Documents/GitHub/SimpleEngine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/SimpleEngine.dir/core/src/engine/pointLight.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/SimpleEngine.dir/core/src/engine/pointLight.cpp.o -MF CMakeFiles/SimpleEngine.dir/core/src/engine/pointLight.cpp.o.d -o CMakeFiles/SimpleEngine.dir/core/src/engine/pointLight.cpp.o -c /home/vival/Documents/GitHub/SimpleEngine/core/src/engine/pointLight.cpp
 
 CMakeFiles/SimpleEngine.dir/core/src/engine/pointLight.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/SimpleEngine.dir/core/src/engine/pointLight.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/vival/Documents/Study/Github/SimpleEngine-university/core/src/engine/pointLight.cpp > CMakeFiles/SimpleEngine.dir/core/src/engine/pointLight.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/vival/Documents/GitHub/SimpleEngine/core/src/engine/pointLight.cpp > CMakeFiles/SimpleEngine.dir/core/src/engine/pointLight.cpp.i
 
 CMakeFiles/SimpleEngine.dir/core/src/engine/pointLight.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/SimpleEngine.dir/core/src/engine/pointLight.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/vival/Documents/Study/Github/SimpleEngine-university/core/src/engine/pointLight.cpp -o CMakeFiles/SimpleEngine.dir/core/src/engine/pointLight.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/vival/Documents/GitHub/SimpleEngine/core/src/engine/pointLight.cpp -o CMakeFiles/SimpleEngine.dir/core/src/engine/pointLight.cpp.s
 
 CMakeFiles/SimpleEngine.dir/core/src/engine/transformComposite.cpp.o: CMakeFiles/SimpleEngine.dir/flags.make
-CMakeFiles/SimpleEngine.dir/core/src/engine/transformComposite.cpp.o: /home/vival/Documents/Study/Github/SimpleEngine-university/core/src/engine/transformComposite.cpp
+CMakeFiles/SimpleEngine.dir/core/src/engine/transformComposite.cpp.o: /home/vival/Documents/GitHub/SimpleEngine/core/src/engine/transformComposite.cpp
 CMakeFiles/SimpleEngine.dir/core/src/engine/transformComposite.cpp.o: CMakeFiles/SimpleEngine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/vival/Documents/Study/Github/SimpleEngine-university/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/SimpleEngine.dir/core/src/engine/transformComposite.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/SimpleEngine.dir/core/src/engine/transformComposite.cpp.o -MF CMakeFiles/SimpleEngine.dir/core/src/engine/transformComposite.cpp.o.d -o CMakeFiles/SimpleEngine.dir/core/src/engine/transformComposite.cpp.o -c /home/vival/Documents/Study/Github/SimpleEngine-university/core/src/engine/transformComposite.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/vival/Documents/GitHub/SimpleEngine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/SimpleEngine.dir/core/src/engine/transformComposite.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/SimpleEngine.dir/core/src/engine/transformComposite.cpp.o -MF CMakeFiles/SimpleEngine.dir/core/src/engine/transformComposite.cpp.o.d -o CMakeFiles/SimpleEngine.dir/core/src/engine/transformComposite.cpp.o -c /home/vival/Documents/GitHub/SimpleEngine/core/src/engine/transformComposite.cpp
 
 CMakeFiles/SimpleEngine.dir/core/src/engine/transformComposite.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/SimpleEngine.dir/core/src/engine/transformComposite.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/vival/Documents/Study/Github/SimpleEngine-university/core/src/engine/transformComposite.cpp > CMakeFiles/SimpleEngine.dir/core/src/engine/transformComposite.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/vival/Documents/GitHub/SimpleEngine/core/src/engine/transformComposite.cpp > CMakeFiles/SimpleEngine.dir/core/src/engine/transformComposite.cpp.i
 
 CMakeFiles/SimpleEngine.dir/core/src/engine/transformComposite.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/SimpleEngine.dir/core/src/engine/transformComposite.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/vival/Documents/Study/Github/SimpleEngine-university/core/src/engine/transformComposite.cpp -o CMakeFiles/SimpleEngine.dir/core/src/engine/transformComposite.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/vival/Documents/GitHub/SimpleEngine/core/src/engine/transformComposite.cpp -o CMakeFiles/SimpleEngine.dir/core/src/engine/transformComposite.cpp.s
 
 CMakeFiles/SimpleEngine.dir/core/src/config/configReader.cpp.o: CMakeFiles/SimpleEngine.dir/flags.make
-CMakeFiles/SimpleEngine.dir/core/src/config/configReader.cpp.o: /home/vival/Documents/Study/Github/SimpleEngine-university/core/src/config/configReader.cpp
+CMakeFiles/SimpleEngine.dir/core/src/config/configReader.cpp.o: /home/vival/Documents/GitHub/SimpleEngine/core/src/config/configReader.cpp
 CMakeFiles/SimpleEngine.dir/core/src/config/configReader.cpp.o: CMakeFiles/SimpleEngine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/vival/Documents/Study/Github/SimpleEngine-university/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/SimpleEngine.dir/core/src/config/configReader.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/SimpleEngine.dir/core/src/config/configReader.cpp.o -MF CMakeFiles/SimpleEngine.dir/core/src/config/configReader.cpp.o.d -o CMakeFiles/SimpleEngine.dir/core/src/config/configReader.cpp.o -c /home/vival/Documents/Study/Github/SimpleEngine-university/core/src/config/configReader.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/vival/Documents/GitHub/SimpleEngine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/SimpleEngine.dir/core/src/config/configReader.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/SimpleEngine.dir/core/src/config/configReader.cpp.o -MF CMakeFiles/SimpleEngine.dir/core/src/config/configReader.cpp.o.d -o CMakeFiles/SimpleEngine.dir/core/src/config/configReader.cpp.o -c /home/vival/Documents/GitHub/SimpleEngine/core/src/config/configReader.cpp
 
 CMakeFiles/SimpleEngine.dir/core/src/config/configReader.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/SimpleEngine.dir/core/src/config/configReader.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/vival/Documents/Study/Github/SimpleEngine-university/core/src/config/configReader.cpp > CMakeFiles/SimpleEngine.dir/core/src/config/configReader.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/vival/Documents/GitHub/SimpleEngine/core/src/config/configReader.cpp > CMakeFiles/SimpleEngine.dir/core/src/config/configReader.cpp.i
 
 CMakeFiles/SimpleEngine.dir/core/src/config/configReader.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/SimpleEngine.dir/core/src/config/configReader.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/vival/Documents/Study/Github/SimpleEngine-university/core/src/config/configReader.cpp -o CMakeFiles/SimpleEngine.dir/core/src/config/configReader.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/vival/Documents/GitHub/SimpleEngine/core/src/config/configReader.cpp -o CMakeFiles/SimpleEngine.dir/core/src/config/configReader.cpp.s
 
 CMakeFiles/SimpleEngine.dir/core/src/scene/scene.cpp.o: CMakeFiles/SimpleEngine.dir/flags.make
-CMakeFiles/SimpleEngine.dir/core/src/scene/scene.cpp.o: /home/vival/Documents/Study/Github/SimpleEngine-university/core/src/scene/scene.cpp
+CMakeFiles/SimpleEngine.dir/core/src/scene/scene.cpp.o: /home/vival/Documents/GitHub/SimpleEngine/core/src/scene/scene.cpp
 CMakeFiles/SimpleEngine.dir/core/src/scene/scene.cpp.o: CMakeFiles/SimpleEngine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/vival/Documents/Study/Github/SimpleEngine-university/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/SimpleEngine.dir/core/src/scene/scene.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/SimpleEngine.dir/core/src/scene/scene.cpp.o -MF CMakeFiles/SimpleEngine.dir/core/src/scene/scene.cpp.o.d -o CMakeFiles/SimpleEngine.dir/core/src/scene/scene.cpp.o -c /home/vival/Documents/Study/Github/SimpleEngine-university/core/src/scene/scene.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/vival/Documents/GitHub/SimpleEngine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/SimpleEngine.dir/core/src/scene/scene.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/SimpleEngine.dir/core/src/scene/scene.cpp.o -MF CMakeFiles/SimpleEngine.dir/core/src/scene/scene.cpp.o.d -o CMakeFiles/SimpleEngine.dir/core/src/scene/scene.cpp.o -c /home/vival/Documents/GitHub/SimpleEngine/core/src/scene/scene.cpp
 
 CMakeFiles/SimpleEngine.dir/core/src/scene/scene.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/SimpleEngine.dir/core/src/scene/scene.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/vival/Documents/Study/Github/SimpleEngine-university/core/src/scene/scene.cpp > CMakeFiles/SimpleEngine.dir/core/src/scene/scene.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/vival/Documents/GitHub/SimpleEngine/core/src/scene/scene.cpp > CMakeFiles/SimpleEngine.dir/core/src/scene/scene.cpp.i
 
 CMakeFiles/SimpleEngine.dir/core/src/scene/scene.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/SimpleEngine.dir/core/src/scene/scene.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/vival/Documents/Study/Github/SimpleEngine-university/core/src/scene/scene.cpp -o CMakeFiles/SimpleEngine.dir/core/src/scene/scene.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/vival/Documents/GitHub/SimpleEngine/core/src/scene/scene.cpp -o CMakeFiles/SimpleEngine.dir/core/src/scene/scene.cpp.s
 
 CMakeFiles/SimpleEngine.dir/core/src/scene/mesh.cpp.o: CMakeFiles/SimpleEngine.dir/flags.make
-CMakeFiles/SimpleEngine.dir/core/src/scene/mesh.cpp.o: /home/vival/Documents/Study/Github/SimpleEngine-university/core/src/scene/mesh.cpp
+CMakeFiles/SimpleEngine.dir/core/src/scene/mesh.cpp.o: /home/vival/Documents/GitHub/SimpleEngine/core/src/scene/mesh.cpp
 CMakeFiles/SimpleEngine.dir/core/src/scene/mesh.cpp.o: CMakeFiles/SimpleEngine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/vival/Documents/Study/Github/SimpleEngine-university/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/SimpleEngine.dir/core/src/scene/mesh.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/SimpleEngine.dir/core/src/scene/mesh.cpp.o -MF CMakeFiles/SimpleEngine.dir/core/src/scene/mesh.cpp.o.d -o CMakeFiles/SimpleEngine.dir/core/src/scene/mesh.cpp.o -c /home/vival/Documents/Study/Github/SimpleEngine-university/core/src/scene/mesh.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/vival/Documents/GitHub/SimpleEngine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/SimpleEngine.dir/core/src/scene/mesh.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/SimpleEngine.dir/core/src/scene/mesh.cpp.o -MF CMakeFiles/SimpleEngine.dir/core/src/scene/mesh.cpp.o.d -o CMakeFiles/SimpleEngine.dir/core/src/scene/mesh.cpp.o -c /home/vival/Documents/GitHub/SimpleEngine/core/src/scene/mesh.cpp
 
 CMakeFiles/SimpleEngine.dir/core/src/scene/mesh.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/SimpleEngine.dir/core/src/scene/mesh.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/vival/Documents/Study/Github/SimpleEngine-university/core/src/scene/mesh.cpp > CMakeFiles/SimpleEngine.dir/core/src/scene/mesh.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/vival/Documents/GitHub/SimpleEngine/core/src/scene/mesh.cpp > CMakeFiles/SimpleEngine.dir/core/src/scene/mesh.cpp.i
 
 CMakeFiles/SimpleEngine.dir/core/src/scene/mesh.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/SimpleEngine.dir/core/src/scene/mesh.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/vival/Documents/Study/Github/SimpleEngine-university/core/src/scene/mesh.cpp -o CMakeFiles/SimpleEngine.dir/core/src/scene/mesh.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/vival/Documents/GitHub/SimpleEngine/core/src/scene/mesh.cpp -o CMakeFiles/SimpleEngine.dir/core/src/scene/mesh.cpp.s
 
 CMakeFiles/SimpleEngine.dir/core/src/scene/model.cpp.o: CMakeFiles/SimpleEngine.dir/flags.make
-CMakeFiles/SimpleEngine.dir/core/src/scene/model.cpp.o: /home/vival/Documents/Study/Github/SimpleEngine-university/core/src/scene/model.cpp
+CMakeFiles/SimpleEngine.dir/core/src/scene/model.cpp.o: /home/vival/Documents/GitHub/SimpleEngine/core/src/scene/model.cpp
 CMakeFiles/SimpleEngine.dir/core/src/scene/model.cpp.o: CMakeFiles/SimpleEngine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/vival/Documents/Study/Github/SimpleEngine-university/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/SimpleEngine.dir/core/src/scene/model.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/SimpleEngine.dir/core/src/scene/model.cpp.o -MF CMakeFiles/SimpleEngine.dir/core/src/scene/model.cpp.o.d -o CMakeFiles/SimpleEngine.dir/core/src/scene/model.cpp.o -c /home/vival/Documents/Study/Github/SimpleEngine-university/core/src/scene/model.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/vival/Documents/GitHub/SimpleEngine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/SimpleEngine.dir/core/src/scene/model.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/SimpleEngine.dir/core/src/scene/model.cpp.o -MF CMakeFiles/SimpleEngine.dir/core/src/scene/model.cpp.o.d -o CMakeFiles/SimpleEngine.dir/core/src/scene/model.cpp.o -c /home/vival/Documents/GitHub/SimpleEngine/core/src/scene/model.cpp
 
 CMakeFiles/SimpleEngine.dir/core/src/scene/model.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/SimpleEngine.dir/core/src/scene/model.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/vival/Documents/Study/Github/SimpleEngine-university/core/src/scene/model.cpp > CMakeFiles/SimpleEngine.dir/core/src/scene/model.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/vival/Documents/GitHub/SimpleEngine/core/src/scene/model.cpp > CMakeFiles/SimpleEngine.dir/core/src/scene/model.cpp.i
 
 CMakeFiles/SimpleEngine.dir/core/src/scene/model.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/SimpleEngine.dir/core/src/scene/model.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/vival/Documents/Study/Github/SimpleEngine-university/core/src/scene/model.cpp -o CMakeFiles/SimpleEngine.dir/core/src/scene/model.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/vival/Documents/GitHub/SimpleEngine/core/src/scene/model.cpp -o CMakeFiles/SimpleEngine.dir/core/src/scene/model.cpp.s
 
 CMakeFiles/SimpleEngine.dir/core/src/scene/sceneReader.cpp.o: CMakeFiles/SimpleEngine.dir/flags.make
-CMakeFiles/SimpleEngine.dir/core/src/scene/sceneReader.cpp.o: /home/vival/Documents/Study/Github/SimpleEngine-university/core/src/scene/sceneReader.cpp
+CMakeFiles/SimpleEngine.dir/core/src/scene/sceneReader.cpp.o: /home/vival/Documents/GitHub/SimpleEngine/core/src/scene/sceneReader.cpp
 CMakeFiles/SimpleEngine.dir/core/src/scene/sceneReader.cpp.o: CMakeFiles/SimpleEngine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/vival/Documents/Study/Github/SimpleEngine-university/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/SimpleEngine.dir/core/src/scene/sceneReader.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/SimpleEngine.dir/core/src/scene/sceneReader.cpp.o -MF CMakeFiles/SimpleEngine.dir/core/src/scene/sceneReader.cpp.o.d -o CMakeFiles/SimpleEngine.dir/core/src/scene/sceneReader.cpp.o -c /home/vival/Documents/Study/Github/SimpleEngine-university/core/src/scene/sceneReader.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/vival/Documents/GitHub/SimpleEngine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/SimpleEngine.dir/core/src/scene/sceneReader.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/SimpleEngine.dir/core/src/scene/sceneReader.cpp.o -MF CMakeFiles/SimpleEngine.dir/core/src/scene/sceneReader.cpp.o.d -o CMakeFiles/SimpleEngine.dir/core/src/scene/sceneReader.cpp.o -c /home/vival/Documents/GitHub/SimpleEngine/core/src/scene/sceneReader.cpp
 
 CMakeFiles/SimpleEngine.dir/core/src/scene/sceneReader.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/SimpleEngine.dir/core/src/scene/sceneReader.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/vival/Documents/Study/Github/SimpleEngine-university/core/src/scene/sceneReader.cpp > CMakeFiles/SimpleEngine.dir/core/src/scene/sceneReader.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/vival/Documents/GitHub/SimpleEngine/core/src/scene/sceneReader.cpp > CMakeFiles/SimpleEngine.dir/core/src/scene/sceneReader.cpp.i
 
 CMakeFiles/SimpleEngine.dir/core/src/scene/sceneReader.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/SimpleEngine.dir/core/src/scene/sceneReader.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/vival/Documents/Study/Github/SimpleEngine-university/core/src/scene/sceneReader.cpp -o CMakeFiles/SimpleEngine.dir/core/src/scene/sceneReader.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/vival/Documents/GitHub/SimpleEngine/core/src/scene/sceneReader.cpp -o CMakeFiles/SimpleEngine.dir/core/src/scene/sceneReader.cpp.s
 
 CMakeFiles/SimpleEngine.dir/core/src/engine/imageLoader.cpp.o: CMakeFiles/SimpleEngine.dir/flags.make
-CMakeFiles/SimpleEngine.dir/core/src/engine/imageLoader.cpp.o: /home/vival/Documents/Study/Github/SimpleEngine-university/core/src/engine/imageLoader.cpp
+CMakeFiles/SimpleEngine.dir/core/src/engine/imageLoader.cpp.o: /home/vival/Documents/GitHub/SimpleEngine/core/src/engine/imageLoader.cpp
 CMakeFiles/SimpleEngine.dir/core/src/engine/imageLoader.cpp.o: CMakeFiles/SimpleEngine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/vival/Documents/Study/Github/SimpleEngine-university/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/SimpleEngine.dir/core/src/engine/imageLoader.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/SimpleEngine.dir/core/src/engine/imageLoader.cpp.o -MF CMakeFiles/SimpleEngine.dir/core/src/engine/imageLoader.cpp.o.d -o CMakeFiles/SimpleEngine.dir/core/src/engine/imageLoader.cpp.o -c /home/vival/Documents/Study/Github/SimpleEngine-university/core/src/engine/imageLoader.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/vival/Documents/GitHub/SimpleEngine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/SimpleEngine.dir/core/src/engine/imageLoader.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/SimpleEngine.dir/core/src/engine/imageLoader.cpp.o -MF CMakeFiles/SimpleEngine.dir/core/src/engine/imageLoader.cpp.o.d -o CMakeFiles/SimpleEngine.dir/core/src/engine/imageLoader.cpp.o -c /home/vival/Documents/GitHub/SimpleEngine/core/src/engine/imageLoader.cpp
 
 CMakeFiles/SimpleEngine.dir/core/src/engine/imageLoader.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/SimpleEngine.dir/core/src/engine/imageLoader.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/vival/Documents/Study/Github/SimpleEngine-university/core/src/engine/imageLoader.cpp > CMakeFiles/SimpleEngine.dir/core/src/engine/imageLoader.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/vival/Documents/GitHub/SimpleEngine/core/src/engine/imageLoader.cpp > CMakeFiles/SimpleEngine.dir/core/src/engine/imageLoader.cpp.i
 
 CMakeFiles/SimpleEngine.dir/core/src/engine/imageLoader.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/SimpleEngine.dir/core/src/engine/imageLoader.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/vival/Documents/Study/Github/SimpleEngine-university/core/src/engine/imageLoader.cpp -o CMakeFiles/SimpleEngine.dir/core/src/engine/imageLoader.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/vival/Documents/GitHub/SimpleEngine/core/src/engine/imageLoader.cpp -o CMakeFiles/SimpleEngine.dir/core/src/engine/imageLoader.cpp.s
 
 CMakeFiles/SimpleEngine.dir/core/src/engine/loaders/modelLoader.cpp.o: CMakeFiles/SimpleEngine.dir/flags.make
-CMakeFiles/SimpleEngine.dir/core/src/engine/loaders/modelLoader.cpp.o: /home/vival/Documents/Study/Github/SimpleEngine-university/core/src/engine/loaders/modelLoader.cpp
+CMakeFiles/SimpleEngine.dir/core/src/engine/loaders/modelLoader.cpp.o: /home/vival/Documents/GitHub/SimpleEngine/core/src/engine/loaders/modelLoader.cpp
 CMakeFiles/SimpleEngine.dir/core/src/engine/loaders/modelLoader.cpp.o: CMakeFiles/SimpleEngine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/vival/Documents/Study/Github/SimpleEngine-university/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/SimpleEngine.dir/core/src/engine/loaders/modelLoader.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/SimpleEngine.dir/core/src/engine/loaders/modelLoader.cpp.o -MF CMakeFiles/SimpleEngine.dir/core/src/engine/loaders/modelLoader.cpp.o.d -o CMakeFiles/SimpleEngine.dir/core/src/engine/loaders/modelLoader.cpp.o -c /home/vival/Documents/Study/Github/SimpleEngine-university/core/src/engine/loaders/modelLoader.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/vival/Documents/GitHub/SimpleEngine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/SimpleEngine.dir/core/src/engine/loaders/modelLoader.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/SimpleEngine.dir/core/src/engine/loaders/modelLoader.cpp.o -MF CMakeFiles/SimpleEngine.dir/core/src/engine/loaders/modelLoader.cpp.o.d -o CMakeFiles/SimpleEngine.dir/core/src/engine/loaders/modelLoader.cpp.o -c /home/vival/Documents/GitHub/SimpleEngine/core/src/engine/loaders/modelLoader.cpp
 
 CMakeFiles/SimpleEngine.dir/core/src/engine/loaders/modelLoader.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/SimpleEngine.dir/core/src/engine/loaders/modelLoader.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/vival/Documents/Study/Github/SimpleEngine-university/core/src/engine/loaders/modelLoader.cpp > CMakeFiles/SimpleEngine.dir/core/src/engine/loaders/modelLoader.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/vival/Documents/GitHub/SimpleEngine/core/src/engine/loaders/modelLoader.cpp > CMakeFiles/SimpleEngine.dir/core/src/engine/loaders/modelLoader.cpp.i
 
 CMakeFiles/SimpleEngine.dir/core/src/engine/loaders/modelLoader.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/SimpleEngine.dir/core/src/engine/loaders/modelLoader.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/vival/Documents/Study/Github/SimpleEngine-university/core/src/engine/loaders/modelLoader.cpp -o CMakeFiles/SimpleEngine.dir/core/src/engine/loaders/modelLoader.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/vival/Documents/GitHub/SimpleEngine/core/src/engine/loaders/modelLoader.cpp -o CMakeFiles/SimpleEngine.dir/core/src/engine/loaders/modelLoader.cpp.s
 
 CMakeFiles/SimpleEngine.dir/core/src/engine/factories/gameObjectFactory.cpp.o: CMakeFiles/SimpleEngine.dir/flags.make
-CMakeFiles/SimpleEngine.dir/core/src/engine/factories/gameObjectFactory.cpp.o: /home/vival/Documents/Study/Github/SimpleEngine-university/core/src/engine/factories/gameObjectFactory.cpp
+CMakeFiles/SimpleEngine.dir/core/src/engine/factories/gameObjectFactory.cpp.o: /home/vival/Documents/GitHub/SimpleEngine/core/src/engine/factories/gameObjectFactory.cpp
 CMakeFiles/SimpleEngine.dir/core/src/engine/factories/gameObjectFactory.cpp.o: CMakeFiles/SimpleEngine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/vival/Documents/Study/Github/SimpleEngine-university/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/SimpleEngine.dir/core/src/engine/factories/gameObjectFactory.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/SimpleEngine.dir/core/src/engine/factories/gameObjectFactory.cpp.o -MF CMakeFiles/SimpleEngine.dir/core/src/engine/factories/gameObjectFactory.cpp.o.d -o CMakeFiles/SimpleEngine.dir/core/src/engine/factories/gameObjectFactory.cpp.o -c /home/vival/Documents/Study/Github/SimpleEngine-university/core/src/engine/factories/gameObjectFactory.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/vival/Documents/GitHub/SimpleEngine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/SimpleEngine.dir/core/src/engine/factories/gameObjectFactory.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/SimpleEngine.dir/core/src/engine/factories/gameObjectFactory.cpp.o -MF CMakeFiles/SimpleEngine.dir/core/src/engine/factories/gameObjectFactory.cpp.o.d -o CMakeFiles/SimpleEngine.dir/core/src/engine/factories/gameObjectFactory.cpp.o -c /home/vival/Documents/GitHub/SimpleEngine/core/src/engine/factories/gameObjectFactory.cpp
 
 CMakeFiles/SimpleEngine.dir/core/src/engine/factories/gameObjectFactory.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/SimpleEngine.dir/core/src/engine/factories/gameObjectFactory.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/vival/Documents/Study/Github/SimpleEngine-university/core/src/engine/factories/gameObjectFactory.cpp > CMakeFiles/SimpleEngine.dir/core/src/engine/factories/gameObjectFactory.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/vival/Documents/GitHub/SimpleEngine/core/src/engine/factories/gameObjectFactory.cpp > CMakeFiles/SimpleEngine.dir/core/src/engine/factories/gameObjectFactory.cpp.i
 
 CMakeFiles/SimpleEngine.dir/core/src/engine/factories/gameObjectFactory.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/SimpleEngine.dir/core/src/engine/factories/gameObjectFactory.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/vival/Documents/Study/Github/SimpleEngine-university/core/src/engine/factories/gameObjectFactory.cpp -o CMakeFiles/SimpleEngine.dir/core/src/engine/factories/gameObjectFactory.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/vival/Documents/GitHub/SimpleEngine/core/src/engine/factories/gameObjectFactory.cpp -o CMakeFiles/SimpleEngine.dir/core/src/engine/factories/gameObjectFactory.cpp.s
 
 CMakeFiles/SimpleEngine.dir/core/src/engine/factories/modelFactory.cpp.o: CMakeFiles/SimpleEngine.dir/flags.make
-CMakeFiles/SimpleEngine.dir/core/src/engine/factories/modelFactory.cpp.o: /home/vival/Documents/Study/Github/SimpleEngine-university/core/src/engine/factories/modelFactory.cpp
+CMakeFiles/SimpleEngine.dir/core/src/engine/factories/modelFactory.cpp.o: /home/vival/Documents/GitHub/SimpleEngine/core/src/engine/factories/modelFactory.cpp
 CMakeFiles/SimpleEngine.dir/core/src/engine/factories/modelFactory.cpp.o: CMakeFiles/SimpleEngine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/vival/Documents/Study/Github/SimpleEngine-university/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object CMakeFiles/SimpleEngine.dir/core/src/engine/factories/modelFactory.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/SimpleEngine.dir/core/src/engine/factories/modelFactory.cpp.o -MF CMakeFiles/SimpleEngine.dir/core/src/engine/factories/modelFactory.cpp.o.d -o CMakeFiles/SimpleEngine.dir/core/src/engine/factories/modelFactory.cpp.o -c /home/vival/Documents/Study/Github/SimpleEngine-university/core/src/engine/factories/modelFactory.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/vival/Documents/GitHub/SimpleEngine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object CMakeFiles/SimpleEngine.dir/core/src/engine/factories/modelFactory.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/SimpleEngine.dir/core/src/engine/factories/modelFactory.cpp.o -MF CMakeFiles/SimpleEngine.dir/core/src/engine/factories/modelFactory.cpp.o.d -o CMakeFiles/SimpleEngine.dir/core/src/engine/factories/modelFactory.cpp.o -c /home/vival/Documents/GitHub/SimpleEngine/core/src/engine/factories/modelFactory.cpp
 
 CMakeFiles/SimpleEngine.dir/core/src/engine/factories/modelFactory.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/SimpleEngine.dir/core/src/engine/factories/modelFactory.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/vival/Documents/Study/Github/SimpleEngine-university/core/src/engine/factories/modelFactory.cpp > CMakeFiles/SimpleEngine.dir/core/src/engine/factories/modelFactory.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/vival/Documents/GitHub/SimpleEngine/core/src/engine/factories/modelFactory.cpp > CMakeFiles/SimpleEngine.dir/core/src/engine/factories/modelFactory.cpp.i
 
 CMakeFiles/SimpleEngine.dir/core/src/engine/factories/modelFactory.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/SimpleEngine.dir/core/src/engine/factories/modelFactory.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/vival/Documents/Study/Github/SimpleEngine-university/core/src/engine/factories/modelFactory.cpp -o CMakeFiles/SimpleEngine.dir/core/src/engine/factories/modelFactory.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/vival/Documents/GitHub/SimpleEngine/core/src/engine/factories/modelFactory.cpp -o CMakeFiles/SimpleEngine.dir/core/src/engine/factories/modelFactory.cpp.s
 
 # Object files for target SimpleEngine
 SimpleEngine_OBJECTS = \
@@ -383,7 +383,7 @@ SimpleEngine: CMakeFiles/SimpleEngine.dir/build.make
 SimpleEngine: /usr/lib64/libassimp.so.5.3.1
 SimpleEngine: /usr/lib64/libglfw.so.3.3
 SimpleEngine: CMakeFiles/SimpleEngine.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/vival/Documents/Study/Github/SimpleEngine-university/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Linking CXX executable SimpleEngine"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/vival/Documents/GitHub/SimpleEngine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Linking CXX executable SimpleEngine"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/SimpleEngine.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -395,6 +395,6 @@ CMakeFiles/SimpleEngine.dir/clean:
 .PHONY : CMakeFiles/SimpleEngine.dir/clean
 
 CMakeFiles/SimpleEngine.dir/depend:
-	cd /home/vival/Documents/Study/Github/SimpleEngine-university/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/vival/Documents/Study/Github/SimpleEngine-university /home/vival/Documents/Study/Github/SimpleEngine-university /home/vival/Documents/Study/Github/SimpleEngine-university/build /home/vival/Documents/Study/Github/SimpleEngine-university/build /home/vival/Documents/Study/Github/SimpleEngine-university/build/CMakeFiles/SimpleEngine.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /home/vival/Documents/GitHub/SimpleEngine/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/vival/Documents/GitHub/SimpleEngine /home/vival/Documents/GitHub/SimpleEngine /home/vival/Documents/GitHub/SimpleEngine/build /home/vival/Documents/GitHub/SimpleEngine/build /home/vival/Documents/GitHub/SimpleEngine/build/CMakeFiles/SimpleEngine.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : CMakeFiles/SimpleEngine.dir/depend
 

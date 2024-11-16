@@ -61,6 +61,7 @@ void Camera::move(const vector<bool>& keys, const float& deltaTime)
         movement = glm::normalize(movement);
 
     addPosition(movement * settings.movingSpeed * deltaTime);
+    notifyObservers();
 }
 
 void Camera::changeTarget(const float& deltaX, const float& deltaY, const float& delta) 

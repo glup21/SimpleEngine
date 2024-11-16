@@ -712,10 +712,10 @@
         {
             "id": "terrain",
             "type" : "model",
-            "directory" : "../assets/models/forest/mountain.obj",
-            "position" : [0, -2, 0],
+            "directory" : "../assets/models/forest/floor.obj",
+            "position" : [0, -3.8, 0],
             "rotation" : [0, 0, 0], 
-            "scale" : [10, 10, 10]
+            "scale" : [2, 2, 2]
         }   
     ]
 
