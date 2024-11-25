@@ -3,7 +3,11 @@
     [
         {
             "type" : "point_light",
-            "position" : [0, 0, 0]
+            "position" : [1, 0, 0]
+        },
+        {
+            "type" : "point_light",
+            "position" : [0, 0, 1]
         },
         {
             "id": "tree",

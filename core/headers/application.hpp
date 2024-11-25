@@ -3,14 +3,9 @@
 
 #include <GL/glew.h>
 #include <GLFW/glfw3.h>
-
-#include <stdlib.h>
-#include <stdio.h>
-
+#include <memory>
+#include <string>
 #include "engine.hpp"
-#include "scene.hpp"
-#include "mesh.hpp"
-#include "model.hpp"
 #include "configReader.hpp"
 #include "input.hpp"
 
@@ -19,12 +14,11 @@ class Input;
 
 class Application
 {
-
-    Engine* engine;
+    std::unique_ptr<Engine> engine;
     GLFWwindow* window;
-    ConfigReader* configReader;
-    string scenePath;
-    Input* input;
+    ConfigReader* configReader; 
+    std::string scenePath;
+    std::shared_ptr<Input> input;
 
 public:
     Application(ConfigReader* configReader);
@@ -35,7 +29,6 @@ public:
     void shutdown();
     void critical_shutdown();
     void loadScene(int sceneID);
-
 };
 
 #endif

@@ -5,107 +5,85 @@
 #include "shaderFactory.hpp"
 #include "sceneReader.hpp"
 
-Engine::Engine(GLFWwindow* window, ConfigReader* configReader) 
-    : window(window), configReader(configReader) 
+Engine::Engine(GLFWwindow* window, ConfigReader* configReader)
+    : window(window), configReader(configReader)
 {
     previousTime = std::chrono::high_resolution_clock::now();
 
-    camera = new Camera(window, configReader->getCameraSettings());
+    camera = std::make_unique<Camera>(window, configReader->getCameraSettings());
+    auto vertexShader = ShaderFactory::createShader(GL_VERTEX_SHADER, configReader->getVertexShaderPath(), camera.get());
+    auto fragmentShader = ShaderFactory::createShader(GL_FRAGMENT_SHADER, configReader->getFragmentShaderPath(), camera.get());
 
-    defaultShaderProgram = new ShaderProgram();
-    defaultShaderProgram->observe(camera);
-
-    Shader* vertexShader = ShaderFactory::createShader(GL_VERTEX_SHADER, configReader->getVertexShaderPath(), camera);
-    Shader* fragmentShader = ShaderFactory::createShader(GL_FRAGMENT_SHADER, configReader->getFragmentShaderPath(), camera);
-
-    defaultShaderProgram->attachShader(vertexShader);
-    defaultShaderProgram->attachShader(fragmentShader);
-    defaultShaderProgram->link();
-
-    
-}
-
-
-void Engine::init(string scenePath) 
-{
     glEnable(GL_DEPTH_TEST);
     glDepthFunc(GL_LESS);
     glEnable(GL_BLEND);
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 
+    defaultShaderProgram = std::make_unique<ShaderProgram>(vertexShader, fragmentShader);
+    defaultShaderProgram->observe(camera.get());
+
+}
+
+void Engine::init(const std::string& scenePath)
+{
+
+
     glfwGetWindowSize(window, &width, &height);
 
     SceneReader sceneReader(scenePath);
-    Scene scene = sceneReader.readScene(defaultShaderProgram);
+    Scene scene = sceneReader.readScene(defaultShaderProgram.get());
+    drawableObjects = scene.getDrawableObjects();
+    gameObjects = scene.getObjects();
+    //defaultShaderProgram->updateLight();
 
-    drawObjectBuffer = scene.getDrawableObjects();
-    gameObjects = *scene.getObjects();
+    std::cout << "Init finished\n" << std::endl;
 }
 
-void Engine::run() 
+void Engine::run()
 {
-    double targetFPS = 60.0; 
-    double targetFrameTime = 1.0 / targetFPS; 
 
-    while (!glfwWindowShouldClose(window)) 
+    while (!glfwWindowShouldClose(window))
     {
-        auto frameStartTime = std::chrono::high_resolution_clock::now();  
         double deltaTime = getDeltaTime();
-        input->updateInput(deltaTime);
+        glfwPollEvents();
+
+        if(input != nullptr)
+            input->updateInput(deltaTime);
+        else
+            std::cout << "Input is nullptr!\n";
 
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
         updateGameObjects(deltaTime);
         drawObjects();
 
         glfwSwapBuffers(window);
-        glfwPollEvents();
-
-        // FPS control
-        auto frameEndTime = std::chrono::high_resolution_clock::now();  
-        
-        std::chrono::duration<double> frameDuration = frameEndTime - frameStartTime;
-        if (frameDuration.count() < targetFrameTime) 
-            std::this_thread::sleep_for(std::chrono::duration<double>(targetFrameTime - frameDuration.count()));
         
     }
 }
 
-void Engine::shutdown() 
+void Engine::shutdown()
 {
-    delete camera;
-    delete defaultShaderProgram;
+    input.reset();
+    drawableObjects.clear();
+    gameObjects.clear();
 }
 
-
-void Engine::updateGameObjects(float delta) 
+void Engine::updateGameObjects(float delta)
 {
     for (auto& gObj : gameObjects)
         gObj->update(delta);
 }
 
-
 void Engine::drawObjects()
 {
-    for (auto dObj : drawObjectBuffer) 
+    for (auto& dObj : drawableObjects)
         dObj->draw();
-    
 }
 
-
-double Engine::getDeltaTime() 
+double Engine::getDeltaTime()
 {
     auto currentTime = std::chrono::high_resolution_clock::now();
     std::chrono::duration<double> deltaTime = currentTime - previousTime;
     previousTime = currentTime;
     return deltaTime.count();
-}
-
-Camera* Engine::getCamera()
-{
-    return camera;
-}
-
-void Engine::addInput(Input* input)
-{
-    this->input = input;
 }

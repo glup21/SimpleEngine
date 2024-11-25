@@ -51,10 +51,22 @@ Scene SceneReader::readScene(ShaderProgram* defaultShaderProgram)
             {
                 vector<float> position = obj.value("position", vector<float>{});
                 glm::vec3 v_position{position[0], position[1], position[2]};
-                shared_ptr<PointLight> light = objectFactory.createLight();
-                defaultShaderProgram->observe(light.get());
+                shared_ptr<PointLight> light = objectFactory.createPointLight();                
                 light->addPosition(v_position);
                 gObj.push_back(light);
+                defaultShaderProgram->observe(light.get());
+
+
+                
+            }
+            else if(type == "ambient_light")
+            {
+                vector<float> position = obj.value("position", vector<float>{});
+                glm::vec3 v_position{position[0], position[1], position[2]};
+                shared_ptr<AmbientLight> light = objectFactory.createAmbientLight();
+                light->addPosition(v_position);
+                gObj.push_back(light);
+                defaultShaderProgram->observe(light.get());
 
                 
             }

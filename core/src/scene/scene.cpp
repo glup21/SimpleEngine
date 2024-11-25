@@ -14,7 +14,7 @@ Scene::Scene(vector<shared_ptr<IGameObject>> gObj) : gameObjects(gObj)
         if (obj)
         {
             std::cout << "Processing game object at index " << i << std::endl;
-            IDrawableObject* drawable = dynamic_cast<IDrawableObject*>(obj.get());
+            shared_ptr<IDrawableObject> drawable = std::dynamic_pointer_cast<IDrawableObject>(obj);
             if (drawable)
             {
                 drawableObjects.push_back(drawable);
@@ -36,12 +36,12 @@ Scene::Scene(vector<shared_ptr<IGameObject>> gObj) : gameObjects(gObj)
     std::cout << "Number of drawable objects: " << drawableObjects.size() << std::endl;
 }
 
-vector<shared_ptr<IGameObject>>* Scene::getObjects()
+vector<shared_ptr<IGameObject>> Scene::getObjects()
 {
-    return &gameObjects;
+    return gameObjects;
 }
 
-vector<IDrawableObject*> Scene::getDrawableObjects()
+vector<shared_ptr<IDrawableObject>> Scene::getDrawableObjects()
 {
     return drawableObjects;
 }

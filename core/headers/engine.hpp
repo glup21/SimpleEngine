@@ -3,57 +3,49 @@
 
 #include <GL/glew.h>
 #include <GLFW/glfw3.h>
-
-#include "scene.hpp"
-#include "shaderProgram.hpp"
-#include "camera.hpp"
-#include <stdlib.h>
-#include <stdio.h>
+#include <vector>
+#include <memory>
+#include <string>
 #include <chrono>
 #include <glm/vec2.hpp>
+#include "shaderProgram.hpp"
+#include "camera.hpp"
 #include "input.hpp"
-#include "cameraSettings.hpp"
 #include "configReader.hpp"
-
-using glm::vec2;
+#include "IGameObject.hpp"
+#include "IDrawableObject.hpp"
 
 class Input;
 
 class Engine
 {
 private:
-    vector<IDrawableObject*> drawObjectBuffer;
-    vector<shared_ptr<IGameObject>> gameObjects;
+    std::vector<std::shared_ptr<IDrawableObject>> drawableObjects;
+    std::vector<std::shared_ptr<IGameObject>> gameObjects;
     std::chrono::time_point<std::chrono::high_resolution_clock> previousTime;
-    ShaderProgram* defaultShaderProgram;
-    Camera* camera;
-    vec2 lastMousePosition;
+    std::unique_ptr<ShaderProgram> defaultShaderProgram;
+    std::unique_ptr<Camera> camera;
     GLFWwindow* window;
-    ConfigReader* configReader;
-    Input* input;
+    ConfigReader* configReader; 
+    std::shared_ptr<Input> input;               
+
     int width;
     int height;
 
-    double xpos, ypos;
-
-    string vertexPath;
-    string fragmentPath;
-
     void updateGameObjects(float delta);
     void drawObjects();
-    
-
 
 public:
     Engine(GLFWwindow* window, ConfigReader* configReader);
-    ~Engine() = default;
-    void init(string scenePath);
+    ~Engine() {}
+
+    void init(const std::string& scenePath);
     void run();
     void shutdown();
 
-    Camera* getCamera();
+    Camera* getCamera() const { return camera.get(); }
     double getDeltaTime();
-    void addInput(Input* input);
+    void addInput(std::shared_ptr<Input> input) { this->input = input; }
 };
 
 #endif

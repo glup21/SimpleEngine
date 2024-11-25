@@ -14,7 +14,7 @@ void window_focus_callback(GLFWwindow* window, int focused)
 }
 
 Input::Input(GLFWwindow* window, Application* application, Engine* engine)
-    : window(window), keys(vector<bool>(300, false)), application(application), engine(engine), camera(engine->getCamera())
+    : window(window), keys(vector<bool>(500, false)), application(application), engine(engine), camera(engine->getCamera())
 {
     glfwSetWindowUserPointer(window, this);
     glfwSetKeyCallback(window, key_callback);
@@ -25,7 +25,7 @@ Input::Input(GLFWwindow* window, Application* application, Engine* engine)
 
 void Input::setEngine(Engine* newEngine) 
 {
-    engine = newEngine;
+    this->engine = newEngine;
     camera = engine->getCamera();
 }
 
@@ -34,7 +34,8 @@ void Input::onKeyCallback(int key, int action)
     if (action == GLFW_PRESS) 
     {
         if (key >= GLFW_KEY_0 && key <= GLFW_KEY_9) {
-            application->loadScene(key - GLFW_KEY_0 - 1);
+            // Causes segmentation fault, fix later 
+            //application->loadScene(key - GLFW_KEY_0 - 1);
         }
         keys[key] = true;
 

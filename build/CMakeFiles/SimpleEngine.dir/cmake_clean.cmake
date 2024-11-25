@@ -3,6 +3,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/SimpleEngine.dir/core/src/application.cpp.o.d"
   "CMakeFiles/SimpleEngine.dir/core/src/config/configReader.cpp.o"
   "CMakeFiles/SimpleEngine.dir/core/src/config/configReader.cpp.o.d"
+  "CMakeFiles/SimpleEngine.dir/core/src/engine/AmbientLight.cpp.o"
+  "CMakeFiles/SimpleEngine.dir/core/src/engine/AmbientLight.cpp.o.d"
   "CMakeFiles/SimpleEngine.dir/core/src/engine/camera.cpp.o"
   "CMakeFiles/SimpleEngine.dir/core/src/engine/camera.cpp.o.d"
   "CMakeFiles/SimpleEngine.dir/core/src/engine/engine.cpp.o"

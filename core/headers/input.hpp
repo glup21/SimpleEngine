@@ -20,6 +20,7 @@ public:
     Input(GLFWwindow* window, Application* application, Engine* engine);
 
     void setEngine(Engine* newEngine);
+    Engine* getEngine() { return engine; }
 
     void onKeyCallback(int key, int action);
     void onWindowFocus(int focused);

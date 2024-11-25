@@ -233,6 +233,9 @@ GLEW_STATIC_LIBRARY_DEBUG:FILEPATH=GLEW_STATIC_LIBRARY_DEBUG-NOTFOUND
 //Path to a library.
 GLEW_STATIC_LIBRARY_RELEASE:FILEPATH=GLEW_STATIC_LIBRARY_RELEASE-NOTFOUND
 
+//Path to a library.
+GLU_LIBRARY:FILEPATH=/usr/lib64/libGLU.so
+
 //Value Computed by CMake
 SimpleEngine_BINARY_DIR:STATIC=/home/vival/Documents/GitHub/SimpleEngine/build
 
@@ -262,9 +265,9 @@ CMAKE_CACHEFILE_DIR:INTERNAL=/home/vival/Documents/GitHub/SimpleEngine/build
 //Major version of cmake used to create the current loaded cache
 CMAKE_CACHE_MAJOR_VERSION:INTERNAL=3
 //Minor version of cmake used to create the current loaded cache
-CMAKE_CACHE_MINOR_VERSION:INTERNAL=28
+CMAKE_CACHE_MINOR_VERSION:INTERNAL=30
 //Patch version of cmake used to create the current loaded cache
-CMAKE_CACHE_PATCH_VERSION:INTERNAL=2
+CMAKE_CACHE_PATCH_VERSION:INTERNAL=5
 //ADVANCED property for variable: CMAKE_COLOR_MAKEFILE
 CMAKE_COLOR_MAKEFILE-ADVANCED:INTERNAL=1
 //Path to CMake executable.

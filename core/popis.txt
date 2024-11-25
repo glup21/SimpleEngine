@@ -1,0 +1,12 @@
+
+
+    Transformace (můžete je libovolně skládat, přehazovat, přidat stejnou BasiCTransformation k více transformacím a kombinovat ji s dalšími, máte použitý Composit správně atd.).
+        Yes, I have.
+    Máte základní testovací scénu s trojúhelníkem.
+        No, because I cant render individual polygons.
+    Máte scénu se čtyřmi kuličkami a funkčním Phongovým osvětlovacím modelem.
+        Well, technically I have, but it doesnt work because right now I have problem with multiple lights.
+    Máte scenu s lesem, kde je více shaderů, více světel. Jak modely (stromy, i světla) se mohou dynamicky rotovat nebo pohybovat.
+        No, because I wasted whole week on fixing issue, when ShaderProgram sends to fragment shader, and it just... doesnt arrive, for whatever reason.
+    Máte noční variantu lesa, kde je lépe vidět baterka pči procházení a další typy světel.
+        No.

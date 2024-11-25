@@ -10,6 +10,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/vival/Documents/GitHub/SimpleEngine/core/src/application.cpp" "CMakeFiles/SimpleEngine.dir/core/src/application.cpp.o" "gcc" "CMakeFiles/SimpleEngine.dir/core/src/application.cpp.o.d"
   "/home/vival/Documents/GitHub/SimpleEngine/core/src/config/configReader.cpp" "CMakeFiles/SimpleEngine.dir/core/src/config/configReader.cpp.o" "gcc" "CMakeFiles/SimpleEngine.dir/core/src/config/configReader.cpp.o.d"
+  "/home/vival/Documents/GitHub/SimpleEngine/core/src/engine/AmbientLight.cpp" "CMakeFiles/SimpleEngine.dir/core/src/engine/AmbientLight.cpp.o" "gcc" "CMakeFiles/SimpleEngine.dir/core/src/engine/AmbientLight.cpp.o.d"
   "/home/vival/Documents/GitHub/SimpleEngine/core/src/engine/camera.cpp" "CMakeFiles/SimpleEngine.dir/core/src/engine/camera.cpp.o" "gcc" "CMakeFiles/SimpleEngine.dir/core/src/engine/camera.cpp.o.d"
   "/home/vival/Documents/GitHub/SimpleEngine/core/src/engine/engine.cpp" "CMakeFiles/SimpleEngine.dir/core/src/engine/engine.cpp.o" "gcc" "CMakeFiles/SimpleEngine.dir/core/src/engine/engine.cpp.o.d"
   "/home/vival/Documents/GitHub/SimpleEngine/core/src/engine/factories/gameObjectFactory.cpp" "CMakeFiles/SimpleEngine.dir/core/src/engine/factories/gameObjectFactory.cpp.o" "gcc" "CMakeFiles/SimpleEngine.dir/core/src/engine/factories/gameObjectFactory.cpp.o.d"

@@ -5,14 +5,18 @@ project(SimpleEngine)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 
+# Find dependencies
 find_package(glfw3 REQUIRED)
 find_package(GLEW REQUIRED)
 
-# Compiler flags
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall")
-
 # Find Assimp package
 find_package(assimp REQUIRED)
+
+# Find GLU library
+find_library(GLU_LIBRARY NAMES GLU REQUIRED)
+
+# Compiler flags
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -fsanitize=address")
 
 # Include directories
 include_directories(${ASSIMP_INCLUDE_DIRS})
@@ -32,6 +36,7 @@ set(SRCS
     core/src/engine/shaderProgram.cpp
     core/src/engine/pointLight.cpp
     core/src/engine/transformComposite.cpp
+    core/src/engine/AmbientLight.cpp
 
     # Config
     core/src/config/configReader.cpp
@@ -42,11 +47,11 @@ set(SRCS
     core/src/scene/model.cpp
     core/src/scene/sceneReader.cpp
 
-    #Loaders
+    # Loaders
     core/src/engine/imageLoader.cpp
     core/src/engine/loaders/modelLoader.cpp
 
-    #Factories
+    # Factories
     core/src/engine/factories/gameObjectFactory.cpp
     core/src/engine/factories/modelFactory.cpp
 )
@@ -55,7 +60,7 @@ set(SRCS
 add_executable(${PROJECT_NAME} ${SRCS})
 
 # Link libraries
-target_link_libraries(${PROJECT_NAME} ${ASSIMP_LIBRARIES} glfw GL GLEW)
+target_link_libraries(${PROJECT_NAME} ${ASSIMP_LIBRARIES} glfw GL GLEW ${GLU_LIBRARY})
 
 # Add include directory
 target_include_directories(${PROJECT_NAME} PRIVATE core/headers)
