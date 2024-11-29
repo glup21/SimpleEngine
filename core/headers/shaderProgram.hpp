@@ -7,6 +7,7 @@
 #include <vector>
 #include "camera.hpp"
 #include "IObserver.hpp"
+#include "ILight.hpp"
 
 using std::unique_ptr, std::string, std::vector, glm::vec3;
 
@@ -16,9 +17,8 @@ class Camera;
 class ShaderProgram : public IObserver
 {
 private:
-    vector<Shader*> shaders; //we dont need vector 
     GLuint ID;
-    vector<vec3> lights;
+    vector<ILight*> lights;
 
     void checkLinkErrors();
 

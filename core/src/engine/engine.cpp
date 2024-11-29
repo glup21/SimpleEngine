@@ -34,14 +34,16 @@ void Engine::init(const std::string& scenePath)
     Scene scene = sceneReader.readScene(defaultShaderProgram.get());
     drawableObjects = scene.getDrawableObjects();
     gameObjects = scene.getObjects();
-    //defaultShaderProgram->updateLight();
+    // Calling updateLight from Engine is dumb, and must be handled
+    // by ShaderProgram. Fix later
+    
+    defaultShaderProgram->updateLight();
 
     std::cout << "Init finished\n" << std::endl;
 }
 
 void Engine::run()
 {
-
     while (!glfwWindowShouldClose(window))
     {
         double deltaTime = getDeltaTime();

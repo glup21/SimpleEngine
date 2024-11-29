@@ -5,6 +5,7 @@ CMakeFiles/SimpleEngine.dir/core/src/application.cpp.o
  /home/vival/Documents/GitHub/SimpleEngine/core/src/application.cpp
  /home/vival/Documents/GitHub/SimpleEngine/core/headers/IDrawableObject.hpp
  /home/vival/Documents/GitHub/SimpleEngine/core/headers/IGameObject.hpp
+ /home/vival/Documents/GitHub/SimpleEngine/core/headers/ILight.hpp
  /home/vival/Documents/GitHub/SimpleEngine/core/headers/ILoader.hpp
  /home/vival/Documents/GitHub/SimpleEngine/core/headers/IObjectFactory.hpp
  /home/vival/Documents/GitHub/SimpleEngine/core/headers/IObserver.hpp
@@ -893,6 +894,7 @@ CMakeFiles/SimpleEngine.dir/core/src/engine/AmbientLight.cpp.o
  /home/vival/Documents/GitHub/SimpleEngine/core/src/engine/AmbientLight.cpp
  /home/vival/Documents/GitHub/SimpleEngine/core/headers/AmbientLight.hpp
  /home/vival/Documents/GitHub/SimpleEngine/core/headers/IGameObject.hpp
+ /home/vival/Documents/GitHub/SimpleEngine/core/headers/ILight.hpp
  /home/vival/Documents/GitHub/SimpleEngine/core/headers/IObserver.hpp
  /home/vival/Documents/GitHub/SimpleEngine/core/headers/camera.hpp
  /home/vival/Documents/GitHub/SimpleEngine/core/headers/cameraSettings.hpp
@@ -1351,6 +1353,8 @@ CMakeFiles/SimpleEngine.dir/core/src/engine/AmbientLight.cpp.o
 
 CMakeFiles/SimpleEngine.dir/core/src/engine/camera.cpp.o
  /home/vival/Documents/GitHub/SimpleEngine/core/src/engine/camera.cpp
+ /home/vival/Documents/GitHub/SimpleEngine/core/headers/IGameObject.hpp
+ /home/vival/Documents/GitHub/SimpleEngine/core/headers/ILight.hpp
  /home/vival/Documents/GitHub/SimpleEngine/core/headers/IObserver.hpp
  /home/vival/Documents/GitHub/SimpleEngine/core/headers/camera.hpp
  /home/vival/Documents/GitHub/SimpleEngine/core/headers/cameraSettings.hpp
@@ -1812,6 +1816,7 @@ CMakeFiles/SimpleEngine.dir/core/src/engine/engine.cpp.o
  /home/vival/Documents/GitHub/SimpleEngine/core/src/engine/engine.cpp
  /home/vival/Documents/GitHub/SimpleEngine/core/headers/IDrawableObject.hpp
  /home/vival/Documents/GitHub/SimpleEngine/core/headers/IGameObject.hpp
+ /home/vival/Documents/GitHub/SimpleEngine/core/headers/ILight.hpp
  /home/vival/Documents/GitHub/SimpleEngine/core/headers/ILoader.hpp
  /home/vival/Documents/GitHub/SimpleEngine/core/headers/IObjectFactory.hpp
  /home/vival/Documents/GitHub/SimpleEngine/core/headers/IObserver.hpp
@@ -2385,6 +2390,7 @@ CMakeFiles/SimpleEngine.dir/core/src/engine/factories/gameObjectFactory.cpp.o
  /home/vival/Documents/GitHub/SimpleEngine/core/headers/AmbientLight.hpp
  /home/vival/Documents/GitHub/SimpleEngine/core/headers/IDrawableObject.hpp
  /home/vival/Documents/GitHub/SimpleEngine/core/headers/IGameObject.hpp
+ /home/vival/Documents/GitHub/SimpleEngine/core/headers/ILight.hpp
  /home/vival/Documents/GitHub/SimpleEngine/core/headers/ILoader.hpp
  /home/vival/Documents/GitHub/SimpleEngine/core/headers/IObjectFactory.hpp
  /home/vival/Documents/GitHub/SimpleEngine/core/headers/IObserver.hpp
@@ -2902,6 +2908,7 @@ CMakeFiles/SimpleEngine.dir/core/src/engine/factories/modelFactory.cpp.o
  /home/vival/Documents/GitHub/SimpleEngine/core/src/engine/factories/modelFactory.cpp
  /home/vival/Documents/GitHub/SimpleEngine/core/headers/IDrawableObject.hpp
  /home/vival/Documents/GitHub/SimpleEngine/core/headers/IGameObject.hpp
+ /home/vival/Documents/GitHub/SimpleEngine/core/headers/ILight.hpp
  /home/vival/Documents/GitHub/SimpleEngine/core/headers/ILoader.hpp
  /home/vival/Documents/GitHub/SimpleEngine/core/headers/IObjectFactory.hpp
  /home/vival/Documents/GitHub/SimpleEngine/core/headers/IObserver.hpp
@@ -3670,6 +3677,7 @@ CMakeFiles/SimpleEngine.dir/core/src/engine/input.cpp.o
  /home/vival/Documents/GitHub/SimpleEngine/core/src/engine/input.cpp
  /home/vival/Documents/GitHub/SimpleEngine/core/headers/IDrawableObject.hpp
  /home/vival/Documents/GitHub/SimpleEngine/core/headers/IGameObject.hpp
+ /home/vival/Documents/GitHub/SimpleEngine/core/headers/ILight.hpp
  /home/vival/Documents/GitHub/SimpleEngine/core/headers/IObserver.hpp
  /home/vival/Documents/GitHub/SimpleEngine/core/headers/application.hpp
  /home/vival/Documents/GitHub/SimpleEngine/core/headers/camera.hpp
@@ -4196,6 +4204,8 @@ CMakeFiles/SimpleEngine.dir/core/src/engine/input.cpp.o
 CMakeFiles/SimpleEngine.dir/core/src/engine/loaders/modelLoader.cpp.o
  /home/vival/Documents/GitHub/SimpleEngine/core/src/engine/loaders/modelLoader.cpp
  /home/vival/Documents/GitHub/SimpleEngine/core/headers/IDrawableObject.hpp
+ /home/vival/Documents/GitHub/SimpleEngine/core/headers/IGameObject.hpp
+ /home/vival/Documents/GitHub/SimpleEngine/core/headers/ILight.hpp
  /home/vival/Documents/GitHub/SimpleEngine/core/headers/ILoader.hpp
  /home/vival/Documents/GitHub/SimpleEngine/core/headers/IObserver.hpp
  /home/vival/Documents/GitHub/SimpleEngine/core/headers/camera.hpp
@@ -4708,6 +4718,7 @@ CMakeFiles/SimpleEngine.dir/core/src/engine/loaders/modelLoader.cpp.o
 CMakeFiles/SimpleEngine.dir/core/src/engine/pointLight.cpp.o
  /home/vival/Documents/GitHub/SimpleEngine/core/src/engine/pointLight.cpp
  /home/vival/Documents/GitHub/SimpleEngine/core/headers/IGameObject.hpp
+ /home/vival/Documents/GitHub/SimpleEngine/core/headers/ILight.hpp
  /home/vival/Documents/GitHub/SimpleEngine/core/headers/IObserver.hpp
  /home/vival/Documents/GitHub/SimpleEngine/core/headers/camera.hpp
  /home/vival/Documents/GitHub/SimpleEngine/core/headers/cameraSettings.hpp
@@ -5167,6 +5178,8 @@ CMakeFiles/SimpleEngine.dir/core/src/engine/pointLight.cpp.o
 
 CMakeFiles/SimpleEngine.dir/core/src/engine/shader.cpp.o
  /home/vival/Documents/GitHub/SimpleEngine/core/src/engine/shader.cpp
+ /home/vival/Documents/GitHub/SimpleEngine/core/headers/IGameObject.hpp
+ /home/vival/Documents/GitHub/SimpleEngine/core/headers/ILight.hpp
  /home/vival/Documents/GitHub/SimpleEngine/core/headers/IObserver.hpp
  /home/vival/Documents/GitHub/SimpleEngine/core/headers/camera.hpp
  /home/vival/Documents/GitHub/SimpleEngine/core/headers/cameraSettings.hpp
@@ -5626,6 +5639,7 @@ CMakeFiles/SimpleEngine.dir/core/src/engine/shaderProgram.cpp.o
  /home/vival/Documents/GitHub/SimpleEngine/core/src/engine/shaderProgram.cpp
  /home/vival/Documents/GitHub/SimpleEngine/core/headers/AmbientLight.hpp
  /home/vival/Documents/GitHub/SimpleEngine/core/headers/IGameObject.hpp
+ /home/vival/Documents/GitHub/SimpleEngine/core/headers/ILight.hpp
  /home/vival/Documents/GitHub/SimpleEngine/core/headers/IObserver.hpp
  /home/vival/Documents/GitHub/SimpleEngine/core/headers/camera.hpp
  /home/vival/Documents/GitHub/SimpleEngine/core/headers/cameraSettings.hpp
@@ -6636,6 +6650,7 @@ CMakeFiles/SimpleEngine.dir/core/src/main.cpp.o
  /home/vival/Documents/GitHub/SimpleEngine/core/src/main.cpp
  /home/vival/Documents/GitHub/SimpleEngine/core/headers/IDrawableObject.hpp
  /home/vival/Documents/GitHub/SimpleEngine/core/headers/IGameObject.hpp
+ /home/vival/Documents/GitHub/SimpleEngine/core/headers/ILight.hpp
  /home/vival/Documents/GitHub/SimpleEngine/core/headers/ILoader.hpp
  /home/vival/Documents/GitHub/SimpleEngine/core/headers/IObserver.hpp
  /home/vival/Documents/GitHub/SimpleEngine/core/headers/application.hpp
@@ -7169,6 +7184,8 @@ CMakeFiles/SimpleEngine.dir/core/src/main.cpp.o
 CMakeFiles/SimpleEngine.dir/core/src/scene/mesh.cpp.o
  /home/vival/Documents/GitHub/SimpleEngine/core/src/scene/mesh.cpp
  /home/vival/Documents/GitHub/SimpleEngine/core/headers/IDrawableObject.hpp
+ /home/vival/Documents/GitHub/SimpleEngine/core/headers/IGameObject.hpp
+ /home/vival/Documents/GitHub/SimpleEngine/core/headers/ILight.hpp
  /home/vival/Documents/GitHub/SimpleEngine/core/headers/ILoader.hpp
  /home/vival/Documents/GitHub/SimpleEngine/core/headers/IObserver.hpp
  /home/vival/Documents/GitHub/SimpleEngine/core/headers/camera.hpp
@@ -7642,6 +7659,7 @@ CMakeFiles/SimpleEngine.dir/core/src/scene/model.cpp.o
  /home/vival/Documents/GitHub/SimpleEngine/core/src/scene/model.cpp
  /home/vival/Documents/GitHub/SimpleEngine/core/headers/IDrawableObject.hpp
  /home/vival/Documents/GitHub/SimpleEngine/core/headers/IGameObject.hpp
+ /home/vival/Documents/GitHub/SimpleEngine/core/headers/ILight.hpp
  /home/vival/Documents/GitHub/SimpleEngine/core/headers/ILoader.hpp
  /home/vival/Documents/GitHub/SimpleEngine/core/headers/IObserver.hpp
  /home/vival/Documents/GitHub/SimpleEngine/core/headers/camera.hpp
@@ -8141,6 +8159,7 @@ CMakeFiles/SimpleEngine.dir/core/src/scene/scene.cpp.o
  /home/vival/Documents/GitHub/SimpleEngine/core/src/scene/scene.cpp
  /home/vival/Documents/GitHub/SimpleEngine/core/headers/IDrawableObject.hpp
  /home/vival/Documents/GitHub/SimpleEngine/core/headers/IGameObject.hpp
+ /home/vival/Documents/GitHub/SimpleEngine/core/headers/ILight.hpp
  /home/vival/Documents/GitHub/SimpleEngine/core/headers/ILoader.hpp
  /home/vival/Documents/GitHub/SimpleEngine/core/headers/IObserver.hpp
  /home/vival/Documents/GitHub/SimpleEngine/core/headers/camera.hpp
@@ -8613,6 +8632,7 @@ CMakeFiles/SimpleEngine.dir/core/src/scene/sceneReader.cpp.o
  /home/vival/Documents/GitHub/SimpleEngine/core/headers/AmbientLight.hpp
  /home/vival/Documents/GitHub/SimpleEngine/core/headers/IDrawableObject.hpp
  /home/vival/Documents/GitHub/SimpleEngine/core/headers/IGameObject.hpp
+ /home/vival/Documents/GitHub/SimpleEngine/core/headers/ILight.hpp
  /home/vival/Documents/GitHub/SimpleEngine/core/headers/ILoader.hpp
  /home/vival/Documents/GitHub/SimpleEngine/core/headers/IObjectFactory.hpp
  /home/vival/Documents/GitHub/SimpleEngine/core/headers/IObserver.hpp

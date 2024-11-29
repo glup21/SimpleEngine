@@ -11,11 +11,13 @@ shared_ptr<Model> GameObjectFactory::createModel(string path, string ID)
     return modelFactory->createModel(path, ID);
 }
 
-shared_ptr<PointLight> GameObjectFactory::createPointLight()
+shared_ptr<PointLight> GameObjectFactory::createPointLight(
+        glm::vec3 position, glm::vec4 color, float distance)
 {
-    return std::make_shared<PointLight>();
+    return std::make_shared<PointLight>(color, distance);
 }
-shared_ptr<AmbientLight> GameObjectFactory::createAmbientLight()
+shared_ptr<AmbientLight> GameObjectFactory::createAmbientLight(
+        glm::vec3 position, glm::vec4 color)
 {
-    return std::make_shared<AmbientLight>();
+    return std::make_shared<AmbientLight>(color);
 }

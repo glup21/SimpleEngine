@@ -4,7 +4,7 @@
         "fov" : 45.0,
         "nearPlane" : 0.1,
         "farPlane" : 100.0,
-        "lookSensitivity" : 200.0,
+        "lookSensitivity" : 100.0,
         "movingSpeed" : 3
     },
     "vertex_shader" : "../core/src/engine/shaders/vertex.glsl",

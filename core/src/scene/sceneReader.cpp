@@ -51,22 +51,39 @@ Scene SceneReader::readScene(ShaderProgram* defaultShaderProgram)
             {
                 vector<float> position = obj.value("position", vector<float>{});
                 glm::vec3 v_position{position[0], position[1], position[2]};
-                shared_ptr<PointLight> light = objectFactory.createPointLight();                
-                light->addPosition(v_position);
-                gObj.push_back(light);
+
+                vector<float> color = obj.value("color", vector<float>{1.0, 1.0, 1.0});
+                float brightness = obj.value("brightness", 1.0f);
+                glm::vec4 v_color{color[0], color[1], color[2], brightness};
+
+                float distance = obj.value("distance", 1.0f);
+        
+                shared_ptr<PointLight> light = objectFactory.createPointLight(
+                    v_position, v_color, distance);
+                std::cout << light << std::endl;
+
                 defaultShaderProgram->observe(light.get());
-
-
+                light->addPosition(v_position);            
+                gObj.push_back(light);
+                
                 
             }
             else if(type == "ambient_light")
             {
                 vector<float> position = obj.value("position", vector<float>{});
                 glm::vec3 v_position{position[0], position[1], position[2]};
-                shared_ptr<AmbientLight> light = objectFactory.createAmbientLight();
+
+                vector<float> color = obj.value("color", vector<float>{1.0, 1.0, 1.0});
+                float brightness = obj.value("brightness", 1.0f);
+                glm::vec4 v_color{color[0], color[1], color[2], brightness};
+
+                shared_ptr<AmbientLight> light = objectFactory.createAmbientLight(
+                    v_position, v_color
+                );
+                defaultShaderProgram->observe(light.get());
                 light->addPosition(v_position);
                 gObj.push_back(light);
-                defaultShaderProgram->observe(light.get());
+                
 
                 
             }

@@ -16,7 +16,6 @@ ShaderProgram::~ShaderProgram() { glDeleteProgram(ID); }
 
 void ShaderProgram::attachShader(Shader* shader) {
     glAttachShader(ID, shader->getID());
-    shaders.push_back(shader);
 }
 
 void ShaderProgram::link() {
@@ -38,7 +37,7 @@ void ShaderProgram::checkLinkErrors() {
 
 void ShaderProgram::setMat4(const std::string& name, glm::mat4 value) 
 {
-
+use();
     GLint location = glGetUniformLocation(ID, name.c_str());
     if (location == -1) {
         //std::cerr << "Warning: Uniform '" << name << "' not found.\n";
@@ -63,13 +62,12 @@ void ShaderProgram::setInt(const std::string& name, int value)
 
 void ShaderProgram::setVec3(const std::string& name, glm::vec3 value) 
 {
-
+use();
     GLint location = glGetUniformLocation(ID, name.c_str());
     if (location == -1) {
         //std::cerr << "Warning: Uniform '" << name << "' not found.\n";
         return;
     }
-    std::cout <<name << ": Location: " << location << std::endl;
     use();
     glUniform3f(location, 1.0f, 2.0f, 0.0f);
 
@@ -81,7 +79,7 @@ void ShaderProgram::setVec3(const std::string& name, glm::vec3 value)
 
 void ShaderProgram::setVec4(const std::string& name, glm::vec4 value) 
 {
-
+    use();
     GLint location = glGetUniformLocation(ID, name.c_str());
     if (location == -1) {
         //std::cerr << "Warning: Uniform '" << name << "' not found.\n";
@@ -92,12 +90,14 @@ void ShaderProgram::setVec4(const std::string& name, glm::vec4 value)
 
 void ShaderProgram::setLight(int index, glm::vec3 position, glm::vec3 color, float brightness, int type) 
 {
+    use();
     string base = "lights[" + std::to_string(index) + "]";
     setVec3(base, position);
 }
 
 void ShaderProgram::setLightCount(int count) 
 {
+    use();
     setInt("lightsCount", count);
 }
 
@@ -119,14 +119,8 @@ void ShaderProgram::update(Subject* subject)
     if (pointLight) 
     {
         std::cout << "Point light added!\n" << std::endl;
-        lights.push_back(pointLight->getTransformMatrix()[3]);
-        updateLight();
+        lights.push_back(pointLight);
         //updateLight();
-        //setLight(1, pointLight->getTransformMatrix()[3], vec3(1.0), 1.0, 1);
-
-        // std::cout << pointLight->getTransformMatrix()[3].x << pointLight->getTransformMatrix()[3].y << pointLight->getTransformMatrix()[3].z << std::endl;
-        // setInt("lightsCount", lights.size());
-        // setVec3("lights[0]", pointLight->getTransformMatrix()[3]);
         return;
     }
 
@@ -134,15 +128,8 @@ void ShaderProgram::update(Subject* subject)
     if (ambientLight) 
     {
         std::cout << "Ambient light added!\n" << std::endl;
-        lights.push_back(ambientLight->getTransformMatrix()[3]);
-        updateLight();
-        //updateLight();
-        //setLight(1, vec3(0.0, 0.0, 0.0), vec3(1.0), 1.0, 0);
-
-        // std::cout << "Lights vector size: " << std::endl;
-        // setInt("lightsCount", lights.size());
-        // glUniform3fv(glGetUniformLocation(ID, "lights[1]"), lights.size(), lights.data());
-
+        char location[64];
+        lights.push_back(ambientLight);
         return;
     }
 
@@ -150,42 +137,86 @@ void ShaderProgram::update(Subject* subject)
 
 void ShaderProgram::updateLight()
 {
-    printf("Test\n");
-    glm::vec4 lp = glm::vec4(1.0, 0.0, 0.0, 1.0);
-    GLint idLightPos = glGetUniformLocation(ID, "lights[0].color");
-    if (idLightPos < 0) {
-        printf("The variable does not exist.");
+    setLightCount(lights.size());
+    use();
+    for(int i = 0; i < lights.size(); i++)
+    {
+        printf("Test\n");
+        if(lights[i]->getType() == 1) //Point light
+        {
+            PointLight* pointLight = dynamic_cast<PointLight*>(lights[i]);
+            char location[64];
+            //Color
+            sprintf(location, "lights[%d].color", i);
+
+            GLint idLightPos = glGetUniformLocation(ID, location);
+            if (idLightPos < 0) {
+                printf("The variable color does not exist.");
+            }
+            else 
+            {
+                glUseProgram(ID);
+                vec4 lightColor = pointLight->getColor();
+                glUniform4f(idLightPos, lightColor.x, lightColor.y, lightColor.z, lightColor.w);
+                glUseProgram(0);
+            }
+
+            //Position
+
+            sprintf(location, "lights[%d].position", i);
+
+            idLightPos = glGetUniformLocation(ID, location);
+            if (idLightPos < 0) {
+                printf("The variable position does not exist.");
+            }
+            else 
+            {
+                glUseProgram(ID);
+                vec3 lightPosition = pointLight->getTransformMatrix()[3];
+                glUniform3f(idLightPos, lightPosition.x, lightPosition.y, lightPosition.z);
+                glUseProgram(0);
+            }
+
+            // Distance
+
+            sprintf(location, "lights[%d].distance", i);
+
+            idLightPos = glGetUniformLocation(ID, location);
+            if (idLightPos < 0) {
+                printf("The variable distance does not exist.");
+            }
+            else 
+            {
+                glUseProgram(ID);
+
+                float distance = pointLight->getDistance();
+                glUniform1f(idLightPos, distance);
+                //setFloat(location, distance);
+                glUseProgram(0);
+            }
+        }
+        if(lights[i]->getType() == 0)
+        {
+            AmbientLight* ambientLight = dynamic_cast<AmbientLight*>(lights[i]);
+            char location[64];
+            sprintf(location, "ambientLight");
+
+            GLint idLightPos = glGetUniformLocation(ID, location);
+            if (idLightPos < 0) {
+                printf("The variable color does not exist.");
+            }
+            else 
+            {
+                glUseProgram(ID);
+                vec4 lightColor = ambientLight->getColor();
+                std::cout << lightColor.r << lightColor.g << lightColor.b << lightColor.w << std::endl;
+                glUniform4f(idLightPos, lightColor.x, lightColor.y, lightColor.z, lightColor.w);
+                glUseProgram(0);
+            }
+        }
+
+
     }
-    else {
-        glUseProgram(ID);
-        glUniform4f(idLightPos, lp.x, lp.y, lp.z, lp.w);
-        glUseProgram(0);
-    }
-
-
-    lp = glm::vec4(1.0, 0.0, 0.0, 1.0);
-    idLightPos = glGetUniformLocation(ID, "lights[2].color");
-    if (idLightPos < 0) {
-        printf("The variable does not exist.");
-    }
-    else {
-        glUseProgram(ID);
-        glUniform4f(idLightPos, lp.x, lp.y, lp.z, lp.w);
-        glUseProgram(0);
-    }
-
-    // glUseProgram(ID);
-    // for(int i = 0; i < lights.size(); i++)
-    // {
-        
-    //     char location[64];
-    //     sprintf(location, "lights[%d]", i);
-    //     printf("%f %f %f\n", lights[i].x, lights[i].y, lights[i].z);
-
-    //     setVec3(location, lights[i]);
-
-
-    // }
 }
 
 void ShaderProgram::observe(Subject* subject) 

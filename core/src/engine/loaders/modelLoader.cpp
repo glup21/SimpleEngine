@@ -61,10 +61,7 @@ void ModelLoader::processMesh(aiMesh* mesh, const aiScene* scene, ModelData& mod
             normal.z = mesh->mNormals[i].z;
 
             vertex.Normal = normal;
-        } else {
-            vertex.Normal = vec3(1.0f); 
         }
-
         if (mesh->HasTextureCoords(0)) {
             glm::vec2 vec;
             vec.x = mesh->mTextureCoords[0][i].x;

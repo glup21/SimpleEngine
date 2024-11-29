@@ -1,0 +1,22 @@
+{
+    "objects":
+    [
+        {
+            "id": "text",
+            "type" : "model",
+            "directory" : "../assets/models/text/text.obj",
+            "position" : [0, 1, 0],
+            "rotation" : [0, 0, 0], 
+            "scale" : [0.1, 0.1, 0.1]
+        },
+        {
+            "type" : "point_light",
+            "position" : [1,1,0]
+        },
+        {
+            "type" : "point_light",
+            "position" : [1,0,0]
+        }
+    ]
+
+}

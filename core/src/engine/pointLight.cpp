@@ -1,8 +1,9 @@
 #include "pointLight.hpp"
 #include "position.hpp"
 
-PointLight::PointLight(vec3 color, float brightness)
-    : color(color), brightness(brightness), type(1) 
+
+PointLight::PointLight(vec4 color, float distance)
+    : ILight(color, 1), distance(distance) 
 {
     notifyObservers();
 }
@@ -16,10 +17,12 @@ void PointLight::addPosition(const vec3& newPosition)
 
 mat4 PointLight::getTransformMatrix()
 {
-    return transform.getTransformMatrix();
+    return transform.getTransformMatrix();  
 }
 
 void PointLight::update(float delta)
 {
-    notifyObservers();
+    //notifyObservers();
 }
+
+

@@ -43,8 +43,11 @@
         },
         {
             "type" : "point_light",
-            "position" : [-1,-1,-1]
-        }
+            "position" : [-1,-1,-1],
+            "color" : [1.0, 1.0, 1.0],
+            "brightness" : 1.0,
+            "distance" : 1.0
+        } 
     ]
 
 }
