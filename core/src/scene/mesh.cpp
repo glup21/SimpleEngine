@@ -33,18 +33,14 @@ void Mesh::setup()
     glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, sizeof(Vertex), (void*)offsetof(Vertex, TexCoords));
 
     glBindVertexArray(0);
-    shaderProgram->link();
+    
 }
 
 void Mesh::draw()
 {
     glm::mat4 transformMatrix = transform.getTransformMatrix();
-    shaderProgram->setMat4("transform", transformMatrix);
 
-    shaderProgram->setInt("textureImage", 0);
-    textures[0]->bind(0);
-
-    shaderProgram->use();
+    material->use(transformMatrix);
 
     glBindVertexArray(VAO);
     glDrawElements(GL_TRIANGLES, indices.size(), GL_UNSIGNED_INT, 0);

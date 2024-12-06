@@ -38,7 +38,7 @@ void ShaderProgram::checkLinkErrors() {
 
 void ShaderProgram::setMat4(const std::string& name, glm::mat4 value) 
 {
-use();
+    use();
     GLint location = glGetUniformLocation(ID, name.c_str());
     if (location == -1) {
         //std::cerr << "Warning: Uniform '" << name << "' not found.\n";
