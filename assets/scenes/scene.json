@@ -47,7 +47,13 @@
             "color" : [1.0, 1.0, 1.0],
             "brightness" : 1.0,
             "distance" : 1.0
-        } 
+        },
+        {
+            "type" : "ambient_light",
+            "position" : [0, 0, 0],
+            "color" : [1.0, 0.0, 0.0],
+            "brightness" : 0.2
+        }
     ]
 
 }

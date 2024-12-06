@@ -34,8 +34,7 @@ void Input::onKeyCallback(int key, int action)
     if (action == GLFW_PRESS) 
     {
         if (key >= GLFW_KEY_0 && key <= GLFW_KEY_9) {
-            // Causes segmentation fault, fix later 
-            //application->loadScene(key - GLFW_KEY_0 - 1);
+
         }
         keys[key] = true;
 
@@ -60,14 +59,18 @@ void Input::updateInput(const double& deltaTime)
         glfwGetCursorPos(window, &xpos, &ypos);
         vec2 mouseDelta(width / 2.0 - xpos, height / 2.0 - ypos);
 
-        if (isWindowFocused && glm::length(mouseDelta) > 0.01f) {
-            mouseDelta = glm::normalize(mouseDelta);
-            camera->changeTarget(-mouseDelta.x, mouseDelta.y, deltaTime);
+        if (isWindowFocused)
+        {
+
+            if(glm::length(mouseDelta) > 0.01f) 
+            {
+                mouseDelta = glm::normalize(mouseDelta);
+                camera->changeTarget(-mouseDelta.x, mouseDelta.y, deltaTime);
+            }
+            camera->move(keys, deltaTime);
         }
         glfwSetCursorPos(window, width / 2.0, height / 2.0);
-
-        camera->changeTarget(-mouseDelta.x, mouseDelta.y, deltaTime);
-        camera->move(keys, deltaTime);
+        
     }
 
 

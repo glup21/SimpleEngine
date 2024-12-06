@@ -5,7 +5,7 @@ ModelFactory::ModelFactory(ShaderProgram* defaultShaderProgram) : defaultShaderP
 
 }
 
-shared_ptr<Model> ModelFactory::makeModelFromData(ModelLoader::ModelData modelData, string ID, ShaderProgram* defaultShaderProgram)
+shared_ptr<Model> ModelFactory::makeModelFromData(ModelLoader::ModelData modelData, int ID, ShaderProgram* defaultShaderProgram)
 {
     vector<Mesh> meshes;
     for(ModelLoader::MeshData meshData : modelData.meshData)
@@ -18,7 +18,7 @@ shared_ptr<Model> ModelFactory::makeModelFromData(ModelLoader::ModelData modelDa
     return make_shared<Model>(ID, defaultShaderProgram, meshes);
 }
 
-shared_ptr<Model> ModelFactory::createModel(string path, string ID)
+shared_ptr<Model> ModelFactory::createModel(string path, int ID)
 {
 
     if(cachedModels.find(path) != cachedModels.end())
@@ -29,5 +29,5 @@ shared_ptr<Model> ModelFactory::createModel(string path, string ID)
     ModelLoader::ModelData modelData = modelLoader.loadModel(path);
 
     cachedModels[path] = modelData;
-    return makeModelFromData(modelData, ID, defaultShaderProgram);
+    return makeModelFromData(modelData, modelID++, defaultShaderProgram);
 }

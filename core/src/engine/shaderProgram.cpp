@@ -1,6 +1,7 @@
 #include "shaderProgram.hpp"
 #include "pointLight.hpp"
 #include "AmbientLight.hpp"
+#include "SpotLight.hpp"
 #include <stdio.h>
 #include <GL/glu.h>
 
@@ -133,6 +134,13 @@ void ShaderProgram::update(Subject* subject)
         return;
     }
 
+    SpotLight* spotLight = dynamic_cast<SpotLight*>(subject);
+    if(spotLight)
+    {
+        std::cout << "Spot light added!\n" << std::endl;
+        lights.push_back(spotLight);
+        return;
+    }
 }
 
 void ShaderProgram::updateLight()
@@ -194,6 +202,20 @@ void ShaderProgram::updateLight()
                 //setFloat(location, distance);
                 glUseProgram(0);
             }
+
+            sprintf(location, "lights[%d].type", i);
+
+            idLightPos = glGetUniformLocation(ID, location);
+            if (idLightPos < 0) {
+                printf("The variable distance does not exist.");
+            }
+            else 
+            {
+                glUseProgram(ID);
+                glUniform1i(idLightPos, pointLight->getType());
+                //setFloat(location, distance);
+                glUseProgram(0);
+            }
         }
         if(lights[i]->getType() == 0)
         {
@@ -211,6 +233,104 @@ void ShaderProgram::updateLight()
                 vec4 lightColor = ambientLight->getColor();
                 std::cout << lightColor.r << lightColor.g << lightColor.b << lightColor.w << std::endl;
                 glUniform4f(idLightPos, lightColor.x, lightColor.y, lightColor.z, lightColor.w);
+                glUseProgram(0);
+            }
+        }
+
+        if(lights[i]->getType() == 2) //Spot light
+        {
+            SpotLight* spotLight = dynamic_cast<SpotLight*>(lights[i]);
+            char location[64];
+            //Color
+            sprintf(location, "lights[%d].color", i);
+
+            GLint idLightPos = glGetUniformLocation(ID, location);
+            if (idLightPos < 0) {
+                printf("The variable color does not exist.");
+            }
+            else 
+            {
+                glUseProgram(ID);
+                vec4 lightColor = spotLight->getColor();
+                glUniform4f(idLightPos, lightColor.x, lightColor.y, lightColor.z, lightColor.w);
+                glUseProgram(0);
+            }
+
+            //Position
+
+            sprintf(location, "lights[%d].position", i);
+
+            idLightPos = glGetUniformLocation(ID, location);
+            if (idLightPos < 0) {
+                printf("The variable position does not exist.");
+            }
+            else 
+            {
+                glUseProgram(ID);
+                vec3 lightPosition = spotLight->getTransformMatrix()[3];
+                glUniform3f(idLightPos, lightPosition.x, lightPosition.y, lightPosition.z);
+                glUseProgram(0);
+            }
+
+            // Rotation
+
+            sprintf(location, "lights[%d].rotation", i);
+
+            idLightPos = glGetUniformLocation(ID, location);
+            if (idLightPos < 0) {
+                printf("The variable rotation does not exist.");
+            }
+            else 
+            {
+                glUseProgram(ID);
+                vec3 lightPosition = spotLight->getTransformMatrix()[2];
+                glUniform3f(idLightPos, lightPosition.x, lightPosition.y, lightPosition.z);
+                glUseProgram(0);
+            }
+
+            // Distance
+
+            sprintf(location, "lights[%d].distance", i);
+
+            idLightPos = glGetUniformLocation(ID, location);
+            if (idLightPos < 0) {
+                printf("The variable distance does not exist.");
+            }
+            else 
+            {
+                glUseProgram(ID);
+
+                float distance = spotLight->getDistance();
+                glUniform1f(idLightPos, distance);
+                //setFloat(location, distance);
+                glUseProgram(0);
+            }
+
+            sprintf(location, "lights[%d].angle", i);
+
+            idLightPos = glGetUniformLocation(ID, location);
+            if (idLightPos < 0) {
+                printf("The variable angle does not exist.");
+            }
+            else 
+            {
+                glUseProgram(ID);
+
+                glUniform1f(idLightPos, glm::radians(spotLight->getAngle()));
+                //setFloat(location, distance);
+                glUseProgram(0);
+            }
+                sprintf(location, "lights[%d].type", i);
+
+            idLightPos = glGetUniformLocation(ID, location);
+            if (idLightPos < 0) {
+                printf("The variable type does not exist.");
+            }
+            else 
+            {
+                glUseProgram(ID);
+                glUniform1i(idLightPos, spotLight->getType());
+                //setFloat(location, distance);
                 glUseProgram(0);
             }
         }

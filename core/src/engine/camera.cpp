@@ -10,7 +10,7 @@ using std::vector;
 Camera::Camera(GLFWwindow* window, CameraSettings settings)
     : upVector(0.0f, 1.0f, 0.0f), window(window), settings(settings) 
 {
-    target = vec3(0.0f, 0.0f, 1.0f);
+    target = vec3(0.0f, 0.0f, -1.0f);
 }
 
 mat4 Camera::getViewMatrix() 

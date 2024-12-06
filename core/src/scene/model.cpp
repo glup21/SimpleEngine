@@ -13,8 +13,8 @@ using std::unordered_map;
 
 unordered_map<string, Texture> texturesLoaded;
 
-Model::Model(string ID, ShaderProgram* shaderProgram, vector<Mesh> meshes) 
-    : ID(ID), transform(), IDrawableObject(shaderProgram), meshes(meshes)
+Model::Model(int ID, ShaderProgram* shaderProgram, vector<Mesh> meshes) 
+    : ID(ID), transform(), IDrawableObject(shaderProgram, ID), meshes(meshes)
 {
     setup();
 }
@@ -24,7 +24,6 @@ void Model::setup()
 
 }
 
-// Behaviour and render
 
 void Model::update(float delta) 
 {

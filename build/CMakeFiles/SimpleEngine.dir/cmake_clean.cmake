@@ -25,6 +25,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/SimpleEngine.dir/core/src/engine/shader.cpp.o.d"
   "CMakeFiles/SimpleEngine.dir/core/src/engine/shaderProgram.cpp.o"
   "CMakeFiles/SimpleEngine.dir/core/src/engine/shaderProgram.cpp.o.d"
+  "CMakeFiles/SimpleEngine.dir/core/src/engine/spotLight.cpp.o"
+  "CMakeFiles/SimpleEngine.dir/core/src/engine/spotLight.cpp.o.d"
   "CMakeFiles/SimpleEngine.dir/core/src/engine/texture.cpp.o"
   "CMakeFiles/SimpleEngine.dir/core/src/engine/texture.cpp.o.d"
   "CMakeFiles/SimpleEngine.dir/core/src/engine/transformComposite.cpp.o"

@@ -5,7 +5,7 @@
 #include "scale.hpp"      
 
 Mesh::Mesh(vector<Vertex> vertices, vector<u_int> indices, vector<Texture*> textures, ShaderProgram* shaderProgram) :
-    vertices(vertices), indices(indices), textures(textures), IDrawableObject(shaderProgram)
+    vertices(vertices), indices(indices), textures(textures), IDrawableObject(shaderProgram, 0)
 {
     setup();
 }

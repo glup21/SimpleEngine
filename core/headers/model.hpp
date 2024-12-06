@@ -12,7 +12,7 @@ using std::vector;
 class Model : public IGameObject, public IDrawableObject
 {
 public:
-    Model(string ID, ShaderProgram* shaderProgram, vector<Mesh> meshes);
+    Model(int ID, ShaderProgram* shaderProgram, vector<Mesh> meshes);
 
     void setup() override;
     void draw() override;
@@ -28,7 +28,7 @@ public:
 
     mat4 getTransformMatrix() override;
 private:
-    string ID;
+    int ID;
     vector<Mesh> meshes;
     string directory;
     TransformComposite transform;

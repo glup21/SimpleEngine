@@ -441,6 +441,30 @@ core/src/engine/shaderProgram.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/SimpleEngine.dir/build.make CMakeFiles/SimpleEngine.dir/core/src/engine/shaderProgram.cpp.s
 .PHONY : core/src/engine/shaderProgram.cpp.s
 
+core/src/engine/spotLight.o: core/src/engine/spotLight.cpp.o
+.PHONY : core/src/engine/spotLight.o
+
+# target to build an object file
+core/src/engine/spotLight.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SimpleEngine.dir/build.make CMakeFiles/SimpleEngine.dir/core/src/engine/spotLight.cpp.o
+.PHONY : core/src/engine/spotLight.cpp.o
+
+core/src/engine/spotLight.i: core/src/engine/spotLight.cpp.i
+.PHONY : core/src/engine/spotLight.i
+
+# target to preprocess a source file
+core/src/engine/spotLight.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SimpleEngine.dir/build.make CMakeFiles/SimpleEngine.dir/core/src/engine/spotLight.cpp.i
+.PHONY : core/src/engine/spotLight.cpp.i
+
+core/src/engine/spotLight.s: core/src/engine/spotLight.cpp.s
+.PHONY : core/src/engine/spotLight.s
+
+# target to generate assembly for a file
+core/src/engine/spotLight.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SimpleEngine.dir/build.make CMakeFiles/SimpleEngine.dir/core/src/engine/spotLight.cpp.s
+.PHONY : core/src/engine/spotLight.cpp.s
+
 core/src/engine/texture.o: core/src/engine/texture.cpp.o
 .PHONY : core/src/engine/texture.o
 
@@ -657,6 +681,9 @@ help:
 	@echo "... core/src/engine/shaderProgram.o"
 	@echo "... core/src/engine/shaderProgram.i"
 	@echo "... core/src/engine/shaderProgram.s"
+	@echo "... core/src/engine/spotLight.o"
+	@echo "... core/src/engine/spotLight.i"
+	@echo "... core/src/engine/spotLight.s"
 	@echo "... core/src/engine/texture.o"
 	@echo "... core/src/engine/texture.i"
 	@echo "... core/src/engine/texture.s"

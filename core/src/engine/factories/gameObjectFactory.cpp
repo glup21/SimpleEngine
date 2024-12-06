@@ -6,7 +6,7 @@ GameObjectFactory::GameObjectFactory(ShaderProgram* defaultShaderProgram)
 
 }
 
-shared_ptr<Model> GameObjectFactory::createModel(string path, string ID)
+shared_ptr<Model> GameObjectFactory::createModel(string path, int ID)
 {
     return modelFactory->createModel(path, ID);
 }
@@ -16,6 +16,13 @@ shared_ptr<PointLight> GameObjectFactory::createPointLight(
 {
     return std::make_shared<PointLight>(color, distance);
 }
+
+shared_ptr<SpotLight> GameObjectFactory::createSpotLight(
+        glm::vec3 position, glm::vec4 color, float distance, float angle)
+{
+    return std::make_shared<SpotLight>(color, distance, angle);
+}
+
 shared_ptr<AmbientLight> GameObjectFactory::createAmbientLight(
         glm::vec3 position, glm::vec4 color)
 {

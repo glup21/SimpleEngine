@@ -19,13 +19,15 @@ private:
     ModelLoader modelLoader;
     ShaderProgram* defaultShaderProgram;
 
-    shared_ptr<Model> makeModelFromData(ModelLoader::ModelData modelData, string ID, ShaderProgram* defaultShaderProgram);
+    int modelID = 0;
+
+    shared_ptr<Model> makeModelFromData(ModelLoader::ModelData modelData, int ID, ShaderProgram* defaultShaderProgram);
 
 public:
     ModelFactory(ShaderProgram* defaultShaderProgram);
     ~ModelFactory() = default;
 
-    shared_ptr<Model> createModel(string path, string ID);
+    shared_ptr<Model> createModel(string path, int ID);
 
 };
 

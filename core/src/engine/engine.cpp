@@ -49,10 +49,7 @@ void Engine::run()
         double deltaTime = getDeltaTime();
         glfwPollEvents();
 
-        if(input != nullptr)
-            input->updateInput(deltaTime);
-        else
-            std::cout << "Input is nullptr!\n";
+        input->updateInput(deltaTime);
 
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
         updateGameObjects(deltaTime);

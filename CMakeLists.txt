@@ -16,7 +16,7 @@ find_package(assimp REQUIRED)
 find_library(GLU_LIBRARY NAMES GLU REQUIRED)
 
 # Compiler flags
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -fsanitize=address")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall")
 
 # Include directories
 include_directories(${ASSIMP_INCLUDE_DIRS})
@@ -37,6 +37,7 @@ set(SRCS
     core/src/engine/pointLight.cpp
     core/src/engine/transformComposite.cpp
     core/src/engine/AmbientLight.cpp
+    core/src/engine/spotLight.cpp
 
     # Config
     core/src/config/configReader.cpp

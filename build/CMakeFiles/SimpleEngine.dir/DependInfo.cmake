@@ -21,6 +21,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/vival/Documents/GitHub/SimpleEngine/core/src/engine/pointLight.cpp" "CMakeFiles/SimpleEngine.dir/core/src/engine/pointLight.cpp.o" "gcc" "CMakeFiles/SimpleEngine.dir/core/src/engine/pointLight.cpp.o.d"
   "/home/vival/Documents/GitHub/SimpleEngine/core/src/engine/shader.cpp" "CMakeFiles/SimpleEngine.dir/core/src/engine/shader.cpp.o" "gcc" "CMakeFiles/SimpleEngine.dir/core/src/engine/shader.cpp.o.d"
   "/home/vival/Documents/GitHub/SimpleEngine/core/src/engine/shaderProgram.cpp" "CMakeFiles/SimpleEngine.dir/core/src/engine/shaderProgram.cpp.o" "gcc" "CMakeFiles/SimpleEngine.dir/core/src/engine/shaderProgram.cpp.o.d"
+  "/home/vival/Documents/GitHub/SimpleEngine/core/src/engine/spotLight.cpp" "CMakeFiles/SimpleEngine.dir/core/src/engine/spotLight.cpp.o" "gcc" "CMakeFiles/SimpleEngine.dir/core/src/engine/spotLight.cpp.o.d"
   "/home/vival/Documents/GitHub/SimpleEngine/core/src/engine/texture.cpp" "CMakeFiles/SimpleEngine.dir/core/src/engine/texture.cpp.o" "gcc" "CMakeFiles/SimpleEngine.dir/core/src/engine/texture.cpp.o.d"
   "/home/vival/Documents/GitHub/SimpleEngine/core/src/engine/transformComposite.cpp" "CMakeFiles/SimpleEngine.dir/core/src/engine/transformComposite.cpp.o" "gcc" "CMakeFiles/SimpleEngine.dir/core/src/engine/transformComposite.cpp.o.d"
   "/home/vival/Documents/GitHub/SimpleEngine/core/src/main.cpp" "CMakeFiles/SimpleEngine.dir/core/src/main.cpp.o" "gcc" "CMakeFiles/SimpleEngine.dir/core/src/main.cpp.o.d"
