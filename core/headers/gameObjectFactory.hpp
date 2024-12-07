@@ -16,13 +16,12 @@ class GameObjectFactory : public IObjectFactory
 {
 private:
     unique_ptr<ModelFactory> modelFactory;
-    ShaderProgram* defaultShaderProgram;
 
 public:
-    GameObjectFactory(ShaderProgram* defaultShaderProgram);
+    GameObjectFactory();
     ~GameObjectFactory() = default;
 
-    shared_ptr<Model> createModel(string path, int ID); //other ways of creation implement later
+    shared_ptr<Model> createModel(string path, int ID, string material = "default");
     shared_ptr<PointLight> createPointLight(
         glm::vec3 position = glm::vec3(0.0), glm::vec4 color = glm::vec4(1.0), float distance = 1.0);
     shared_ptr<SpotLight> createSpotLight(

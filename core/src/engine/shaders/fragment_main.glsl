@@ -1,70 +1,84 @@
-#version 400 core
+#version 450 
 #define MAX_LIGHTS 5
 
-struct Light {
-    vec3 position;
-    vec4 color;
-    uint type;
+struct Light
+{
+  vec4 color;
+  vec3 position;  
+  vec3 rotation;
+  float distance;  
+  float angle;     
+  int type;        
 };
 
-in vec3 FragPos;
-in vec3 WorldNormal;
-in vec2 TexCoords;
-
-out vec4 FragColor;
-
-uniform sampler2D textureImage;
 uniform Light lights[MAX_LIGHTS];
 uniform int lightsCount;
-uniform vec3 cameraPosition;
+uniform vec3 cameraPosition;  
+uniform vec4 ambientLight;    
+uniform sampler2D textureImage;
+
+in vec3 FragPos;        
+in vec3 WorldNormal;    
+in vec2 TexCoords;      
+out vec4 FragColor;     
+
+float getAttenuation(float c, float l, float q, float dist)
+{
+    float att = 1.0 / (c + l * dist + q * dist * dist);
+    return clamp(att, 0.0, 1.0);
+}
 
 void main() 
 {
-    uint lightType = lights[0].type;
-    FragColor = vec4(lightType / 255.0, 0.0, 0.0, 1.0); 
-
     vec4 texColor = texture(textureImage, TexCoords);
-    if (texColor.a < 0.001)
+    if (texColor.a < 0.001) discard;
+
+    vec4 ambient = ambientLight * texColor;
+    ambient *= ambientLight.w; 
+    vec3 diffuse = vec3(0.0);
+    vec3 specular = vec3(0.0);
+
+    vec3 cameraVector = normalize(cameraPosition - FragPos);
+
+    for (int i = 0; i < lightsCount; i++)
     {
-        discard;
-    }
-
-    vec4 ambient = vec4(0.0);
-    vec4 diffuse = vec4(0.0);
-    vec4 specular = vec4(0.0);
-    vec3 finalColor = vec3(0.0);
-
-    float proximityToWhite = length(vec3(1.0) - texColor.rgb);
-    float shininess = proximityToWhite * 128.0;
-    float specularCoeff = 0.5;
-
-    for (int i = 0; i < 2; i++) 
-    {
-        switch(lights[i].type)
+        if (lights[i].type == 1) // Point Light
         {
-            case 0:
-                finalColor = vec3(0.0, 1.0, 0.0);
-                ambient += vec4(texColor.rgb * lights[i].color.rgb * 0.1, 1.0);
-                break;
-            case 1:
-                
-                finalColor = vec3(1.0, 1.0, 0.0);
-                vec3 lightDir = normalize(lights[i].position.xyz - FragPos);
-                vec3 normal = normalize(WorldNormal);
-                vec3 viewDir = normalize(cameraPosition - FragPos);
-                vec3 halfwayDir = normalize(lightDir + viewDir);
+            vec3 lightVector = normalize(lights[i].position - FragPos);
+            float distance = length(lights[i].position - FragPos);
+            float attenuation = getAttenuation(1.0, 0.1, 0.01, distance);
 
-                float diff = max(dot(normal, lightDir), 0.0);
-                diffuse += lights[i].color * diff * lights[i].color.w;
+            // Diffuse calculation
+            float diff = max(dot(lightVector, normalize(WorldNormal)), 0.0);
+            diffuse += diff * lights[i].color.rgb * attenuation * lights[i].color.w;
 
-                float spec = pow(max(dot(normal, halfwayDir), 0.0), shininess);
-                specular += lights[i].color * spec * specularCoeff * lights[i].color.w;
-                break;
-
+            // Specular calculation
+            vec3 halfwayDir = normalize(lightVector + cameraVector);
+            float spec = pow(max(dot(normalize(WorldNormal), halfwayDir), 0.0), 32.0);
+            specular += spec * lights[i].color.rgb * attenuation * lights[i].color.w;
         }
+        if (lights[i].type == 2) // Spotlight
+        {
+            vec3 lightVector = normalize(FragPos - lights[i].position);
+            
+            float spotEffect = dot(lightVector, normalize(WorldNormal));
+            if (spotEffect < cos(lights[i].angle))
+                continue; 
 
+            float distance = length(FragPos - lights[i].position);
+            float attenuation = getAttenuation(1.0, 0.1, 0.01, distance);
+
+            // Diffuse calculation
+            float diff = max(spotEffect, 0.0);
+            diffuse += diff * lights[i].color.rgb * attenuation * lights[i].color.w;
+
+            // Specular calculation
+            vec3 halfwayDir = normalize(lightVector + cameraVector);
+            float spec = pow(max(dot(normalize(WorldNormal), halfwayDir), 0.0), 32.0);
+            specular += spec * lights[i].color.rgb * attenuation;
+        }
     }
 
-    //vec3 finalColor = ambient.rgb + texColor.rgb * diffuse.rgb + specular.rgb;
-    FragColor = vec4(finalColor, 1.0);
+    vec3 finalColor = ambient.rgb + texColor.rgb * diffuse + specular;
+    FragColor = vec4(clamp(finalColor, 0.0, 1.0), texColor.a);
 }

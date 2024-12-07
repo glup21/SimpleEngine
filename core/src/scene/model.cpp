@@ -13,10 +13,10 @@ using std::unordered_map;
 
 unordered_map<string, Texture> texturesLoaded;
 
-Model::Model(int ID, ShaderProgram* shaderProgram, vector<Mesh> meshes) 
-    : ID(ID), transform(), IDrawableObject(shaderProgram, ID), meshes(meshes)
+Model::Model(int ID, vector<Mesh> meshes) 
+    : ID(ID), transform(), IDrawableObject(ID), meshes(meshes)
 {
-    setup();
+
 }
 
 void Model::setup()

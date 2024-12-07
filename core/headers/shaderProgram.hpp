@@ -8,6 +8,7 @@
 #include "camera.hpp"
 #include "IObserver.hpp"
 #include "ILight.hpp"
+#include "shader.hpp"
 
 using std::unique_ptr, std::string, std::vector, glm::vec3;
 
@@ -20,10 +21,13 @@ private:
     GLuint ID;
     vector<ILight*> lights;
 
+    Shader* vertexShader;
+    Camera* camera;
+
     void checkLinkErrors();
 
 public:
-    ShaderProgram(Shader* vertexShader, Shader* fragmentShader);
+    ShaderProgram(Shader* vertexShader, Shader* fragmentShader, Camera* camera);
     ~ShaderProgram();
 
     void attachShader(Shader* shader);
@@ -44,6 +48,8 @@ public:
     void observe(Subject* subject);
     void updateLight();
 
+    Shader* getVertexShader();
+    Camera* getCamera() {return camera;}
 
 };
 

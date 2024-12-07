@@ -6,12 +6,15 @@
 #include <GL/glu.h>
 
 
-ShaderProgram::ShaderProgram(Shader* vertexShader, Shader* fragmentShader) : ID(glCreateProgram()) 
+ShaderProgram::ShaderProgram(Shader* vertexShader, Shader* fragmentShader, Camera* camera) :
+     ID(glCreateProgram()), vertexShader(vertexShader), camera(camera)
 {
     
     attachShader(vertexShader);
     attachShader(fragmentShader);
     link();
+
+    //observe(camera);
 }
 ShaderProgram::~ShaderProgram() { glDeleteProgram(ID); }
 
@@ -63,17 +66,18 @@ void ShaderProgram::setInt(const std::string& name, int value)
 
 void ShaderProgram::setVec3(const std::string& name, glm::vec3 value) 
 {
-use();
+    use();
     GLint location = glGetUniformLocation(ID, name.c_str());
     if (location == -1) {
         //std::cerr << "Warning: Uniform '" << name << "' not found.\n";
         return;
     }
     use();
-    glUniform3f(location, 1.0f, 2.0f, 0.0f);
+    glUniform3f(location, value.x, value.y, value.z);
 
     GLenum error = glGetError();
     if (error != GL_NO_ERROR) {
+        std::cout << name << std::endl;
         std::cerr << "OpenGL Error: " << gluErrorString(error) << std::endl;
     }
 }
@@ -342,4 +346,9 @@ void ShaderProgram::updateLight()
 void ShaderProgram::observe(Subject* subject) 
 {
     subject->addObserver(this);
+}
+
+Shader* ShaderProgram::getVertexShader()
+{
+    return vertexShader;
 }

@@ -5,10 +5,9 @@
 class IDrawableObject
 {
 protected:
-    ShaderProgram* shaderProgram;
     int ID;
 public: 
-    IDrawableObject(ShaderProgram* shaderProgram, int ID) : shaderProgram(shaderProgram), ID(ID) {}
+    IDrawableObject(int ID) : ID(ID) {}
     virtual void draw() = 0;
     virtual void setup() = 0;
 };

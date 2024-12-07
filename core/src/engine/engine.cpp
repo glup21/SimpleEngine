@@ -4,23 +4,22 @@
 #include <glm/glm.hpp>
 #include "shaderFactory.hpp"
 #include "sceneReader.hpp"
+#include "MaterialFactory.hpp"
 
 Engine::Engine(GLFWwindow* window, ConfigReader* configReader)
     : window(window), configReader(configReader)
 {
     previousTime = std::chrono::high_resolution_clock::now();
+    camera = std::make_shared<Camera>(window, configReader->getCameraSettings());
 
-    camera = std::make_unique<Camera>(window, configReader->getCameraSettings());
-    auto vertexShader = ShaderFactory::createShader(GL_VERTEX_SHADER, configReader->getVertexShaderPath(), camera.get());
-    auto fragmentShader = ShaderFactory::createShader(GL_FRAGMENT_SHADER, configReader->getFragmentShaderPath(), camera.get());
+    MaterialFactory& mf = MaterialFactory::getInstance();
+    mf.setCamera(camera.get());
+    mf.setShaderPath("../core/src/engine/shaders/");
 
     glEnable(GL_DEPTH_TEST);
     glDepthFunc(GL_LESS);
     glEnable(GL_BLEND);
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
-
-    defaultShaderProgram = std::make_unique<ShaderProgram>(vertexShader, fragmentShader);
-    defaultShaderProgram->observe(camera.get());
 
 }
 
@@ -31,7 +30,7 @@ void Engine::init(const std::string& scenePath)
     glfwGetWindowSize(window, &width, &height);
 
     SceneReader sceneReader(scenePath);
-    Scene scene = sceneReader.readScene(defaultShaderProgram.get());
+    Scene scene = sceneReader.readScene();
     drawableObjects = scene.getDrawableObjects();
     gameObjects = scene.getObjects();
     // Calling updateLight from Engine is dumb, and must be handled

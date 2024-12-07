@@ -4,10 +4,10 @@
 #include <iostream>
 #include <glm/gtc/type_ptr.hpp>
 
-Shader::Shader(GLenum type, Camera* camera)
-     : ID(glCreateShader(type)), camera(camera) {}
+Shader::Shader(GLenum type)
+     : ID(glCreateShader(type)){}
 
-void Shader::compile(const string& source)
+void Shader::compile(string source)
 {
 
     const char* code = source.c_str();
@@ -15,11 +15,8 @@ void Shader::compile(const string& source)
     glCompileShader(ID);
     checkCompileErrors();
 
-}
+    this->source = source;
 
-void Shader::attachShaderProgram(ShaderProgram* parentShaderProgram)
-{
-    this->parentShaderProgram = parentShaderProgram;
 }
 
 GLuint Shader::getID()
@@ -39,3 +36,7 @@ void Shader::checkCompileErrors()
     }
 }
 
+string Shader::getSource()
+{
+    return source;
+}

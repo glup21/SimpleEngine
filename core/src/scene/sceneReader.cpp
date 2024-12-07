@@ -8,9 +8,9 @@
 #include "pointLight.hpp"
 #include "SpotLight.hpp"
 
-Scene SceneReader::readScene(ShaderProgram* defaultShaderProgram)
+Scene SceneReader::readScene()
 {
-    GameObjectFactory objectFactory(defaultShaderProgram);
+    GameObjectFactory objectFactory;
 
     std::ifstream file(scenePath);
     if (!file.is_open()) {
@@ -38,7 +38,7 @@ Scene SceneReader::readScene(ShaderProgram* defaultShaderProgram)
                 glm::vec3 v_rotation{rotation[0], rotation[1], rotation[2]};
                 glm::vec3 v_scale{scale[0], scale[1], scale[2]};
 
-                std::shared_ptr<Model> model = objectFactory.createModel(directory, 0);
+                std::shared_ptr<Model> model = objectFactory.createModel(directory, 0, obj.value("material", "default"));
 
                 model->addScale(v_scale);
                 model->addRotation({1.0f, 0.0f, 0.0f}, v_rotation.x);
@@ -63,7 +63,7 @@ Scene SceneReader::readScene(ShaderProgram* defaultShaderProgram)
                     v_position, v_color, distance);
                 std::cout << light << std::endl;
 
-                defaultShaderProgram->observe(light.get());
+                //defaultShaderProgram->observe(light.get());
                 light->addPosition(v_position);            
                 gObj.push_back(light);
                 
@@ -81,7 +81,7 @@ Scene SceneReader::readScene(ShaderProgram* defaultShaderProgram)
                 shared_ptr<AmbientLight> light = objectFactory.createAmbientLight(
                     v_position, v_color
                 );
-                defaultShaderProgram->observe(light.get());
+                //defaultShaderProgram->observe(light.get());
                 light->addPosition(v_position);
                 gObj.push_back(light);
                 
@@ -105,7 +105,9 @@ Scene SceneReader::readScene(ShaderProgram* defaultShaderProgram)
                 shared_ptr<SpotLight> light = objectFactory.createSpotLight(
                     v_position, v_color, v_angle
                 );
-                defaultShaderProgram->observe(light.get());
+
+                // ADD HERE FOR MATERIAL FACTORY ABILITY TO SET ALL SHADERS TO OBSERVE THIS LIGHT
+                //defaultShaderProgram->observe(light.get());
                 light->addPosition(v_position);
                 light->addRotation({1.0f, 0.0f, 0.0f}, v_rotation.x);
                 light->addRotation({0.0f, 1.0f, 0.0f}, v_rotation.y);

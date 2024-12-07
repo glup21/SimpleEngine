@@ -10,11 +10,19 @@ using std::string, std::unique_ptr;
 class ShaderFactory
 {
 public:
-    static Shader* createShader(GLenum shaderType, const string& filePath, Camera* camera) 
+    static Shader* createShader(GLenum shaderType, const string& filePath) 
     {
         string shaderSource = loadShaderSource(filePath);
-        Shader* shader = new Shader(shaderType, camera);
+        Shader* shader = new Shader(shaderType);
         shader->compile(shaderSource);
+        return shader;
+    }
+    // The worst decision ever n.2
+    static Shader* createShader(GLenum shaderType, const string& source, int is_source) 
+    {
+      
+        Shader* shader = new Shader(shaderType);
+        shader->compile(source);
         return shader;
     }
 

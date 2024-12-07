@@ -24,7 +24,7 @@ private:
     std::vector<std::shared_ptr<IGameObject>> gameObjects;
     std::chrono::time_point<std::chrono::high_resolution_clock> previousTime;
     std::unique_ptr<ShaderProgram> defaultShaderProgram;
-    std::unique_ptr<Camera> camera;
+    std::shared_ptr<Camera> camera;
     GLFWwindow* window;
     ConfigReader* configReader; 
     std::shared_ptr<Input> input;               

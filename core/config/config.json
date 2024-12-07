@@ -8,6 +8,7 @@
         "movingSpeed" : 3
     },
     "vertex_shader" : "../core/src/engine/shaders/vertex.glsl",
-    "fragment_shader" : "../core/src/engine/shaders/fragment_test.glsl"
+    "fragment_shader" : "../core/src/engine/shaders/fragment_test.glsl",
+    "shader_path" : "../core/src/engine/shaders/"
     
 }

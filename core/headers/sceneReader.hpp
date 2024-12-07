@@ -19,7 +19,7 @@ class SceneReader
 
 public:
     SceneReader(const string& path) : scenePath(path) {}
-    Scene readScene(ShaderProgram* defaultShaderProgram);
+    Scene readScene();
 
 };
 

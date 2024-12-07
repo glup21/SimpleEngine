@@ -38,6 +38,7 @@ set(SRCS
     core/src/engine/transformComposite.cpp
     core/src/engine/AmbientLight.cpp
     core/src/engine/spotLight.cpp
+    core/src/engine/Material.cpp
 
     # Config
     core/src/config/configReader.cpp
@@ -55,6 +56,7 @@ set(SRCS
     # Factories
     core/src/engine/factories/gameObjectFactory.cpp
     core/src/engine/factories/modelFactory.cpp
+    core/src/engine/factories/MaterialFactory.cpp
 )
 
 # Add executable

@@ -5,6 +5,7 @@
             "id": "house",
             "type" : "model",
             "directory" : "../assets/models/house/model.obj",
+            "material" : "ambient",
             "position" : [5, -13, 6],
             "rotation" : [0, 0, 0], 
             "scale" : [0.5, 0.5, 0.5]

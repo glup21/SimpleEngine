@@ -17,17 +17,16 @@ private:
 
     unordered_map<string, ModelLoader::ModelData> cachedModels;
     ModelLoader modelLoader;
-    ShaderProgram* defaultShaderProgram;
 
     int modelID = 0;
 
-    shared_ptr<Model> makeModelFromData(ModelLoader::ModelData modelData, int ID, ShaderProgram* defaultShaderProgram);
+    shared_ptr<Model> makeModelFromData(ModelLoader::ModelData modelData, int ID, int material);
 
 public:
-    ModelFactory(ShaderProgram* defaultShaderProgram);
+    ModelFactory();
     ~ModelFactory() = default;
 
-    shared_ptr<Model> createModel(string path, int ID);
+    shared_ptr<Model> createModel(string path, int ID, int material);
 
 };
 

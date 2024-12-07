@@ -14,24 +14,20 @@
 
 using std::string, std::vector, glm::mat4; 
 
-class Camera;
-class ShaderProgram;
-
 class Shader
 {
 private:
-    Camera* camera;
     GLuint ID;
+    string source;
     void checkCompileErrors();
-    ShaderProgram* parentShaderProgram;
 
 public:
-    Shader(GLenum type, Camera* camera);
+    Shader(GLenum type);
     ~Shader() = default;
 
-    void attachShaderProgram(ShaderProgram* parentShaderProgram);
-    void compile(const string& source);
+    void compile(string source);
     GLuint getID();
+    string getSource();
 
 };
 

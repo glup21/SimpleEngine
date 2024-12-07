@@ -201,6 +201,30 @@ core/src/engine/AmbientLight.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/SimpleEngine.dir/build.make CMakeFiles/SimpleEngine.dir/core/src/engine/AmbientLight.cpp.s
 .PHONY : core/src/engine/AmbientLight.cpp.s
 
+core/src/engine/Material.o: core/src/engine/Material.cpp.o
+.PHONY : core/src/engine/Material.o
+
+# target to build an object file
+core/src/engine/Material.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SimpleEngine.dir/build.make CMakeFiles/SimpleEngine.dir/core/src/engine/Material.cpp.o
+.PHONY : core/src/engine/Material.cpp.o
+
+core/src/engine/Material.i: core/src/engine/Material.cpp.i
+.PHONY : core/src/engine/Material.i
+
+# target to preprocess a source file
+core/src/engine/Material.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SimpleEngine.dir/build.make CMakeFiles/SimpleEngine.dir/core/src/engine/Material.cpp.i
+.PHONY : core/src/engine/Material.cpp.i
+
+core/src/engine/Material.s: core/src/engine/Material.cpp.s
+.PHONY : core/src/engine/Material.s
+
+# target to generate assembly for a file
+core/src/engine/Material.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SimpleEngine.dir/build.make CMakeFiles/SimpleEngine.dir/core/src/engine/Material.cpp.s
+.PHONY : core/src/engine/Material.cpp.s
+
 core/src/engine/camera.o: core/src/engine/camera.cpp.o
 .PHONY : core/src/engine/camera.o
 
@@ -248,6 +272,30 @@ core/src/engine/engine.s: core/src/engine/engine.cpp.s
 core/src/engine/engine.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/SimpleEngine.dir/build.make CMakeFiles/SimpleEngine.dir/core/src/engine/engine.cpp.s
 .PHONY : core/src/engine/engine.cpp.s
+
+core/src/engine/factories/MaterialFactory.o: core/src/engine/factories/MaterialFactory.cpp.o
+.PHONY : core/src/engine/factories/MaterialFactory.o
+
+# target to build an object file
+core/src/engine/factories/MaterialFactory.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SimpleEngine.dir/build.make CMakeFiles/SimpleEngine.dir/core/src/engine/factories/MaterialFactory.cpp.o
+.PHONY : core/src/engine/factories/MaterialFactory.cpp.o
+
+core/src/engine/factories/MaterialFactory.i: core/src/engine/factories/MaterialFactory.cpp.i
+.PHONY : core/src/engine/factories/MaterialFactory.i
+
+# target to preprocess a source file
+core/src/engine/factories/MaterialFactory.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SimpleEngine.dir/build.make CMakeFiles/SimpleEngine.dir/core/src/engine/factories/MaterialFactory.cpp.i
+.PHONY : core/src/engine/factories/MaterialFactory.cpp.i
+
+core/src/engine/factories/MaterialFactory.s: core/src/engine/factories/MaterialFactory.cpp.s
+.PHONY : core/src/engine/factories/MaterialFactory.s
+
+# target to generate assembly for a file
+core/src/engine/factories/MaterialFactory.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SimpleEngine.dir/build.make CMakeFiles/SimpleEngine.dir/core/src/engine/factories/MaterialFactory.cpp.s
+.PHONY : core/src/engine/factories/MaterialFactory.cpp.s
 
 core/src/engine/factories/gameObjectFactory.o: core/src/engine/factories/gameObjectFactory.cpp.o
 .PHONY : core/src/engine/factories/gameObjectFactory.o
@@ -651,12 +699,18 @@ help:
 	@echo "... core/src/engine/AmbientLight.o"
 	@echo "... core/src/engine/AmbientLight.i"
 	@echo "... core/src/engine/AmbientLight.s"
+	@echo "... core/src/engine/Material.o"
+	@echo "... core/src/engine/Material.i"
+	@echo "... core/src/engine/Material.s"
 	@echo "... core/src/engine/camera.o"
 	@echo "... core/src/engine/camera.i"
 	@echo "... core/src/engine/camera.s"
 	@echo "... core/src/engine/engine.o"
 	@echo "... core/src/engine/engine.i"
 	@echo "... core/src/engine/engine.s"
+	@echo "... core/src/engine/factories/MaterialFactory.o"
+	@echo "... core/src/engine/factories/MaterialFactory.i"
+	@echo "... core/src/engine/factories/MaterialFactory.s"
 	@echo "... core/src/engine/factories/gameObjectFactory.o"
 	@echo "... core/src/engine/factories/gameObjectFactory.i"
 	@echo "... core/src/engine/factories/gameObjectFactory.s"

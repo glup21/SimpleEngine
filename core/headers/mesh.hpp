@@ -7,6 +7,7 @@
 #include "vertex.hpp"
 #include "texture.hpp"
 #include "shader.hpp"
+#include "Material.hpp"
 
 using std::vector;
 
@@ -15,7 +16,7 @@ class Mesh : public IDrawableObject
 public:
     
 
-    Mesh(vector<Vertex> vertices, vector<u_int> indices, vector<Texture*> textures, ShaderProgram* shaderProgram);
+    Mesh(vector<Vertex> vertices, vector<u_int> indices, Material* material);
     
     void draw() override;
     void setup() override;
@@ -35,8 +36,7 @@ private:
     GLuint VAO, VBO, EBO;
     vector<Vertex> vertices;
     vector<u_int> indices;
-    vector<Texture*> textures;
-
+    Material* material;
 };
 
 #endif

@@ -6,13 +6,14 @@
 #include "IGameObject.hpp"
 #include "IDrawableObject.hpp"
 #include <vector>
+#include "Material.hpp"
 
 using std::vector;
 
 class Model : public IGameObject, public IDrawableObject
 {
 public:
-    Model(int ID, ShaderProgram* shaderProgram, vector<Mesh> meshes);
+    Model(int ID, vector<Mesh> meshes);
 
     void setup() override;
     void draw() override;
@@ -30,7 +31,6 @@ public:
 private:
     int ID;
     vector<Mesh> meshes;
-    string directory;
     TransformComposite transform;
 
 };

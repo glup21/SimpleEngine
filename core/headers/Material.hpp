@@ -13,10 +13,10 @@ class Material
     std::vector<Texture*> textures;
 
 public:
-    Material(ShaderProgram* shader_program, std::vector<Texture*> textures);
+    Material(ShaderProgram* shader_program);
     ~Material() = default;
 
-
+    void addTextures(std::vector<Texture*> textures);
     void use(glm::mat4 transformMatrix);
 
 };

@@ -1,15 +1,23 @@
 #include "gameObjectFactory.hpp"
-
-GameObjectFactory::GameObjectFactory(ShaderProgram* defaultShaderProgram)
-    : defaultShaderProgram(defaultShaderProgram), modelFactory(std::make_unique<ModelFactory>(defaultShaderProgram))
+#include "MaterialFactory.hpp"
+GameObjectFactory::GameObjectFactory()
+    : modelFactory(std::make_unique<ModelFactory>())
 {
 
 }
 
-shared_ptr<Model> GameObjectFactory::createModel(string path, int ID)
+shared_ptr<Model> GameObjectFactory::createModel(string path, int ID, string material)
 {
-    return modelFactory->createModel(path, ID);
+    if(material == "default")
+        return modelFactory->createModel(path, ID, SHADER_DEFAULT);
+    else if(material == "ambient")
+        return modelFactory->createModel(path, ID, SHADER_AMBIENT);
+    else if(material == "color")
+        return modelFactory->createModel(path, ID, SHADER_COLOR);
+
+    return modelFactory->createModel(path, ID, SHADER_DEFAULT);
 }
+
 
 shared_ptr<PointLight> GameObjectFactory::createPointLight(
         glm::vec3 position, glm::vec4 color, float distance)
