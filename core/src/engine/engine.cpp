@@ -20,6 +20,7 @@ Engine::Engine(GLFWwindow* window, ConfigReader* configReader)
     glDepthFunc(GL_LESS);
     glEnable(GL_BLEND);
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+    glEnable(GL_TEXTURE_CUBE_MAP_SEAMLESS);
 
 }
 
@@ -33,16 +34,20 @@ void Engine::init(const std::string& scenePath)
     Scene scene = sceneReader.readScene();
     drawableObjects = scene.getDrawableObjects();
     gameObjects = scene.getObjects();
+    
     // Calling updateLight from Engine is dumb, and must be handled
     // by ShaderProgram. Fix later
+    MaterialFactory& mf = MaterialFactory::getInstance();
+    mf.updateAllLights();
+
     
-    defaultShaderProgram->updateLight();
 
     std::cout << "Init finished\n" << std::endl;
 }
 
 void Engine::run()
 {
+
     while (!glfwWindowShouldClose(window))
     {
         double deltaTime = getDeltaTime();

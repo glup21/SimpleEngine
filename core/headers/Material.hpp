@@ -18,6 +18,7 @@ public:
 
     void addTextures(std::vector<Texture*> textures);
     void use(glm::mat4 transformMatrix);
+    ShaderProgram* getShaderProgram(){return shader_program;}
 
 };
 

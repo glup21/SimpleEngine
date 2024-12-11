@@ -5,7 +5,6 @@
             "id": "house",
             "type" : "model",
             "directory" : "../assets/models/house/model.obj",
-            "material" : "ambient",
             "position" : [5, -13, 6],
             "rotation" : [0, 0, 0], 
             "scale" : [0.5, 0.5, 0.5]
@@ -17,35 +16,6 @@
             "position" : [5, -1, 0],
             "rotation" : [0, 0, 0], 
             "scale" : [1, 1, 1]
-        },
-        {
-            "type" : "point_light",
-            "position" : [-1,-1,-1],
-            "color" : [1.0, 1.0, 1.0],
-            "brightness" : 1.0,
-            "distance" : 1.0
-        },
-        {
-            "type" : "point_light",
-            "position" : [0,4,1],
-            "color" : [1.0, 0.0, 1.0],
-            "brightness" : 1.0,
-            "distance" : 1.0
-        },
-        {
-            "type" : "spot_light",
-            "position" : [0, 3, 0],
-            "rotation" : [0, 0, 0],
-            "color" : [0.0, 1.0, 0.0],
-            "brightness" : 10.0,
-            "distance" : 1.0,
-            "angle" : 120.0
-        },
-        {
-            "type" : "ambient_light",
-            "position" : [0, 0, 0],
-            "color" : [1.0, 1.0, 1.0],
-            "brightness" : 0.1
         },
         {
             "id": "tree",
@@ -758,7 +728,27 @@
             "position" : [0, -3.8, 0],
             "rotation" : [0, 0, 0], 
             "scale" : [2, 2, 2]
-        }   
+        },  
+        {
+            "type" : "point_light",
+            "position" : [-1,-1,-1],
+            "color" : [1.0, 1.0, 1.0],
+            "brightness" : 1.0,
+            "distance" : 1.0
+        },
+        {
+            "type" : "point_light",
+            "position" : [0,4,1],
+            "color" : [1.0, 0.0, 1.0],
+            "brightness" : 1.0,
+            "distance" : 1.0
+        },
+        {
+            "type" : "ambient_light",
+            "position" : [0, 0, 0],
+            "color" : [1.0, 1.0, 1.0],
+            "brightness" : 0.1
+        }
     ]
 
 }

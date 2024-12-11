@@ -16,6 +16,8 @@ class ModelFactory : public IObjectFactory
 private:
 
     unordered_map<string, ModelLoader::ModelData> cachedModels;
+    unordered_map<string, Material*> cachedMaterials;  
+
     ModelLoader modelLoader;
 
     int modelID = 0;

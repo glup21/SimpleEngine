@@ -22,12 +22,11 @@ private:
     vector<ILight*> lights;
 
     Shader* vertexShader;
-    Camera* camera;
 
     void checkLinkErrors();
 
 public:
-    ShaderProgram(Shader* vertexShader, Shader* fragmentShader, Camera* camera);
+    ShaderProgram(Shader* vertexShader, Shader* fragmentShader);
     ~ShaderProgram();
 
     void attachShader(Shader* shader);
@@ -47,9 +46,6 @@ public:
     void update(Subject* subject) override;
     void observe(Subject* subject);
     void updateLight();
-
-    Shader* getVertexShader();
-    Camera* getCamera() {return camera;}
 
 };
 

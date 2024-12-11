@@ -5,21 +5,25 @@ project(SimpleEngine)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 
-# Find dependencies
+# Debug target
+if(NOT CMAKE_BUILD_TYPE)
+    set(CMAKE_BUILD_TYPE Debug)
+endif()
+
+# Compiler flags
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Wextra -pedantic")
+
+# Find required packages
 find_package(glfw3 REQUIRED)
 find_package(GLEW REQUIRED)
-
-# Find Assimp package
 find_package(assimp REQUIRED)
 
 # Find GLU library
-find_library(GLU_LIBRARY NAMES GLU REQUIRED)
-
-# Compiler flags
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall")
+find_library(GLU_LIBRARY GLU REQUIRED)
 
 # Include directories
 include_directories(${ASSIMP_INCLUDE_DIRS})
+include_directories(core/headers)
 
 # Source files
 set(SRCS
@@ -59,14 +63,22 @@ set(SRCS
     core/src/engine/factories/MaterialFactory.cpp
 )
 
-# Add executable
+# Add the executable
 add_executable(${PROJECT_NAME} ${SRCS})
 
 # Link libraries
-target_link_libraries(${PROJECT_NAME} ${ASSIMP_LIBRARIES} glfw GL GLEW ${GLU_LIBRARY})
+target_link_libraries(${PROJECT_NAME}
+    glfw
+    GLEW
+    ${GLU_LIBRARY}
+    ${ASSIMP_LIBRARIES}
+    GL # For OpenGL
+)
 
-# Add include directory
+# Include directories for the target
 target_include_directories(${PROJECT_NAME} PRIVATE core/headers)
 
-# Debug target
-set(CMAKE_BUILD_TYPE Debug)
+# Output messages
+message(STATUS "Build type: ${CMAKE_BUILD_TYPE}")
+message(STATUS "Assimp include dirs: ${ASSIMP_INCLUDE_DIRS}")
+message(STATUS "GLU library: ${GLU_LIBRARY}")

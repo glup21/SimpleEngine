@@ -9,6 +9,7 @@ CMakeFiles/SimpleEngine.dir/core/src/application.cpp.o: /home/vival/Documents/Gi
   /home/vival/Documents/GitHub/SimpleEngine/core/headers/IObjectFactory.hpp \
   /home/vival/Documents/GitHub/SimpleEngine/core/headers/IObserver.hpp \
   /home/vival/Documents/GitHub/SimpleEngine/core/headers/Material.hpp \
+  /home/vival/Documents/GitHub/SimpleEngine/core/headers/SpotLight.hpp \
   /home/vival/Documents/GitHub/SimpleEngine/core/headers/application.hpp \
   /home/vival/Documents/GitHub/SimpleEngine/core/headers/camera.hpp \
   /home/vival/Documents/GitHub/SimpleEngine/core/headers/cameraSettings.hpp \
@@ -894,6 +895,7 @@ CMakeFiles/SimpleEngine.dir/core/src/engine/AmbientLight.cpp.o: /home/vival/Docu
   /home/vival/Documents/GitHub/SimpleEngine/core/headers/IGameObject.hpp \
   /home/vival/Documents/GitHub/SimpleEngine/core/headers/ILight.hpp \
   /home/vival/Documents/GitHub/SimpleEngine/core/headers/IObserver.hpp \
+  /home/vival/Documents/GitHub/SimpleEngine/core/headers/SpotLight.hpp \
   /home/vival/Documents/GitHub/SimpleEngine/core/headers/camera.hpp \
   /home/vival/Documents/GitHub/SimpleEngine/core/headers/cameraSettings.hpp \
   /home/vival/Documents/GitHub/SimpleEngine/core/headers/position.hpp \
@@ -1355,6 +1357,7 @@ CMakeFiles/SimpleEngine.dir/core/src/engine/Material.cpp.o: /home/vival/Document
   /home/vival/Documents/GitHub/SimpleEngine/core/headers/ILoader.hpp \
   /home/vival/Documents/GitHub/SimpleEngine/core/headers/IObserver.hpp \
   /home/vival/Documents/GitHub/SimpleEngine/core/headers/Material.hpp \
+  /home/vival/Documents/GitHub/SimpleEngine/core/headers/SpotLight.hpp \
   /home/vival/Documents/GitHub/SimpleEngine/core/headers/camera.hpp \
   /home/vival/Documents/GitHub/SimpleEngine/core/headers/cameraSettings.hpp \
   /home/vival/Documents/GitHub/SimpleEngine/core/headers/imageLoader.hpp \
@@ -1820,14 +1823,20 @@ CMakeFiles/SimpleEngine.dir/core/src/engine/Material.cpp.o: /home/vival/Document
 CMakeFiles/SimpleEngine.dir/core/src/engine/camera.cpp.o: /home/vival/Documents/GitHub/SimpleEngine/core/src/engine/camera.cpp \
   /home/vival/Documents/GitHub/SimpleEngine/core/headers/IGameObject.hpp \
   /home/vival/Documents/GitHub/SimpleEngine/core/headers/ILight.hpp \
+  /home/vival/Documents/GitHub/SimpleEngine/core/headers/ILoader.hpp \
   /home/vival/Documents/GitHub/SimpleEngine/core/headers/IObserver.hpp \
+  /home/vival/Documents/GitHub/SimpleEngine/core/headers/Material.hpp \
+  /home/vival/Documents/GitHub/SimpleEngine/core/headers/MaterialFactory.hpp \
+  /home/vival/Documents/GitHub/SimpleEngine/core/headers/SpotLight.hpp \
   /home/vival/Documents/GitHub/SimpleEngine/core/headers/camera.hpp \
   /home/vival/Documents/GitHub/SimpleEngine/core/headers/cameraSettings.hpp \
+  /home/vival/Documents/GitHub/SimpleEngine/core/headers/imageLoader.hpp \
   /home/vival/Documents/GitHub/SimpleEngine/core/headers/position.hpp \
   /home/vival/Documents/GitHub/SimpleEngine/core/headers/rotation.hpp \
   /home/vival/Documents/GitHub/SimpleEngine/core/headers/shader.hpp \
   /home/vival/Documents/GitHub/SimpleEngine/core/headers/shaderProgram.hpp \
   /home/vival/Documents/GitHub/SimpleEngine/core/headers/subject.hpp \
+  /home/vival/Documents/GitHub/SimpleEngine/core/headers/texture.hpp \
   /home/vival/Documents/GitHub/SimpleEngine/core/headers/transformComposite.hpp \
   /usr/include/GL/gl.h \
   /usr/include/GL/glew.h \
@@ -1933,6 +1942,7 @@ CMakeFiles/SimpleEngine.dir/core/src/engine/camera.cpp.o: /home/vival/Documents/
   /usr/include/c++/14/bits/cpp_type_traits.h \
   /usr/include/c++/14/bits/cxxabi_forced.h \
   /usr/include/c++/14/bits/cxxabi_init_exception.h \
+  /usr/include/c++/14/bits/erase_if.h \
   /usr/include/c++/14/bits/exception.h \
   /usr/include/c++/14/bits/exception_defines.h \
   /usr/include/c++/14/bits/exception_ptr.h \
@@ -1953,6 +1963,7 @@ CMakeFiles/SimpleEngine.dir/core/src/engine/camera.cpp.o: /home/vival/Documents/
   /usr/include/c++/14/bits/move.h \
   /usr/include/c++/14/bits/nested_exception.h \
   /usr/include/c++/14/bits/new_allocator.h \
+  /usr/include/c++/14/bits/node_handle.h \
   /usr/include/c++/14/bits/ostream.tcc \
   /usr/include/c++/14/bits/ostream_insert.h \
   /usr/include/c++/14/bits/postypes.h \
@@ -1974,9 +1985,12 @@ CMakeFiles/SimpleEngine.dir/core/src/engine/camera.cpp.o: /home/vival/Documents/
   /usr/include/c++/14/bits/stl_iterator.h \
   /usr/include/c++/14/bits/stl_iterator_base_funcs.h \
   /usr/include/c++/14/bits/stl_iterator_base_types.h \
+  /usr/include/c++/14/bits/stl_map.h \
+  /usr/include/c++/14/bits/stl_multimap.h \
   /usr/include/c++/14/bits/stl_pair.h \
   /usr/include/c++/14/bits/stl_raw_storage_iter.h \
   /usr/include/c++/14/bits/stl_tempbuf.h \
+  /usr/include/c++/14/bits/stl_tree.h \
   /usr/include/c++/14/bits/stl_uninitialized.h \
   /usr/include/c++/14/bits/stl_vector.h \
   /usr/include/c++/14/bits/streambuf.tcc \
@@ -2021,6 +2035,7 @@ CMakeFiles/SimpleEngine.dir/core/src/engine/camera.cpp.o: /home/vival/Documents/
   /usr/include/c++/14/iostream \
   /usr/include/c++/14/istream \
   /usr/include/c++/14/limits \
+  /usr/include/c++/14/map \
   /usr/include/c++/14/memory \
   /usr/include/c++/14/new \
   /usr/include/c++/14/ostream \
@@ -2286,6 +2301,7 @@ CMakeFiles/SimpleEngine.dir/core/src/engine/engine.cpp.o: /home/vival/Documents/
   /home/vival/Documents/GitHub/SimpleEngine/core/headers/IObserver.hpp \
   /home/vival/Documents/GitHub/SimpleEngine/core/headers/Material.hpp \
   /home/vival/Documents/GitHub/SimpleEngine/core/headers/MaterialFactory.hpp \
+  /home/vival/Documents/GitHub/SimpleEngine/core/headers/SpotLight.hpp \
   /home/vival/Documents/GitHub/SimpleEngine/core/headers/application.hpp \
   /home/vival/Documents/GitHub/SimpleEngine/core/headers/camera.hpp \
   /home/vival/Documents/GitHub/SimpleEngine/core/headers/cameraSettings.hpp \
@@ -2858,10 +2874,14 @@ CMakeFiles/SimpleEngine.dir/core/src/engine/factories/MaterialFactory.cpp.o: /ho
   /home/vival/Documents/GitHub/SimpleEngine/core/headers/IObserver.hpp \
   /home/vival/Documents/GitHub/SimpleEngine/core/headers/Material.hpp \
   /home/vival/Documents/GitHub/SimpleEngine/core/headers/MaterialFactory.hpp \
+  /home/vival/Documents/GitHub/SimpleEngine/core/headers/SpotLight.hpp \
   /home/vival/Documents/GitHub/SimpleEngine/core/headers/camera.hpp \
   /home/vival/Documents/GitHub/SimpleEngine/core/headers/cameraSettings.hpp \
+  /home/vival/Documents/GitHub/SimpleEngine/core/headers/configReader.hpp \
   /home/vival/Documents/GitHub/SimpleEngine/core/headers/imageLoader.hpp \
+  /home/vival/Documents/GitHub/SimpleEngine/core/headers/json.hpp \
   /home/vival/Documents/GitHub/SimpleEngine/core/headers/shader.hpp \
+  /home/vival/Documents/GitHub/SimpleEngine/core/headers/shaderFactory.hpp \
   /home/vival/Documents/GitHub/SimpleEngine/core/headers/shaderProgram.hpp \
   /home/vival/Documents/GitHub/SimpleEngine/core/headers/subject.hpp \
   /home/vival/Documents/GitHub/SimpleEngine/core/headers/texture.hpp \
@@ -2950,9 +2970,13 @@ CMakeFiles/SimpleEngine.dir/core/src/engine/factories/MaterialFactory.cpp.o: /ho
   /usr/include/bits/wctype-wchar.h \
   /usr/include/bits/wordsize.h \
   /usr/include/bits/xopen_lim.h \
+  /usr/include/c++/14/algorithm \
+  /usr/include/c++/14/any \
+  /usr/include/c++/14/array \
   /usr/include/c++/14/backward/auto_ptr.h \
   /usr/include/c++/14/backward/binders.h \
   /usr/include/c++/14/bit \
+  /usr/include/c++/14/bits/algorithmfwd.h \
   /usr/include/c++/14/bits/align.h \
   /usr/include/c++/14/bits/alloc_traits.h \
   /usr/include/c++/14/bits/allocated_ptr.h \
@@ -2965,27 +2989,44 @@ CMakeFiles/SimpleEngine.dir/core/src/engine/factories/MaterialFactory.cpp.o: /ho
   /usr/include/c++/14/bits/basic_string.tcc \
   /usr/include/c++/14/bits/char_traits.h \
   /usr/include/c++/14/bits/charconv.h \
+  /usr/include/c++/14/bits/chrono.h \
   /usr/include/c++/14/bits/codecvt.h \
   /usr/include/c++/14/bits/concept_check.h \
   /usr/include/c++/14/bits/cpp_type_traits.h \
   /usr/include/c++/14/bits/cxxabi_forced.h \
   /usr/include/c++/14/bits/cxxabi_init_exception.h \
+  /usr/include/c++/14/bits/enable_special_members.h \
   /usr/include/c++/14/bits/erase_if.h \
   /usr/include/c++/14/bits/exception.h \
   /usr/include/c++/14/bits/exception_defines.h \
   /usr/include/c++/14/bits/exception_ptr.h \
+  /usr/include/c++/14/bits/forward_list.h \
+  /usr/include/c++/14/bits/forward_list.tcc \
+  /usr/include/c++/14/bits/fs_dir.h \
+  /usr/include/c++/14/bits/fs_fwd.h \
+  /usr/include/c++/14/bits/fs_ops.h \
+  /usr/include/c++/14/bits/fs_path.h \
   /usr/include/c++/14/bits/fstream.tcc \
   /usr/include/c++/14/bits/functexcept.h \
   /usr/include/c++/14/bits/functional_hash.h \
+  /usr/include/c++/14/bits/gslice.h \
+  /usr/include/c++/14/bits/gslice_array.h \
   /usr/include/c++/14/bits/hash_bytes.h \
+  /usr/include/c++/14/bits/hashtable.h \
+  /usr/include/c++/14/bits/hashtable_policy.h \
+  /usr/include/c++/14/bits/indirect_array.h \
   /usr/include/c++/14/bits/invoke.h \
   /usr/include/c++/14/bits/ios_base.h \
   /usr/include/c++/14/bits/istream.tcc \
   /usr/include/c++/14/bits/locale_classes.h \
   /usr/include/c++/14/bits/locale_classes.tcc \
+  /usr/include/c++/14/bits/locale_conv.h \
   /usr/include/c++/14/bits/locale_facets.h \
   /usr/include/c++/14/bits/locale_facets.tcc \
+  /usr/include/c++/14/bits/locale_facets_nonio.h \
+  /usr/include/c++/14/bits/locale_facets_nonio.tcc \
   /usr/include/c++/14/bits/localefwd.h \
+  /usr/include/c++/14/bits/mask_array.h \
   /usr/include/c++/14/bits/memory_resource.h \
   /usr/include/c++/14/bits/memoryfwd.h \
   /usr/include/c++/14/bits/move.h \
@@ -2994,41 +3035,56 @@ CMakeFiles/SimpleEngine.dir/core/src/engine/factories/MaterialFactory.cpp.o: /ho
   /usr/include/c++/14/bits/node_handle.h \
   /usr/include/c++/14/bits/ostream.tcc \
   /usr/include/c++/14/bits/ostream_insert.h \
+  /usr/include/c++/14/bits/parse_numbers.h \
   /usr/include/c++/14/bits/postypes.h \
   /usr/include/c++/14/bits/predefined_ops.h \
   /usr/include/c++/14/bits/ptr_traits.h \
+  /usr/include/c++/14/bits/quoted_string.h \
   /usr/include/c++/14/bits/range_access.h \
   /usr/include/c++/14/bits/refwrap.h \
   /usr/include/c++/14/bits/requires_hosted.h \
   /usr/include/c++/14/bits/shared_ptr.h \
   /usr/include/c++/14/bits/shared_ptr_atomic.h \
   /usr/include/c++/14/bits/shared_ptr_base.h \
+  /usr/include/c++/14/bits/slice_array.h \
   /usr/include/c++/14/bits/specfun.h \
   /usr/include/c++/14/bits/sstream.tcc \
   /usr/include/c++/14/bits/std_abs.h \
+  /usr/include/c++/14/bits/std_function.h \
+  /usr/include/c++/14/bits/stl_algo.h \
   /usr/include/c++/14/bits/stl_algobase.h \
   /usr/include/c++/14/bits/stl_bvector.h \
   /usr/include/c++/14/bits/stl_construct.h \
   /usr/include/c++/14/bits/stl_function.h \
+  /usr/include/c++/14/bits/stl_heap.h \
   /usr/include/c++/14/bits/stl_iterator.h \
   /usr/include/c++/14/bits/stl_iterator_base_funcs.h \
   /usr/include/c++/14/bits/stl_iterator_base_types.h \
   /usr/include/c++/14/bits/stl_map.h \
   /usr/include/c++/14/bits/stl_multimap.h \
+  /usr/include/c++/14/bits/stl_numeric.h \
   /usr/include/c++/14/bits/stl_pair.h \
   /usr/include/c++/14/bits/stl_raw_storage_iter.h \
+  /usr/include/c++/14/bits/stl_relops.h \
   /usr/include/c++/14/bits/stl_tempbuf.h \
   /usr/include/c++/14/bits/stl_tree.h \
   /usr/include/c++/14/bits/stl_uninitialized.h \
   /usr/include/c++/14/bits/stl_vector.h \
+  /usr/include/c++/14/bits/stream_iterator.h \
   /usr/include/c++/14/bits/streambuf.tcc \
   /usr/include/c++/14/bits/streambuf_iterator.h \
   /usr/include/c++/14/bits/string_view.tcc \
   /usr/include/c++/14/bits/stringfwd.h \
+  /usr/include/c++/14/bits/uniform_int_dist.h \
   /usr/include/c++/14/bits/unique_ptr.h \
+  /usr/include/c++/14/bits/unordered_map.h \
   /usr/include/c++/14/bits/uses_allocator.h \
   /usr/include/c++/14/bits/uses_allocator_args.h \
   /usr/include/c++/14/bits/utility.h \
+  /usr/include/c++/14/bits/valarray_after.h \
+  /usr/include/c++/14/bits/valarray_array.h \
+  /usr/include/c++/14/bits/valarray_array.tcc \
+  /usr/include/c++/14/bits/valarray_before.h \
   /usr/include/c++/14/bits/vector.tcc \
   /usr/include/c++/14/bits/version.h \
   /usr/include/c++/14/cassert \
@@ -3038,12 +3094,15 @@ CMakeFiles/SimpleEngine.dir/core/src/engine/factories/MaterialFactory.cpp.o: /ho
   /usr/include/c++/14/climits \
   /usr/include/c++/14/clocale \
   /usr/include/c++/14/cmath \
+  /usr/include/c++/14/codecvt \
+  /usr/include/c++/14/compare \
   /usr/include/c++/14/concepts \
   /usr/include/c++/14/cstddef \
   /usr/include/c++/14/cstdint \
   /usr/include/c++/14/cstdio \
   /usr/include/c++/14/cstdlib \
   /usr/include/c++/14/cstring \
+  /usr/include/c++/14/ctime \
   /usr/include/c++/14/cwchar \
   /usr/include/c++/14/cwctype \
   /usr/include/c++/14/debug/assertions.h \
@@ -3056,20 +3115,30 @@ CMakeFiles/SimpleEngine.dir/core/src/engine/factories/MaterialFactory.cpp.o: /ho
   /usr/include/c++/14/ext/numeric_traits.h \
   /usr/include/c++/14/ext/string_conversions.h \
   /usr/include/c++/14/ext/type_traits.h \
+  /usr/include/c++/14/filesystem \
+  /usr/include/c++/14/forward_list \
   /usr/include/c++/14/fstream \
+  /usr/include/c++/14/functional \
   /usr/include/c++/14/initializer_list \
+  /usr/include/c++/14/iomanip \
   /usr/include/c++/14/ios \
   /usr/include/c++/14/iosfwd \
   /usr/include/c++/14/iostream \
   /usr/include/c++/14/istream \
+  /usr/include/c++/14/iterator \
   /usr/include/c++/14/limits \
+  /usr/include/c++/14/locale \
   /usr/include/c++/14/map \
   /usr/include/c++/14/memory \
   /usr/include/c++/14/new \
+  /usr/include/c++/14/numeric \
   /usr/include/c++/14/ostream \
   /usr/include/c++/14/pstl/execution_defs.h \
+  /usr/include/c++/14/pstl/glue_algorithm_defs.h \
   /usr/include/c++/14/pstl/glue_memory_defs.h \
+  /usr/include/c++/14/pstl/glue_numeric_defs.h \
   /usr/include/c++/14/pstl/pstl_config.h \
+  /usr/include/c++/14/ratio \
   /usr/include/c++/14/sstream \
   /usr/include/c++/14/stdexcept \
   /usr/include/c++/14/streambuf \
@@ -3091,7 +3160,11 @@ CMakeFiles/SimpleEngine.dir/core/src/engine/factories/MaterialFactory.cpp.o: /ho
   /usr/include/c++/14/tuple \
   /usr/include/c++/14/type_traits \
   /usr/include/c++/14/typeinfo \
+  /usr/include/c++/14/unordered_map \
+  /usr/include/c++/14/utility \
+  /usr/include/c++/14/valarray \
   /usr/include/c++/14/vector \
+  /usr/include/c++/14/version \
   /usr/include/c++/14/x86_64-redhat-linux/bits/atomic_word.h \
   /usr/include/c++/14/x86_64-redhat-linux/bits/basic_file.h \
   /usr/include/c++/14/x86_64-redhat-linux/bits/c++allocator.h \
@@ -3104,7 +3177,9 @@ CMakeFiles/SimpleEngine.dir/core/src/engine/factories/MaterialFactory.cpp.o: /ho
   /usr/include/c++/14/x86_64-redhat-linux/bits/error_constants.h \
   /usr/include/c++/14/x86_64-redhat-linux/bits/gthr-default.h \
   /usr/include/c++/14/x86_64-redhat-linux/bits/gthr.h \
+  /usr/include/c++/14/x86_64-redhat-linux/bits/messages_members.h \
   /usr/include/c++/14/x86_64-redhat-linux/bits/os_defines.h \
+  /usr/include/c++/14/x86_64-redhat-linux/bits/time_members.h \
   /usr/include/ctype.h \
   /usr/include/endian.h \
   /usr/include/errno.h \
@@ -3293,6 +3368,7 @@ CMakeFiles/SimpleEngine.dir/core/src/engine/factories/MaterialFactory.cpp.o: /ho
   /usr/include/glm/vector_relational.hpp \
   /usr/include/gnu/stubs-64.h \
   /usr/include/gnu/stubs.h \
+  /usr/include/libintl.h \
   /usr/include/limits.h \
   /usr/include/linux/errno.h \
   /usr/include/linux/limits.h \
@@ -3850,6 +3926,7 @@ CMakeFiles/SimpleEngine.dir/core/src/engine/factories/modelFactory.cpp.o: /home/
   /home/vival/Documents/GitHub/SimpleEngine/core/headers/IObserver.hpp \
   /home/vival/Documents/GitHub/SimpleEngine/core/headers/Material.hpp \
   /home/vival/Documents/GitHub/SimpleEngine/core/headers/MaterialFactory.hpp \
+  /home/vival/Documents/GitHub/SimpleEngine/core/headers/SpotLight.hpp \
   /home/vival/Documents/GitHub/SimpleEngine/core/headers/camera.hpp \
   /home/vival/Documents/GitHub/SimpleEngine/core/headers/cameraSettings.hpp \
   /home/vival/Documents/GitHub/SimpleEngine/core/headers/configReader.hpp \
@@ -4663,6 +4740,7 @@ CMakeFiles/SimpleEngine.dir/core/src/engine/input.cpp.o: /home/vival/Documents/G
   /home/vival/Documents/GitHub/SimpleEngine/core/headers/IGameObject.hpp \
   /home/vival/Documents/GitHub/SimpleEngine/core/headers/ILight.hpp \
   /home/vival/Documents/GitHub/SimpleEngine/core/headers/IObserver.hpp \
+  /home/vival/Documents/GitHub/SimpleEngine/core/headers/SpotLight.hpp \
   /home/vival/Documents/GitHub/SimpleEngine/core/headers/application.hpp \
   /home/vival/Documents/GitHub/SimpleEngine/core/headers/camera.hpp \
   /home/vival/Documents/GitHub/SimpleEngine/core/headers/cameraSettings.hpp \
@@ -5192,6 +5270,7 @@ CMakeFiles/SimpleEngine.dir/core/src/engine/loaders/modelLoader.cpp.o: /home/viv
   /home/vival/Documents/GitHub/SimpleEngine/core/headers/ILoader.hpp \
   /home/vival/Documents/GitHub/SimpleEngine/core/headers/IObserver.hpp \
   /home/vival/Documents/GitHub/SimpleEngine/core/headers/Material.hpp \
+  /home/vival/Documents/GitHub/SimpleEngine/core/headers/SpotLight.hpp \
   /home/vival/Documents/GitHub/SimpleEngine/core/headers/camera.hpp \
   /home/vival/Documents/GitHub/SimpleEngine/core/headers/cameraSettings.hpp \
   /home/vival/Documents/GitHub/SimpleEngine/core/headers/defaultAssets.hpp \
@@ -5703,6 +5782,7 @@ CMakeFiles/SimpleEngine.dir/core/src/engine/pointLight.cpp.o: /home/vival/Docume
   /home/vival/Documents/GitHub/SimpleEngine/core/headers/IGameObject.hpp \
   /home/vival/Documents/GitHub/SimpleEngine/core/headers/ILight.hpp \
   /home/vival/Documents/GitHub/SimpleEngine/core/headers/IObserver.hpp \
+  /home/vival/Documents/GitHub/SimpleEngine/core/headers/SpotLight.hpp \
   /home/vival/Documents/GitHub/SimpleEngine/core/headers/camera.hpp \
   /home/vival/Documents/GitHub/SimpleEngine/core/headers/cameraSettings.hpp \
   /home/vival/Documents/GitHub/SimpleEngine/core/headers/pointLight.hpp \
@@ -6163,6 +6243,7 @@ CMakeFiles/SimpleEngine.dir/core/src/engine/shader.cpp.o: /home/vival/Documents/
   /home/vival/Documents/GitHub/SimpleEngine/core/headers/IGameObject.hpp \
   /home/vival/Documents/GitHub/SimpleEngine/core/headers/ILight.hpp \
   /home/vival/Documents/GitHub/SimpleEngine/core/headers/IObserver.hpp \
+  /home/vival/Documents/GitHub/SimpleEngine/core/headers/SpotLight.hpp \
   /home/vival/Documents/GitHub/SimpleEngine/core/headers/camera.hpp \
   /home/vival/Documents/GitHub/SimpleEngine/core/headers/cameraSettings.hpp \
   /home/vival/Documents/GitHub/SimpleEngine/core/headers/shader.hpp \
@@ -8094,6 +8175,7 @@ CMakeFiles/SimpleEngine.dir/core/src/main.cpp.o: /home/vival/Documents/GitHub/Si
   /home/vival/Documents/GitHub/SimpleEngine/core/headers/ILoader.hpp \
   /home/vival/Documents/GitHub/SimpleEngine/core/headers/IObserver.hpp \
   /home/vival/Documents/GitHub/SimpleEngine/core/headers/Material.hpp \
+  /home/vival/Documents/GitHub/SimpleEngine/core/headers/SpotLight.hpp \
   /home/vival/Documents/GitHub/SimpleEngine/core/headers/application.hpp \
   /home/vival/Documents/GitHub/SimpleEngine/core/headers/camera.hpp \
   /home/vival/Documents/GitHub/SimpleEngine/core/headers/cameraSettings.hpp \
@@ -8629,6 +8711,7 @@ CMakeFiles/SimpleEngine.dir/core/src/scene/mesh.cpp.o: /home/vival/Documents/Git
   /home/vival/Documents/GitHub/SimpleEngine/core/headers/ILoader.hpp \
   /home/vival/Documents/GitHub/SimpleEngine/core/headers/IObserver.hpp \
   /home/vival/Documents/GitHub/SimpleEngine/core/headers/Material.hpp \
+  /home/vival/Documents/GitHub/SimpleEngine/core/headers/SpotLight.hpp \
   /home/vival/Documents/GitHub/SimpleEngine/core/headers/camera.hpp \
   /home/vival/Documents/GitHub/SimpleEngine/core/headers/cameraSettings.hpp \
   /home/vival/Documents/GitHub/SimpleEngine/core/headers/imageLoader.hpp \
@@ -9103,6 +9186,7 @@ CMakeFiles/SimpleEngine.dir/core/src/scene/model.cpp.o: /home/vival/Documents/Gi
   /home/vival/Documents/GitHub/SimpleEngine/core/headers/ILoader.hpp \
   /home/vival/Documents/GitHub/SimpleEngine/core/headers/IObserver.hpp \
   /home/vival/Documents/GitHub/SimpleEngine/core/headers/Material.hpp \
+  /home/vival/Documents/GitHub/SimpleEngine/core/headers/SpotLight.hpp \
   /home/vival/Documents/GitHub/SimpleEngine/core/headers/camera.hpp \
   /home/vival/Documents/GitHub/SimpleEngine/core/headers/cameraSettings.hpp \
   /home/vival/Documents/GitHub/SimpleEngine/core/headers/defaultAssets.hpp \
@@ -9603,6 +9687,7 @@ CMakeFiles/SimpleEngine.dir/core/src/scene/scene.cpp.o: /home/vival/Documents/Gi
   /home/vival/Documents/GitHub/SimpleEngine/core/headers/ILoader.hpp \
   /home/vival/Documents/GitHub/SimpleEngine/core/headers/IObserver.hpp \
   /home/vival/Documents/GitHub/SimpleEngine/core/headers/Material.hpp \
+  /home/vival/Documents/GitHub/SimpleEngine/core/headers/SpotLight.hpp \
   /home/vival/Documents/GitHub/SimpleEngine/core/headers/camera.hpp \
   /home/vival/Documents/GitHub/SimpleEngine/core/headers/cameraSettings.hpp \
   /home/vival/Documents/GitHub/SimpleEngine/core/headers/imageLoader.hpp \
@@ -10077,6 +10162,7 @@ CMakeFiles/SimpleEngine.dir/core/src/scene/sceneReader.cpp.o: /home/vival/Docume
   /home/vival/Documents/GitHub/SimpleEngine/core/headers/IObjectFactory.hpp \
   /home/vival/Documents/GitHub/SimpleEngine/core/headers/IObserver.hpp \
   /home/vival/Documents/GitHub/SimpleEngine/core/headers/Material.hpp \
+  /home/vival/Documents/GitHub/SimpleEngine/core/headers/MaterialFactory.hpp \
   /home/vival/Documents/GitHub/SimpleEngine/core/headers/SpotLight.hpp \
   /home/vival/Documents/GitHub/SimpleEngine/core/headers/camera.hpp \
   /home/vival/Documents/GitHub/SimpleEngine/core/headers/cameraSettings.hpp \
@@ -10667,8 +10753,6 @@ CMakeFiles/SimpleEngine.dir/core/src/scene/sceneReader.cpp.o: /home/vival/Docume
 
 /home/vival/Documents/GitHub/SimpleEngine/core/headers/gameObjectFactory.hpp:
 
-/home/vival/Documents/GitHub/SimpleEngine/core/headers/SpotLight.hpp:
-
 /home/vival/Documents/GitHub/SimpleEngine/core/src/main.cpp:
 
 /home/vival/Documents/GitHub/SimpleEngine/core/src/engine/factories/gameObjectFactory.cpp:
@@ -10725,7 +10809,7 @@ CMakeFiles/SimpleEngine.dir/core/src/scene/sceneReader.cpp.o: /home/vival/Docume
 
 /usr/include/gnu/stubs.h:
 
-/usr/include/glm/ext/matrix_double3x2_precision.hpp:
+/usr/include/glm/vector_relational.hpp:
 
 /usr/include/c++/14/bits/utility.h:
 
@@ -10915,10 +10999,6 @@ CMakeFiles/SimpleEngine.dir/core/src/scene/sceneReader.cpp.o: /home/vival/Docume
 
 /usr/include/assimp/vector3.h:
 
-/usr/include/c++/14/bits/valarray_array.tcc:
-
-/usr/include/bits/types/wint_t.h:
-
 /usr/include/c++/14/ext/alloc_traits.h:
 
 /usr/include/glm/ext/scalar_int_sized.hpp:
@@ -11057,11 +11137,17 @@ CMakeFiles/SimpleEngine.dir/core/src/scene/sceneReader.cpp.o: /home/vival/Docume
 
 /usr/include/bits/long-double.h:
 
+/home/vival/Documents/GitHub/SimpleEngine/core/headers/vertex.hpp:
+
 /usr/include/glm/ext/vector_float3.hpp:
 
 /home/vival/Documents/GitHub/SimpleEngine/core/headers/cameraSettings.hpp:
 
 /usr/include/bits/types/cookie_io_functions_t.h:
+
+/home/vival/Documents/GitHub/SimpleEngine/core/headers/transformComposite.hpp:
+
+/usr/include/glm/detail/_vectorize.hpp:
 
 /usr/include/c++/14/bits/locale_classes.h:
 
@@ -11076,10 +11162,6 @@ CMakeFiles/SimpleEngine.dir/core/src/scene/sceneReader.cpp.o: /home/vival/Docume
 /usr/include/c++/14/filesystem:
 
 /usr/include/glm/ext/matrix_float2x3_precision.hpp:
-
-/home/vival/Documents/GitHub/SimpleEngine/core/headers/transformComposite.hpp:
-
-/usr/include/glm/detail/_vectorize.hpp:
 
 /usr/include/c++/14/bits/memoryfwd.h:
 
@@ -11125,6 +11207,10 @@ CMakeFiles/SimpleEngine.dir/core/src/scene/sceneReader.cpp.o: /home/vival/Docume
 
 /usr/include/bits/thread-shared-types.h:
 
+/usr/include/bits/types/__fpos_t.h:
+
+/home/vival/Documents/GitHub/SimpleEngine/core/headers/SpotLight.hpp:
+
 /usr/include/c++/14/bits/locale_facets_nonio.tcc:
 
 /usr/include/c++/14/bits/algorithmfwd.h:
@@ -11135,13 +11221,9 @@ CMakeFiles/SimpleEngine.dir/core/src/scene/sceneReader.cpp.o: /home/vival/Docume
 
 /usr/include/bits/pthreadtypes-arch.h:
 
-/usr/include/bits/types/__fpos_t.h:
-
 /home/vival/Documents/GitHub/SimpleEngine/core/headers/shader.hpp:
 
-/usr/include/glm/ext/vector_float1.hpp:
-
-/usr/include/assimp/Compiler/poppack1.h:
+/usr/include/bits/types/clockid_t.h:
 
 /home/vival/Documents/GitHub/SimpleEngine/core/headers/modelFactory.hpp:
 
@@ -11157,7 +11239,9 @@ CMakeFiles/SimpleEngine.dir/core/src/scene/sceneReader.cpp.o: /home/vival/Docume
 
 /usr/include/glm/ext/quaternion_transform.inl:
 
-/usr/include/bits/types/clockid_t.h:
+/usr/include/glm/ext/vector_float1.hpp:
+
+/usr/include/assimp/Compiler/poppack1.h:
 
 /usr/include/c++/14/array:
 
@@ -11185,8 +11269,6 @@ CMakeFiles/SimpleEngine.dir/core/src/scene/sceneReader.cpp.o: /home/vival/Docume
 
 /usr/include/c++/14/x86_64-redhat-linux/bits/error_constants.h:
 
-/home/vival/Documents/GitHub/SimpleEngine/core/headers/vertex.hpp:
-
 /usr/include/c++/14/bits/valarray_after.h:
 
 /usr/include/assimp/quaternion.h:
@@ -11205,9 +11287,9 @@ CMakeFiles/SimpleEngine.dir/core/src/scene/sceneReader.cpp.o: /home/vival/Docume
 
 /usr/include/assimp/vector2.h:
 
-/usr/include/bits/wctype-wchar.h:
-
 /usr/include/bits/stdint-intn.h:
+
+/usr/include/bits/wctype-wchar.h:
 
 /usr/include/c++/14/bits/cxxabi_forced.h:
 
@@ -11287,6 +11369,10 @@ CMakeFiles/SimpleEngine.dir/core/src/scene/sceneReader.cpp.o: /home/vival/Docume
 
 /usr/include/glm/detail/type_mat4x3.inl:
 
+/usr/include/bits/sched.h:
+
+/usr/include/bits/struct_rwlock.h:
+
 /usr/include/bits/mathcalls-narrow.h:
 
 /usr/include/bits/pthread_stack_min-dynamic.h:
@@ -11357,9 +11443,11 @@ CMakeFiles/SimpleEngine.dir/core/src/scene/sceneReader.cpp.o: /home/vival/Docume
 
 /usr/include/bits/types/sigset_t.h:
 
-/usr/include/bits/sched.h:
+/usr/include/bits/types/wint_t.h:
 
-/usr/include/bits/struct_rwlock.h:
+/usr/include/c++/14/bits/valarray_array.tcc:
+
+/usr/include/glm/ext/matrix_double3x2_precision.hpp:
 
 /usr/include/c++/14/bits/valarray_before.h:
 
@@ -11602,8 +11690,6 @@ CMakeFiles/SimpleEngine.dir/core/src/scene/sceneReader.cpp.o: /home/vival/Docume
 /usr/include/glm/ext/matrix_clip_space.inl:
 
 /usr/include/glm/detail/type_float.hpp:
-
-/usr/include/glm/vector_relational.hpp:
 
 /usr/include/glm/detail/type_half.hpp:
 

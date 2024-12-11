@@ -21,5 +21,5 @@ mat4 AmbientLight::getTransformMatrix()
 
 void AmbientLight::update(float delta)
 {
-
+    //notifyObservers();
 }

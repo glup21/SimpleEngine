@@ -6,15 +6,14 @@
 #include <GL/glu.h>
 
 
-ShaderProgram::ShaderProgram(Shader* vertexShader, Shader* fragmentShader, Camera* camera) :
-     ID(glCreateProgram()), vertexShader(vertexShader), camera(camera)
+ShaderProgram::ShaderProgram(Shader* vertexShader, Shader* fragmentShader) :
+     ID(glCreateProgram()), vertexShader(vertexShader)
 {
     
     attachShader(vertexShader);
     attachShader(fragmentShader);
     link();
 
-    //observe(camera);
 }
 ShaderProgram::~ShaderProgram() { glDeleteProgram(ID); }
 
@@ -58,8 +57,6 @@ void ShaderProgram::setInt(const std::string& name, int value)
         //std::cerr << "Warning: Uniform '" << name << "' not found.\n";
         return;
     }
-    if(name == "lightsCount")
-        std::cout << "Lights count in setInt: " << value << std::endl; 
     glUniform1i(location, value);
     
 }
@@ -149,8 +146,11 @@ void ShaderProgram::update(Subject* subject)
 
 void ShaderProgram::updateLight()
 {
-    setLightCount(lights.size());
+
     use();
+    setLightCount(lights.size());
+    setVec3("directionalLightDirection", glm::vec3(1.0f, 1.0f, 1.0f));
+    setVec4("directionalLightColor", glm::vec4(0.0f, 0.0f, 1.0f, 1.0f));
     for(int i = 0; i < lights.size(); i++)
     {
         printf("Test\n");
@@ -346,9 +346,4 @@ void ShaderProgram::updateLight()
 void ShaderProgram::observe(Subject* subject) 
 {
     subject->addObserver(this);
-}
-
-Shader* ShaderProgram::getVertexShader()
-{
-    return vertexShader;
 }

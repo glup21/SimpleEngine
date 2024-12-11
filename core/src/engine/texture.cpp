@@ -7,6 +7,7 @@ Texture::Texture(const u_char* image, int width, int height, int nrChannels, std
     : width(width), height(height), nrChannels(nrChannels), type(type)
 {
     glGenTextures(1, &textureID);
+    std::cout << "TextureID: " <<  textureID << std::endl;
     glBindTexture(GL_TEXTURE_2D, textureID);
 
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT); 
@@ -37,7 +38,7 @@ Texture::Texture(const u_char* image, int width, int height, int nrChannels, std
 Texture::~Texture()
 {
     //Somewhere in code texture desctructor is called before render, and I dont know where...
-    //glDeleteTextures(1, &textureID);
+    glDeleteTextures(1, &textureID);
 }
 
 void Texture::bind(unsigned int unit) const

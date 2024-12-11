@@ -444,9 +444,9 @@ SimpleEngine: CMakeFiles/SimpleEngine.dir/core/src/engine/factories/gameObjectFa
 SimpleEngine: CMakeFiles/SimpleEngine.dir/core/src/engine/factories/modelFactory.cpp.o
 SimpleEngine: CMakeFiles/SimpleEngine.dir/core/src/engine/factories/MaterialFactory.cpp.o
 SimpleEngine: CMakeFiles/SimpleEngine.dir/build.make
-SimpleEngine: /usr/lib64/libassimp.so.5.3.1
 SimpleEngine: /usr/lib64/libglfw.so.3.3
 SimpleEngine: /usr/lib64/libGLU.so
+SimpleEngine: /usr/lib64/libassimp.so.5.3.1
 SimpleEngine: CMakeFiles/SimpleEngine.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/vival/Documents/GitHub/SimpleEngine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Linking CXX executable SimpleEngine"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/SimpleEngine.dir/link.txt --verbose=$(VERBOSE)

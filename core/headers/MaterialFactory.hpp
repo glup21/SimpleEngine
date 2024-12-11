@@ -9,6 +9,8 @@
 #include "Material.hpp"
 #include "camera.hpp"
 #include <string>
+#include "IObserver.hpp"
+#include <vector>
 
 using std::string;
 
@@ -19,12 +21,17 @@ private:
     MaterialFactory();
     Camera* camera;
     string path;
+    std::vector<ShaderProgram*> shader_programs;
+    
 public:
     static MaterialFactory& getInstance();
 
     void setCamera(Camera* camera);
     void setShaderPath(string path);
     Material* getMaterialInstance(int material_type);
+
+    void observeByShaderPrograms(Subject* subject);
+    void updateAllLights();
 
 };
 

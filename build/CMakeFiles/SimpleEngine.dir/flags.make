@@ -6,5 +6,5 @@ CXX_DEFINES =
 
 CXX_INCLUDES = -I/home/vival/Documents/GitHub/SimpleEngine/core/headers
 
-CXX_FLAGS =  -Wall -g -std=gnu++17
+CXX_FLAGS =  -Wall -Wextra -pedantic -g -std=gnu++17
 

@@ -4,11 +4,12 @@
 #include <iostream>
 #include "position.hpp"
 #include "rotation.hpp"
+#include "MaterialFactory.hpp"
 
 using std::vector;
 
 Camera::Camera(GLFWwindow* window, CameraSettings settings)
-    : upVector(0.0f, 1.0f, 0.0f), window(window), settings(settings) 
+    : upVector(0.0f, 1.0f, 0.0f), window(window), settings(settings)
 {
     target = vec3(0.0f, 0.0f, -1.0f);
 }
@@ -62,6 +63,8 @@ void Camera::move(const vector<bool>& keys, const float& deltaTime)
 
     addPosition(movement * settings.movingSpeed * deltaTime);
     notifyObservers();
+
+
 }
 
 void Camera::changeTarget(const float& deltaX, const float& deltaY, const float& delta) 
@@ -108,3 +111,4 @@ void Camera::addRotation(const vec3& rotationVec, const float& angle)
     Rotation* rotation = new Rotation(rotationVec, angle);
     transform.addTransform(rotation);
 }
+

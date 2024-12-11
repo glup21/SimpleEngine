@@ -12,6 +12,7 @@ void SpotLight::addPosition(const vec3& newPosition)
 {
     Position* position = new Position(newPosition);
     transform.addTransform(position);
+    std::cout << "Updated\n" << std::endl;
     notifyObservers();
 }
 
@@ -31,6 +32,6 @@ mat4 SpotLight::getTransformMatrix()
 void SpotLight::update(float delta)
 {
 
-    // notifyObservers();
+    //notifyObservers();
 }
 

@@ -8,14 +8,14 @@ GameObjectFactory::GameObjectFactory()
 
 shared_ptr<Model> GameObjectFactory::createModel(string path, int ID, string material)
 {
-    if(material == "default")
-        return modelFactory->createModel(path, ID, SHADER_DEFAULT);
+    if(material == "default" || material == "")
+        return modelFactory->createModel(path, ID, 0);
     else if(material == "ambient")
         return modelFactory->createModel(path, ID, SHADER_AMBIENT);
     else if(material == "color")
         return modelFactory->createModel(path, ID, SHADER_COLOR);
 
-    return modelFactory->createModel(path, ID, SHADER_DEFAULT);
+    return modelFactory->createModel(path, ID, 0);
 }
 
 

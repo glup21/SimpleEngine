@@ -6,10 +6,11 @@
 #include "transformComposite.hpp"
 #include "subject.hpp"
 #include <GLFW/glfw3.h>
-
+#include "SpotLight.hpp"
 using glm::vec3, glm::mat4;
 
 class ShaderProgram;
+class SpotLight;
 
 class Camera : public Subject {
 private:
@@ -19,6 +20,7 @@ private:
     GLFWwindow* window;
     CameraSettings settings;
     float ratio;
+
 
 public:
     Camera(GLFWwindow* window, CameraSettings settings);
@@ -37,6 +39,7 @@ public:
 
     void addPosition(const vec3& newPosition);
     void addRotation(const vec3& rotationVec, const float& angle);
+
 };
 
 #endif

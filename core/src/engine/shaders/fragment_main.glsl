@@ -1,5 +1,5 @@
 #version 450 
-#define MAX_LIGHTS 5
+#define MAX_LIGHTS 100
 
 struct Light
 {
@@ -16,6 +16,9 @@ uniform int lightsCount;
 uniform vec3 cameraPosition;  
 uniform vec4 ambientLight;    
 uniform sampler2D textureImage;
+
+uniform vec3 directionalLightDirection;
+uniform vec4 directionalLightColor;
 
 in vec3 FragPos;        
 in vec3 WorldNormal;    
@@ -59,23 +62,30 @@ void main()
         }
         if (lights[i].type == 2) // Spotlight
         {
-            vec3 lightVector = normalize(FragPos - lights[i].position);
+            vec3 lightVector = normalize(lights[i].position - FragPos);
             
             float spotEffect = dot(lightVector, normalize(WorldNormal));
             if (spotEffect < cos(lights[i].angle))
                 continue; 
 
-            float distance = length(FragPos - lights[i].position);
-            float attenuation = getAttenuation(1.0, 0.1, 0.01, distance);
+            float distance = length(lightVector);
 
             // Diffuse calculation
             float diff = max(spotEffect, 0.0);
-            diffuse += diff * lights[i].color.rgb * attenuation * lights[i].color.w;
+            diffuse += diff * lights[i].color.rgb  * lights[i].color.w;
 
             // Specular calculation
             vec3 halfwayDir = normalize(lightVector + cameraVector);
             float spec = pow(max(dot(normalize(WorldNormal), halfwayDir), 0.0), 32.0);
-            specular += spec * lights[i].color.rgb * attenuation;
+            specular += spec * lights[i].color.rgb ;
+        }
+        if (directionalLightDirection != vec3(0.0)) 
+        {
+            vec3 lightVector = normalize(directionalLightDirection);
+
+            float diff = max(dot(WorldNormal, -lightVector), 0.0);
+            diffuse += diff * directionalLightColor.rgb * texColor.rgb;
+
         }
     }
 

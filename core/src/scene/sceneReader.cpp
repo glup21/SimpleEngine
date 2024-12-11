@@ -7,11 +7,12 @@
 #include "gameObjectFactory.hpp"
 #include "pointLight.hpp"
 #include "SpotLight.hpp"
+#include "MaterialFactory.hpp"
 
 Scene SceneReader::readScene()
 {
     GameObjectFactory objectFactory;
-
+    MaterialFactory& mf = MaterialFactory::getInstance();
     std::ifstream file(scenePath);
     if (!file.is_open()) {
         std::cerr << "Error: Could not open scene config: " << scenePath << std::endl;
@@ -64,6 +65,7 @@ Scene SceneReader::readScene()
                 std::cout << light << std::endl;
 
                 //defaultShaderProgram->observe(light.get());
+                mf.observeByShaderPrograms(light.get());
                 light->addPosition(v_position);            
                 gObj.push_back(light);
                 
@@ -82,6 +84,7 @@ Scene SceneReader::readScene()
                     v_position, v_color
                 );
                 //defaultShaderProgram->observe(light.get());
+                mf.observeByShaderPrograms(light.get());
                 light->addPosition(v_position);
                 gObj.push_back(light);
                 
@@ -107,7 +110,7 @@ Scene SceneReader::readScene()
                 );
 
                 // ADD HERE FOR MATERIAL FACTORY ABILITY TO SET ALL SHADERS TO OBSERVE THIS LIGHT
-                //defaultShaderProgram->observe(light.get());
+                mf.observeByShaderPrograms(light.get());
                 light->addPosition(v_position);
                 light->addRotation({1.0f, 0.0f, 0.0f}, v_rotation.x);
                 light->addRotation({0.0f, 1.0f, 0.0f}, v_rotation.y);
